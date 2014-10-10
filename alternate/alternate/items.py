@@ -12,5 +12,6 @@ class AlternateItem(scrapy.Item):
     name = scrapy.Field()
     desc = scrapy.Field()
     price = scrapy.Field()
+    url = scrapy.Field()
 
 

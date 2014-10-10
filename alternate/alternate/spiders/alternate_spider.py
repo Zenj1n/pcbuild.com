@@ -3,6 +3,8 @@ import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
+
+
 from alternate.items import AlternateItem
 
 class alternate_spider(CrawlSpider):
@@ -15,15 +17,17 @@ class alternate_spider(CrawlSpider):
     #rules = [Rule(SgmlLinkExtractor(allow=[r'product/\d+']), callback='parse_alternate', follow=True)]
 
 
-    def parse(self, response):
-        for titles in response.xpath('//div[@class = "listRow"]'):
+    def parse_start_url(self, response):
+        hxs = HtmlXPathSelector(response)
+        titles = hxs.select('//div[@class="listRow"]')
+        items = []
+        for titles in titles:
             item = AlternateItem()
-            item['name'] = titles.xpath('a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
-            item['desc'] = titles.xpath('a[@class = "productLink"]/span[@class = "info"]/text()').extract()
-            item['price'] = titles.xpath('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            #item['name'] = response.xpath'body/div[@id = "pageBig"]/div[@id = "content"]/div[@id = "pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
-            #item['desc'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class= "productLink"]/span[@class = "info"]/text()').extract()
-            #item['price'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-        yield item
+            item['name'] = titles.select('a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
+            item['desc'] = titles.select('a[@class = "productLink"]/span[@class = "info"]/text()').extract()
+            item['price'] = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            item['url'] = titles.select('a[@class="productLink"]/@href').extract()
+        items.append(item)
+        return (items)
 
         
