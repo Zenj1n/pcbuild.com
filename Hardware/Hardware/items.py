@@ -9,6 +9,7 @@ import scrapy
 
 
 class HWItem(scrapy.Item):
+    webshop = scrapy.Field()
     name = scrapy.Field()
     url = scrapy.Field()
     desc = scrapy.Field()

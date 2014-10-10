@@ -7,10 +7,10 @@ from scrapy.selector import HtmlXPathSelector
 
 from Hardware.items import  HWItem
 
-class MotherboardSpider(CrawlSpider):
-    name = "HW_Motherboard"
+class Storagepider(CrawlSpider):
+    name = "HW_STORAGE"
     allowed_domains = ["hardware.info"]
-    start_urls = ["http://nl.hardware.info/productgroep/1/moederborden"]
+    start_urls = ["http://nl.hardware.info/productgroep/4/harddisksssds"]
     
     rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
     , callback="parse_start_url", follow= True),
