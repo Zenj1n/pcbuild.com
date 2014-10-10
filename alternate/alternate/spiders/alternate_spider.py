@@ -17,17 +17,20 @@ class alternate_spider(CrawlSpider):
     #rules = [Rule(SgmlLinkExtractor(allow=[r'product/\d+']), callback='parse_alternate', follow=True)]
 
 
-    def parse_start_url(self, response):
+    def parse_start_url(self,response):
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
         items = []
         for titles in titles:
-            item = AlternateItem()
-            item['name'] = titles.select('a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
-            item['desc'] = titles.select('a[@class = "productLink"]/span[@class = "info"]/text()').extract()
-            item['price'] = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            item['url'] = titles.select('a[@class="productLink"]/@href').extract()
-        items.append(item)
+           item = AlternateItem()
+           item['name'] = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+           item['url'] = titles.select('a[@class="productLink"]/@href').extract()
+           item['desc'] = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
+           item['price'] = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+           items.append(item)
         return (items)
+        
+
+      
 
         
