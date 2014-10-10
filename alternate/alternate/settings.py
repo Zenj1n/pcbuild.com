@@ -13,7 +13,7 @@ BOT_NAME = 'alternate'
 SPIDER_MODULES = ['alternate.spiders']
 NEWSPIDER_MODULE = 'alternate.spiders'
 DOWNLOAD_DELAY = 0.75
-CLOSESPIDER_PAGECOUNT = 10
+CLOSESPIDER_PAGECOUNT = 1000
 
 EXTENSIONS = {
     'scrapy.contrib.closespider.CloseSpider': 500

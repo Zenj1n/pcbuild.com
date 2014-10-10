@@ -9,9 +9,8 @@ import scrapy
 
 
 class AlternateItem(scrapy.Item):
-    url = scrapy.Field()
     name = scrapy.Field()
-    description = scrapy.Field()
+    desc = scrapy.Field()
     price = scrapy.Field()
 
 

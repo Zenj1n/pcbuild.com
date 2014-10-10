@@ -9,18 +9,17 @@ class alternate_spider(CrawlSpider):
     name = "alternate"
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/Club-3D/Radeon-R9-290-royalKing-grafische-kaart/html/product/1126000"
+        "http://www.alternate.nl/html/product/listing.html?navId=11626&tk=7&lk=9435"
     ]
 
-    rules = [Rule(SgmlLinkExtractor(allow=[r'product/\d+']), callback='parse_alternate', follow=True)]
+    #rules = [Rule(SgmlLinkExtractor(allow=[r'product/\d+']), callback='parse_alternate', follow=True)]
 
 
-    def parse_alternate(self, response):
+    def parse(self, response):
         item = AlternateItem()
-        item['url'] = response.xpath('head/link[@rel = "canonical"]/@href').extract()
-        item['name'] = response.xpath('body/div[@id = "page"]/div[@id = "content"]/div[@id = "contentWrapper"]/div[@id = "pageContent"]/form[@id = "buyProduct"]/div[@class = "productNameContainer"]/meta[@itemprop = "name"]/@content').extract()
-        item['description'] = response.xpath('body/div[@id = "page"]/div[@id = "content"]/div[@id = "contentWrapper"]/div[@id = "pageContent"]/form[@id = "buyProduct"]/div[@class = "tabberBox"]/div[@class = "content"]/div[@id = "details"]/div[@class = "description"]/meta[@itemprop = "description"]/@content').extract()
-        item['price'] = response.xpath('//span[@itemprop = "price"]/@content').extract()
+        item['name'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id = "pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
+        item['desc'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class = "productLink"]/span[@class = "info"]').extract()
+        item['price'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/div[@class= "waresSum"]/p/span[@class = "price right right10"]').extract()
         return item
 
         
