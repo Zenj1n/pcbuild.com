@@ -16,10 +16,14 @@ class alternate_spider(CrawlSpider):
 
 
     def parse(self, response):
-        item = AlternateItem()
-        item['name'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id = "pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
-        #item['desc'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class= "productLink"]/span[@class = "info"]/text()').extract()
-        #item['price'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-        return item
+        for titles in response.xpath('//div[@class = "listRow"]'):
+            item = AlternateItem()
+            item['name'] = titles.xpath('a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
+            item['desc'] = titles.xpath('a[@class = "productLink"]/span[@class = "info"]/text()').extract()
+            item['price'] = titles.xpath('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            #item['name'] = response.xpath'body/div[@id = "pageBig"]/div[@id = "content"]/div[@id = "pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class = "productLink"]/span[@class = "product"]/span[@class = "pic"]/@title').extract()
+            #item['desc'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/a[@class= "productLink"]/span[@class = "info"]/text()').extract()
+            #item['price'] = response.xpath('body/div[@id = "pageBig"]/div[@id = "content"]/div[@id ="pageContent"]/div[@id = "listingResult"]/div[@class = "listRow"]/div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+        yield item
 
         
