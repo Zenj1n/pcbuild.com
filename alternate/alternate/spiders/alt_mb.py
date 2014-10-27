@@ -7,14 +7,12 @@ from scrapy.selector import HtmlXPathSelector
 
 from alternate.items import AlternateItem
 
-class alt_ram_ddr(CrawlSpider):
-    name = "alt_ram_ddr"
+class alt_mb(CrawlSpider):
+    name = "alt_mb"
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/html/product/listing.html?navId=11542&tk=7&lk=9335",
-        "http://www.alternate.nl/html/product/listing.html?navId=11554&tk=7&lk=9312",
-        "http://www.alternate.nl/html/product/listing.html?navId=11556&bgid=8296&tk=7&lk=9326",
-        "http://www.alternate.nl/html/product/listing.html?navId=20678&tk=7&lk=13472"
+        "http://www.alternate.nl/html/product/listing.html?navId=11622&tk=7&lk=9419",
+        "http://www.alternate.nl/html/product/listing.html?navId=11626&tk=7&lk=9435"
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)

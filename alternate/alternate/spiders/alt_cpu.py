@@ -11,7 +11,8 @@ class alt_cpu(CrawlSpider):
     name = "alt_cpu"
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/html/product/listing.html?navId=11572&bgid=10846&tk=7&lk=9487"
+        "http://www.alternate.nl/html/product/listing.html?navId=11572&bgid=10846&tk=7&lk=9487",
+        "http://www.alternate.nl/html/product/listing.html?navId=11576&tk=7&lk=9475"
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
