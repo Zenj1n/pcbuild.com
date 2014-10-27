@@ -14,6 +14,12 @@ class HWItem(scrapy.Item):
     url = scrapy.Field()
     desc = scrapy.Field()
     price = scrapy.Field()
-    image_urls = scrapy.Field()
-    images = scrapy.Field()
+    #image_urls = scrapy.Field()
+    #images = scrapy.Field()
+    
+class HWPhoneItem(scrapy.Item):
+    name = scrapy.Field()
+    brand = scrapy.Field()
+    desc = scrapy.Field()
+    price = scrapy.Field()
     
