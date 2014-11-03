@@ -3,6 +3,8 @@ import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
+from py2neo import rel, node
+from py2neo import neo4j
 
 
 from Informatique.items import  InformatiqueItem
@@ -19,16 +21,20 @@ class CasesSpider(CrawlSpider):
    #)
     
     def parse_start_url(self,response):
+        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//ul[@id="detailview"]/li')
-        items = []
         for titles in titles:
-           item = InformatiqueItem()
-           item['webshop'] = 'Informatique'
-           item['name'] = titles.select('div[@id="title"]/a/text()').extract()
-           item['url'] = titles.select('div[@id="title"]/a/@href').extract()
-           item['desc'] = titles.select('div[@id="description"]/ul/li/text()').extract()
-           item['price'] = titles.select('div[@id="price"]/text()').extract()
-           item['image_urls'] = titles.select('div[@id="image"]/a/img/@src').extract()
-           items.append(item)
-        return (items)
+           webshop = 'Informatique'
+           name = titles.select('div[@id="title"]/a/text()').extract()
+           url = titles.select('div[@id="title"]/a/@href').extract()
+           desc = titles.select('div[@id="description"]/ul/li/text()').extract()
+           price = titles.select('div[@id="price"]/text()').extract()
+           image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+        
+        print "== Adding Node to database =="
+        
+        query = neo4j.CypherQuery(graph_db, "CREATE (inf_opticalDriver {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+                              "RETURN n")
+                              
+        inf_opticalDriver = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
