@@ -6,11 +6,12 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-
 from alternate.items import AlternateItem
 
 class alt_psu(CrawlSpider):
+
     name = "alt_psu"
+    
     allowed_domains = ["alternate.nl"]
     start_urls = [
         "http://www.alternate.nl/html/product/listing.html?navId=11604&bgid=8215&tk=7&lk=9533"
@@ -23,12 +24,16 @@ class alt_psu(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
         items = []
-       for titles in titles:
-           webshop = 'alternate.nl'
-           name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-           url = titles.select('a[@class="productLink"]/@href').extract()
-           desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-           price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+        
+        print "== Initializing =="
+           
+        
+        for titles in titles:
+          webshop = 'alternate.nl'
+          name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+          url = titles.select('a[@class="productLink"]/@href').extract()
+          desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
+          price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
         
         print "== Adding Node to database =="
         

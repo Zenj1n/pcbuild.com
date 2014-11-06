@@ -20,13 +20,13 @@ class alt_case(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
 
     def parse_start_url(self,response):
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/") 
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
         items = []
         
         print "== Initializing =="
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")               
+              
         
         for titles in titles:
            webshop = 'alternate.nl'
@@ -38,7 +38,7 @@ class alt_case(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_case")
                               
         alt_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
        

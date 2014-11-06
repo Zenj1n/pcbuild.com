@@ -35,6 +35,6 @@ class alt_tvcard(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_tvcard {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_tvcard")
                               
         alt_tvcard = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

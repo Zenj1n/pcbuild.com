@@ -25,12 +25,12 @@ class alt_ssd(CrawlSpider):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
-       for titles in titles:
-           webshop = 'alternate.nl'
-           name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-           url = titles.select('a[@class="productLink"]/@href').extract()
-           desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-           price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+        for titles in titles:
+          webshop = 'alternate.nl'
+          name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+          url = titles.select('a[@class="productLink"]/@href').extract()
+          desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
+          price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
         
         print "== Adding Node to database =="
         
