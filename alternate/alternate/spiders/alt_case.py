@@ -9,9 +9,7 @@ from py2neo import neo4j
 from alternate.items import AlternateItem
 
 class alt_case(CrawlSpider):
-
     name = "alt_case"
-
     allowed_domains = ["alternate.nl"]
     start_urls = [
         "http://www.alternate.nl/html/product/listing.html?navId=2436&bgid=8148&tk=7&lk=9309"
