@@ -27,7 +27,6 @@ class alt_case(CrawlSpider):
         
         print "== Initializing =="
               
-        
         for titles in titles:
            webshop = 'alternate.nl'
            name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
