@@ -12,7 +12,7 @@ BOT_NAME = 'Hardware'
 
 SPIDER_MODULES = ['Hardware.spiders']
 NEWSPIDER_MODULE = 'Hardware.spiders'
-ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
+#ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
 #IMAGES_STORE = 'G:\Users\hoye\Documents\PCBuild\Python-Crawler\Hardware\Images'
 #IMAGES_EXPIRES = 90
 DEPTH_LIMIT = 10

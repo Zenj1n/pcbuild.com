@@ -6,7 +6,6 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-
 from Hardware.items import  HWItem
 
 class CasesSpider(CrawlSpider):
@@ -29,6 +28,7 @@ class CasesSpider(CrawlSpider):
            desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = titles.select('td[@class="center"]/a/text()').extract()
            image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+        
            
            print "== Adding Node to database =="
         
