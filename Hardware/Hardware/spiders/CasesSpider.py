@@ -21,6 +21,7 @@ class CasesSpider(CrawlSpider):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//tr')
+        items = []
         for titles in titles:
            webshop = 'Hardware.info'
            name = titles.select('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
@@ -29,6 +30,7 @@ class CasesSpider(CrawlSpider):
            price = titles.select('td[@class="center"]/a/text()').extract()
            image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
         
+           
            
            print "== Adding Node to database =="
         
