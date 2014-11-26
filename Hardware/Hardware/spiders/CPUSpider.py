@@ -21,15 +21,15 @@ class CPUSpider(CrawlSpider):
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
-        titles = hxs.select('//tr')
+        titles = response.xpath('//tr')
         for titles in titles:
            webshop = 'Hardware.info'
-           name = titles.select('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
-           url = titles.select('td[@class="top"]/div/h3/a/@href').extract()
-           desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
-           price = titles.select('td[@class="center"]/a/text()').extract()
-           image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-           
+           name = titles.xpath('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
+           url = titles.xpath('td[@class="top"]/div/h3/a/@href').extract()
+           desc = titles.xpath('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
+           price = titles.xpath('td[@class="center"]/a/text()').extract()
+           item['image_urls'] = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+         
            print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_cpu {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
