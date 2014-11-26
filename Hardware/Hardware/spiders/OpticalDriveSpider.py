@@ -33,6 +33,6 @@ class OpticalDriveSpider(CrawlSpider):
            print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_opticalDriver {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN hw_opticalDriver")
                               
         hw_opticalDriver = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

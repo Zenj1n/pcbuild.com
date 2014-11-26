@@ -34,6 +34,6 @@ class CasesSpider(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (inf_ssd {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN inf_ssd")
                               
         inf_ssd = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

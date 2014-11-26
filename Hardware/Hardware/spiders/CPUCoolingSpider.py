@@ -33,6 +33,6 @@ class CPUCoolerSpider(CrawlSpider):
            print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_cpucooling {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN hw_cpucooling")
                               
         hw_cpucooling = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
