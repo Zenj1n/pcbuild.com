@@ -29,7 +29,7 @@ class CPUCoolerSpider(CrawlSpider):
            desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = titles.select('td[@class="center"]/a/text()').extract()
            image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-           
+
            print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_cpucooling {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"

@@ -29,7 +29,8 @@ class CasesSpider(CrawlSpider):
            desc = response.xpath('//tr/td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = response.xpath('//tr/td[@class="center"]/a/text()').extract()
            image_urls = response.xpath('//tr/td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-   
+
+           print name, url, desc, price, image_urls
            print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
