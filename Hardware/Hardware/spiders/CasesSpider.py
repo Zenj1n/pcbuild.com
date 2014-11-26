@@ -6,7 +6,7 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-from Hardware.items import  HWItem
+from Hardware.items import HWItem
 
 class CasesSpider(CrawlSpider):
     name = "HW_Cases"
@@ -18,21 +18,21 @@ class CasesSpider(CrawlSpider):
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
-        titles = hxs.select('//tr')
+        titles = hxs.xpath('//tr')
         items = []
         for titles in titles:
            webshop = 'Hardware.info'
-           name = titles.select('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
-           url = titles.select('td[@class="top"]/div/h3/a/@href').extract()
-           desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
-           price = titles.select('td[@class="center"]/a/text()').extract()
-           image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+           name = titles.xpath('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
+           url = titles.xpath('td[@class="top"]/div/h3/a/@href').extract()
+           desc = titles.xpath('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
+           price = titles.xpath('td[@class="center"]/a/text()').extract()
+           image_urls = titles.xpath('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
         
            
            
            print "== Adding Node to database =="
         
-        #query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-        #                     "RETURN hw_case")
+        query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+                             "RETURN hw_case")
                               
-        #hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
