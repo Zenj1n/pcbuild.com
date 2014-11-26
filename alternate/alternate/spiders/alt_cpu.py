@@ -33,6 +33,6 @@ class alt_cpu(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_cpu {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_cpu")
                               
         alt_cpu = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

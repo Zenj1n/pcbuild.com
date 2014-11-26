@@ -33,6 +33,6 @@ class alt_soundcard(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_soundcard {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_ram_ddr")
                               
         alt_soundcard = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

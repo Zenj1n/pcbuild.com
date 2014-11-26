@@ -38,6 +38,6 @@ class alt_koel(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_koel {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_koel")
                               
         alt_koel = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

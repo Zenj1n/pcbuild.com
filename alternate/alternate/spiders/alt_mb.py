@@ -34,6 +34,6 @@ class alt_mb(CrawlSpider):
         print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (alt_mb {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN n")
+                              "RETURN alt_mb")
                               
         alt_mb = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
