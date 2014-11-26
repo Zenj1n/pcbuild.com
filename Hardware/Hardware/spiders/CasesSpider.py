@@ -13,9 +13,7 @@ class CasesSpider(CrawlSpider):
     allowed_domains = ["hardware.info"]
     start_urls = ["http://nl.hardware.info/productgroep/7/behuizingen"]
     
-    rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-    , callback="parse_start_url", follow= True),
-    )
+    rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]')), callback='parse_start_url', follow=True),)
     
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
@@ -34,7 +32,7 @@ class CasesSpider(CrawlSpider):
            
            print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN hw_case")
+        #query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+        #                     "RETURN hw_case")
                               
-        hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        #hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
