@@ -2,7 +2,8 @@ import scrapy
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
+from scrapy.http import HtmlResponse
 from py2neo import rel, node
 from py2neo import neo4j
 
@@ -17,7 +18,7 @@ class CasesSpider(CrawlSpider):
     
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
-        hxs = HtmlXPathSelector(response)
+        hxs = Selector(response)
         titles = hxs.xpath('//tr')
         items = []
         for titles in titles:
