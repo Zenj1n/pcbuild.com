@@ -24,14 +24,14 @@ class CasesSpider(CrawlSpider):
         titles = hxs.xpath('//tr')
         for titles in titles:
            webshop = 'Hardware.info'
-           name = response.xpath('//tr/td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
-           url = response.xpath('//tr/td[@class="top"]/div/h3/a/@href').extract()
-           desc = response.xpath('//tr/td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
-           price = response.xpath('//tr/td[@class="center"]/a/text()').extract()
-           image_urls = response.xpath('//tr/td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+           name = titles.xpath('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
+           url = titles.xpath('td[@class="top"]/div/h3/a/@href').extract()
+           desc = titles.xpath('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
+           price = titles.xpath('td[@class="center"]/a/text()').extract()
+           image_urls = titles.xpath('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+           print name, url, desc, price
 
-           print name, url, desc, price, image_urls
-           print "== Adding Node to database =="
+        print "== Adding Node to database =="
         
         query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
                              "RETURN hw_case")
