@@ -11,7 +11,7 @@ from scrapy.selector import HtmlXPathSelector
 from Hardware.items import HWItem
 
 class CasesSpider(CrawlSpider):
-    name = "HW_Cases"
+    name = "hw_cases"
     allowed_domains = ["hardware.info"]
     start_urls = [
         "http://nl.hardware.info/productgroep/7/behuizingen"
@@ -20,7 +20,7 @@ class CasesSpider(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]')), callback='parse_start_url', follow=True),)
     
     def parse_start_url(self,response):
-        #graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         row = hxs.select('//tr')
         for titles in row:
@@ -31,9 +31,9 @@ class CasesSpider(CrawlSpider):
            price = titles.select('td[@class="center"]/a/text()').extract()
            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
            print webshop, name, url, desc, price 
-        print "== Adding Node to database =="
+           print "== Adding Node to database =="
         
-        #query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-          #                   "RETURN hw_case")
+           query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+                             "RETURN hw_case")
                               
-        #hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+           hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)

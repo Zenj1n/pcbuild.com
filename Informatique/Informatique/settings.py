@@ -12,9 +12,9 @@ BOT_NAME = 'Informatique'
 
 SPIDER_MODULES = ['Informatique.spiders']
 NEWSPIDER_MODULE = 'Informatique.spiders'
-ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
-IMAGES_STORE = 'C:\Users\hoye\Documents\GitHub\Python-Crawler\Informatique\Images'
-IMAGES_EXPIRES = 90
+#ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
+#IMAGES_STORE = 'C:\Users\hoye\Documents\GitHub\Python-Crawler\Informatique\Images'
+#IMAGES_EXPIRES = 90
 DEPTH_LIMIT = 10
 DOWNLOAD_DELAY = 0.25
 
