@@ -6,6 +6,7 @@ from scrapy.selector import Selector
 from scrapy.http import HtmlResponse
 from py2neo import rel, node
 from py2neo import neo4j
+from scrapy.selector import HtmlXPathSelector
 
 from Hardware.items import HWItem
 
@@ -19,21 +20,20 @@ class CasesSpider(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]')), callback='parse_start_url', follow=True),)
     
     def parse_start_url(self,response):
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
-        hxs = response
-        titles = hxs.xpath('//tr')
-        for titles in titles:
+        #graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        hxs = HtmlXPathSelector(response)
+        row = hxs.select('//tr')
+        for titles in row:
            webshop = 'Hardware.info'
-           name = titles.xpath('//tr/td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
-           url = titles.xpath('//tr/td[@class="top"]/div/h3/a/@href').extract()
-           desc = titles.xpath('//tr/td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
-           price = titles.xpath('//tr/td[@class="center"]/a/text()').extract()
-           image_urls = titles.xpath('//tr/td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-        
-        print name, url, desc, price
+           name = titles.select('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
+           url = titles.select('td[@class="top"]/div/h3/a/@href').extract()
+           desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
+           price = titles.select('td[@class="center"]/a/text()').extract()
+           #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+           print webshop, name, url, desc, price 
         print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                             "RETURN hw_case")
+        #query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+          #                   "RETURN hw_case")
                               
-        hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        #hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
