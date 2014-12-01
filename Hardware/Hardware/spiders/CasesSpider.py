@@ -29,7 +29,6 @@ class CasesSpider(CrawlSpider):
            desc = titles.xpath('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = titles.xpath('td[@class="center"]/a/text()').extract()
            image_urls = titles.xpath('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-           print name, url, desc, price
 
         print "== Adding Node to database =="
         
