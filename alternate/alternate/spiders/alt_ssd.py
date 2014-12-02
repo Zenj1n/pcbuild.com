@@ -34,7 +34,7 @@ class alt_ssd(CrawlSpider):
         
         print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (alt_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
-                              "RETURN alt_ram_ddr")
+        query = neo4j.CypherQuery(graph_db, "CREATE (alt_ssd {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+                              "RETURN alt_ssd")
                               
-        alt_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        alt_ssd = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
