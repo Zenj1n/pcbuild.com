@@ -22,7 +22,6 @@ class CasesSpider(CrawlSpider):
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
-        #component = hxs.select('//div[@id="contentLeft"]/h1/text()')
         row = hxs.select('//tr')
         for titles in row:
            webshop = 'Hardware.info'
