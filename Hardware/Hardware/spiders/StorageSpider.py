@@ -5,8 +5,6 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
-from Hardware.spiders.CasesSpider import parse_start_url
-
 
 from Hardware.items import  HWItem
 
