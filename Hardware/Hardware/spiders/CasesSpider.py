@@ -22,7 +22,7 @@ class CasesSpider(CrawlSpider):
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
-        component = hxs.select('//div[@id="contentLeft"]/h1/text()')
+        #component = hxs.select('//div[@id="contentLeft"]/h1/text()')
         row = hxs.select('//tr')
         for titles in row:
            webshop = 'Hardware.info'
@@ -30,7 +30,7 @@ class CasesSpider(CrawlSpider):
            url2 = titles.select('td[@class="top"]/div/h3/a/@href').extract()
            url1 = str(url2)
            url = 'www.nl.hardware.info' + url1
-           component = component
+           component = 'Behuizing'
            desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = titles.select('td[@class="center"]/a/text()').extract()
            image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
