@@ -21,18 +21,19 @@ class Storagepider(CrawlSpider):
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
-        titles = hxs.select('//tr')
-        for titles in titles:
+        row = hxs.select('//tr')
+        for titles in row:
            webshop = 'Hardware.info'
            name = titles.select('td[@class="top"]/div[@itemscope]/h3/a/span/text()').extract()
-           url = titles.select('td[@class="top"]/div/h3/a/@href').extract()
+           url2 = titles.select('td[@class="top"]/div/h3/a/@href').extract()
+           url1 = str(url2)
+           url = 'www.nl.hardware.info' + url1
            desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
            price = titles.select('td[@class="center"]/a/text()').extract()
-           image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
            
            print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (hw_hd {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (hw_hd {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN hw_hd")
                               
-        hw_hd = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+           hw_hd = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
