@@ -1,0 +1,2 @@
+scrapy crawl hw_cases
+scrapy crawl hw_cpucooler
