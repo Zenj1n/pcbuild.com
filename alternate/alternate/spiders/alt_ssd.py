@@ -30,16 +30,19 @@ class alt_ssd(CrawlSpider):
           name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
           url = titles.select('a[@class="productLink"]/@href').extract()
           desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-          price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+          euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+           cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+           
+           price = euro + cent
           
           namestring = ''.join(name)
           namesplit = namestring.split(",")
           namedb = namesplit[0]
         
         
-        print "== Adding Node to database =="
+          print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (alt_ssd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+          query = neo4j.CypherQuery(graph_db, "CREATE (alt_ssd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN alt_ssd")
                               
-        alt_ssd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
+          alt_ssd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)

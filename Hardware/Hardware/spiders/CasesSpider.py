@@ -37,7 +37,7 @@ class CasesSpider(CrawlSpider):
            print name, url, desc, price, component
            print "== Adding Node to database =="
         
-           query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price} component:{component}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                             "RETURN hw_case")
                               
            hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price, component=component)

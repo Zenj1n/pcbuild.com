@@ -13,12 +13,11 @@ BOT_NAME = 'alternate'
 SPIDER_MODULES = ['alternate.spiders']
 NEWSPIDER_MODULE = 'alternate.spiders'
 DOWNLOAD_DELAY = 0.75
-CLOSESPIDER_PAGECOUNT = 1000
 IMAGES_STORE = 'E:\Repositories Git Hub\Python-Crawler\alternate\images'
 IMAGES_EXPIRES = 90
 
 EXTENSIONS = {
-    'scrapy.contrib.closespider.CloseSpider': 500
+    #'scrapy.contrib.closespider.CloseSpider': 500
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

@@ -28,7 +28,10 @@ class alt_koel_nwcard(CrawlSpider):
            name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
            url = titles.select('a[@class="productLink"]/@href').extract()
            desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-           price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+           euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+           cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+           
+           price = euro + cent
            
            namestring = ''.join(name)
            namesplit = namestring.split(",")
