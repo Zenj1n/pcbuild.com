@@ -37,7 +37,7 @@ class alt_psu(CrawlSpider):
         
         print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (alt_psu {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+        query = neo4j.CypherQuery(graph_db, "CREATE (alt_psu {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN alt_psu")
                               
-        alt_psu = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        alt_psu = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)

@@ -29,10 +29,15 @@ class alt_soundcard(CrawlSpider):
            url = titles.select('a[@class="productLink"]/@href').extract()
            desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
            price = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+           
+           namestring = ''.join(name)
+           namesplit = namestring.split(",")
+           namedb = namesplit[0]
+        
         
         print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (alt_soundcard {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+        query = neo4j.CypherQuery(graph_db, "CREATE (alt_soundcard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN alt_ram_ddr")
                               
-        alt_soundcard = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+        alt_soundcard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
