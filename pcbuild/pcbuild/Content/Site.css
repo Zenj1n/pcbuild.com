@@ -1,0 +1,64 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*Menubar van componenten CSS*/
+ul.menubar-components{
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    z-index: 4;
+    border-color:#0094ff;
+}
+
+#menubar {
+    background-color:white;
+}
+ul.menubar-components {
+     list-style:none; 
+     -align:center; 
+     border-top:1px solid #eee; 
+     border-bottom:1px solid #eee; 
+     padding:10px 0; 
+
+}
+ul.menubar-components li { 
+    display:inline; 
+    padding:0 10px; 
+    letter-spacing:1px; 
+    background-color:white;
+}
+ul.menubar-components li a { 
+    text-decoration:none; 
+    color:#00ffff;
+}
+ul.menubar-components li a:hover { 
+    text-decoration:underline;
+
+}
+
+
