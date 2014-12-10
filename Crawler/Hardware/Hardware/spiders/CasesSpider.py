@@ -32,9 +32,14 @@ class CasesSpider(CrawlSpider):
            price = titles.select('td[@class="center"]/a/text()').extract()
            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
+           namestring = ''.join(name)
+           namesplit = namestring.split(",")
+           namedb = namesplit[0]
+
+
            print "== Adding Node to database =="
         
-           query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                             "RETURN hw_case")
                               
-           hw_case = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price, component=component)
+           hw_case = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)

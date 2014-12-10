@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\CasesSpider.py" afterPath="" />
       <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Hardware\Hardware\spiders\TelefoonsSpider.py" afterPath="" />
       <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Hardware\Hardware\spiders\TestSpider.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\alternate\crawl test.cmd" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\neo4j python\test.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\Books" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\Resources" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\items.json" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\scrapy.cfg" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\items.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\pipelines.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\settings.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\spiders\__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\spiders\dmoz-spider.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" />
@@ -26,7 +13,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\CPUSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\CasesSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\GPUSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gpu.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\HDDSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_storage.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\MotherboardSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\OpticalDriveSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\PowerSupplySpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\RAMSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\SSDSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\SoundCardSpider.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +46,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="alt_case.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="alt_case.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
+            <state vertical-scroll-proportion="0.648531" vertical-offset="16" max-vertical-offset="952">
               <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -134,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageSpider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StorageSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6844396" vertical-offset="0" max-vertical-offset="919">
-              <caret line="37" column="96" selection-start-line="37" selection-start-column="96" selection-end-line="37" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -317,7 +313,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hardware" />
+              <option name="myItemId" value="Informatique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,11 +327,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hardware" />
+              <option name="myItemId" value="Informatique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hardware" />
+              <option name="myItemId" value="Informatique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -349,11 +345,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hardware" />
+              <option name="myItemId" value="Informatique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Hardware" />
+              <option name="myItemId" value="Informatique" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -514,10 +510,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -710,16 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
@@ -802,8 +788,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6844396" vertical-offset="0" max-vertical-offset="919">
-          <caret line="37" column="96" selection-start-line="37" selection-start-column="96" selection-end-line="37" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.648531" vertical-offset="16" max-vertical-offset="952">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
