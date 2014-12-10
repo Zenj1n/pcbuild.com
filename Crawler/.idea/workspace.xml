@@ -35,47 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="inf_ssd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_storage.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_storage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7954298" vertical-offset="0" max-vertical-offset="919">
-              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_soundcard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="inf_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="41" column="160" selection-start-line="41" selection-start-column="160" selection-end-line="41" selection-end-column="160" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -86,8 +50,8 @@
       <file leaf-file-name="inf_cpu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -98,8 +62,8 @@
       <file leaf-file-name="inf_drive.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="41" column="169" selection-start-line="41" selection-start-column="169" selection-end-line="41" selection-end-column="169" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -110,8 +74,8 @@
       <file leaf-file-name="inf_gpu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -122,8 +86,8 @@
       <file leaf-file-name="inf_mb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="969">
-              <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="986">
+              <caret line="49" column="158" selection-start-line="49" selection-start-column="158" selection-end-line="49" selection-end-column="158" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -134,8 +98,8 @@
       <file leaf-file-name="inf_psu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+              <caret line="39" column="159" selection-start-line="39" selection-start-column="159" selection-end-line="39" selection-end-column="159" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -146,8 +110,44 @@
       <file leaf-file-name="inf_ram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+              <caret line="43" column="159" selection-start-line="43" selection-start-column="159" selection-end-line="43" selection-end-column="159" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_soundcard.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <caret line="41" column="165" selection-start-line="41" selection-start-column="165" selection-end-line="41" selection-end-column="165" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_ssd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+              <caret line="40" column="159" selection-start-line="40" selection-start-column="159" selection-end-line="40" selection-end-column="159" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_storage.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_storage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7584331" vertical-offset="0" max-vertical-offset="919">
+              <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -798,7 +798,7 @@
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
-          <caret line="46" column="67" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="67" />
+          <caret line="43" column="151" selection-start-line="43" selection-start-column="130" selection-end-line="43" selection-end-column="151" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -807,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="43" column="66" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="160" selection-start-line="41" selection-start-column="160" selection-end-line="41" selection-end-column="160" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -817,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -827,8 +827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="169" selection-start-line="41" selection-start-column="169" selection-end-line="41" selection-end-column="169" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -837,8 +837,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="969">
-          <caret line="51" column="64" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="986">
+          <caret line="49" column="158" selection-start-line="49" selection-start-column="158" selection-end-line="49" selection-end-column="158" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -857,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="39" column="159" selection-start-line="39" selection-start-column="159" selection-end-line="39" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -867,8 +867,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="43" column="159" selection-start-line="43" selection-start-column="159" selection-end-line="43" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -877,8 +877,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="165" selection-start-line="41" selection-start-column="165" selection-end-line="41" selection-end-column="165" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -887,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="40" column="159" selection-start-line="40" selection-start-column="159" selection-end-line="40" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -897,8 +897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_storage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7954298" vertical-offset="0" max-vertical-offset="919">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.7584331" vertical-offset="0" max-vertical-offset="919">
+          <caret line="41" column="159" selection-start-line="41" selection-start-column="159" selection-end-line="41" selection-end-column="159" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

@@ -28,6 +28,7 @@ class CasesSpider(CrawlSpider):
            webshop = 'Informatique'
            name = titles.xpath('div[@id="title"]/a/text()').extract()
            url = titles.xpath('div[@id="title"]/a/@href').extract()
+           component = 'behuizing'
            desc = titles.xpath('div[@id="description"]/ul/li/text()').extract()
            price = titles.xpath('div[@id="price"]/text()').extract()
            #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
@@ -38,7 +39,7 @@ class CasesSpider(CrawlSpider):
 
            print "== Adding Node to database =="
         
-           query = neo4j.CypherQuery(graph_db, "CREATE (inf_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (inf_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                               "RETURN inf_case")
                               
            inf_case = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)

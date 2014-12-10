@@ -28,6 +28,7 @@ class CasesSpider(CrawlSpider):
            webshop = 'Informatique'
            name = titles.select('div[@id="title"]/a/text()').extract()
            url = titles.select('div[@id="title"]/a/@href').extract()
+           component = 'geluidskaart'
            desc = titles.select('div[@id="description"]/ul/li/text()').extract()
            price = titles.select('div[@id="price"]/text()').extract()
            #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
@@ -38,7 +39,7 @@ class CasesSpider(CrawlSpider):
         
            print "== Adding Node to database =="
         
-           query = neo4j.CypherQuery(graph_db, "CREATE (inf_soundCard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (inf_soundCard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                               "RETURN inf_soundCard")
                               
            inf_soundCard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
