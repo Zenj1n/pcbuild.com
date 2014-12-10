@@ -32,11 +32,15 @@ class CasesSpider(CrawlSpider):
            url = titles.select('div[@id="title"]/a/@href').extract()
            desc = titles.select('div[@id="description"]/ul/li/text()').extract()
            price = titles.select('div[@id="price"]/text()').extract()
-           image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+           #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+
+           namestring = ''.join(name)
+           namesplit = namestring.split(",")
+           namedb = namesplit[0]
         
-        print "== Adding Node to database =="
-        
-        query = neo4j.CypherQuery(graph_db, "CREATE (inf_ram {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+           print "== Adding Node to database =="
+
+           query = neo4j.CypherQuery(graph_db, "CREATE (inf_ram {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN inf_ram")
                               
-        inf_ram = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+           inf_ram = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)

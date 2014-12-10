@@ -16,9 +16,9 @@ class CasesSpider(CrawlSpider):
     "http://www.informatique.nl/?m=usl&g=218&view=6&&sort=pop&pl=500"
     ]
     
-   #rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-   # , callback="parse_start_url", follow= True),
-   #)
+    rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
+     , callback="parse_start_url", follow= True),
+    )
     
     def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
@@ -30,11 +30,15 @@ class CasesSpider(CrawlSpider):
            url = titles.select('div[@id="title"]/a/@href').extract()
            desc = titles.select('div[@id="description"]/ul/li/text()').extract()
            price = titles.select('div[@id="price"]/text()').extract()
-           image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+           #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+
+           namestring = ''.join(name)
+           namesplit = namestring.split(",")
+           namedb = namesplit[0]
         
-        print "== Adding Node to database =="
+           print "== Adding Node to database =="
         
-        query = neo4j.CypherQuery(graph_db, "CREATE (inf_cpu {webshop:{webshop}, name:{name}, url:{url}, desc:{desc}, price:{price}})"
+           query = neo4j.CypherQuery(graph_db, "CREATE (inf_cpu {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
                               "RETURN inf_cpu")
                               
-        inf_cpu = query.execute(webshop=webshop, name=name, url=url, desc=desc, price=price)
+           inf_cpu = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
