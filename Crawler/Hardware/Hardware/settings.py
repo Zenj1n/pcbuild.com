@@ -16,6 +16,11 @@ NEWSPIDER_MODULE = 'Hardware.spiders'
 #IMAGES_STORE = 'G:\Users\hoye\Documents\PCBuild\Python-Crawler\Hardware\Images'
 #IMAGES_EXPIRES = 90
 DEPTH_LIMIT = 10
-DOWNLOAD_DELAY = 0.75
+DOWNLOAD_DELAY = 10.0
+
+EXTENSIONS = {
+    'scrapy.contrib.closespider.CloseSpider': 500
+}
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Hardware (+http://www.yourdomain.com)'
