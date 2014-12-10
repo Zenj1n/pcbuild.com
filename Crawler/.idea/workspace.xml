@@ -2,12 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\CasesSpider.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Hardware\Hardware\spiders\TelefoonsSpider.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Hardware\Hardware\spiders\TestSpider.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\alternate\crawl test.cmd" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\neo4j python\test.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\Books" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\Resources" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\items.json" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\scrapy.cfg" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\items.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\pipelines.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\settings.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\spiders\__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\tutorial\tutorial\spiders\dmoz-spider.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,71 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="alt_gfx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="50" max-vertical-offset="969">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_hd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_hd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="47" column="119" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_koel_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_koel_case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="952">
-              <caret line="50" column="121" selection-start-line="50" selection-start-column="121" selection-end-line="50" selection-end-column="121" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_drive.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="45" column="122" selection-start-line="45" selection-start-column="122" selection-end-line="45" selection-end-column="122" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_cpu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-              <caret line="45" column="120" selection-start-line="45" selection-start-column="120" selection-end-line="45" selection-end-column="120" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="alt_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
-              <caret line="46" column="121" selection-start-line="46" selection-start-column="102" selection-end-line="46" selection-end-column="121" />
+              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -103,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_ram_ddr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py">
+      <file leaf-file-name="CPUSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -115,11 +74,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_soundcard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py">
+      <file leaf-file-name="GPUSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemorrySpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MotherboardSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpticalDriveSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PowerSupplySpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageSpider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6844396" vertical-offset="0" max-vertical-offset="919">
+              <caret line="37" column="96" selection-start-line="37" selection-start-column="96" selection-end-line="37" selection-end-column="96" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CasesSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="41" column="77" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="77" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -127,23 +158,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_ssd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py">
+      <file leaf-file-name="CPUCoolingSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="47" column="116" selection-start-line="47" selection-start-column="116" selection-end-line="47" selection-end-column="116" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_tvcard.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7214363" vertical-offset="0" max-vertical-offset="919">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -162,15 +181,6 @@
         <option value="$PROJECT_DIR$/Hardware/Hardware/settings.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/settings.py" />
         <option value="$PROJECT_DIR$/Informatique/Informatique/settings.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py" />
@@ -184,6 +194,15 @@
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py" />
       </list>
     </option>
   </component>
@@ -571,116 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/TestSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/TelefoonsSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
@@ -761,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
-          <caret line="46" column="121" selection-start-line="46" selection-start-column="102" selection-end-line="46" selection-end-column="121" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
@@ -803,8 +702,108 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7214363" vertical-offset="0" max-vertical-offset="919">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
           <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="952">
+          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <caret line="41" column="77" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MemorrySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/MotherboardSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/OpticalDriveSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/PowerSupplySpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/StorageSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6844396" vertical-offset="0" max-vertical-offset="919">
+          <caret line="37" column="96" selection-start-line="37" selection-start-column="96" selection-end-line="37" selection-end-column="96" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
