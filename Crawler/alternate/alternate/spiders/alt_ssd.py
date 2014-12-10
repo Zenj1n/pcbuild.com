@@ -28,6 +28,7 @@ class alt_ssd(CrawlSpider):
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url = titles.select('a[@class="productLink"]/@href').extract()
+            component = 'ssd'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
@@ -41,7 +42,7 @@ class alt_ssd(CrawlSpider):
         print "== Adding Node to database =="
 
         query = neo4j.CypherQuery(graph_db,
-                                  "CREATE (alt_ssd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+                                  "CREATE (alt_ssd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                                   "RETURN alt_ssd")
 
-        alt_ssd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
+        alt_ssd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
