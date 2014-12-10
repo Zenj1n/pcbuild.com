@@ -28,7 +28,6 @@ class alt_gfx(CrawlSpider):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
-        items = []
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
