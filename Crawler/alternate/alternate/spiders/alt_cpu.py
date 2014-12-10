@@ -25,6 +25,7 @@ class alt_cpu(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+            component = 'Behuizing'
             url = titles.select('a[@class="productLink"]/@href').extract()
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
