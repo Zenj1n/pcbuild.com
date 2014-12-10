@@ -10,7 +10,7 @@ from py2neo import neo4j
 from Informatique.items import  InformatiqueItem
 
 class CasesSpider(CrawlSpider):
-    name = "INF_CPU"
+    name = "inf_cpu"
     allowed_domains = ["informatique.nl"]
     start_urls = ["http://www.informatique.nl/?m=usl&g=611&view=6&&sort=pop&pl=500",
     "http://www.informatique.nl/?m=usl&g=218&view=6&&sort=pop&pl=500"

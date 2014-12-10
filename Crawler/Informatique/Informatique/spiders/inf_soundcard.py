@@ -10,7 +10,7 @@ from py2neo import neo4j
 from Informatique.items import  InformatiqueItem
 
 class CasesSpider(CrawlSpider):
-    name = "INF_SOUNDCARD"
+    name = "inf_soundcard"
     allowed_domains = ["informatique.nl"]
     start_urls = ["http://www.informatique.nl/?m=art&g=023&view=6&&sort=pop&pl=500",
     
