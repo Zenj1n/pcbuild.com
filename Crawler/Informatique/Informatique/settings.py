@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'Informatique.spiders'
 #IMAGES_STORE = 'C:\Users\hoye\Documents\GitHub\Python-Crawler\Informatique\Images'
 #IMAGES_EXPIRES = 90
 DEPTH_LIMIT = 10
-DOWNLOAD_DELAY = 0.25
+DOWNLOAD_DELAY = 10
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Informatique (+http://www.yourdomain.com)'
