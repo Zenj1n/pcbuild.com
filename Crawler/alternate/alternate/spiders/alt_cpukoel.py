@@ -8,14 +8,11 @@ from py2neo import neo4j
 from alternate.items import AlternateItem
 
 
-class alt_tvcard(CrawlSpider):
-    name = "alt_tvcard"
+class alt_cpukoel(CrawlSpider):
+    name = "alt_cpukoel"
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/html/product/listing.html?navId=960&tk=7&lk=9525",
-        "http://www.alternate.nl/html/product/listing.html?navId=964&tk=7&lk=9522",
-        "http://www.alternate.nl/html/product/listing.html?navId=962&tk=7&lk=9524",
-        "http://www.alternate.nl/html/product/listing.html?navId=966&tk=7&lk=9523"
+        "http://www.alternate.nl/html/product/listing.html?navId=11898&bgid=8215&tk=7&lk=9344",
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
@@ -27,8 +24,8 @@ class alt_tvcard(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+            component = 'processor koeler'
             url = titles.select('a[@class="productLink"]/@href').extract()
-            component = 'tvkaart'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
@@ -42,7 +39,7 @@ class alt_tvcard(CrawlSpider):
             print "== Adding Node to database =="
 
             query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (alt_tvcard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN alt_tvcard")
+                                      "CREATE (alt_cpukoel {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
+                                      "RETURN alt_cpukoel")
 
-            alt_tvcard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            alt_cpukoel = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)

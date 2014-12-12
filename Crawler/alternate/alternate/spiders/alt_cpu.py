@@ -25,7 +25,7 @@ class alt_cpu(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            component = 'Behuizing'
+            component = 'processor'
             url = titles.select('a[@class="productLink"]/@href').extract()
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
@@ -40,7 +40,7 @@ class alt_cpu(CrawlSpider):
             print "== Adding Node to database =="
 
             query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (alt_cpu {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+                                      "CREATE (alt_cpu {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                                       "RETURN alt_cpu")
 
-            alt_cpu = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
+            alt_cpu = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)

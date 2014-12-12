@@ -24,11 +24,11 @@ class alt_ram_ddr(CrawlSpider):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
-        items = []
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url = titles.select('a[@class="productLink"]/@href').extract()
+            component = 'werkgeheugen'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
@@ -42,7 +42,7 @@ class alt_ram_ddr(CrawlSpider):
             print "== Adding Node to database =="
 
             query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (alt_ram_ddr {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}})"
+                                      "CREATE (alt_ram_ddr {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                                       "RETURN alt_ram_ddr")
 
-            alt_ram_ddr = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price)
+            alt_ram_ddr = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
