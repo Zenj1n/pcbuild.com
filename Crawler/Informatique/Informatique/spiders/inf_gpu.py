@@ -27,8 +27,7 @@ class inf_gpu(CrawlSpider):
             price = titles.select('div[@id="price"]/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="

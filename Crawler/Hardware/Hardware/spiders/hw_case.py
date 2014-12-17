@@ -11,7 +11,7 @@ from scrapy.selector import HtmlXPathSelector
 from Hardware.items import HWItem
 
 class CasesSpider(CrawlSpider):
-    name = "hw_cases"
+    name = "hw_case"
     allowed_domains = ["hardware.info"]
     start_urls = [
         "http://nl.hardware.info/productgroep/7/behuizingen"
@@ -32,8 +32,7 @@ class CasesSpider(CrawlSpider):
            price = titles.select('td[@class="center"]/a/text()').extract()
            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
-           namestring = ''.join(name)
-           namesplit = namestring.split(",")
+           namesplit = ''.join(name).split(",")
            namedb = namesplit[0]
 
 

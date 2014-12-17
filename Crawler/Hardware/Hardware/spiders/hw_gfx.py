@@ -32,8 +32,7 @@ class GPUSpider(CrawlSpider):
            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
            print "== Adding Node to database =="
 
-           namestring = ''.join(name)
-           namesplit = namestring.split(",")
+           namesplit = ''.join(name).split(",")
            namedb = namesplit[0]
         
            query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price} component:{component}})"

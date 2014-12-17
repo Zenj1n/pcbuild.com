@@ -33,10 +33,13 @@ class alt_ram_ddr(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            capaciteit = desc[0]
+            timings = desc[1]
+            modules = desc[2]
+
             price = euro + cent
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="

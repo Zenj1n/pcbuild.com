@@ -34,10 +34,13 @@ class alt_psu(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            vermogen = desc[0];
+            geluid = desc[1];
+            zuinigheid = desc[2];
+
             price = euro + cent
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
         print "== Adding Node to database =="

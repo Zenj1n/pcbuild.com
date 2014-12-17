@@ -12,7 +12,9 @@ class alt_koel_nwcard(CrawlSpider):
     name = "alt_nwcard"
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/html/product/listing.html?navId=1450&navId=1452&navId=1456&tk=7&lk=9534"
+        "http://www.alternate.nl/html/product/listing.html?navId=1450&navId=1452&navId=1456&tk=7&lk=9534",
+        "http://www.alternate.nl/html/product/listing.html?navId=1452&tk=7&lk=9536",
+        "http://www.alternate.nl/html/product/listing.html?navId=1456&tk=7&lk=9537"
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
@@ -30,16 +32,18 @@ class alt_koel_nwcard(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            snelheid = desc[0]
+            aansluitingen = desc[1]
+
             price = euro + cent
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-        print "== Adding Node to database =="
+            print "== Adding Node to database =="
 
-        query = neo4j.CypherQuery(graph_db,
+            query = neo4j.CypherQuery(graph_db,
                                   "CREATE (alt_nwcard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                                   "RETURN alt_nwcard")
 
-        alt_nwcard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            alt_nwcard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)

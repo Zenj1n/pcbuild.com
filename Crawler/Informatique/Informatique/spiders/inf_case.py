@@ -29,8 +29,7 @@ class inf_case(CrawlSpider):
             price = titles.xpath('div[@id="price"]/text()').extract()
             # image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="
