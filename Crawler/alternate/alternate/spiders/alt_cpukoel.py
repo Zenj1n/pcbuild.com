@@ -30,6 +30,10 @@ class alt_cpukoel(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            socket = desc[0]
+            geluid = desc[1]
+            luchtverplaatsing = desc[2]
+
             price = euro + cent
 
             namesplit = ''.join(name).split(",")

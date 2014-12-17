@@ -33,6 +33,10 @@ class alt_hd(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            capaciteit = desc[0]
+            snelheid = desc[1]
+
+
             price = euro + cent
 
             namesplit = ''.join(name).split(",")

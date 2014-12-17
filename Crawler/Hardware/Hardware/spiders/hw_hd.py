@@ -33,7 +33,7 @@ class Storagepider(CrawlSpider):
 
            namesplit = ''.join(name).split(",")
            namedb = namesplit[0]
-        
+
            query = neo4j.CypherQuery(graph_db, "CREATE (hw_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price} component:{component}})"
                             "RETURN hw_case")
                               
