@@ -22,33 +22,28 @@ namespace pcbuild.Controllers
       
         public ActionResult Index()
         {
-            var componenten = new List<All_Components>();
-            ArrayList componenten2 = new ArrayList();
-            //All_Components x = new All_Components();
-
-            WebClient c = new WebClient();
+            //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
+            //Query om alle componenten opte halen
             var componenten_query = client
                 .Cypher
                 .Match("(n)")
                 .Return(n => n.As<All_Components>())
                 .Results;
-                
 
-                //var test = componenten_query.Results;
-                   // Debug.WriteLine(test.ToList);
-
+            //Test om te kijken of er data in de model zit
             foreach (var item in componenten_query)
             {
-                if (item.name1 == null)
+                if (item.name == null)
                 {
                     Debug.WriteLine("Geen data");
                 }
                 else
                 {
-                    Debug.WriteLine("1", item.name1);
+
+                    Debug.WriteLine("1", item.name);
                     Debug.WriteLine("2", item.desc);
                     Debug.WriteLine("3", item.url);
                     Debug.WriteLine("4", item.price);
@@ -57,32 +52,7 @@ namespace pcbuild.Controllers
                 }
                
             }
-
-                //foreach (var item in test)
-                //{
-                //Debug.WriteLine("1",item.All_Components_Name.ToString());
-                //Debug.WriteLine("2", item.All_Components_Desc.ToString());
-                //Debug.WriteLine("3", item.All_Components_URL.ToString());
-                //Debug.WriteLine("4", item.All_Components_Price.ToString());
-                //Debug.WriteLine("5", item.All_Components_Webshop.ToString());
-                //Debug.WriteLine("6", item.All_Components_Component.ToString());
-                //}
-                Debug.WriteLine("test_string");
-
-                for (int i = 0; i < 100; i++){
-                    componenten2.Add("yo");
-                }
-
-                //foreach (var all_component in componenten2)
-                //{
-                //    var component = new All_Components();
-
-                //    component.All_Components_Name = "WDD GREEN 2TB";
-                //    component.All_Components_Price = 90;
-
-                //    componenten.Add(component);
-                //}
-                return View();
+                return View(componenten_query);
         }
     }
 }
