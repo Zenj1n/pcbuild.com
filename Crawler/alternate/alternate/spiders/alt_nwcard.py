@@ -32,8 +32,7 @@ class alt_koel_nwcard(CrawlSpider):
 
             price = euro + cent
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
         print "== Adding Node to database =="

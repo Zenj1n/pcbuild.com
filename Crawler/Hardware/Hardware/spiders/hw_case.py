@@ -32,8 +32,7 @@ class CasesSpider(CrawlSpider):
            price = titles.select('td[@class="center"]/a/text()').extract()
            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
-           namestring = ''.join(name)
-           namesplit = namestring.split(",")
+           namesplit = ''.join(name).split(",")
            namedb = namesplit[0]
 
 

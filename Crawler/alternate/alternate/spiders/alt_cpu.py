@@ -31,11 +31,15 @@ class alt_cpu(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            kloksnelheid = desc[0];
+            kernen = desc[1];
+            socket = desc[2];
+
             price = euro + cent
 
-            namestring = ''.join(name)
-            namesplit = namestring.split(",")
+            namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
+
 
             print "== Adding Node to database =="
 
