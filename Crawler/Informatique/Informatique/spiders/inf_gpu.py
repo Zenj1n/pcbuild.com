@@ -1,4 +1,5 @@
-from scrapy.contrib.spiders import CrawlSpider
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from py2neo import neo4j
 
@@ -10,9 +11,9 @@ class inf_gpu(CrawlSpider):
                   "http://www.informatique.nl/?M=USL&G=500",
                   "http://www.informatique.nl/?m=usl&g=585&view=6&&sort=pop&pl=500"]
 
-    # rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-    # , callback="parse_start_url", follow= True),
-    #)
+    rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
+                  , callback="parse_start_url", follow=True),
+    )
 
     def parse_start_url(self, response):
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")

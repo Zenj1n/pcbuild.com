@@ -11,7 +11,7 @@ class inf_drive(CrawlSpider):
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-    , callback="parse_start_url", follow= True),
+                  , callback="parse_start_url", follow=True),
     )
 
     def parse_start_url(self, response):
