@@ -24,41 +24,53 @@ textarea {
 }
 
 
-/*Menubar van componenten CSS*/
-ul.menubar-components{
-    float: left;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    z-index: 4;
-    border-color:#0094ff;
+/* eigen css*/
+
+/* css navbar*/
+
+.navbar-default {
+  background-color: #F80000;
+  border-color: #e7e7e7;
 }
 
-#menubar {
-    background-color:white;
+/* css main page */
+#home_index_main{
+    margin-left: -10%;
+    width: 120%;
+    height: 500PX;
+    border:1px solid black;
+    background-image:url("http://static.hdw.eweb4.com/media/wallpapers_1920x1080/vector/1/1/intricate-circuit-vector-hd-wallpaper-1920x1080-7156.jpg");
+    overflow:hidden;
+    background-size:cover;
+    background-position:center center;
+    text-align:center;
 }
-ul.menubar-components {
-     list-style:none; 
-     -align:center; 
-     border-top:1px solid #eee; 
-     border-bottom:1px solid #eee; 
-     padding:10px 0; 
 
+#home_index_main_h1{
+    font-size: 300%;
+    margin-top: 300px;
+    color: white;
 }
-ul.menubar-components li { 
-    display:inline; 
-    padding:0 10px; 
-    letter-spacing:1px; 
-    background-color:white;
-}
-ul.menubar-components li a { 
-    text-decoration:none; 
-    color:#00ffff;
-}
-ul.menubar-components li a:hover { 
-    text-decoration:underline;
 
+#home_index_main_button{
+    margin-top: 25px;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border: 0px;
+    border-radius: 5px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #00aeff;
+    padding: 10px 30px 10px 30px;
+    text-decoration: none;
 }
+
+#home_index_main_button:hover {
+  background: #119ced;
+  text-decoration: none;
+}
+
+
 
 
