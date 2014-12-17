@@ -7,11 +7,11 @@ namespace pcbuild.Models
 {
     public class All_Components
     {
-        public string All_Components_Name { get; set; }
-        public string All_Components_Desc { get; set; }
-        public string All_Components_URL { get; set; }
-        public decimal All_Components_Price { get; set; }
-        public string All_Components_Webshop { get; set; }
-        public string All_Components_Component { get; set; }
+        public string name { get; set; }
+        public string desc { get; set; }
+        public string url { get; set; }
+        public string price { get; set; }
+        public string webshop { get; set; }
+        public string component { get; set; }
     }
 }

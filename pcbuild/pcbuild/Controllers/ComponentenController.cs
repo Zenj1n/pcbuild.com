@@ -32,23 +32,30 @@ namespace pcbuild.Controllers
 
             var componenten_query = client
                 .Cypher
-                .Match("n")
-                .Return<All_Components>("n");
-                ;
-
-            var test = componenten_query.Results.ToList();
+                .Match("(n)")
+                .Return(n => n.As<All_Components>())
+                .Results;
+                
 
                 //var test = componenten_query.Results;
                    // Debug.WriteLine(test.ToList);
 
-            foreach (var item in test)
+            foreach (var item in componenten_query)
             {
-                Debug.WriteLine("1", item.All_Components_Name);
-                Debug.WriteLine("2", item.All_Components_Desc);
-                Debug.WriteLine("3", item.All_Components_URL);
-                Debug.WriteLine("4", item.All_Components_Price);
-                Debug.WriteLine("5", item.All_Components_Webshop);
-                Debug.WriteLine("6", item.All_Components_Component);
+                if (item.name1 == null)
+                {
+                    Debug.WriteLine("Geen data");
+                }
+                else
+                {
+                    Debug.WriteLine("1", item.name1);
+                    Debug.WriteLine("2", item.desc);
+                    Debug.WriteLine("3", item.url);
+                    Debug.WriteLine("4", item.price);
+                    Debug.WriteLine("5", item.webshop);
+                    Debug.WriteLine("6", item.component);
+                }
+               
             }
 
                 //foreach (var item in test)
