@@ -17,9 +17,7 @@ NEWSPIDER_MODULE = 'Informatique.spiders'
 #IMAGES_EXPIRES = 90
 DOWNLOAD_DELAY = 10.0
 
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.contrib.downloadermiddleware.downloadtimeout.DownloadTimeoutMiddleware': 543,
-}
+
 
 EXTENSIONS = {
     'scrapy.contrib.closespider.CloseSpider': 500
