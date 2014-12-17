@@ -1,0 +1,21 @@
+﻿@model IEnumerable<pcbuild.Models.Opslag>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Component</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>Prijs</td>
+    </tr>
+    
+    @foreach (var all_componenten in Model)
+    {
+        <tr>
+            <td>@all_componenten.Opslag_Name</td>
+            <td>@all_componenten.Opslag_Price</td>
+        </tr>
+    }
