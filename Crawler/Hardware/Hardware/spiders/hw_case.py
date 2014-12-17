@@ -11,7 +11,7 @@ from scrapy.selector import HtmlXPathSelector
 from Hardware.items import HWItem
 
 class CasesSpider(CrawlSpider):
-    name = "hw_cases"
+    name = "hw_case"
     allowed_domains = ["hardware.info"]
     start_urls = [
         "http://nl.hardware.info/productgroep/7/behuizingen"
