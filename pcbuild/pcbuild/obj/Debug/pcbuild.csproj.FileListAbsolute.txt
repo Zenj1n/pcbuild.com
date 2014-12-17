@@ -108,3 +108,6 @@ C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Se
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
