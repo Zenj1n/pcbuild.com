@@ -15,8 +15,8 @@ NEWSPIDER_MODULE = 'Hardware.spiders'
 #ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
 #IMAGES_STORE = 'G:\Users\hoye\Documents\PCBuild\Python-Crawler\Hardware\Images'
 #IMAGES_EXPIRES = 90
-DEPTH_LIMIT = 10
 DOWNLOAD_DELAY = 10.0
+RANDOMIZE_DOWNLOAD_DELAY = True
 
 EXTENSIONS = {
     'scrapy.contrib.closespider.CloseSpider': 500
