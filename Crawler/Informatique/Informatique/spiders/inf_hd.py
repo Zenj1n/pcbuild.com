@@ -3,7 +3,7 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import neo4j
 
 
-class CasesSpider(CrawlSpider):
+class inf_hd(CrawlSpider):
     name = "inf_hd"
     allowed_domains = ["informatique.nl"]
     start_urls = ["http://www.informatique.nl/?m=usl&g=026&view=6&&sort=pop&pl=500",
