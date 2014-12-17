@@ -108,11 +108,6 @@ C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Se
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.dll
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Extensions.dll
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Primitives.dll
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.pdb
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.xml
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Extensions.xml
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Primitives.xml
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csproj.App.config
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb

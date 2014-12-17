@@ -1,10 +1,13 @@
+import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
+from py2neo import rel, node
 from py2neo import neo4j
 
+from Informatique.items import InformatiqueItem
 
-class CasesSpider(CrawlSpider):
+class inf_case(CrawlSpider):
     name = "inf_case"
     allowed_domains = ["informatique.nl"]
     start_urls = ["http://www.informatique.nl/?m=usl&g=004&view=6&&sort=pop&pl=800"]
