@@ -41,8 +41,28 @@ class alt_soundcard(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (alt_soundcard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN alt_ram_ddr")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
-            alt_soundcard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:geluidskaart {naam:{namedb}})")
+            alt_case = query_CreateComponentNode.execute(namedb=namedb, component=component)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
+            alt_case = query_GiveComponentProperties.execute(namedb=namedb, component=component, interface=interface,
+                                                         geluidschip=geluidschip, aansluitingen=aansluitingen)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:geluidskaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            alt_case = query_DeleteRelationships.execute(namedb=namedb, component=component, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:geluidskaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:price]-w")
+            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, component=component, webshop=webshop,
+                                                         price=price)
+
+            query_CreateURLRelationship = neo4j.CypherQuery(graph_db,
+                                                        "MATCH (c:geluidskaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:url]-w")
+            alt_case = query_CreateURLRelationship.execute(namedb=namedb, component=component, webshop=webshop, url=url)

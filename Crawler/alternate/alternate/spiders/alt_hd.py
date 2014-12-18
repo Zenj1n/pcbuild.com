@@ -28,7 +28,7 @@ class alt_hd(CrawlSpider):
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url = titles.select('a[@class="productLink"]/@href').extract()
-            component = 'opslag'
+            component = 'HDD'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
@@ -44,8 +44,28 @@ class alt_hd(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (alt_hd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN alt_hd")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
-            alt_hd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:HDD {naam:{namedb}})")
+            alt_case = query_CreateComponentNode.execute(namedb=namedb, component=component)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:HDD) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
+            alt_case = query_GiveComponentProperties.execute(namedb=namedb, component=component, capaciteit=capaciteit,
+                                                         snelheid=snelheid)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:HDD)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            alt_case = query_DeleteRelationships.execute(namedb=namedb, component=component, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:HDD), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:price]-w")
+            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, component=component, webshop=webshop,
+                                                         price=price)
+
+            query_CreateURLRelationship = neo4j.CypherQuery(graph_db,
+                                                        "MATCH (c:HDD), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:url]-w")
+            alt_case = query_CreateURLRelationship.execute(namedb=namedb, component=component, webshop=webshop, url=url)

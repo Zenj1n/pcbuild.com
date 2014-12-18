@@ -43,8 +43,28 @@ class alt_ssd(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                  "CREATE (alt_ssd {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                  "RETURN alt_ssd")
+           query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
-            alt_ssd = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:ssd {naam:{namedb}})")
+            alt_case = query_CreateComponentNode.execute(namedb=namedb, component=component)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:ssd) WHERE c.naam = {namedb} SET c.totalecapaciteit={totalecapaciteit}, c.snelheid={snelheid}")
+            alt_case = query_GiveComponentProperties.execute(namedb=namedb, component=component, totalecapaciteit=totalecapaciteit,
+                                                         snelheid=snelheid)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:ssd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            alt_case = query_DeleteRelationships.execute(namedb=namedb, component=component, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:price]-w")
+            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, component=component, webshop=webshop,
+                                                         price=price)
+
+            query_CreateURLRelationship = neo4j.CypherQuery(graph_db,
+                                                        "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:url]-w")
+            alt_case = query_CreateURLRelationship.execute(namedb=namedb, component=component, webshop=webshop, url=url)
