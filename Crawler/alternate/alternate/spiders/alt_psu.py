@@ -43,10 +43,10 @@ class alt_psu(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-        print "== Adding Node to database =="
+            print "== Adding Node to database =="
 
-         query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                    "MERGE (w:Webshop { naam: {webshop} })")
             alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,

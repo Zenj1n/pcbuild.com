@@ -34,8 +34,12 @@ class alt_case(CrawlSpider):
 
             price = euro + cent
 
+
+
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
+
+            #query_test = 'MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:'+price+' ]-w'
 
             print "== Adding Node to database =="
 
@@ -57,13 +61,10 @@ class alt_case(CrawlSpider):
             alt_case = query_DeleteRelationships.execute(namedb=namedb, component=component, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:price]-w")
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
             alt_case = query_CreatePriceRelationship.execute(namedb=namedb, component=component, webshop=webshop,
-                                                         price=price)
+                                                         price=price, url=url)
 
-            query_CreateURLRelationship = neo4j.CypherQuery(graph_db,
-                                                        "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:url]-w")
-            alt_case = query_CreateURLRelationship.execute(namedb=namedb, component=component, webshop=webshop, url=url)
 									  
 			 
 

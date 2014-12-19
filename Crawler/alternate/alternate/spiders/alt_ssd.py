@@ -43,7 +43,7 @@ class alt_ssd(CrawlSpider):
 
             print "== Adding Node to database =="
 
-           query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")
             alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
