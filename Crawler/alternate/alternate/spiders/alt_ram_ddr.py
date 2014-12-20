@@ -50,22 +50,18 @@ class alt_ram_ddr(CrawlSpider):
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
                                                       "MERGE (c:werkgeheugen {naam:{namedb}})")
-            alt_case = query_CreateComponentNode.execute(namedb=namedb, component=component)
+            alt_case = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.modules={modules}, c.capaciteit={capaciteit}, c.timings={timings}")
-            alt_case = query_GiveComponentProperties.execute(namedb=namedb, component=component, modules=modules,
+            alt_case = query_GiveComponentProperties.execute(namedb=namedb, modules=modules,
                                                          capaciteit=capaciteit, timings=timings)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            alt_case = query_DeleteRelationships.execute(namedb=namedb, component=component, webshop=webshop)
+            alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:price]-w")
-            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, component=component, webshop=webshop,
-                                                         price=price)
-
-            query_CreateURLRelationship = neo4j.CypherQuery(graph_db,
-                                                        "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE c-[:url]-w")
-            alt_case = query_CreateURLRelationship.execute(namedb=namedb, component=component, webshop=webshop, url=url)
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                                                         price=price, url=url)
