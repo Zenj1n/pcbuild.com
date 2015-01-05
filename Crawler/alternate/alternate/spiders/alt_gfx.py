@@ -50,22 +50,22 @@ class alt_gfx(CrawlSpider):
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")
-            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
+            alt_gfx = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
                                                       "MERGE (c:videokaart {naam:{namedb}})")
-            alt_case = query_CreateComponentNode.execute(namedb=namedb)
+            alt_gfx = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:videokaart) WHERE c.naam = {namedb} SET c.gfx={gfx}, c.geheugen={geheugen}, c.slots={slots}")
-            alt_case = query_GiveComponentProperties.execute(namedb=namedb, gfx=gfx,
+            alt_gfx = query_GiveComponentProperties.execute(namedb=namedb, gfx=gfx,
                                                          geheugen=geheugen, slots=slots)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+            alt_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+            alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)

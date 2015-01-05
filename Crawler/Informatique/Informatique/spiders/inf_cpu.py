@@ -33,9 +33,24 @@ class inf_cpu(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (inf_cpu {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN inf_cpu")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            inf_cpu = query_CreateWebshopNode.execute(webshop=webshop)
 
-            inf_cpu = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price,
-                                    component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:processor {naam:{namedb}})")
+            inf_cpu = query_CreateComponentNode.execute(namedb=namedb)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:processor) WHERE c.naam = {namedb} SET c.kloksnelheid={kloksnelheid}, c.kernen={kernen}, c.socket={socket}")
+            inf_cpu = query_GiveComponentProperties.execute(namedb=namedb, kloksnelheid=kloksnelheid,
+                                                         kernen=kernen, socket=socket)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            inf_cpu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+            inf_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                                                         price=price, url=url)

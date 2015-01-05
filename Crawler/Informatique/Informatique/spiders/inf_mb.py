@@ -41,8 +41,24 @@ class inf_mb(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (inf_mb {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN inf_mb")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            inf_mb = query_CreateWebshopNode.execute(webshop=webshop)
 
-            inf_mb = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:moederbord {naam:{namedb}})")
+            inf_mb = query_CreateComponentNode.execute(namedb=namedb)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:moederbord) WHERE c.naam = {namedb} SET c.interfaces={interfaces}, c.vormfactor={vormfactor}, c.socket={socket}")
+            inf_mb = query_GiveComponentProperties.execute(namedb=namedb, interfaces=interfaces,
+                                                         vormfactor=vormfactor, socket=socket)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:moederbord)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            inf_mb = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+            inf_mb = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                                                         price=price, url=url)

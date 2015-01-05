@@ -27,16 +27,35 @@ class inf_case(CrawlSpider):
             component = 'behuizing'
             desc = titles.xpath('div[@id="description"]/ul/li/text()').extract()
             price = titles.xpath('div[@id="price"]/text()').extract()
-            # image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
+            #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
+
+            interfaces = desc[3];
+            vormfactor = desc[0];
+            vormvoeding = desc[2];
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (inf_case {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN inf_case")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            inf_case = query_CreateWebshopNode.execute(webshop=webshop)
 
-            inf_case = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price,
-                                     component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:behuizing {naam:{namedb}})")
+            inf_case = query_CreateComponentNode.execute(namedb=namedb)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:behuizing) WHERE c.naam = {namedb} SET c.interfaces={interfaces}, c.vormfactor={vormfactor}, c.vormvoeding={vormvoeding}")
+            inf_case = query_GiveComponentProperties.execute(namedb=namedb, interfaces=interfaces,
+                                                         vormfactor=vormfactor, vormvoeding=vormvoeding)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            inf_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+            inf_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                                                         price=price, url=url)

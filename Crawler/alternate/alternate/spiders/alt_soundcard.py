@@ -43,22 +43,22 @@ class alt_soundcard(CrawlSpider):
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")
-            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
+            alt_soundcard = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
                                                       "MERGE (c:geluidskaart {naam:{namedb}})")
-            alt_case = query_CreateComponentNode.execute(namedb=namedb)
+            alt_soundcard = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
-            alt_case = query_GiveComponentProperties.execute(namedb=namedb, interface=interface,
+            alt_soundcard = query_GiveComponentProperties.execute(namedb=namedb, interface=interface,
                                                          geluidschip=geluidschip, aansluitingen=aansluitingen)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:geluidskaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+            alt_soundcard = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+            alt_soundcard = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)

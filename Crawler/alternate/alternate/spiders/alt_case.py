@@ -65,10 +65,10 @@ class alt_case(CrawlSpider):
             alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)
 
-									  
-			 
 
-            
-       
+
+
+
+
        
 

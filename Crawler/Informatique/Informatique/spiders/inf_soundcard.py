@@ -33,9 +33,24 @@ class inf_soundcard(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query = neo4j.CypherQuery(graph_db,
-                                      "CREATE (inf_soundCard {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
-                                      "RETURN inf_soundCard")
+            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
+            inf_soundcard = query_CreateWebshopNode.execute(webshop=webshop)
 
-            inf_soundCard = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price,
-                                          component=component)
+            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                                                      "MERGE (c:geluidskaart {naam:{namedb}})")
+            inf_soundcard = query_CreateComponentNode.execute(namedb=namedb)
+
+            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
+            inf_soundcard = query_GiveComponentProperties.execute(namedb=namedb, interface=interface,
+                                                         geluidschip=geluidschip, aansluitingen=aansluitingen)
+
+            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                                                      "MATCH (c:geluidskaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+            inf_soundcard = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+
+            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+            inf_soundcard = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                                                         price=price, url=url)

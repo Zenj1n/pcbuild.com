@@ -46,22 +46,22 @@ class alt_ram_ddr(CrawlSpider):
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")
-            alt_case = query_CreateWebshopNode.execute(webshop=webshop)
+            alt_ram_ddr = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
                                                       "MERGE (c:werkgeheugen {naam:{namedb}})")
-            alt_case = query_CreateComponentNode.execute(namedb=namedb)
+            alt_ram_ddr = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.modules={modules}, c.capaciteit={capaciteit}, c.timings={timings}")
-            alt_case = query_GiveComponentProperties.execute(namedb=namedb, modules=modules,
+            alt_ram_ddr = query_GiveComponentProperties.execute(namedb=namedb, modules=modules,
                                                          capaciteit=capaciteit, timings=timings)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+            alt_ram_ddr = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
                                                           "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+            alt_ram_ddr = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)
