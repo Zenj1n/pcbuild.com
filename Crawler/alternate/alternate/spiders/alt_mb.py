@@ -33,7 +33,7 @@ class alt_mb(CrawlSpider):
 
             vormfactor = desc[0];
             interfaces = desc[1];
-            socket = desc[3];
+            socket = desc[2];
 
             price = euro + cent
 
