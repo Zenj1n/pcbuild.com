@@ -59,6 +59,6 @@ class alt_cpukoel(CrawlSpider):
             alt_cpukoel = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                          "MATCH (c:processor koeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
             alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)
