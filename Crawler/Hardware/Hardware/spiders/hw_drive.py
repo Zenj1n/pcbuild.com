@@ -42,16 +42,16 @@ class OpticalDriveSpider(CrawlSpider):
             hw_drive = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:optische drives {naam:{namedb}})")
+                                                      "MERGE (c:optischedrives {naam:{namedb}})")
             hw_drive = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:optische_drives) WHERE c.naam = {namedb} SET c.lezen={lezen}, c.schrijven={schrijven}, c.aansluiting={aansluiting}")
+                                                          "MATCH (c:optischedrives) WHERE c.naam = {namedb} SET c.lezen={lezen}, c.schrijven={schrijven}, c.aansluiting={aansluiting}")
             hw_drive = query_GiveComponentProperties.execute(namedb=namedb, lezen=lezen,
                                                          schrijven=schrijven, aansluiting=aansluiting)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:optische drives)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                      "MATCH (c:optischedrives)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
             hw_drive = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,

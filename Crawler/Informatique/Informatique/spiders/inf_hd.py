@@ -37,16 +37,16 @@ class inf_hd(CrawlSpider):
             inf_hd = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:HDD {naam:{namedb}})")
+                                                      "MERGE (c:hd {naam:{namedb}})")
             inf_hd = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:HDD) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
+                                                          "MATCH (c:hd) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
             inf_hd = query_GiveComponentProperties.execute(namedb=namedb, capaciteit=capaciteit,
                                                          snelheid=snelheid)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:HDD)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                      "MATCH (c:hd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
             inf_hd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
