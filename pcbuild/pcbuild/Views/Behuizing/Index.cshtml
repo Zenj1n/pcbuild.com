@@ -1,10 +1,12 @@
-﻿@model IEnumerable<pcbuild.Models.Behuizing_Model>
+﻿@model IEnumerable<pcbuild.Models.ViewModel>
+
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Behuizing";
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Component</h2>
+<h2>Behuizingen</h2>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -17,9 +19,10 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.naam</td>
-            <td>@item.interfaces</td>
-            <td>@item.vormfactor</td>
-            <td>@item.vormvoeding</td>
+            <td>@item.Behuizing_test.naam</td> 
+            <td>@item.Behuizing_test.interfaces</td>
+            <td>@item.Behuizing_test.vormfactor</td>
+            <td>@item.Behuizing_test.vormvoeding</td>
+
         </tr>
     }
