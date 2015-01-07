@@ -52,20 +52,25 @@ class alt_gfx(CrawlSpider):
                                                         "MERGE (w:Webshop { naam: {webshop} })")
             alt_gfx = query_CreateWebshopNode.execute(webshop=webshop)
 
-            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:videokaart {naam:{namedb}})")
-            alt_gfx = query_CreateComponentNode.execute(namedb=namedb)
+            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
+                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
+            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
+                matchCountNumber = record[0]
 
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:videokaart) WHERE c.naam = {namedb} SET c.gfx={gfx}, c.geheugen={geheugen}, c.slots={slots}")
-            alt_gfx = query_GiveComponentProperties.execute(namedb=namedb, gfx=gfx,
-                                                         geheugen=geheugen, slots=slots)
-
-            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            alt_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-
-            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                         price=price, url=url)
+            if matchCountNumber != 0:
+                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                alt_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
+            else:
+                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                 "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
+                 alt_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
+                 geheugen=geheugen, slots=slots)
+                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                 alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                 price=price, url=url)

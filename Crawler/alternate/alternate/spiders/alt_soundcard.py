@@ -46,12 +46,8 @@ class alt_soundcard(CrawlSpider):
             alt_soundcard = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:geluidskaart {naam:{namedb}})")
-            alt_soundcard = query_CreateComponentNode.execute(namedb=namedb)
-
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
-            alt_soundcard = query_GiveComponentProperties.execute(namedb=namedb, interface=interface,
+                                                      "MERGE (c:geluidskaart {naam:{namedb}, interfaces:{interfaces}, geluidschip:{geluidschip}, aansluitingen:{aansluitingen}})")
+            alt_soundcard = query_CreateComponentNode.execute(namedb=namedb, interface=interface,
                                                          geluidschip=geluidschip, aansluitingen=aansluitingen)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
