@@ -46,7 +46,7 @@ class alt_cpukoel(CrawlSpider):
             alt_cpukoel = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:processor koeler {naam:{namedb}})")
+                                                      "MERGE (c:processorkoeler {naam:{namedb}})")
             alt_cpukoel = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,

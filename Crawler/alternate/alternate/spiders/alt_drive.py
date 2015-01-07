@@ -47,7 +47,7 @@ class alt_drive(CrawlSpider):
             alt_drive = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:optische drives {naam:{namedb}})")
+                                                      "MERGE (c:optischedrives {naam:{namedb}})")
             alt_drive = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,

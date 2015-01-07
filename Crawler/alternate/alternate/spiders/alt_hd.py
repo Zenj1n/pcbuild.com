@@ -53,7 +53,7 @@ class alt_hd(CrawlSpider):
             alt_hd = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:HDD) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
+                                                          "MATCH (c:hd) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
             alt_hd = query_GiveComponentProperties.execute(namedb=namedb, capaciteit=capaciteit,
                                                          snelheid=snelheid)
 
