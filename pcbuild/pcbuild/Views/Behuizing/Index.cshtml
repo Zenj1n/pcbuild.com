@@ -1,0 +1,25 @@
+﻿@model IEnumerable<pcbuild.Models.Behuizing_Model>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutController.cshtml";
+}
+
+<h2>Component</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>interfaces</td>
+        <td>vormfactor</td>
+        <td>vormvoeding</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.naam</td>
+            <td>@item.interfaces</td>
+            <td>@item.vormfactor</td>
+            <td>@item.vormvoeding</td>
+        </tr>
+    }
