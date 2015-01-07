@@ -50,15 +50,15 @@ class alt_cpukoel(CrawlSpider):
             alt_cpukoel = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:processor koeler) WHERE c.naam = {namedb} SET c.socket={socket}, c.geluid={geluid}, c.luchtverplaatsing={luchtverplaatsing}")
+                                                          "MATCH (c:processorkoeler) WHERE c.naam = {namedb} SET c.socket={socket}, c.geluid={geluid}, c.luchtverplaatsing={luchtverplaatsing}")
             alt_cpukoel = query_GiveComponentProperties.execute(namedb=namedb, socket=socket,
                                                          geluid=geluid, luchtverplaatsing=luchtverplaatsing)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:processor koeler)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                      "MATCH (c:processorkoeler)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
             alt_cpukoel = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:processor koeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                          "MATCH (c:processorkoeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
             alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                          price=price, url=url)
