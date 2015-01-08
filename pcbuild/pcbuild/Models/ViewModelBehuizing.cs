@@ -5,7 +5,7 @@ using System.Web;
 
 namespace pcbuild.Models
 {
-    public class ViewModel
+    public class ViewModelBehuizing
 
     {
         public Behuizing_Model Behuizing_test { get; set; }
