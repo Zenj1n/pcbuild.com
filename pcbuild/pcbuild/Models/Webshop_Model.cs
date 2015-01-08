@@ -7,7 +7,6 @@ namespace pcbuild.Models
 {
     public class Webshop_Model
     {
-        public string webshop { get; set; }
-
+        public string naam { get; set; }
     }
 }

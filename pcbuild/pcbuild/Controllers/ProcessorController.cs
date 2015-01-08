@@ -1,5 +1,6 @@
 ﻿using Neo4jClient;
 using pcbuild.Models;
+using pcbuild.Models.ProcessorModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ using System.Diagnostics;
 
 namespace pcbuild.Controllers
 {
-    public class BehuizingController : Controller
+    public class ProcessorController : Controller
     {
-        // GET: Behuizing
+        // GET: Processor
         public ActionResult Index()
         {
             //Connectie met database
@@ -28,17 +29,16 @@ namespace pcbuild.Controllers
             // Query om alle behuizingen op te halen
             var componenten_query = client
               .Cypher
-              .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
-              .Return((n, r, p) => new ViewModelBehuizing
+              .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+              .Return((n, r, p) => new ViewModelProcessor
               {
-                  Behuizing_test = n.As<Behuizing_Model>(),
-                  Verkrijgbaar_test = r.As<Verkrijgbaar_Model>(),
-                  Webshop_test = p.As<Webshop_Model>(),
+                  Proccesor_m = n.As<Processor_Model>(),
+                  Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                  Webshop_m = p.As<Webshop_Model>(),
               })
               .Results;
 
-                return View(componenten_query);
-            }
-
+            return View(componenten_query);
         }
+    }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<pcbuild.Models.ViewModel>
+﻿@model IEnumerable<pcbuild.Models.ViewModelBehuizing>
 
 @{
     ViewBag.Title = "Behuizing";
@@ -13,6 +13,9 @@
         <td>interfaces</td>
         <td>vormfactor</td>
         <td>vormvoeding</td>
+        <td>Prijs</td>
+        <td>url</td>
+        <td>webshop</td>
     </tr>
 
     @foreach (var item in Model)
@@ -22,6 +25,9 @@
             <td>@item.Behuizing_test.interfaces</td>
             <td>@item.Behuizing_test.vormfactor</td>
             <td>@item.Behuizing_test.vormvoeding</td>
-
+            <td>@item.Verkrijgbaar_test.prijs</td>
+            <td>@item.Verkrijgbaar_test.url</td>
+            <td>@item.Webshop_test.naam</td>            
         </tr>
     }
+</table>
