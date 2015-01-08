@@ -11,6 +11,5 @@ namespace pcbuild.Models
         public string interfaces { get; set; }
         public string vormfactor { get; set; }
         public string vormvoeding { get; set; }
-        public string webshop { get; set; }
     }
 }

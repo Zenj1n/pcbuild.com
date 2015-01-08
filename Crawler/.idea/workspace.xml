@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_hd.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_hd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Processor/Index.cshtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/ProcessorController.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/ProcessorModels/Processor_Model.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/ProcessorModels/ViewModelProcessor.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/BehuizingController.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/BehuizingController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/ComponentenController.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/ComponentenController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Behuizing/Index.cshtml" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Behuizing/Index.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/Webshop_Model.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/Webshop_Model.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/pcbuild.csproj" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/pcbuild.csproj" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\Models\Behuizing_Model.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/BehuizingModels/Behuizing_Model.cs" />
+      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\Models\ViewModelBehuizing.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/BehuizingModels/ViewModelBehuizing.cs" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -162,6 +179,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -344,7 +362,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -546,7 +563,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
