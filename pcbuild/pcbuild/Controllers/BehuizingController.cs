@@ -25,26 +25,28 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
+            var test = new ViewModelBehuizing()
+            {
+
+            };
             
+          
+
+            var bhms = new Behuizing_Model();
            // Query om alle behuizingen op te halen
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
-              .Return((n, r, p) => new
+              .Return((n, r, p) => new ViewModelBehuizing
               {
-                 n = n.As<Behuizing_Model>(),
-                 r = r.As<Verkrijgbaar_Model>(),
-                 p = p.As<Webshop_Model>(),
+                 Behuizing_test = n.As<Behuizing_Model>(),
+                 Verkrijgbaar_test = r.As<Verkrijgbaar_Model>(),
+                 Webshop_test = p.As<Webshop_Model>(),
               })
               .Results;
 
-            var viewModel = new ViewModel()
-            {
-                
-            };
             
-            List<ViewModel> viewModelList = new List<ViewModel>();
-            viewModelList.Add(viewModel);
+          
                 
 
             //var componenten_query = client
@@ -54,23 +56,23 @@ namespace pcbuild.Controllers
             //    .Results;
 
             //Test om te kijken of er data in de model zit
-            foreach (var item in componenten_query)
-            {
-                if (item.n.naam == null)
-                {
-                    Debug.WriteLine("Geen data");
-                }
-                else
-                {
+            //foreach (var item in componenten_query)
+            //{
+            //    if (item.n.naam == null)
+            //    {
+            //        Debug.WriteLine("Geen data");
+            //    }
+            //    else
+            //    {
 
-                    Debug.WriteLine("1", item.n.naam);
-                    Debug.WriteLine("2", item.n.interfaces);
-                    Debug.WriteLine("3", item.n.vormfactor);
-                    Debug.WriteLine("4", item.n.vormvoeding);
-                    Debug.WriteLine("6", item.r.prijs);
-                }
+            //        Debug.WriteLine("1", item.n.naam);
+            //        Debug.WriteLine("2", item.n.interfaces);
+            //        Debug.WriteLine("3", item.n.vormfactor);
+            //        Debug.WriteLine("4", item.n.vormvoeding);
+            //        Debug.WriteLine("6", item.r.prijs);
+            //    }
 
-            }
+            //}
             return View(componenten_query);
         }
     }
