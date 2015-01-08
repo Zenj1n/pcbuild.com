@@ -63,7 +63,7 @@ class alt_hd(CrawlSpider):
                 alt_hd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                  query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:hd {naam:{namedb}, kloksnelheid:{kloksnelheid}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
+                 "Create (c:hd {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
                  alt_hd = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
                  snelheid=snelheid)
                  query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
