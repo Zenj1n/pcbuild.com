@@ -67,10 +67,10 @@ class alt_gfx(CrawlSpider):
                 alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                  query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
+                 "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
                  alt_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
                  geheugen=geheugen, slots=slots)
                  query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                 "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                  alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                  price=price, url=url)

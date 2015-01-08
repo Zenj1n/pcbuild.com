@@ -57,17 +57,17 @@ class alt_psu(CrawlSpider):
 
             if matchCountNumber != 0:
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_psu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                  query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
+                 "Create (c:voeding {naam:{namedb}, vermogen:{vermogen}, geluid:{geluid}, zuinigheid:{zuinigheid}})")
                  alt_psu = query_CreateComponentNode.execute(namedb=namedb, vermogen=vermogen,
                  geluid=geluid, zuinigheid=zuinigheid)
                  query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                 "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                  alt_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                  price=price, url=url)
