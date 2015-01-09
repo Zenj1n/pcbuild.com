@@ -54,6 +54,9 @@ class alt_case(CrawlSpider):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
+				query_SetSpecifications = neo4j.CypherQuery(graph_db,
+                "MATCH (c:behuizing) WHERE c.naam = {namedb} SET c.interfaces = {interfaces}, c.vormfactor = {vormfactor}, c.vormvoeding = {vormvoeding}")
+                alt_case = query_DeleteRelationships.execute(namedb=namedb, interfaces=interfaces, vormfactor=vormfactor, vormvoeding=vormvoeding)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
