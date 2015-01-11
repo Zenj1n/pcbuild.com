@@ -1,0 +1,33 @@
+﻿@model IEnumerable<pcbuild.Models.WerkgeheugenModels.ViewModelWerkgeheugen>
+
+@{
+    ViewBag.Title = "Behuizing";
+    Layout = "~/Views/Shared/_LayoutController.cshtml";
+}
+
+<h2>Behuizingen</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>Capaciteit</td>
+        <td>Timings</td>
+        <td>Modules</td>
+        <td>Prijs</td>
+        <td>url</td>
+        <td>webshop</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Werkgeheugen_all.naam</td>
+            <td>@item.Werkgeheugen_all.capaciteit</td>
+            <td>@item.Werkgeheugen_all.timings</td>
+            <td>@item.Werkgeheugen_all.modules</td>
+            <td>@item.Verkrijgbaar_all.prijs</td>
+            <td>@item.Verkrijgbaar_all.url</td>
+            <td>@item.Webshop_all.naam</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<pcbuild.Models.MoederbordModels.ViewModelMoederbord>
+
+@{
+    ViewBag.Title = "Moederbord";
+    Layout = "~/Views/Shared/_LayoutController.cshtml";
+}
+
+<h2>Behuizingen</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>socket</td>
+        <td>vormfactor</td>
+        <td>interfaces</td>
+        <td>Prijs</td>
+        <td>url</td>
+        <td>webshop</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Moederbord_all.naam</td>
+            <td>@item.Moederbord_all.socket</td>
+            <td>@item.Moederbord_all.vormfactor</td>
+            <td>@item.Moederbord_all.interfaces</td>
+            <td>@item.Verkrijgbaar_all.prijs</td>
+            <td>@item.Verkrijgbaar_all.url</td>
+            <td>@item.Webshop_all.naam</td>
+        </tr>
+    }
+</table>

@@ -171,18 +171,26 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BehuizingController.cs" />
     <Compile Include="Controllers\ComponentenController.cs" />
+    <Compile Include="Controllers\HardDiskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoederbordController.cs" />
     <Compile Include="Controllers\ProcessorController.cs" />
     <Compile Include="Controllers\VideokaartController.cs" />
+    <Compile Include="Controllers\WerkgeheugenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\All_Components.cs" />
     <Compile Include="Models\BehuizingModels\Behuizing_Model.cs" />
+    <Compile Include="Models\HardDiskModels\Harddisk_Model.cs" />
+    <Compile Include="Models\HardDiskModels\SSDModel.cs" />
+    <Compile Include="Models\HardDiskModels\ViewModelHardDisk.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MoederbordModels\Moederbord_Model.cs" />
+    <Compile Include="Models\MoederbordModels\ViewModelMoederbord.cs" />
     <Compile Include="Models\ProcessorModels\Processor_Model.cs" />
     <Compile Include="Models\ProcessorModels\ViewModelProcessor.cs" />
     <Compile Include="Models\Verkrijgbaar_Model.cs" />
@@ -190,6 +198,8 @@
     <Compile Include="Models\VideokaartModels\Videokaart_Model.cs" />
     <Compile Include="Models\VideokaartModels\ViewModelVideokaart.cs" />
     <Compile Include="Models\Webshop_Model.cs" />
+    <Compile Include="Models\WerkgeheugenModels\ViewModelWerkgeheugen.cs" />
+    <Compile Include="Models\WerkgeheugenModels\Werkgeheugen_Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -257,6 +267,9 @@
     <Content Include="Views\Behuizing\Index.cshtml" />
     <Content Include="Views\Processor\Index.cshtml" />
     <Content Include="Views\Videokaart\Index.cshtml" />
+    <Content Include="Views\Moederbord\Index.cshtml" />
+    <Content Include="Views\Werkgeheugen\Index.cshtml" />
+    <Content Include="Views\HardDisk\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
