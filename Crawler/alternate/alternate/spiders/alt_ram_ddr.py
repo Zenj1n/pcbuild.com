@@ -55,6 +55,9 @@ class alt_ram_ddr(CrawlSpider):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
+                query_SetSpecifications = neo4j.CypherQuery(graph_db,
+                "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.timings = {timings}, c.modules = {modules}")
+                alt_ram_ddr = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, timings=timings, modules=modules)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ram_ddr = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

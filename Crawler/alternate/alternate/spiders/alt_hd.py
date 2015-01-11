@@ -55,6 +55,9 @@ class alt_hd(CrawlSpider):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
+                query_SetSpecifications = neo4j.CypherQuery(graph_db,
+                "MATCH (c:hd) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
+                alt_hd = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:hd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_hd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

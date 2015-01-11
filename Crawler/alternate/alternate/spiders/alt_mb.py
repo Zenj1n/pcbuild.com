@@ -53,6 +53,9 @@ class alt_mb(CrawlSpider):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
+                query_SetSpecifications = neo4j.CypherQuery(graph_db,
+                "MATCH (c:moederbord) WHERE c.naam = {namedb} SET c.vormfactor = {vormfactor}, c.interfaces = {interfaces}, c.socket = {socket}")
+                alt_mb = query_DeleteRelationships.execute(namedb=namedb, vormfactor=vormfactor, interfaces=interfaces, socket=socket)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:moederbord)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_mb = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
