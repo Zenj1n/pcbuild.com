@@ -13,13 +13,13 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using pcbuild.Models.HardDiskModels;
+using pcbuild.Models.VoedingModels;
 
 namespace pcbuild.Controllers
 {
-    public class HardDiskController : Controller
+    public class VoedingController : Controller
     {
-        // GET: HardDisk
+        // GET: Voeding
         public ActionResult Index()
         {
             //Connectie met database
@@ -29,10 +29,10 @@ namespace pcbuild.Controllers
             // Query om alle behuizingen op te halen
             var componenten_query = client
               .Cypher
-              .Match("(n:hd)-[r:verkrijgbaar]-(p:Webshop)")
-              .Return((n, r, p) => new ViewModelHardDisk
+              .Match("(n:voeding)-[r:verkrijgbaar]-(p:Webshop)")
+              .Return((n, r, p) => new ViewModelVoeding
               {
-                  Harddisk_all = n.As<Harddisk_Model>(),                  
+                  Voeding_all = n.As<Voeding_Model>(),
                   Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
                   Webshop_all = p.As<Webshop_Model>(),
               })

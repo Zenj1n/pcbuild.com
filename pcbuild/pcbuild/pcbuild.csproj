@@ -177,6 +177,7 @@
     <Compile Include="Controllers\MoederbordController.cs" />
     <Compile Include="Controllers\ProcessorController.cs" />
     <Compile Include="Controllers\VideokaartController.cs" />
+    <Compile Include="Controllers\VoedingController.cs" />
     <Compile Include="Controllers\WerkgeheugenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,6 +198,8 @@
     <Compile Include="Models\BehuizingModels\ViewModelBehuizing.cs" />
     <Compile Include="Models\VideokaartModels\Videokaart_Model.cs" />
     <Compile Include="Models\VideokaartModels\ViewModelVideokaart.cs" />
+    <Compile Include="Models\VoedingModels\ViewModelVoeding.cs" />
+    <Compile Include="Models\VoedingModels\Voeding_Model.cs" />
     <Compile Include="Models\Webshop_Model.cs" />
     <Compile Include="Models\WerkgeheugenModels\ViewModelWerkgeheugen.cs" />
     <Compile Include="Models\WerkgeheugenModels\Werkgeheugen_Model.cs" />
@@ -270,6 +273,7 @@
     <Content Include="Views\Moederbord\Index.cshtml" />
     <Content Include="Views\Werkgeheugen\Index.cshtml" />
     <Content Include="Views\HardDisk\Index.cshtml" />
+    <Content Include="Views\Voeding\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

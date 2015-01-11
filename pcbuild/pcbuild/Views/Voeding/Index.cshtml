@@ -1,0 +1,33 @@
+﻿@model IEnumerable<pcbuild.Models.VoedingModels.ViewModelVoeding>
+
+@{
+    ViewBag.Title = "Voeding";
+    Layout = "~/Views/Shared/_LayoutController.cshtml";
+}
+
+<h2>Behuizingen</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>Vermogen</td>
+        <td>Geluid</td>
+        <td>Zuinigheid</td>
+        <td>Prijs</td>
+        <td>url</td>
+        <td>webshop</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Voeding_all.naam</td>
+            <td>@item.Voeding_all.vermogen</td>
+            <td>@item.Voeding_all.geluid</td>
+            <td>@item.Voeding_all.zuinigheid</td>
+            <td>@item.Verkrijgbaar_all.prijs</td>
+            <td>@item.Verkrijgbaar_all.url</td>
+            <td>@item.Webshop_all.naam</td>
+        </tr>
+    }
+</table>
