@@ -27,6 +27,15 @@ class inf_hd(CrawlSpider):
             price = titles.select('div[@id="price"]/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
+            try:
+                capaciteit = desc[0]
+            except:
+                capiciteit = "onbekend"
+            try:
+                snelheid = desc[2]
+            except:
+                snelheid = "onbekend"
+
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
@@ -36,14 +45,28 @@ class inf_hd(CrawlSpider):
                                                         "MERGE (w:Webshop { naam: {webshop} })")
             inf_hd = query_CreateWebshopNode.execute(webshop=webshop)
 
-            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:hd {naam:{namedb}})")
-            inf_hd = query_CreateComponentNode.execute(namedb=namedb)
+            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
+                                                      "match (c:hd) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
+            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
+                matchCountNumber = record[0]
 
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:hd) WHERE c.naam = {namedb} SET c.capaciteit={capaciteit}, c.snelheid={snelheid}")
-            inf_hd = query_GiveComponentProperties.execute(namedb=namedb, capaciteit=capaciteit,
-                                                         snelheid=snelheid)
+            if matchCountNumber != 0:
+                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                "MATCH (c:hd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                inf_hd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:hd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                inf_hd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
+            else:
+                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                 "Create (c:hd {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
+                 inf_hd = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
+                 snelheid=snelheid)
+                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                 "MATCH (c:hd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                 inf_hd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                 price=price, url=url)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:hd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")

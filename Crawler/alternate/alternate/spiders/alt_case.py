@@ -39,8 +39,6 @@ class alt_case(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-            #query_test = 'MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:'+price+' ]-w'
-
             print "== Adding Node to database =="
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
@@ -48,7 +46,7 @@ class alt_case(CrawlSpider):
             alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                      "match (c:behuizing) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]

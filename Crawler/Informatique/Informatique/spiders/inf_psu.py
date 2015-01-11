@@ -26,23 +26,47 @@ class inf_psu(CrawlSpider):
             price = titles.select('div[@id="price"]/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
+            try:
+                vermogen = desc[1];
+            except:
+                vermogen = "onbekend"
+            geluid = "onbekend"
+            try:
+                zuinigheid = desc[2]
+            except:
+                zuinigheid = "onbekend"
+
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                    "MERGE (w:Webshop { naam: {webshop} })")
+                                                        "MERGE (w:Webshop { naam: {webshop} })")
             inf_psu = query_CreateWebshopNode.execute(webshop=webshop)
 
-            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:voeding {naam:{namedb}})")
-            inf_psu = query_CreateComponentNode.execute(namedb=namedb)
+            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
+                                                      "match (c:voeding) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
+            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
+                matchCountNumber = record[0]
 
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:voeding) WHERE c.naam = {namedb} SET c.geluid={geluid}, c.vermogen={vermogen}, c.zuinigheid={zuinigheid}")
-            inf_psu = query_GiveComponentProperties.execute(namedb=namedb, vermogen=vermogen,
-                                                         geluid=geluid, zuinigheid=zuinigheid)
+            if matchCountNumber != 0:
+                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                inf_psu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                inf_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
+            else:
+                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                 "Create (c:voeding {naam:{namedb}, vermogen:{vermogen}, geluid:{geluid}, zuinigheid:{zuinigheid}})")
+                 inf_psu = query_CreateComponentNode.execute(namedb=namedb, vermogen=vermogen,
+                 geluid=geluid, zuinigheid=zuinigheid)
+                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                 "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                 inf_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                 price=price, url=url)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                                                       "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")

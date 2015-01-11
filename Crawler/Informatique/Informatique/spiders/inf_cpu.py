@@ -39,8 +39,6 @@ class inf_cpu(CrawlSpider):
 
             kernen = "onbekend"
 
-            print desc
-
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
