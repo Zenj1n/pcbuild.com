@@ -62,11 +62,11 @@ class alt_cpukoel(CrawlSpider):
                 "MATCH (c:cpukoeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
-                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:cpukoeler {naam:{namedb}, socket:{socket}, geluid:{geluid}, luchtverplaatsing:{luchtverplaatsing}})")
-                 alt_cpukoel = query_CreateComponentNode.execute(namedb=namedb, socket=socket,
-                 geluid=geluid, luchtverplaatsing=luchtverplaatsing)
-                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:cpukoeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                 alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                 price=price, url=url)
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:cpukoeler {naam:{namedb}, socket:{socket}, geluid:{geluid}, luchtverplaatsing:{luchtverplaatsing}})")
+                alt_cpukoel = query_CreateComponentNode.execute(namedb=namedb, socket=socket,
+                geluid=geluid, luchtverplaatsing=luchtverplaatsing)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:cpukoeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)

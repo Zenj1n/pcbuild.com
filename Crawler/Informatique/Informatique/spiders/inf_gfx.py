@@ -61,11 +61,11 @@ class inf_gfx(CrawlSpider):
                 "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
-                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
-                 inf_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
-                 geheugen=geheugen, slots=slots)
-                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                 inf_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                 price=price, url=url)
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
+                inf_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
+                geheugen=geheugen, slots=slots)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                inf_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)

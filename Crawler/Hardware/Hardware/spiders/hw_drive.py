@@ -9,7 +9,7 @@ from py2neo import neo4j
 
 from Hardware.items import  HWItem
 
-class OpticalDriveSpider(CrawlSpider):
+class hw_drive(CrawlSpider):
     name = "hw_drive"
     allowed_domains = ["hardware.info"]
     start_urls = ["http://nl.hardware.info/productgroep/2/optische-drives"]
@@ -30,7 +30,11 @@ class OpticalDriveSpider(CrawlSpider):
             desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
             price = titles.select('td[@class="center"]/a/text()').extract()
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-            print "== Adding Node to database =="
+
+
+            lezen = "onbekend"
+            schrijven = "onbekend"
+            aansluiting = "onbekend"
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -41,20 +45,25 @@ class OpticalDriveSpider(CrawlSpider):
                                                         "MERGE (w:Webshop { naam: {webshop} })")
             hw_drive = query_CreateWebshopNode.execute(webshop=webshop)
 
-            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:optischedrives {naam:{namedb}})")
-            hw_drive = query_CreateComponentNode.execute(namedb=namedb)
+            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
+                                                      "match (c:optischedrive) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
+            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
+                matchCountNumber = record[0]
 
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:optischedrives) WHERE c.naam = {namedb} SET c.lezen={lezen}, c.schrijven={schrijven}, c.aansluiting={aansluiting}")
-            hw_drive = query_GiveComponentProperties.execute(namedb=namedb, lezen=lezen,
-                                                         schrijven=schrijven, aansluiting=aansluiting)
-
-            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:optischedrives)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            hw_drive = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-
-            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            hw_drive = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                         price=price, url=url)
+            if matchCountNumber != 0:
+                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                "MATCH (c:optischedrive)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                hw_drive = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:optischedrive), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                hw_drive = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
+            else:
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:optischedrive {naam:{namedb}, lezen:{lezen}, schrijven:{schrijven}, aansluiting:{aansluiting}})")
+                hw_drive = query_CreateComponentNode.execute(namedb=namedb, lezen=lezen,
+                schrijven=schrijven, aansluiting=aansluiting)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:optischedrive), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                hw_drive = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)

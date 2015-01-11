@@ -64,12 +64,12 @@ class alt_cpu(CrawlSpider):
                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
-                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
-                 alt_cpu = query_CreateComponentNode.execute(namedb=namedb, kloksnelheid=kloksnelheid,
-                 socket=socket, kernen=kernen)
-                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                 alt_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                 price=price, url=url)
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
+                alt_cpu = query_CreateComponentNode.execute(namedb=namedb, kloksnelheid=kloksnelheid,
+                socket=socket, kernen=kernen)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                alt_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)
 									  

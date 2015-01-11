@@ -70,11 +70,11 @@ class inf_mb(CrawlSpider):
                 "MATCH (c:moederbord), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_mb = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
-                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:moederbord {naam:{namedb}, vormfactor:{vormfactor}, socket:{socket}, interfaces:{interfaces}})")
-                 inf_mb = query_CreateComponentNode.execute(namedb=namedb, vormfactor=vormfactor,
-                 socket=socket, interfaces=interfaces)
-                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:moederbord), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                 inf_mb = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                 price=price, url=url)
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:moederbord {naam:{namedb}, vormfactor:{vormfactor}, socket:{socket}, interfaces:{interfaces}})")
+                inf_mb = query_CreateComponentNode.execute(namedb=namedb, vormfactor=vormfactor,
+                socket=socket, interfaces=interfaces)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:moederbord), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                inf_mb = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)

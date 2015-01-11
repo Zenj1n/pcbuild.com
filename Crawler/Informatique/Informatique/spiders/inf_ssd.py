@@ -28,9 +28,9 @@ class inf_ssd(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                totalecapaciteit = desc[0]
+                capaciteit = desc[0]
             except:
-                totalecapaciteit = "onbekend"
+                capaciteit = "onbekend"
             try:
                 snelheid = desc[4]
             except:
@@ -59,11 +59,11 @@ class inf_ssd(CrawlSpider):
                 "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
-                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                 "Create (c:ssd {naam:{namedb}, totalecapaciteit:{totalecapaciteit}, snelheid:{snelheid}})")
-                 inf_ssd = query_CreateComponentNode.execute(namedb=namedb, totalecapaciteit=totalecapaciteit,
-                 snelheid=snelheid)
-                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                 "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                 inf_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                 price=price, url=url)
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:ssd {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
+                inf_ssd = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
+                snelheid=snelheid)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                inf_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)

@@ -9,7 +9,7 @@ from py2neo import neo4j
 
 from Hardware.items import  HWItem
 
-class MemorySpider(CrawlSpider):
+class hw_ram(CrawlSpider):
     name = "hw_ram"
     allowed_domains = ["hardware.info"]
     start_urls = ["http://nl.hardware.info/productgroep/20/geheugenmodules"]
@@ -30,29 +30,49 @@ class MemorySpider(CrawlSpider):
             desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
             price = titles.select('td[@class="center"]/a/text()').extract()
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
-            print "== Adding Node to database =="
+
+            try:
+                capaciteit = ','.join(desc).split(",")[0]
+            except:
+                capaciteit = "onbekend"
+            try:
+                modules = ','.join(desc).split(",")[4]
+            except:
+                modules = "onbekend"
+            try:
+                ddr = ','.join(desc).split(",")[1]
+            except:
+                ddr = "onbekend"
+
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
-        
+
+            print "== Adding Node to database =="
+
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")
             hw_ram = query_CreateWebshopNode.execute(webshop=webshop)
 
-            query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                      "MERGE (c:werkgeheugen {naam:{namedb}})")
-            hw_ram = query_CreateComponentNode.execute(namedb=namedb)
+            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
+                                                      "match (c:werkgeheugen) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
+            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
+                matchCountNumber = record[0]
 
-            query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.modules={modules}, c.capaciteit={capaciteit}, c.timings={timings}")
-            hw_ram = query_GiveComponentProperties.execute(namedb=namedb, modules=modules,
-                                                         capaciteit=capaciteit, timings=timings)
-
-            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            hw_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-
-            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            hw_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                         price=price, url=url)
+            if matchCountNumber != 0:
+                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
+                "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                hw_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                hw_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
+            else:
+                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
+                "Create (c:werkgeheugen {naam:{namedb}, capaciteit:{capaciteit}, ddr:{ddr}, modules:{modules}})")
+                hw_ram = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
+                ddr=ddr, modules=modules)
+                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
+                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                hw_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
+                price=price, url=url)
