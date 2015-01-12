@@ -23,11 +23,14 @@ class inf_case(CrawlSpider):
         for titles in titles:
             webshop = 'Informatique'
             name = titles.xpath('div[@id="title"]/a/text()').extract()
-            url = titles.xpath('div[@id="title"]/a/@href').extract()
+            url_raw = titles.xpath('div[@id="title"]/a/@href').extract()
             component = 'behuizing'
             desc = titles.xpath('div[@id="description"]/ul/li/text()').extract()
-            price = titles.xpath('div[@id="price"]/text()').extract()
+            price_raw = titles.xpath('div[@id="price"]/text()').extract()
             #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
+
+            url = ''.join(url_raw).replace("[\"]\"","")
+            price = ''.join(price_raw).replace("[\"]\"","")
 
             try:
                 vormfactor = desc[0].strip();

@@ -2,35 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpukoel.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpukoel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpukoel.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpukoel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_hd.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_hd.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ssd.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ssd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Home/Moederbord_Stap2.cshtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/Opslag Model.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Home/Processor_Stap1.cshtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/SSDModels/SSD_Model.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Models/SSDModels/ViewModelSSD.cs" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Hardware\Hardware\spiders\hw_hd.py" afterPath="" />
+      <change type="DELETED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\Informatique\Informatique\spiders\inf_hd.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/HardDiskController.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/HardDiskController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/HomeController.cs" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Controllers/HomeController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/HardDisk/Index.cshtml" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/HardDisk/Index.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Home/Index.cshtml" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/Views/Home/Index.cshtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_hd.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_hd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" />
-      <change type="MOVED" beforePath="E:\Repositories Git Hub\pcbuild.com\Crawler\alternate\alternate\spiders\alt_hd.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_opslag.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/pcbuild.csproj" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/pcbuild.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,51 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="alt_opslag.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_opslag.py">
+      <file leaf-file-name="inf_case.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1343">
-              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_psu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="1258">
-              <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_ram.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="1241">
-              <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_soundcard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="986">
-              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_ssd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -107,48 +67,88 @@
       <file leaf-file-name="inf_cpu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1258">
-              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1309">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inf_case.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
+      <file leaf-file-name="inf_drive.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20457019" vertical-offset="373" max-vertical-offset="1292">
-              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1173">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_koel_case.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_koel_case.py">
+      <file leaf-file-name="inf_gfx.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1292">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_mb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py">
+      <file leaf-file-name="inf_mb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
-              <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1445">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alt_nwcard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py">
+      <file leaf-file-name="inf_opslag.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
-              <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="1462">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_psu.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1411">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_ram.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1326">
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_soundcard.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="986">
+              <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_ssd.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42546245" vertical-offset="0" max-vertical-offset="1258">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -162,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CasesSpider.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUCoolingSpider.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/CPUSpider.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/GPUSpider.py" />
@@ -178,40 +177,42 @@
         <option value="$PROJECT_DIR$/Informatique/Informatique/settings.py" />
         <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gpu.py" />
         <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py" />
-        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram_ddr.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_drive.py" />
-        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py" />
-        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_soundcard.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_hd.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpukoel.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_hd.py" />
-        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py" />
         <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ssd.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_hd.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_hd.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_hd.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py" />
+        <option value="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py" />
+        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py" />
+        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_cpukoel.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py" />
+        <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_opslag.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" />
       </list>
     </option>
   </component>
@@ -676,13 +677,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="680" max-vertical-offset="782">
-          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="799">
@@ -795,86 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1309">
-          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1122">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1122">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1241">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_hd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1360">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1394">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1360">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="1275">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="986">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
@@ -915,34 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1190">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1190">
           <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="1258">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_hd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="1173">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -955,34 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1411">
-          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1241">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_cpukoel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1190">
-          <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1207">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+        <state vertical-scroll-proportion="-26.137932" vertical-offset="364" max-vertical-offset="1241">
+          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -995,42 +861,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="1258">
+          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_tvcard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="1122">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_cpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1326">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_cpukoel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1275">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1292">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_gfx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1292">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_mb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
-          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1292">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_nwcard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1207">
-          <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1292">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_opslag.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1343">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1428">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_psu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="1258">
-          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="1343">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="1241">
-          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="1343">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1045,24 +975,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ssd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1224">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1309">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1258">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_soundcard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="986">
+          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20457019" vertical-offset="373" max-vertical-offset="1292">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="271" max-vertical-offset="1309">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="1173">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1292">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1445">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="148" max-vertical-offset="1462">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="1411">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1326">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42546245" vertical-offset="0" max-vertical-offset="1258">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
           <folding />
         </state>
       </provider>
