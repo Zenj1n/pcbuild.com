@@ -1,4 +1,4 @@
-﻿@model IEnumerable<pcbuild.Models.HardDiskModels.ViewModelHardDisk>
+﻿@model IEnumerable<pcbuild.Models.Opslag_Model>
 
 @{
     ViewBag.Title = "Behuizing";
@@ -21,13 +21,10 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.Harddisk_all.naam</td>
-            <td>@item.Behuizing_test.interfaces</td>
-            <td>@item.Behuizing_test.vormfactor</td>
-            <td>@item.Behuizing_test.vormvoeding</td>
-            <td>@item.Verkrijgbaar_test.prijs</td>
-            <td>@item.Verkrijgbaar_test.url</td>
-            <td>@item.Webshop_test.naam</td>
+            <td>@item.HD_V_ALL.Harddisk_all.naam</td>
+       </tr>
+        <tr>
+            <td>@item.SSD_V_ALL.SSD_all.naam</td>
         </tr>
     }
 </table>

@@ -192,8 +192,11 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MoederbordModels\Moederbord_Model.cs" />
     <Compile Include="Models\MoederbordModels\ViewModelMoederbord.cs" />
+    <Compile Include="Models\Opslag Model.cs" />
     <Compile Include="Models\ProcessorModels\Processor_Model.cs" />
     <Compile Include="Models\ProcessorModels\ViewModelProcessor.cs" />
+    <Compile Include="Models\SSDModels\SSD_Model.cs" />
+    <Compile Include="Models\SSDModels\ViewModelSSD.cs" />
     <Compile Include="Models\Verkrijgbaar_Model.cs" />
     <Compile Include="Models\BehuizingModels\ViewModelBehuizing.cs" />
     <Compile Include="Models\VideokaartModels\Videokaart_Model.cs" />
@@ -274,6 +277,8 @@
     <Content Include="Views\Werkgeheugen\Index.cshtml" />
     <Content Include="Views\HardDisk\Index.cshtml" />
     <Content Include="Views\Voeding\Index.cshtml" />
+    <Content Include="Views\Home\Processor_Stap1.cshtml" />
+    <Content Include="Views\Home\Moederbord_Stap2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

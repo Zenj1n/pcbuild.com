@@ -22,12 +22,15 @@ class inf_opslag(CrawlSpider):
         for titles in titles:
             webshop = 'Informatique'
             name = titles.select('div[@id="title"]/a/text()').extract()
-            url = titles.select('div[@id="title"]/a/@href').extract()
+            url_raw = titles.select('div[@id="title"]/a/@href').extract()
             component = 'opslag'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
-            price = titles.select('div[@id="price"]/text()').extract()
+            price_raw = titles.select('div[@id="price"]/text()').extract()
             type_raw = response.xpath('//*[@id="hdr"]/h1/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+
+            url = ''.join(url_raw).replace("[\"]\"","")
+            price = ''.join(price_raw).replace("[\"]\"","")
 
             type = ''.join(type_raw).replace("SATA Harddisks", "Harde schijf").replace("(Solid State Drive)", "").strip()
             try:
