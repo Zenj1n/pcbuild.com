@@ -32,15 +32,15 @@ class hw_gfx(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                gfx = ','.join(desc).split(",")[0]
+                gfx = ','.join(desc).split(",")[0].strip()
             except:
                 gfx = "onbekend"
             try:
-                geheugen = ','.join(desc).split(",")[4]
+                geheugen = ','.join(desc).split(",")[4].strip()
             except:
                 geheugen = "onbeklend"
             try:
-                slots = ','.join(desc).split(",")[2]
+                slots = ','.join(desc).split(",")[2].strip()
             except:
                 slots = "onbekend"
 

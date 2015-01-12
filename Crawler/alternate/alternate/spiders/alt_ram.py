@@ -34,8 +34,8 @@ class alt_ram_ddr(CrawlSpider):
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
             ddr  = response.xpath('//*[@id="pageContent"]/h1/text()').extract()
 
-            capaciteit = desc[0]
-            modules = desc[2]
+            capaciteit = desc[0].strip()
+            modules = desc[2].strip()
 
             price = euro + cent
 
@@ -57,7 +57,7 @@ class alt_ram_ddr(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.ddr = {ddr}, c.modules = {modules}")
-                alt_ram = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, ddr=ddr, modules=modules)
+                alt_ram = query_SetSpecifications.execute(namedb=namedb, capaciteit=capaciteit, ddr=ddr, modules=modules)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

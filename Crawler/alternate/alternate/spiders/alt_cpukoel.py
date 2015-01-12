@@ -30,9 +30,9 @@ class alt_cpukoel(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            socket = desc[0]
-            geluid = desc[1]
-            luchtverplaatsing = desc[2]
+            socket = desc[0].strip()
+            geluid = desc[1].strip()
+            luchtverplaatsing = desc[2].strip()
 
             price = euro + cent
 
@@ -54,7 +54,7 @@ class alt_cpukoel(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:cpukoeler) WHERE c.naam = {namedb} SET c.socket = {socket}, c.geluid = {geluid}, c.luchtverplaatsing = {luchtverplaatsing}")
-                alt_cpukoel = query_DeleteRelationships.execute(namedb=namedb, socket=socket, geluid=geluid, luchtverplaatsing=luchtverplaatsing)
+                alt_cpukoel = query_SetSpecifications.execute(namedb=namedb, socket=socket, geluid=geluid, luchtverplaatsing=luchtverplaatsing)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:cpukoeler)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_cpukoel = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

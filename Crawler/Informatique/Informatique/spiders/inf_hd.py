@@ -28,11 +28,11 @@ class inf_hd(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                capaciteit = desc[0]
+                capaciteit = desc[0].strip()
             except:
                 capiciteit = "onbekend"
             try:
-                snelheid = desc[2]
+                snelheid = desc[2].strip()
             except:
                 snelheid = "onbekend"
 

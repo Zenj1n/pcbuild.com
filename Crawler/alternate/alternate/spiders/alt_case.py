@@ -28,9 +28,9 @@ class alt_case(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            interfaces = desc[0];
-            vormfactor = desc[1];
-            vormvoeding = desc[2];
+            interfaces = desc[0].strip();
+            vormfactor = desc[1].strip();
+            vormvoeding = desc[2].strip();
 
             price = euro + cent
 
@@ -54,7 +54,7 @@ class alt_case(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:behuizing) WHERE c.naam = {namedb} SET c.interfaces = {interfaces}, c.vormfactor = {vormfactor}, c.vormvoeding = {vormvoeding}")
-                alt_case = query_DeleteRelationships.execute(namedb=namedb, interfaces=interfaces, vormfactor=vormfactor, vormvoeding=vormvoeding)
+                alt_case = query_SetSpecifications.execute(namedb=namedb, interfaces=interfaces, vormfactor=vormfactor, vormvoeding=vormvoeding)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

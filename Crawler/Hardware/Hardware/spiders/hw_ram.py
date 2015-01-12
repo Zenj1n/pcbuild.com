@@ -32,15 +32,15 @@ class hw_ram(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                capaciteit = ','.join(desc).split(",")[0]
+                capaciteit = ','.join(desc).split(",")[0].strip()
             except:
                 capaciteit = "onbekend"
             try:
-                modules = ','.join(desc).split(",")[4]
+                modules = ','.join(desc).split(",")[4].strip()
             except:
                 modules = "onbekend"
             try:
-                ddr = ','.join(desc).split(",")[1]
+                ddr = ','.join(desc).split(",")[1].strip()
             except:
                 ddr = "onbekend"
 

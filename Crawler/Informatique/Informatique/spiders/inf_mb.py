@@ -38,7 +38,7 @@ class inf_mb(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                vormfactor = desc[1]
+                vormfactor = desc[1].strip()
             except:
                 vormfactor = "onbekend"
             interfaces = "onbekend"

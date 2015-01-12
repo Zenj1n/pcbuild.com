@@ -33,12 +33,12 @@ class hw_case(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                vormfactor = ','.join(desc).split(",")[1];
+                vormfactor = ','.join(desc).split(",")[1].strip();
             except:
                 vormfactor = "unknown"
             interfaces = "onbekend"
             try:
-                vormvoeding = ','.join(desc).split(",")[4]
+                vormvoeding = ','.join(desc).split(",")[4].strip()
             except:
                 vormvoeding = "onbekend"
 

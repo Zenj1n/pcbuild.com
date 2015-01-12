@@ -33,8 +33,8 @@ class alt_ssd(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            capaciteit = desc[0]
-            snelheid = desc[1]
+            capaciteit = desc[0].strip()
+            snelheid = desc[1].strip()
 
             price = euro + cent
 
@@ -56,7 +56,7 @@ class alt_ssd(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:ssd) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
-                alt_ssd = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
+                alt_ssd = query_SetSpecifications.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:ssd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ssd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

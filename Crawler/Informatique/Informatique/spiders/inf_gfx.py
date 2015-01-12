@@ -29,11 +29,11 @@ class inf_gfx(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                gfx = desc[0]
+                gfx = desc[0].strip()
             except:
                 gfx = "onbekend"
             try:
-                geheugen = desc[1]
+                geheugen = desc[1].strip()
             except:
                 geheugen = "onbeklend"
             slots = "onbekend"

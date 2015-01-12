@@ -34,9 +34,9 @@ class alt_psu(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            vermogen = desc[0];
-            geluid = desc[1];
-            zuinigheid = desc[2];
+            vermogen = desc[0].strip();
+            geluid = desc[1].strip();
+            zuinigheid = desc[2].strip();
 
             price = euro + cent
 
@@ -58,7 +58,7 @@ class alt_psu(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:voeding) WHERE c.naam = {namedb} SET c.vermogen = {vermogen}, c.geluid = {geluid}, c.zuinigheid = {zuinigheid}")
-                alt_psu = query_DeleteRelationships.execute(namedb=namedb, vermogen=vermogen, geluid=geluid, zuinigheid=zuinigheid)
+                alt_psu = query_SetSpecifications.execute(namedb=namedb, vermogen=vermogen, geluid=geluid, zuinigheid=zuinigheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_psu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

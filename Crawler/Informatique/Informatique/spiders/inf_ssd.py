@@ -28,11 +28,11 @@ class inf_ssd(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                capaciteit = desc[0]
+                capaciteit = desc[0].strip()
             except:
                 capaciteit = "onbekend"
             try:
-                snelheid = desc[4]
+                snelheid = desc[4].strip()
             except:
                 snelheid = "onbekend"
 

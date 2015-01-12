@@ -31,9 +31,9 @@ class alt_mb(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            vormfactor = desc[0];
-            interfaces = desc[1];
-            socket = desc[2];
+            vormfactor = desc[0].strip();
+            interfaces = desc[1].strip();
+            socket = desc[2].strip();
 
             price = euro + cent
 
@@ -55,7 +55,7 @@ class alt_mb(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:moederbord) WHERE c.naam = {namedb} SET c.vormfactor = {vormfactor}, c.interfaces = {interfaces}, c.socket = {socket}")
-                alt_mb = query_DeleteRelationships.execute(namedb=namedb, vormfactor=vormfactor, interfaces=interfaces, socket=socket)
+                alt_mb = query_SetSpecifications.execute(namedb=namedb, vormfactor=vormfactor, interfaces=interfaces, socket=socket)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:moederbord)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_mb = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

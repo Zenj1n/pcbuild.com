@@ -32,8 +32,8 @@ class alt_koel_nwcard(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            snelheid = desc[0]
-            aansluitingen = desc[1]
+            snelheid = desc[0].strip()
+            aansluitingen = desc[1].strip()
 
             price = euro + cent
 
@@ -55,7 +55,7 @@ class alt_koel_nwcard(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:nwkaart) WHERE c.naam = {namedb} SET c.snelheid = {snelheid}, c.aansluitingen = {aansluitingen}")
-                alt_nwcard = query_DeleteRelationships.execute(namedb=namedb, snelheid=snelheid, aansluitingen=aansluitingen)
+                alt_nwcard = query_SetSpecifications.execute(namedb=namedb, snelheid=snelheid, aansluitingen=aansluitingen)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:nwkaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_nwcard = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

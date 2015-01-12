@@ -32,11 +32,11 @@ class inf_ram(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                capaciteit = desc[0]
+                capaciteit = desc[0].strip()
             except:
                 capaciteit = "onbekend"
             try:
-                modules = desc[2]
+                modules = desc[2].strip()
             except:
                 modules = "onbekend"
 
