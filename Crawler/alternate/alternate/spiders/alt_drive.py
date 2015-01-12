@@ -25,17 +25,22 @@ class alt_drive(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'optische drives'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
             lezen = desc[0].strip()
             schrijven = desc[1].strip()
             aansluiting = desc[2].strip()
 
-            price = euro + cent
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
