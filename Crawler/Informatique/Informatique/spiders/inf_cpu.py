@@ -29,11 +29,11 @@ class inf_cpu(CrawlSpider):
             # image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                socket = desc[2];
+                socket = desc[2].strip().replace("S","");
             except:
                 socket = "onbekend"
             try:
-                kloksnelheid = desc[3]
+                kloksnelheid = desc[3].strip()
             except:
                 kloksnelheid = "onbekend"
 

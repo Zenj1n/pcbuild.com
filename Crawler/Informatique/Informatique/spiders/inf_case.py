@@ -30,15 +30,15 @@ class inf_case(CrawlSpider):
             #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
             try:
-                vormfactor = desc[0];
+                vormfactor = desc[0].strip();
             except:
                 vormfactor = "onbekend"
             try:
-                interfaces = desc[1]
+                interfaces = desc[1].strip()
             except:
                 interfaces = "onbekend"
             try:
-                vormvoeding = desc[2]
+                vormvoeding = desc[2].strip()
             except:
                 vormvoeding = "onbekend"
 

@@ -1,6 +1,10 @@
 ﻿using Neo4jClient;
 using pcbuild.Models;
 using pcbuild.Models.ProcessorModels;
+using pcbuild.Models.MoederbordModels;
+using pcbuild.Models.VideokaartModels;
+using pcbuild.Models.WerkgeheugenModels;
+using pcbuild.Models.VoedingModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +42,7 @@ namespace pcbuild.Controllers
             return View();
         }
 
-        public ActionResult ProcessorStart()
+        public ActionResult Processor_Stap1()
         {
 
             //Connectie met database
@@ -54,6 +58,28 @@ namespace pcbuild.Controllers
                   Proccesor_m = n.As<Processor_Model>(),
                   Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
                   Webshop_m = p.As<Webshop_Model>(),
+              })
+              .Results;
+
+            return View(componenten_query);
+        }
+
+        public ActionResult Moederbord_Stap2()
+        {
+
+            //Connectie met database
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+
+            // Query om alle behuizingen op te halen
+            var componenten_query = client
+              .Cypher
+              .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
+              .Return((n, r, p) => new ViewModelMoederbord
+              {
+                  Moederbord_all = n.As<Moederbord_Model>(),
+                  Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
+                  Webshop_all = p.As<Webshop_Model>(),
               })
               .Results;
 

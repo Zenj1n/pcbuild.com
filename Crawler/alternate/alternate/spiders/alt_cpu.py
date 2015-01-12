@@ -31,9 +31,9 @@ class alt_cpu(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            kloksnelheid = desc[0];
-            kernen = desc[1];
-            socket = desc[2];
+            kloksnelheid = desc[0].strip();
+            kernen = desc[1].strip();
+            socket = desc[2].strip();
 
             price = euro + cent
 
@@ -56,7 +56,7 @@ class alt_cpu(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:processor) WHERE c.naam = {namedb} SET c.kloksnelheid = {kloksnelheid}, c.kernen = {kernen}, c.socket = {socket}")
-                alt_cpu = query_DeleteRelationships.execute(namedb=namedb, kloksnelheid=kloksnelheid, kernen=kernen, socket=socket)
+                alt_cpu = query_SetSpecifications.execute(namedb=namedb, kloksnelheid=kloksnelheid, kernen=kernen, socket=socket)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_cpu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

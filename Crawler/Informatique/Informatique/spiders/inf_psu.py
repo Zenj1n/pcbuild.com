@@ -27,12 +27,12 @@ class inf_psu(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             try:
-                vermogen = desc[1];
+                vermogen = desc[1].strip();
             except:
                 vermogen = "onbekend"
             geluid = "onbekend"
             try:
-                zuinigheid = desc[2]
+                zuinigheid = desc[2].strip()
             except:
                 zuinigheid = "onbekend"
 

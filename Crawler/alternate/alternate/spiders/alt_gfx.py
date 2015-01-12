@@ -37,9 +37,9 @@ class alt_gfx(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            gfx = desc[0]
-            geheugen = desc[1]
-            slots = desc[2]
+            gfx = desc[0].strip()
+            geheugen = desc[1].strip()
+            slots = desc[2].strip()
 
             price = euro + cent
 

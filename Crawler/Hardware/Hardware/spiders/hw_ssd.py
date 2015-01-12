@@ -31,11 +31,11 @@ class hw_ssd(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                capaciteit = ','.join(desc).split(",")[1]
+                capaciteit = ','.join(desc).split(",")[1].strip()
             except:
                 capaciteit = "onbekend"
             try:
-                snelheid = ','.join(desc).split(",")[2]
+                snelheid = ','.join(desc).split(",")[2].strip()
             except:
                 snelheid = "onbekend"
 

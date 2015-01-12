@@ -32,7 +32,7 @@ class hw_cpukoel(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                socket = ','.join(desc).split(",")[0], ','.join(desc).split(",")[1]
+                socket = ','.join(desc).split(",")[0], ','.join(desc).split(",")[1].strip()
             except:
                 socket = "onbekend"
             geluid = "onbekend"

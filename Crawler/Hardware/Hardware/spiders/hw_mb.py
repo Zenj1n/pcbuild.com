@@ -32,12 +32,12 @@ class hw_mb(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                vormfactor = ','.join(desc).split(",")[0]
+                vormfactor = ','.join(desc).split(",")[0].strip()
             except:
                 vormfactor = "onbekend"
             interfaces = "onbekend"
             try:
-                socket = ','.join(desc).split(",")[1]
+                socket = ','.join(desc).split(",")[1].strip()
             except:
                 socket = "onbekend"
 

@@ -31,9 +31,9 @@ class alt_drive(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            lezen = desc[0]
-            schrijven = desc[1]
-            aansluiting = desc[2]
+            lezen = desc[0].strip()
+            schrijven = desc[1].strip()
+            aansluiting = desc[2].strip()
 
             price = euro + cent
 
@@ -55,7 +55,7 @@ class alt_drive(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:optischedrive) WHERE c.naam = {namedb} SET c.lezen = {lezen}, c.schrijven = {schrijven}, c.aansluiting = {aansluiting}")
-                alt_drive = query_DeleteRelationships.execute(namedb=namedb, lezen=lezen, schrijven=schrijven, aansluiting=aansluiting)
+                alt_drive = query_SetSpecifications.execute(namedb=namedb, lezen=lezen, schrijven=schrijven, aansluiting=aansluiting)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:optischedrive)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_drive = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
