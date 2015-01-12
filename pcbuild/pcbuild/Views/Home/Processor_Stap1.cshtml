@@ -20,15 +20,23 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Proccesor_m.naam</td>
-            <td>@item.Proccesor_m.socket</td>
-            <td>@item.Proccesor_m.kernen</td>
-            <td>@item.Proccesor_m.kloksnelheid</td>
-            <td>@item.Verkrijgbaar_m.prijs</td>
-            <td>@item.Verkrijgbaar_m.url</td>
-            <td>@item.Webshop_m.naam</td>
-        </tr>
+        if (item.Verkrijgbaar_m.prijs != null)
+        {
+            string test;
+            test = item.Verkrijgbaar_m.prijs;
+            item.Verkrijgbaar_m.prijs.Trim(new Char[] { '[', ']','"'});
+
+            <tr>
+                <td>@item.Proccesor_m.naam</td>
+                <td>@item.Proccesor_m.socket</td>
+                <td>@item.Proccesor_m.kernen</td>
+                <td>@item.Proccesor_m.kloksnelheid</td>
+                <td>@item.Verkrijgbaar_m.prijs</td>
+                <td>@item.Verkrijgbaar_m.url</td>
+                <td>@item.Webshop_m.naam</td>
+            </tr>
+        };
+     
     }
     <a href="@Url.Action("Moederbord_Stap2", "Home")">
         <button id="Volgende_Stap2" type="button">Volgende Stap</button>
