@@ -38,6 +38,8 @@ namespace pcbuild.Controllers
               })
               .Results;
 
+            Debug.WriteLine(componenten_query);
+
             return View(componenten_query);
         }
     }
