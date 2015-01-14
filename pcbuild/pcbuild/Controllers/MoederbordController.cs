@@ -27,25 +27,23 @@ namespace pcbuild.Controllers
             Debug.WriteLine(socket);
             Debug.WriteLine(prijs);
 
-
-
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om alle Moederborden op te halen
-            var componenten_query = client
-              .Cypher
-              .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
-              .Return((n, r, p) => new ViewModelMoederbord
-              {
-                  Moederbord_all = n.As<Moederbord_Model>(),
-                  Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
-                  Webshop_all = p.As<Webshop_Model>(),
-              })
-              .Results;
-            
-            return View(componenten_query);
+                   var componenten_query = client
+                  .Cypher
+                  .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
+                  .Where((Moederbord_Model n) => n.socket == socket)
+                  .Return((n, r, p) => new ViewModelMoederbord
+                  {
+                     Moederbord_all = n.As<Moederbord_Model>(),
+                     Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
+                     Webshop_all = p.As<Webshop_Model>(),
+                  })
+                 .Results;
+
+                 return View(componenten_query);
+            }
         }
-    }
 }
