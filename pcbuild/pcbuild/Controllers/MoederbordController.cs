@@ -20,8 +20,15 @@ namespace pcbuild.Controllers
     public class MoederbordController : Controller
     {
         // GET: Moederbord
-        public ActionResult Index()
+        public ActionResult Index(string processor, string socket, string prijs)
         {
+
+            Debug.WriteLine(processor);
+            Debug.WriteLine(socket);
+            Debug.WriteLine(prijs);
+
+
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();

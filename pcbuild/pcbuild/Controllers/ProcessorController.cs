@@ -47,7 +47,7 @@ namespace pcbuild.Controllers
 
         public ActionResult Voeg_Toe_Processor(String naam_lijst)
         {
-            
+            return null;
         }
 
     }

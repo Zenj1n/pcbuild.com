@@ -40,6 +40,7 @@
             <td>@item.Verkrijgbaar_m.url</td>
             <td>@item.Webshop_m.naam</td>
             <td>@Html.ActionLink("Voeg Toe", "Index","Moederbord", new { naam_lijst = item.Proccesor_m.naam})</td>
+            <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs'> KIES </a></td>
         </tr>
     }
 
@@ -49,7 +50,7 @@
 
 
     <a href="@Url.Action("Index", "Moederbord")">
-        <button id="Volgende_Stap2" type="button">Volgende Stap</button>
+       test
     </a>
 
 
