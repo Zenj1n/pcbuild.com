@@ -11,5 +11,6 @@ namespace pcbuild.Models.MoederbordModels
         public string socket { get; set; }
         public string vormfactor { get; set; }
         public string interfaces { get; set; }
+        public string ddr { get; set; }
     }
 }

@@ -21,9 +21,9 @@
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
         <td>Naam</td>
-        <td>interfaces</td>
-        <td>vormfactor</td>
-        <td>vormvoeding</td>
+        <td>Socket</td>
+        <td>Kernen</td>
+        <td>Kloksnelheid</td>
         <td>Prijs</td>
 
     </tr>
@@ -36,8 +36,6 @@
             <td>@item.Proccesor_m.kernen</td>
             <td>@item.Proccesor_m.kloksnelheid</td>
             <td>@item.Verkrijgbaar_m.prijs</td>
-            <!--<td>@item.Verkrijgbaar_m.url</td>
-            <td>@item.Webshop_m.naam</td>-->
             <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs'> KIES </a></td>
         </tr>
     }
