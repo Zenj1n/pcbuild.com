@@ -1,11 +1,10 @@
-import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
-from py2neo import rel, node
 from py2neo import neo4j
 
-from alternate.items import AlternateItem
+import csv
+import datetime
 
 
 class alt_koel(CrawlSpider):

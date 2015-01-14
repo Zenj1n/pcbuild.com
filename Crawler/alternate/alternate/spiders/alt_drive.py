@@ -1,11 +1,7 @@
-import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
-from py2neo import rel, node
 from py2neo import neo4j
-
-from alternate.items import AlternateItem
 
 
 class alt_drive(CrawlSpider):
@@ -19,6 +15,8 @@ class alt_drive(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
 
     def parse_start_url(self, response):
+        now = datetime.datetime.now()
+        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv", "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
@@ -37,7 +35,10 @@ class alt_drive(CrawlSpider):
             schrijven = desc[1].strip()
             aansluiting = desc[2].strip()
 
-            euro = ''.join(euro_raw)
+            euro_raw = ''.join(euro_raw)
+            euro = euro_raw[1:]
+            cent_raw = ''.join(cent_raw)
+            cent = cent_raw[:-1]
             cent = ''.join(cent_raw)
             price_raw = euro + cent
             price = price_raw.replace("[\"]\"*", "")
@@ -76,3 +77,7 @@ class alt_drive(CrawlSpider):
                 "MATCH (c:optischedrive), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_drive = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(now), name, price])

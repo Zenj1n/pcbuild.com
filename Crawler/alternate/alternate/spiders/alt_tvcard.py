@@ -1,11 +1,7 @@
-import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
-from py2neo import rel, node
 from py2neo import neo4j
-
-from alternate.items import AlternateItem
 
 
 class alt_tvcard(CrawlSpider):
@@ -66,3 +62,7 @@ class alt_tvcard(CrawlSpider):
                  "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                  alt_tvcard = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                  price=price, url=url)
+
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(now), name, price])
