@@ -32,6 +32,7 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+              .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
               .Return((n, r, p) => new ViewModelProcessor
               {
                   Proccesor_m = n.As<Processor_Model>(),
