@@ -20,14 +20,20 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.Videokaart_all.naam/td>
-            <td>@item.Videokaart_all.gfx</td>
-            <td>@item.Videokaart_all.geheugen</td>
-            <td>@item.Videokaart_all.slots<td>
-            <td>@item.Verkrijgbaar_all.prijs</td>
-            <td>@item.Verkrijgbaar_all.url</td>
-            <td>@item.Webshop_all.naam</td>
+         <tr>
+             <td>@item.Videokaart_all.naam</td>
+             <td>@item.Videokaart_all.gfx</td>
+             <td>@item.Videokaart_all.geheugen</td>
+             <td>@item.Videokaart_all.slots</td>
+             <td>@item.Verkrijgbaar_all.prijs</td>
+             <td>@item.Verkrijgbaar_all.url</td>
+             <td>@item.Webshop_all.naam</td>
         </tr>
-    }
+        }
+ 
+   
+
 </table>
+<a href="@Url.Action("Index", "Werkgeheugen")">
+    <button id="Volgende_Stap4" type="button">Volgende Stap</button>
+</a>
