@@ -5,7 +5,17 @@
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Videokaarten</h2>
+<ol class="progtrckr" data-progtrckr-steps="7">
+       <li class="progtrckr-current">Processor</li><!--
+    --><li class="progtrckr-todo">Moederbord</li><!--
+    --><li class="progtrckr-todo">Videokaart</li><!--
+    --><li class="progtrckr-todo">Werkgeheugen</li><!--
+    --><li class="progtrckr-todo">Behuizing</li><!--
+    --><li class="progtrckr-todo">Opslag</li><!--
+    --><li class="progtrckr-todo">Voeding</li>
+</ol>
+
+<div style="border: 1px solid black"> <center> FILTERS </center> </div>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -14,7 +24,6 @@
         <td>Geheugen</td>
         <td>Slots</td>
         <td>Prijs</td>
-        <td>Link</td>
         <td>Webshop</td>
     </tr>
 
@@ -26,7 +35,6 @@
              <td>@item.Videokaart_all.geheugen</td>
              <td>@item.Videokaart_all.slots</td>
              <td>@item.Verkrijgbaar_all.prijs</td>
-             <td>@item.Verkrijgbaar_all.url</td>
              <td>@item.Webshop_all.naam</td>
         </tr>
         }
@@ -34,6 +42,57 @@
    
 
 </table>
-<a href="@Url.Action("Index", "Werkgeheugen")">
-    <button id="Volgende_Stap4" type="button">Volgende Stap</button>
-</a>
+
+
+<div style="border: 1px solid black">
+
+    Uw Lijst
+
+    @if (Request.Cookies["processor_cookie"] != null)
+    {
+
+        <table style="border: 1px solid black">
+            <tr>
+                <td>Component</td>
+                <td>Prijs</td>
+            </tr>
+
+            <tr>
+                <td>@Request.Cookies["processor_cookie"].Value</td>
+                <td>@Request.Cookies["processorprijs_cookie"].Value</td>
+            </tr>
+
+            <tr>
+                <td>@Request.Cookies["moederbord_cookie"].Value</td>
+                <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["videokaart_cookie"].Value</td>
+                <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
+                <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["behuizing_cookie"].Value</td>
+                <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["opslag_cookie"].Value</td>
+                <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["voeding_cookie"].Value</td>
+                <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
+            </tr>
+
+        </table>
+
+    }
+    else
+    {
+        <center> ERROR - Zet cookies aan om gebruik te maken van de lijst!  </center>
+    }
+
+</div>

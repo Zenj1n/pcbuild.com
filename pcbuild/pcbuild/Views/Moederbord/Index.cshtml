@@ -5,7 +5,29 @@
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Moederbord</h2>
+<ol class="progtrckr" data-progtrckr-steps="7">
+    <li class="progtrckr-current">Processor</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Moederbord</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Videokaart</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Werkgeheugen</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Behuizing</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Opslag</li>
+    <!--
+    -->
+    <li class="progtrckr-todo">Voeding</li>
+</ol>
+
+<div style="border: 1px solid black"> <center> FILTERS </center> </div>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -14,7 +36,6 @@
         <td>vormfactor</td>
         <td>interfaces</td>
         <td>Prijs</td>
-        <td>url</td>
         <td>webshop</td>
     </tr>
 
@@ -26,9 +47,7 @@
             <td>@item.Moederbord_all.vormfactor</td>
             <td>@item.Moederbord_all.interfaces</td>
             <td>@item.Verkrijgbaar_all.prijs</td>
-            <td>@item.Verkrijgbaar_all.url</td>
             <td>@item.Webshop_all.naam</td>
-            <td><a href='/Werkgeheugen/Index?ddr=@item.Moederbord_all.ddr'> KIES </a></td>
         </tr>
     }
 </table>
