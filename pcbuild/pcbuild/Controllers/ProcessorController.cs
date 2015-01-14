@@ -19,6 +19,8 @@ namespace pcbuild.Controllers
 {
     public class ProcessorController : Controller
     {
+        static ViewModelProcessor test = new ViewModelProcessor();
+
         // GET: Processor
         public ActionResult Index()
         {
@@ -42,5 +44,11 @@ namespace pcbuild.Controllers
 
             return View(componenten_query);
         }
+
+        public ActionResult Voeg_Toe_Processor(String naam_lijst)
+        {
+            
+        }
+
     }
 }

@@ -26,7 +26,7 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om alle behuizingen op te halen
+            // Query om alle Moederborden op te halen
             var componenten_query = client
               .Cypher
               .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
@@ -37,7 +37,7 @@ namespace pcbuild.Controllers
                   Webshop_all = p.As<Webshop_Model>(),
               })
               .Results;
-
+            
             return View(componenten_query);
         }
     }

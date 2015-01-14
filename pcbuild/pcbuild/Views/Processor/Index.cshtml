@@ -39,6 +39,7 @@
             <td>@item.Verkrijgbaar_m.prijs</td>
             <td>@item.Verkrijgbaar_m.url</td>
             <td>@item.Webshop_m.naam</td>
+            <td>@Html.ActionLink("Voeg Toe", "Index","Moederbord", new { naam_lijst = item.Proccesor_m.naam})</td>
         </tr>
     }
 
