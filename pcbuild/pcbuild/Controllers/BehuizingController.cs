@@ -20,7 +20,7 @@ namespace pcbuild.Controllers
     {
         // GET: Behuizing
         public ActionResult Index()
-        {
+        {        
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
