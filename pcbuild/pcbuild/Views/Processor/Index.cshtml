@@ -25,8 +25,7 @@
         <td>Kernen</td>
         <td>Kloksnelheid</td>
         <td>Prijs</td>
-        <td>url</td>
-        <td>webshop</td>
+
     </tr>
 
     @foreach (var item in Model)
@@ -37,19 +36,62 @@
             <td>@item.Proccesor_m.kernen</td>
             <td>@item.Proccesor_m.kloksnelheid</td>
             <td>@item.Verkrijgbaar_m.prijs</td>
-            <td>@item.Verkrijgbaar_m.url</td>
-            <td>@item.Webshop_m.naam</td>
             <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs'> KIES </a></td>
         </tr>
     }
 
 </table>
 
-<div style="border: 1px solid black"> <center> LIJST </center> </div>
+<div style="border: 1px solid black">
 
+    Uw Lijst
 
-    <a href="@Url.Action("Index", "Moederbord")">
-       test
-    </a>
+    @if (Request.Cookies["processor_cookie"] != null)
+    {
+
+        <table style="border: 1px solid black">
+            <tr>
+                <td>Component</td>
+                <td>Prijs</td>
+            </tr>
+
+            <tr>
+                <td>@Request.Cookies["processor_cookie"].Value</td>
+                <td>@Request.Cookies["processorprijs_cookie"].Value</td>
+            </tr>
+
+            <tr>
+                <td>@Request.Cookies["moederbord_cookie"].Value</td>
+                <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["videokaart_cookie"].Value</td>
+                <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
+                <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["behuizing_cookie"].Value</td>
+                <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["opslag_cookie"].Value</td>
+                <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td>@Request.Cookies["voeding_cookie"].Value</td>
+                <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
+            </tr>
+
+        </table>
+
+    }
+    else { 
+    <center> ERROR - Zet cookies aan om gebruik te maken van de lijst!  </center> 
+}
+
+</div>
 
 
