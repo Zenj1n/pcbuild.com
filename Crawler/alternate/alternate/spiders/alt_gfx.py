@@ -18,7 +18,8 @@ class alt_gfx(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
 
     def parse_start_url(self, response):
-        now = datetime.datetime.now()
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
         f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv", "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
@@ -43,7 +44,8 @@ class alt_gfx(CrawlSpider):
             cent_raw = ''.join(cent_raw)
             cent = cent_raw[:-1]
             price_raw = euro + cent
-            price = price_raw.replace("[\"]\"*", "")
+            price_raw2 = price_raw.replace("[\"]\"*", "").strip();
+            price = price_raw2.replace("-","00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -82,4 +84,4 @@ class alt_gfx(CrawlSpider):
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')
-            a.writerow([str(now), name, price])
+            a.writerow([str(date), name, price])
