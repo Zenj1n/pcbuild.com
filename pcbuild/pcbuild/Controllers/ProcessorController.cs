@@ -41,6 +41,14 @@ namespace pcbuild.Controllers
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
             HttpCookie voedingprijs_cookie = new HttpCookie("voedingprijs_cookie");
 
+            HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
+            HttpCookie moederbordwebshop_cookie = new HttpCookie("moederbordwebshop_cookie");
+            HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
+            HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
+            HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
+            HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
+            HttpCookie voedingwebshop_cookie = new HttpCookie("voedingwebshop_cookie");
+
             //voeg data toe aan cookies
             processor_cookie.Value = "Geen processor toegevoegd.";
             moederbord_cookie.Value = "Geen moederbord toegevoegd.";
@@ -58,6 +66,14 @@ namespace pcbuild.Controllers
             opslagprijs_cookie.Value = "€ 0,-";
             voedingprijs_cookie.Value = "€ 0,-";
 
+            processorwebshop_cookie.Value = "Webshop onbekend.";
+            moederbordwebshop_cookie.Value = "Webshop onbekend.";
+            videokaartwebshop_cookie.Value = "Webshop onbekend."; ;
+            werkgeheugenwebshop_cookie.Value = "Webshop onbekend.";
+            behuizingwebshop_cookie.Value = "Webshop onbekend.-";
+            opslagwebshop_cookie.Value = "€Webshop onbekend.";
+            voedingwebshop_cookie.Value = "Webshop onbekend.";
+
             //save the cookies!!!
             Response.Cookies.Add(processor_cookie);
             Response.Cookies.Add(moederbord_cookie);
@@ -74,6 +90,14 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(behuizingprijs_cookie);
             Response.Cookies.Add(opslagprijs_cookie);
             Response.Cookies.Add(voedingprijs_cookie);
+
+            Response.Cookies.Add(processorwebshop_cookie);
+            Response.Cookies.Add(moederbordwebshop_cookie);
+            Response.Cookies.Add(videokaartwebshop_cookie);
+            Response.Cookies.Add(werkgeheugenwebshop_cookie);
+            Response.Cookies.Add(behuizingwebshop_cookie);
+            Response.Cookies.Add(opslagwebshop_cookie);
+            Response.Cookies.Add(voedingwebshop_cookie);
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

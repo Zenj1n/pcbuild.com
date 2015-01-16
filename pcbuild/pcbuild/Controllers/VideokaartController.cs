@@ -21,8 +21,32 @@ namespace pcbuild.Controllers
     public class VideokaartController : Controller
     {
         // GET: Videokaart
-        public ActionResult Index()
+        public ActionResult Index(string moederbord, string prijs, string webshop, string vormfactor, string ddr)
         {
+            //Maak cookie arrays
+            HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");
+            HttpCookie moederbordprijs_cookie = new HttpCookie("moederbordprijs_cookie");
+            HttpCookie moederbordwebshop_cookie = new HttpCookie("moederbordwebshop_cookie");
+
+            HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
+            HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+
+            //voeg data toe aan cookies
+            moederbord_cookie.Value = moederbord;
+            moederbordprijs_cookie.Value = prijs;
+            moederbordwebshop_cookie.Value = webshop;
+
+            moederbordvormfactor_cookie.Value = vormfactor;
+            moederbordddr_cookie.Value = ddr;
+
+            //save the cookies!!!
+            Response.Cookies.Add(moederbord_cookie);
+            Response.Cookies.Add(moederbordprijs_cookie);
+            Response.Cookies.Add(moederbordwebshop_cookie);
+
+            Response.Cookies.Add(moederbordvormfactor_cookie);
+            Response.Cookies.Add(moederbordddr_cookie);
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();

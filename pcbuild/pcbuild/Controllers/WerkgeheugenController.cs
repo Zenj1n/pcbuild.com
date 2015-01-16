@@ -20,8 +20,23 @@ namespace pcbuild.Controllers
     public class WerkgeheugenController : Controller
     {
         // GET: Werkgeheugen
-        public ActionResult Index()
+        public ActionResult Index(string videokaart, string prijs, string webshop)
         {
+            //Maak cookie arrays
+            HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
+            HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
+            HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
+
+            //voeg data toe aan cookies
+            videokaart_cookie.Value = videokaart;
+            videokaartprijs_cookie.Value = prijs;
+            videokaartwebshop_cookie.Value = webshop;
+
+            //save the cookies!!!
+            Response.Cookies.Add(videokaart_cookie);
+            Response.Cookies.Add(videokaartprijs_cookie);
+            Response.Cookies.Add(videokaartwebshop_cookie);
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
