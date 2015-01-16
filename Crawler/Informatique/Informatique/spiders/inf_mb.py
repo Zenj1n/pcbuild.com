@@ -88,3 +88,7 @@ class inf_mb(CrawlSpider):
                 "MATCH (c:moederbord), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_mb = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])

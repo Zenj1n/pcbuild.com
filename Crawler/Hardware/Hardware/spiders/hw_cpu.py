@@ -40,36 +40,17 @@ class hw_cpu(CrawlSpider):
             except:
                 kloksnelheid = "onbekend"
 
-            kernen = "onbekend"
+            try:
+                kernen = ','.join(desc).split(",")[2].strip()
+            except:
+                kernen  = "onbekend"
+
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
             print "== Adding Node to database =="
 
-            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
-            hw_cpu = query_CreateWebshopNode.execute(webshop=webshop)
-
-            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
-            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
-            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
-                matchCountNumber = record[0]
-
-            if matchCountNumber != 0:
-                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-                hw_cpu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
-            else:
-                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
-                hw_cpu = query_CreateComponentNode.execute(namedb=namedb, kloksnelheid=kloksnelheid,
-                socket=socket, kernen=kernen)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+            query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
+            "MATCH (c:processor)  WHERE c.naam = {namedb} SET c.kloksnelheid = {kloksnelheid}, c.kernen = {kernen}")
+            hw_cpu = query_VoegSpecificatiesToe.execute(namedb=namedb, kloksnelheid=kloksnelheid, kernen = kernen)

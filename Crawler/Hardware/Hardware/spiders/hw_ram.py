@@ -43,6 +43,10 @@ class hw_ram(CrawlSpider):
                 ddr = ','.join(desc).split(",")[1].strip()
             except:
                 ddr = "onbekend"
+            try:
+                cl =  ','.join(desc).split(",")[5].strip()
+            except:
+                cl = "onbekend"
 
 
             namesplit = ''.join(name).split(",")
@@ -50,29 +54,6 @@ class hw_ram(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
-            hw_ram = query_CreateWebshopNode.execute(webshop=webshop)
-
-            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:werkgeheugen) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
-            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
-            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
-                matchCountNumber = record[0]
-
-            if matchCountNumber != 0:
-                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-                hw_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
-            else:
-                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:werkgeheugen {naam:{namedb}, capaciteit:{capaciteit}, ddr:{ddr}, modules:{modules}})")
-                hw_ram = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
-                ddr=ddr, modules=modules)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+            query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
+            "MATCH (c:werkgeheugen)  WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.modules = {modules}, c.ddr = {ddr}, c.cl = {cl}")
+            hw_ram = query_VoegSpecificatiesToe.execute(namedb=namedb, capaciteit=capaciteit, modules = modules, ddr=ddr, cl = cl)
