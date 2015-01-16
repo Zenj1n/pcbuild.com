@@ -1,7 +1,6 @@
 scrapy crawl alt_cpu
 scrapy crawl alt_case
 scrapy crawl alt_drive
-scrapy crawl alt_cpu
 scrapy crawl alt_gfx
 scrapy crawl alt_hd
 scrapy crawl alt_mb
