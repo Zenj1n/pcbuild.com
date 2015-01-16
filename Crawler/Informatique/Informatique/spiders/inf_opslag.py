@@ -81,11 +81,6 @@ class inf_opslag(CrawlSpider):
                 inf_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
 
-            query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                      "MATCH (c:hd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-            inf_opslag = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-
-            query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-            inf_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                         price=price, url=url)
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])

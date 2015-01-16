@@ -48,29 +48,6 @@ class hw_opslag(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
-            hw_opslag = query_CreateWebshopNode.execute(webshop=webshop)
-
-            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:hd) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
-            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
-            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
-                matchCountNumber = record[0]
-
-            if matchCountNumber != 0:
-                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-                hw_opslag = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
-            else:
-                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:opslag {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}, type:{type}})")
-                hw_opslag = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
-                snelheid=snelheid, type=type)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+            query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
+            "MATCH (c:opslag)  WHERE c.naam = {namedb} SET c.type = {type}, c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
+            hw_opslag = query_VoegSpecificatiesToe.execute(namedb=namedb, type=type, capaciteit = capaciteit, snelheid=snelheid)

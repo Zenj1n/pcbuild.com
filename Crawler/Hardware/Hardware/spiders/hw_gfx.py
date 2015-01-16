@@ -40,38 +40,19 @@ class hw_gfx(CrawlSpider):
             except:
                 geheugen = "onbeklend"
             try:
-                slots = ','.join(desc).split(",")[2].strip()
+                aansluiting = ','.join(desc).split(",")[2].strip()
             except:
-                slots = "onbekend"
+                aansluiting = "onbekend"
+            try:
+                kloksnelheid = ','.join(desc).split(",")[3].strip()
+            except:
+                kloksnelheid = "onbekend"
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
         
             print "== Adding Node to database =="
 
-            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
-            hw_gfx = query_CreateWebshopNode.execute(webshop=webshop)
-
-            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:videokaart) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
-            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
-            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
-                matchCountNumber = record[0]
-
-            if matchCountNumber != 0:
-                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-                hw_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
-            else:
-                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
-                hw_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
-                geheugen=geheugen, slots=slots)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+            query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
+            "MATCH (c:videokaart)  WHERE c.naam = {namedb} SET c.aansluiting = {aansluiting}, c.geheugen = {geheugen}, c.kloksnelheid = {kloksnelheid}")
+            hw_gfx = query_VoegSpecificatiesToe.execute(namedb=namedb, aansluiting=aansluiting, geheugen = geheugen, kloksnelheid=kloksnelheid)
