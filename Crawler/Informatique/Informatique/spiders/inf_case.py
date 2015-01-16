@@ -1,3 +1,5 @@
+import csv
+import datetime
 import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -17,6 +19,10 @@ class inf_case(CrawlSpider):
     )
 
     def parse_start_url(self, response):
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
+        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv",
+                 "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = Selector(response)
         titles = hxs.xpath('//ul[@id="detailview"]/li')
@@ -30,7 +36,8 @@ class inf_case(CrawlSpider):
             #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
-            price = ''.join(price_raw).replace("[\"]\"","")
+            price = ''.join(price_raw)[1:].replace("[\"]\"*", "").strip();
+
 
             try:
                 vormfactor = desc[0].strip();
@@ -46,6 +53,7 @@ class inf_case(CrawlSpider):
                 vormvoeding = "onbekend"
 
             kernen = "onbekend"
+
 
 
             namesplit = ''.join(name).split(",")

@@ -1,3 +1,6 @@
+import csv
+import datetime
+
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
@@ -16,6 +19,10 @@ class inf_opslag(CrawlSpider):
     )
 
     def parse_start_url(self, response):
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
+        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv",
+                 "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//ul[@id="detailview"]/li')
@@ -30,7 +37,7 @@ class inf_opslag(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
-            price = ''.join(price_raw).replace("[\"]\"","")
+            price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             type = ''.join(type_raw).replace("SATA Harddisks", "Harde schijf").replace("(Solid State Drive)", "").strip()
             try:
