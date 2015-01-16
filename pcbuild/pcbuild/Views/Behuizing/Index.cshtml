@@ -6,11 +6,11 @@
 }
 
 <ol class="progtrckr" data-progtrckr-steps="7">
-       <li class="progtrckr-current">Processor</li><!--
-    --><li class="progtrckr-todo">Moederbord</li><!--
-    --><li class="progtrckr-todo">Videokaart</li><!--
-    --><li class="progtrckr-todo">Werkgeheugen</li><!--
-    --><li class="progtrckr-todo">Behuizing</li><!--
+       <li class="progtrckr-done">Processor</li><!--
+    --><li class="progtrckr-done">Moederbord</li><!--
+    --><li class="progtrckr-done">Videokaart</li><!--
+    --><li class="progtrckr-done">Werkgeheugen</li><!--
+    --><li class="progtrckr-current">Behuizing</li><!--
     --><li class="progtrckr-todo">Opslag</li><!--
     --><li class="progtrckr-todo">Voeding</li>
 </ol>
@@ -24,6 +24,7 @@
         <td>vormfactor</td>
         <td>vormvoeding</td>
         <td>Prijs</td>
+        <td>webshop</td>
     </tr>
 
     @foreach (var item in Model)
@@ -33,7 +34,8 @@
             <td>@item.Behuizing_test.interfaces</td>
             <td>@item.Behuizing_test.vormfactor</td>
             <td>@item.Behuizing_test.vormvoeding</td>
-            <td>@item.Verkrijgbaar_test.prijs</td>           
+            <td>@item.Verkrijgbaar_test.prijs</td>      
+            <td>@item.Webshop_test.naam</td>     
         </tr>
     }
 </table>
