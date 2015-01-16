@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Behuizingen</h2>
+<h2>Voedingen</h2>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -31,3 +31,7 @@
         </tr>
     }
 </table>
+
+<a href="@Url.Action("Index", "PrintLijst")">
+    <button id="Volgende_Stap8" type="button">Volgende Stap</button>
+</a>

@@ -13,13 +13,7 @@ class alt_gfx(CrawlSpider):
     allowed_domains = ["alternate.nl"]
     start_urls = [
         "http://www.alternate.nl/html/product/listing.html?navId=11606&bgid=11369&tk=7&lk=9374",
-        "http://www.alternate.nl/html/product/listing.html?navId=1358&tk=7&lk=9372",
-        "http://www.alternate.nl/html/product/listing.html?navId=11608&bgid=10846&tk=7&lk=9365",
-        "http://www.alternate.nl/html/product/listing.html?navId=14655&bgid=8985&tk=7&lk=9599",
-        "http://www.alternate.nl/html/product/listing.html?navId=1360&tk=7&lk=9381",
-        "http://www.alternate.nl/html/product/listing.html?navId=17232&tk=7&lk=9382",
-        "http://www.alternate.nl/html/product/listing.html?navId=1362&tk=7&lk=9361"
-
+        "http://www.alternate.nl/html/product/listing.html?navId=11608&bgid=10846&tk=7&lk=9365"
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
@@ -31,17 +25,22 @@ class alt_gfx(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'videokaart'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            gfx = desc[0]
-            geheugen = desc[1]
-            slots = desc[2]
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
-            price = euro + cent
+            gfx = desc[0].strip()
+            geheugen = desc[1].strip()
+            slots = desc[2].strip()
+
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -61,7 +60,7 @@ class alt_gfx(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:videokaart) WHERE c.naam = {namedb} SET c.gfx = {gfx}, c.geheugen = {geheugen}, c.slots = {slots}")
-                alt_gfx = query_DeleteRelationships.execute(namedb=namedb, gfx=gfx, geheugen=geheugen, slots=slots)
+                alt_gfx = query_SetSpecifications.execute(namedb=namedb, gfx=gfx, geheugen=geheugen, slots=slots)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

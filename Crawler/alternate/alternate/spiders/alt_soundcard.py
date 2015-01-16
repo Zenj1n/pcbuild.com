@@ -30,9 +30,9 @@ class alt_soundcard(CrawlSpider):
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            interface = desc[0]
-            geluidschip = desc[1]
-            aansluitingen = desc[2]
+            interface = desc[0].strip()
+            geluidschip = desc[1].strip()
+            aansluitingen = desc[2].strip()
 
             price = euro + cent
 

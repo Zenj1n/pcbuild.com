@@ -20,19 +20,22 @@ class inf_psu(CrawlSpider):
         for titles in titles:
             webshop = 'Informatique'
             name = titles.select('div[@id="title"]/a/text()').extract()
-            url = titles.select('div[@id="title"]/a/@href').extract()
+            url_raw = titles.select('div[@id="title"]/a/@href').extract()
             component = 'voeding'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
-            price = titles.select('div[@id="price"]/text()').extract()
+            price_raw = titles.select('div[@id="price"]/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
+            url = ''.join(url_raw).replace("[\"]\"","")
+            price = ''.join(price_raw).replace("[\"]\"","")
+
             try:
-                vermogen = desc[1];
+                vermogen = desc[1].strip();
             except:
                 vermogen = "onbekend"
             geluid = "onbekend"
             try:
-                zuinigheid = desc[2]
+                zuinigheid = desc[2].strip()
             except:
                 zuinigheid = "onbekend"
 

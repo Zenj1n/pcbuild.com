@@ -26,16 +26,21 @@ class alt_koel_nwcard(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'netwerkkaart'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            snelheid = desc[0]
-            aansluitingen = desc[1]
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
-            price = euro + cent
+            snelheid = desc[0].strip()
+            aansluitingen = desc[1].strip()
+
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -55,7 +60,7 @@ class alt_koel_nwcard(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:nwkaart) WHERE c.naam = {namedb} SET c.snelheid = {snelheid}, c.aansluitingen = {aansluitingen}")
-                alt_nwcard = query_DeleteRelationships.execute(namedb=namedb, snelheid=snelheid, aansluitingen=aansluitingen)
+                alt_nwcard = query_SetSpecifications.execute(namedb=namedb, snelheid=snelheid, aansluitingen=aansluitingen)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:nwkaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_nwcard = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

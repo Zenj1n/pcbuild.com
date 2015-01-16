@@ -27,13 +27,13 @@ class alt_tvcard(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'tvkaart'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            price = euro + cent
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]

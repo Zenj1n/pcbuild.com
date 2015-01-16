@@ -32,11 +32,11 @@ class hw_cpu(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                socket = ','.join(desc).split(",")[0];
+                socket = ','.join(desc).split(",")[0].strip();
             except:
                 socket = "onbekend"
             try:
-                kloksnelheid = ','.join(desc).split(",")[1]
+                kloksnelheid = ','.join(desc).split(",")[1].strip()
             except:
                 kloksnelheid = "onbekend"
 

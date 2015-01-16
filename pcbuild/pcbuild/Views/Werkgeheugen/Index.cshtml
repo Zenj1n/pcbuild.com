@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<pcbuild.Models.WerkgeheugenModels.ViewModelWerkgeheugen>
 
 @{
-    ViewBag.Title = "Behuizing";
+    ViewBag.Title = "Werkgeheugen";
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Behuizingen</h2>
+<h2>Werkgeheugen</h2>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -31,3 +31,6 @@
         </tr>
     }
 </table>
+<a href="@Url.Action("Index", "Behuizing")">
+    <button id="Volgende_Stap4" type="button">Volgende Stap</button>
+</a>

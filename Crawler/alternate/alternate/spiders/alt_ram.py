@@ -27,17 +27,23 @@ class alt_ram_ddr(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'werkgeheugen'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
-            ddr  = response.xpath('//*[@id="pageContent"]/h1/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            ddr_raw  = response.xpath('//*[@id="pageContent"]/h1/text()').extract()
 
-            capaciteit = desc[0]
-            modules = desc[2]
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
-            price = euro + cent
+            capaciteit = desc[0].strip()
+            modules = desc[2].strip()
+            ddr = ''.join(ddr_raw).replace("Geheugen - ", "").strip().lower()
+
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -57,7 +63,7 @@ class alt_ram_ddr(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:werkgeheugen) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.ddr = {ddr}, c.modules = {modules}")
-                alt_ram = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, ddr=ddr, modules=modules)
+                alt_ram = query_SetSpecifications.execute(namedb=namedb, capaciteit=capaciteit, ddr=ddr, modules=modules)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

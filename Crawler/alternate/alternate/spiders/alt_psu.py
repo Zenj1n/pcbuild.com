@@ -13,7 +13,7 @@ class alt_psu(CrawlSpider):
 
     allowed_domains = ["alternate.nl"]
     start_urls = [
-        "http://www.alternate.nl/html/product/listing.html?navId=11604&bgid=8215&tk=7&lk=9533"
+        "http://www.alternate.nl/html/product/listing.html?filter_5=&filter_4=ATX&filter_3=&filter_2=&filter_1=&order=null&size=40&bgid=8215&lk=9533&tk=7&navId=11604#listingResult"
     ]
 
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
@@ -28,17 +28,22 @@ class alt_psu(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'voeding'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            vermogen = desc[0];
-            geluid = desc[1];
-            zuinigheid = desc[2];
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
-            price = euro + cent
+            vermogen = desc[0].strip();
+            geluid = desc[1].strip();
+            zuinigheid = desc[2].strip();
+
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -58,7 +63,7 @@ class alt_psu(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:voeding) WHERE c.naam = {namedb} SET c.vermogen = {vermogen}, c.geluid = {geluid}, c.zuinigheid = {zuinigheid}")
-                alt_psu = query_DeleteRelationships.execute(namedb=namedb, vermogen=vermogen, geluid=geluid, zuinigheid=zuinigheid)
+                alt_psu = query_SetSpecifications.execute(namedb=namedb, vermogen=vermogen, geluid=geluid, zuinigheid=zuinigheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_psu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

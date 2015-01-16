@@ -171,10 +171,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BehuizingController.cs" />
     <Compile Include="Controllers\ComponentenController.cs" />
-    <Compile Include="Controllers\HardDiskController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoederbordController.cs" />
+    <Compile Include="Controllers\OpslagController.cs" />
     <Compile Include="Controllers\ProcessorController.cs" />
     <Compile Include="Controllers\VideokaartController.cs" />
     <Compile Include="Controllers\VoedingController.cs" />
@@ -185,13 +185,12 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\All_Components.cs" />
     <Compile Include="Models\BehuizingModels\Behuizing_Model.cs" />
-    <Compile Include="Models\HardDiskModels\Harddisk_Model.cs" />
-    <Compile Include="Models\HardDiskModels\SSDModel.cs" />
-    <Compile Include="Models\HardDiskModels\ViewModelHardDisk.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MoederbordModels\Moederbord_Model.cs" />
     <Compile Include="Models\MoederbordModels\ViewModelMoederbord.cs" />
+    <Compile Include="Models\OpslagModels\Opslag_Model.cs" />
+    <Compile Include="Models\OpslagModels\ViewModelOpslag.cs" />
     <Compile Include="Models\ProcessorModels\Processor_Model.cs" />
     <Compile Include="Models\ProcessorModels\ViewModelProcessor.cs" />
     <Compile Include="Models\Verkrijgbaar_Model.cs" />
@@ -272,8 +271,11 @@
     <Content Include="Views\Videokaart\Index.cshtml" />
     <Content Include="Views\Moederbord\Index.cshtml" />
     <Content Include="Views\Werkgeheugen\Index.cshtml" />
-    <Content Include="Views\HardDisk\Index.cshtml" />
     <Content Include="Views\Voeding\Index.cshtml" />
+    <Content Include="Views\Home\Processor_Stap1.cshtml" />
+    <Content Include="Views\Home\Moederbord_Stap2.cshtml" />
+    <Content Include="Views\Home\Videokaart_Stap3.cshtml" />
+    <Content Include="Views\Opslag\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

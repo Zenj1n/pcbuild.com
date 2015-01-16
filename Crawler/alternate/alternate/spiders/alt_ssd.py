@@ -27,16 +27,21 @@ class alt_ssd(CrawlSpider):
         for titles in titles:
             webshop = 'alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
-            url = titles.select('a[@class="productLink"]/@href').extract()
+            url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'ssd'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
-            euro = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
-            capaciteit = desc[0]
-            snelheid = desc[1]
+            url = ''.join(url_raw).replace("[\"]\"", "")
 
-            price = euro + cent
+            capaciteit = desc[0].strip()
+            snelheid = desc[1].strip()
+
+            euro = ''.join(euro_raw)
+            cent = ''.join(cent_raw)
+            price_raw = euro + cent
+            price = price_raw.replace("[\"]\"*", "")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -56,7 +61,7 @@ class alt_ssd(CrawlSpider):
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
                 "MATCH (c:ssd) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
-                alt_ssd = query_DeleteRelationships.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
+                alt_ssd = query_SetSpecifications.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
                 "MATCH (c:ssd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ssd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)

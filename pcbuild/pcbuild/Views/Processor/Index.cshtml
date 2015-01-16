@@ -5,7 +5,18 @@
     Layout = "~/Views/Shared/_LayoutController.cshtml";
 }
 
-<h2>Processoren</h2>
+
+<ol class="progtrckr" data-progtrckr-steps="7">
+       <li class="progtrckr-current">Processor</li><!--
+    --><li class="progtrckr-todo">Moederbord</li><!--
+    --><li class="progtrckr-todo">Videokaart</li><!--
+    --><li class="progtrckr-todo">Werkgeheugen</li><!--
+    --><li class="progtrckr-todo">Behuizing</li><!--
+    --><li class="progtrckr-todo">Opslag</li><!--
+    --><li class="progtrckr-todo">Voeding</li>
+</ol>
+
+<div style="border: 1px solid black"> <center> FILTERS </center> </div>
 
 <table style="background-color:lightpink; border:solid 2px black;">
     <tr>
@@ -30,4 +41,14 @@
             <td>@item.Webshop_m.naam</td>
         </tr>
     }
+
 </table>
+
+<div style="border: 1px solid black"> <center> LIJST </center> </div>
+
+
+    <a href="@Url.Action("Index", "Moederbord")">
+        <button id="Volgende_Stap2" type="button">Volgende Stap</button>
+    </a>
+
+

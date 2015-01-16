@@ -32,12 +32,12 @@ class hw_psu(CrawlSpider):
             #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
-                vermogen = ','.join(desc).split(",")[0];
+                vermogen = ','.join(desc).split(",")[0].strip();
             except:
                 vermogen = "onbekend"
             geluid = "onbekend"
             try:
-                zuinigheid = ','.join(desc).split(",")[2]
+                zuinigheid = ','.join(desc).split(",")[2].strip()
             except:
                 zuinigheid = "onbekend"
 

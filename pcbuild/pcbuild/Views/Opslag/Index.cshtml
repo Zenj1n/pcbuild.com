@@ -1,0 +1,36 @@
+﻿@model IEnumerable<pcbuild.Models.OpslagModels.ViewModelOpslag>
+
+@{
+    ViewBag.Title = "Opslag";
+    Layout = "~/Views/Shared/_LayoutController.cshtml";
+}
+
+<h2>Opslag</h2>
+
+<table style="background-color:lightpink; border:solid 2px black;">
+    <tr>
+        <td>Naam</td>
+        <td>Capaciteit</td>
+        <td>Snelheid</td>
+        <td>Type</td>
+        <td>Prijs</td>
+        <td>Url</td>
+        <td>Webshop</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Opslag_m.naam</td>
+            <td>@item.Opslag_m.capaciteit</td>
+            <td>@item.Opslag_m.snelheid</td>
+            <td>@item.Opslag_m.type</td>
+            <td>@item.Verkrijgbaar_m.prijs</td>
+            <td>@item.Verkrijgbaar_m.url</td>
+            <td>@item.Webshop_m.naam</td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Index", "Voeding")">
+    <button id="Volgende_Stap6" type="button">Volgende Stap</button>
+</a>
