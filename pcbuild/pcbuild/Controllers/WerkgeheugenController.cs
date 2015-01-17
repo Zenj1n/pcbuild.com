@@ -27,6 +27,11 @@ namespace pcbuild.Controllers
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
             HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
 
+            HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+            moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
+
+            string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
+
             //voeg data toe aan cookies
             videokaart_cookie.Value = videokaart;
             videokaartprijs_cookie.Value = prijs;

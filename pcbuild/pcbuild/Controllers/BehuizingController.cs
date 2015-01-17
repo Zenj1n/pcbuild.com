@@ -19,8 +19,28 @@ namespace pcbuild.Controllers
     public class BehuizingController : Controller
     {
         // GET: Behuizing
-        public ActionResult Index()
-        {        
+        public ActionResult Index(string werkgeheugen, string prijs, string webshop)
+        {
+            //Maak cookie arrays
+            HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
+            HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
+            HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
+
+            HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
+            moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
+
+            string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
+
+            //voeg data toe aan cookies
+            werkgeheugen_cookie.Value = werkgeheugen;
+            werkgeheugenprijs_cookie.Value = prijs;
+            werkgeheugenwebshop_cookie.Value = webshop;
+
+            //save the cookies!!!
+            Response.Cookies.Add(werkgeheugen_cookie);
+            Response.Cookies.Add(werkgeheugenprijs_cookie);
+            Response.Cookies.Add(werkgeheugenwebshop_cookie);
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();

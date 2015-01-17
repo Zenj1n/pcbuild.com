@@ -20,8 +20,22 @@ namespace pcbuild.Controllers
     public class OpslagController : Controller
     {
         // GET: Opslag
-        public ActionResult Index()
+        public ActionResult Index(string behuizing, string prijs, string webshop)
         {
+            //Maak cookie arrays
+            HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
+            HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
+            HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
+
+            //voeg data toe aan cookies
+            behuizing_cookie.Value = behuizing;
+            behuizingprijs_cookie.Value = prijs;
+            behuizingwebshop_cookie.Value = webshop;
+
+            //save the cookies!!!
+            Response.Cookies.Add(behuizing_cookie);
+            Response.Cookies.Add(behuizingprijs_cookie);
+            Response.Cookies.Add(behuizingwebshop_cookie);
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
