@@ -49,6 +49,7 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
+              .Where((Behuizing_Model n) => n.vormfactor == vormfactor)
               .Return((n, r, p) => new ViewModelBehuizing
               {
                   Behuizing_test = n.As<Behuizing_Model>(),

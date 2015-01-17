@@ -31,6 +31,11 @@ namespace pcbuild.Controllers
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
+            string ddr_search = "(?i).*"+ddr+".*";
+
+            Debug.WriteLine(ddr);
+            Debug.WriteLine(ddr_search);
+
 
             //voeg data toe aan cookies
             videokaart_cookie.Value = videokaart;
@@ -50,12 +55,15 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:werkgeheugen)-[r:verkrijgbaar]-(p:Webshop)")
+              .Where("n.naam =~ {ddr_query}")
+              .WithParam("ddr_query", ddr_search)
               .Return((n, r, p) => new ViewModelWerkgeheugen
               {
                   Werkgeheugen_all = n.As<Werkgeheugen_Model>(),
                   Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
                   Webshop_all = p.As<Webshop_Model>(),
               })
+               .Limit(50)
               .Results;
 
             return View(componenten_query);
