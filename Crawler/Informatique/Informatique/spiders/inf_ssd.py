@@ -22,7 +22,7 @@ class inf_ssd(CrawlSpider):
     def parse_start_url(self, response):
         now = datetime.datetime.today()
         date = now.strftime('%m/%d/%Y')
-        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv",
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
                  "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
