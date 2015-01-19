@@ -7,7 +7,7 @@ from py2neo import rel, node
 from py2neo import neo4j
 
 
-from Hardware.items import  HWItem
+import time
 
 class hw_gfx(CrawlSpider):
     name = "hw_gfx"
@@ -56,3 +56,4 @@ class hw_gfx(CrawlSpider):
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
             "MATCH (c:videokaart)  WHERE c.naam = {namedb} SET c.aansluiting = {aansluiting}, c.geheugen = {geheugen}, c.kloksnelheid = {kloksnelheid}")
             hw_gfx = query_VoegSpecificatiesToe.execute(namedb=namedb, aansluiting=aansluiting, geheugen = geheugen, kloksnelheid=kloksnelheid)
+            time.sleep(10)

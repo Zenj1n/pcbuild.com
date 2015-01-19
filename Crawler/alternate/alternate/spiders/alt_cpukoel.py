@@ -3,6 +3,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from py2neo import neo4j
 
+import time
 import csv
 import datetime
 
@@ -80,6 +81,7 @@ class alt_cpukoel(CrawlSpider):
                 "MATCH (c:cpukoeler), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_cpukoel = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')

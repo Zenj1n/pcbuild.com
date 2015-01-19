@@ -6,7 +6,7 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-from Hardware.items import  HWItem
+import time
 
 class hw_ssd(CrawlSpider):
     name = "hw_ssd"
@@ -70,3 +70,4 @@ class hw_ssd(CrawlSpider):
                 "MATCH (c:hd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 hw_hd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)

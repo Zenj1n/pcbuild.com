@@ -1,10 +1,9 @@
 import csv
 import datetime
-import scrapy
+import time
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
-from py2neo import rel, node
 from py2neo import neo4j
 
 from Informatique.items import InformatiqueItem
@@ -87,6 +86,7 @@ class inf_case(CrawlSpider):
                 "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 MATCH = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')
