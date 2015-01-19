@@ -29,7 +29,7 @@ class inf_drive(CrawlSpider):
         titles = hxs.select('//ul[@id="detailview"]/li')
         for titles in titles:
             webshop = 'Informatique'
-            name = titles.select('div[@id="title"]/a/text()').extract()
+            name_raw = titles.select('div[@id="title"]/a/text()').extract()
             url_raw = titles.select('div[@id="title"]/a/@href').extract()
             component = 'optische drives'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
@@ -37,6 +37,7 @@ class inf_drive(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
+            name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             lezen = "onbekend"

@@ -6,8 +6,6 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
 from py2neo import neo4j
 
-from Informatique.items import InformatiqueItem
-
 class inf_case(CrawlSpider):
     name = "inf_case"
     allowed_domains = ["informatique.nl"]
@@ -27,7 +25,7 @@ class inf_case(CrawlSpider):
         titles = hxs.xpath('//ul[@id="detailview"]/li')
         for titles in titles:
             webshop = 'Informatique'
-            name = titles.xpath('div[@id="title"]/a/text()').extract()
+            name_raw = titles.xpath('div[@id="title"]/a/text()').extract()
             url_raw = titles.xpath('div[@id="title"]/a/@href').extract()
             component = 'behuizing'
             desc = titles.xpath('div[@id="description"]/ul/li/text()').extract()
@@ -35,6 +33,7 @@ class inf_case(CrawlSpider):
             #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
+            name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"*", "").strip();
 
 
