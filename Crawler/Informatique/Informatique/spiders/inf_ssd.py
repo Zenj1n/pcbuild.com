@@ -5,6 +5,8 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from py2neo import neo4j
+import time
+
 
 
 class inf_ssd(CrawlSpider):
@@ -77,6 +79,7 @@ class inf_ssd(CrawlSpider):
                 "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')

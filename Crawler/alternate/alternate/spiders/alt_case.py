@@ -1,5 +1,6 @@
 import csv
 import datetime
+import time
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -87,6 +88,7 @@ class alt_case(CrawlSpider):
                                                                   "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                                                                  price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')

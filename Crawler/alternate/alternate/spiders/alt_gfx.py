@@ -5,6 +5,8 @@ from py2neo import neo4j
 
 import csv
 import datetime
+import time
+
 
 
 class alt_gfx(CrawlSpider):
@@ -81,6 +83,7 @@ class alt_gfx(CrawlSpider):
                 "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')
