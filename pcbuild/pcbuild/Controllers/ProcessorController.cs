@@ -119,10 +119,112 @@ namespace pcbuild.Controllers
             return View(componenten_query);
         }
 
-        public ActionResult Voeg_Toe_Processor(String naam_lijst)
+        public ActionResult filter_prijs()
         {
-            return null;
-        }
+            int filter_prijs_setting = 0;
 
+            if (filter_prijs_setting == 200)
+            {
+                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                client.Connect();
+
+                var componenten_query_200 = client
+                .Cypher
+                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
+                .Return((n, r, p) => new ViewModelProcessor
+                {
+                    Proccesor_m = n.As<Processor_Model>(),
+                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                    Webshop_m = p.As<Webshop_Model>(),
+                })
+                .Results;
+
+                return View(componenten_query_200);
+            }
+            if (filter_prijs_setting == 400)
+            {
+                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                client.Connect();
+
+                var componenten_query_400 = client
+                .Cypher
+                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
+                .Return((n, r, p) => new ViewModelProcessor
+                {
+                    Proccesor_m = n.As<Processor_Model>(),
+                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                    Webshop_m = p.As<Webshop_Model>(),
+                })
+                .Results;
+
+                return View(componenten_query_400);
+            }
+
+            if (filter_prijs_setting == 600)
+            {
+                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                client.Connect();
+
+                var componenten_query_600 = client
+                .Cypher
+                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
+                .Return((n, r, p) => new ViewModelProcessor
+                {
+                    Proccesor_m = n.As<Processor_Model>(),
+                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                    Webshop_m = p.As<Webshop_Model>(),
+                })
+                .Results;
+
+                return View(componenten_query_600);
+            }
+
+            if (filter_prijs_setting == 800)
+            {
+                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                client.Connect();
+
+                var componenten_query_800 = client
+                .Cypher
+                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
+                .Return((n, r, p) => new ViewModelProcessor
+                {
+                    Proccesor_m = n.As<Processor_Model>(),
+                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                    Webshop_m = p.As<Webshop_Model>(),
+                })
+                .Results;
+
+                return View(componenten_query_800);
+            }
+            if (filter_prijs_setting == 1000)
+            {
+                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+                client.Connect();
+
+                var componenten_query_1000 = client
+                .Cypher
+                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
+                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
+                .Return((n, r, p) => new ViewModelProcessor
+                {
+                    Proccesor_m = n.As<Processor_Model>(),
+                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
+                    Webshop_m = p.As<Webshop_Model>(),
+                })
+                .Results;
+
+                return View(componenten_query_1000);
+            }
+            else
+            {
+                return View();
+            }
+
+        }
     }
 }

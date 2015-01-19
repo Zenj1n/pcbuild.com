@@ -29,6 +29,8 @@
 
     @foreach (var item in Model)
     {
+        if (item.Proccesor_m.naam == item.Proccesor_m.naam) 
+        { 
         <tr>
             <td>@item.Proccesor_m.naam</td>
             <td>@item.Proccesor_m.socket</td>
@@ -37,6 +39,7 @@
             <td>@item.Verkrijgbaar_m.prijs</td>
             <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam'> KIES </a></td>
         </tr>
+         }
     }
 
 </table>

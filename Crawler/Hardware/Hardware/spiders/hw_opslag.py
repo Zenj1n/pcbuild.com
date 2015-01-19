@@ -6,7 +6,7 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-from Hardware.items import  HWItem
+import time
 
 class hw_opslag(CrawlSpider):
     name = "hw_opslag"
@@ -51,3 +51,4 @@ class hw_opslag(CrawlSpider):
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
             "MATCH (c:opslag)  WHERE c.naam = {namedb} SET c.type = {type}, c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
             hw_opslag = query_VoegSpecificatiesToe.execute(namedb=namedb, type=type, capaciteit = capaciteit, snelheid=snelheid)
+            time.sleep(10)

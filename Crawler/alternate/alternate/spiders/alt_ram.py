@@ -5,6 +5,8 @@ from py2neo import neo4j
 
 import csv
 import datetime
+import time
+
 
 
 class alt_ram_ddr(CrawlSpider):
@@ -22,7 +24,7 @@ class alt_ram_ddr(CrawlSpider):
     def parse_start_url(self, response):
         now = datetime.datetime.today()
         date = now.strftime('%m/%d/%Y')
-        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv", "a")
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv", "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
@@ -84,6 +86,7 @@ class alt_ram_ddr(CrawlSpider):
                 "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')

@@ -15,13 +15,7 @@ NEWSPIDER_MODULE = 'Informatique.spiders'
 #ITEM_PIPELINES = {'scrapy.contrib.pipeline.images.ImagesPipeline': 1}
 #IMAGES_STORE = 'C:\Users\hoye\Documents\GitHub\Python-Crawler\Informatique\Images'
 #IMAGES_EXPIRES = 90
-DOWNLOAD_DELAY = 10.0
 
-
-
-EXTENSIONS = {
-    'scrapy.contrib.closespider.CloseSpider': 500
-}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Informatique (+http://www.yourdomain.com)'

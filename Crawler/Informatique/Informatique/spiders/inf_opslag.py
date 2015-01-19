@@ -1,5 +1,7 @@
 import csv
 import datetime
+import time
+
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
@@ -21,14 +23,14 @@ class inf_opslag(CrawlSpider):
     def parse_start_url(self, response):
         now = datetime.datetime.today()
         date = now.strftime('%m/%d/%Y')
-        f = open("E:\\Repositories Git Hub\\pcbuild.com\\Crawler\\alternate\\components\\case\\prijsgeschiedenis.csv",
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
                  "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//ul[@id="detailview"]/li')
         for titles in titles:
             webshop = 'Informatique'
-            name = titles.select('div[@id="title"]/a/text()').extract()
+            name_raw = titles.select('div[@id="title"]/a/text()').extract()
             url_raw = titles.select('div[@id="title"]/a/@href').extract()
             component = 'opslag'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
@@ -37,6 +39,7 @@ class inf_opslag(CrawlSpider):
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
+            name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             type = ''.join(type_raw).replace("SATA Harddisks", "Harde schijf").replace("(Solid State Drive)", "").strip()
@@ -80,6 +83,7 @@ class inf_opslag(CrawlSpider):
                 "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
 
             csv_f = csv.reader(f)
             a = csv.writer(f, delimiter=',')

@@ -7,7 +7,7 @@ from py2neo import rel, node
 from py2neo import neo4j
 
 
-from Hardware.items import  HWItem
+import time
 
 class hw_ram(CrawlSpider):
     name = "hw_ram"
@@ -57,3 +57,4 @@ class hw_ram(CrawlSpider):
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
             "MATCH (c:werkgeheugen)  WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.modules = {modules}, c.ddr = {ddr}, c.cl = {cl}")
             hw_ram = query_VoegSpecificatiesToe.execute(namedb=namedb, capaciteit=capaciteit, modules = modules, ddr=ddr, cl = cl)
+            time.sleep(10)

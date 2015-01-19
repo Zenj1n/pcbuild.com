@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-	<JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
+    <JavaMaximumHeapSize>2G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -177,6 +177,7 @@
     <Compile Include="Controllers\MoederbordController.cs" />
     <Compile Include="Controllers\OpslagController.cs" />
     <Compile Include="Controllers\ProcessorController.cs" />
+    <Compile Include="Controllers\SearchComponentController.cs" />
     <Compile Include="Controllers\VideokaartController.cs" />
     <Compile Include="Controllers\VoedingController.cs" />
     <Compile Include="Controllers\WerkgeheugenController.cs" />
@@ -194,6 +195,8 @@
     <Compile Include="Models\OpslagModels\ViewModelOpslag.cs" />
     <Compile Include="Models\ProcessorModels\Processor_Model.cs" />
     <Compile Include="Models\ProcessorModels\ViewModelProcessor.cs" />
+    <Compile Include="Models\SearchModels\Search_Model.cs" />
+    <Compile Include="Models\SearchModels\ViewModelSearch.cs" />
     <Compile Include="Models\Verkrijgbaar_Model.cs" />
     <Compile Include="Models\BehuizingModels\ViewModelBehuizing.cs" />
     <Compile Include="Models\VideokaartModels\Videokaart_Model.cs" />
@@ -277,6 +280,8 @@
     <Content Include="Views\Home\Moederbord_Stap2.cshtml" />
     <Content Include="Views\Home\Videokaart_Stap3.cshtml" />
     <Content Include="Views\Opslag\Index.cshtml" />
+    <Content Include="Views\SearchComponent\Index.cshtml" />
+    <Content Include="Views\SearchComponent\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

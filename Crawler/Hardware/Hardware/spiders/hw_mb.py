@@ -7,7 +7,7 @@ from py2neo import rel, node
 from py2neo import neo4j
 
 
-from Hardware.items import  HWItem
+import time
 
 class hw_mb(CrawlSpider):
     name = "hw_mb"
@@ -53,3 +53,4 @@ class hw_mb(CrawlSpider):
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
             "MATCH (c:moederbord)  WHERE c.naam = {namedb} SET c.ddr = {ddr}")
             hw_mb = query_VoegSpecificatiesToe.execute(namedb=namedb, ddr=ddr)
+            time.sleep(10)

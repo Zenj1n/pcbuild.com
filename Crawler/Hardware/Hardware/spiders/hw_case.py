@@ -8,7 +8,8 @@ from py2neo import rel, node
 from py2neo import neo4j
 from scrapy.selector import HtmlXPathSelector
 
-from Hardware.items import HWItem
+import time
+
 
 class hw_case(CrawlSpider):
     name = "hw_case"
@@ -56,3 +57,4 @@ class hw_case(CrawlSpider):
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
             "MATCH (c:behuizing)  WHERE c.naam = {namedb} SET c.type = {type}")
             hw_case = query_VoegSpecificatiesToe.execute(namedb=namedb, type=type)
+            time.sleep(10)
