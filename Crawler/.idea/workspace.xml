@@ -5,22 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py" afterPath="$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_drive.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_gfx.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_psu.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ssd.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Crawler.iws" />
@@ -48,7 +32,7 @@
       <file leaf-file-name="hw_gfx.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_gfx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="918">
               <caret line="57" column="143" selection-start-line="55" selection-start-column="12" selection-end-line="57" selection-end-column="143" />
               <folding />
             </state>
@@ -68,7 +52,7 @@
       <file leaf-file-name="hw_cpu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="884">
               <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
               <folding />
             </state>
@@ -78,8 +62,8 @@
       <file leaf-file-name="inf_opslag.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9118607" vertical-offset="607" max-vertical-offset="1547">
-              <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+            <state vertical-scroll-proportion="1.0598477" vertical-offset="352" max-vertical-offset="1547">
+              <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -90,7 +74,7 @@
       <file leaf-file-name="hw_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="901">
               <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="57" selection-end-column="82" />
               <folding />
             </state>
@@ -100,7 +84,7 @@
       <file leaf-file-name="hw_opslag.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="850">
               <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding />
             </state>
@@ -110,7 +94,7 @@
       <file leaf-file-name="hw_psu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_psu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+            <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="918">
               <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="57" selection-end-column="125" />
               <folding />
             </state>
@@ -240,7 +224,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -423,6 +406,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -629,7 +613,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -858,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="1496">
           <caret line="87" column="48" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,9 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1683">
           <caret line="93" column="48" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,9 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="590" max-vertical-offset="1496">
           <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,9 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="509" max-vertical-offset="1496">
           <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,9 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="1666">
           <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,9 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1547">
           <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1445">
           <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,9 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="424" max-vertical-offset="1411">
           <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1462">
           <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,9 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="543" max-vertical-offset="1530">
           <caret line="84" column="48" selection-start-line="84" selection-start-column="48" selection-end-line="84" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1105">
           <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
           <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,9 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="492" max-vertical-offset="1615">
           <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -986,9 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
           <caret line="13" column="92" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_opslag.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9118607" vertical-offset="607" max-vertical-offset="1547">
-          <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+        <state vertical-scroll-proportion="1.0598477" vertical-offset="352" max-vertical-offset="1547">
+          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
