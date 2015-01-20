@@ -36,7 +36,6 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(werkgeheugenwebshop_cookie);
 
             return RedirectToAction("Index");
-
         }
 
         // GET: Behuizing

@@ -14,9 +14,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.MoederbordModels;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
+
     public class MoederbordController : Controller
     {
         // GET: Moederbord
@@ -59,6 +61,9 @@ namespace pcbuild.Controllers
             string socket = processorsocket_cookie.Value;
             string prijs = processorprijs_cookie.Value;
             string webshop = processorwebshop_cookie.Value;
+
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            Debug.WriteLine(prijs_processor);
 
             string socket_search = "(?i).*" + socket + ".*";              
 

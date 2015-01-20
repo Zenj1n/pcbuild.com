@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.OpslagModels;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
@@ -45,6 +46,9 @@ namespace pcbuild.Controllers
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
             HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
+
+            string prijs = behuizingprijs_cookie.Value;
+            decimal prijs_behuizing = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

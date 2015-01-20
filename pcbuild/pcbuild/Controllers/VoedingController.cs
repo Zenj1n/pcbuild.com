@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.VoedingModels;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
@@ -44,6 +45,9 @@ namespace pcbuild.Controllers
             HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
             HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
+
+            string prijs = opslagprijs_cookie.Value;
+            decimal prijs_opslag = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
