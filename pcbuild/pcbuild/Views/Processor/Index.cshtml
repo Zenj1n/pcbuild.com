@@ -31,49 +31,48 @@
         <td>Prijs</td>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        string uniek = item.GetHashCode().ToString();
-        string uniekmethashtag = "#" + uniek;
-        
-        if (item.Proccesor_m.naam == item.Proccesor_m.naam) 
-        { 
-        <tr>
-            <td>@item.Proccesor_m.naam</td>
-            <td>@item.Proccesor_m.socket</td>
-            <td>@item.Proccesor_m.kernen</td>
-            <td>@item.Proccesor_m.kloksnelheid</td>
-            <td>@item.Verkrijgbaar_m.prijs</td>
-            <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam'> KIES </a></td>
-            <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=@uniekmethashtag>@item.Proccesor_m.naam</button></td>
-            
-            <div class="modal fade" id=@uniek tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Component informatie</h4>
-                        </div>
-                        <div class="modal-body">
-                            @item.Proccesor_m.naam <br />
-                            @item.Proccesor_m.socket<br />
-                            @item.Proccesor_m.kernen<br />
-                            @item.Proccesor_m.kloksnelheid<br />
-                            @item.Verkrijgbaar_m.prijs<br />
-                            @item.Verkrijgbaar_m.url<br />
-                            @item.Webshop_m.naam<br />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+        @foreach (var item in Model)
+        {
+            string uniek = item.GetHashCode().ToString();
+            string uniekmethashtag = "#" + uniek;
+
+            if (item.Proccesor_m.naam == item.Proccesor_m.naam)
+            {
+
+                <tr data-toggle="modal" data-id="1" data-target=@uniekmethashtag>
+                    <td>@item.Proccesor_m.naam</td>
+                    <td>@item.Proccesor_m.socket</td>
+                    <td>@item.Proccesor_m.kernen</td>
+                    <td>@item.Proccesor_m.kloksnelheid</td>
+                    <td>@item.Verkrijgbaar_m.prijs</td>
+                    <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam'> KIES </a></td>
+
+                    <div class="modal fade" id=@uniek tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Component informatie</h4>
+                                </div>
+                                <div class="modal-body">
+                                    @item.Proccesor_m.naam <br />
+                                    @item.Proccesor_m.socket<br />
+                                    @item.Proccesor_m.kernen<br />
+                                    @item.Proccesor_m.kloksnelheid<br />
+                                    @item.Verkrijgbaar_m.prijs<br />
+                                    @item.Verkrijgbaar_m.url<br />
+                                    @item.Webshop_m.naam<br />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            
-            </div>
 
-        </tr>
+                </tr>
+            }
         }
-    }
 
 </table>
 </div>
