@@ -20,6 +20,7 @@ namespace pcbuild.Controllers
     public class ProcessorController : Controller
     {
         static ViewModelProcessor test = new ViewModelProcessor();
+        public static string tst = "tst";
 
         // GET: Processor
         public ActionResult Index()

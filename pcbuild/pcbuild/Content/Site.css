@@ -147,7 +147,7 @@ ol.progtrckr li.progtrckr-current:before {
 
 div.filters{
     border: 1px solid blue;
-    width: 15%;
+    width: 12.5%;
     float: left;
 }
 
@@ -155,8 +155,9 @@ div.filters{
 
 div.componenten{
     border: 1px solid green;
-    width: 65%;
+    width: 62.5%;
     float:left;
+    margin-left: 2.5%;
 }
 
 /* css lijst*/
@@ -165,4 +166,24 @@ div.lijst{
     border: 1px solid red;
     width: 20%;
     float: left;
+    margin-left: 2.5%;
+}
+
+/* css componenten_table*/
+
+table.componenten_table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.componententr{
+    height: 30px;
+    border-bottom: thin dotted #00aeff;
+}
+
+
+.componententr:hover{
+    border-bottom: thin solid #00aeff;
+    border-top: thin solid #00aeff;
+    color: #00aeff;
 }
