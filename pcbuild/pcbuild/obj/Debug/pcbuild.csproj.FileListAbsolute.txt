@@ -119,7 +119,6 @@ C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.xml
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Extensions.xml
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Primitives.xml
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csproj.App.config
-<<<<<<< HEAD
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.config
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.pdb
@@ -183,7 +182,6 @@ C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.cs
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 C:\Users\Jason\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
-=======
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.config
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.pdb
@@ -247,9 +245,6 @@ C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.c
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.config
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.pdb
@@ -310,4 +305,4 @@ E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csproj.App.config
->>>>>>> b006924d04732fa9be25cc20bacc4e05530206d9
+
