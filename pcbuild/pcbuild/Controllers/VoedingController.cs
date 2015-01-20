@@ -19,8 +19,7 @@ namespace pcbuild.Controllers
 {
     public class VoedingController : Controller
     {
-        // GET: Voeding
-        public ActionResult Index(string opslag, string prijs ,string webshop)
+        public ActionResult Reload(string opslag, string prijs, string webshop)
         {
             //Maak cookie arrays
             HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
@@ -36,6 +35,15 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(opslag_cookie);
             Response.Cookies.Add(opslagprijs_cookie);
             Response.Cookies.Add(opslagwebshop_cookie);
+
+            return RedirectToAction("Index");
+        }
+        // GET: Voeding
+        public ActionResult Index()
+        {
+            HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
+            HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
+            HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

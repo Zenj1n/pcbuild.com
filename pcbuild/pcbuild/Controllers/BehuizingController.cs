@@ -18,19 +18,12 @@ namespace pcbuild.Controllers
 {
     public class BehuizingController : Controller
     {
-        // GET: Behuizing
-        public ActionResult Index(string werkgeheugen, string prijs, string webshop)
+        public ActionResult Reload(string werkgeheugen, string prijs, string webshop)
         {
             //Maak cookie arrays
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
-
-            HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
-            moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
-
-            string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
-            string vormfactor_search = "(?i).*" + vormfactor[0] + ".*";
 
             //voeg data toe aan cookies
             werkgeheugen_cookie.Value = werkgeheugen;
@@ -42,11 +35,31 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(werkgeheugenprijs_cookie);
             Response.Cookies.Add(werkgeheugenwebshop_cookie);
 
+            return RedirectToAction("Index");
+
+        }
+
+        // GET: Behuizing
+        public ActionResult Index()
+        {
+            //Maak de cookies
+            HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
+            HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
+            HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
+            HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
+            
+            //Haal de cookies op om te matchen
+            moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
+
+            //Maak er een query van om te zoeken in onze database
+            string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
+            string vormfactor_search = "(?i)" + vormfactor[0] + ".*";           
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om alle behuizingen op te halen
+            // Query om behuizingen op te halen met de parameters die wij kregen van moederbord
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")

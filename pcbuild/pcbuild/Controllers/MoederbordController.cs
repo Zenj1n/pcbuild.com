@@ -60,13 +60,7 @@ namespace pcbuild.Controllers
             string prijs = processorprijs_cookie.Value;
             string webshop = processorwebshop_cookie.Value;
 
-            string socket_search = "(?i).*" + socket + ".*";
-           // int processor_prijs = Convert.ToInt32(prijs);
-
-          //  lijstModel.processor = processor;
-          //  ViewBag.lijst_processor = lijstModel.processor;
-
-            
+            string socket_search = "(?i).*" + socket + ".*";              
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

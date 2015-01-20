@@ -19,8 +19,7 @@ namespace pcbuild.Controllers
 {
     public class OpslagController : Controller
     {
-        // GET: Opslag
-        public ActionResult Index(string behuizing, string prijs, string webshop)
+        public ActionResult Reload(string behuizing, string prijs, string webshop)
         {
             //Maak cookie arrays
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
@@ -36,6 +35,16 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(behuizing_cookie);
             Response.Cookies.Add(behuizingprijs_cookie);
             Response.Cookies.Add(behuizingwebshop_cookie);
+
+            return RedirectToAction("Index");
+        }
+        // GET: Opslag
+        public ActionResult Index()
+        {
+            //Maak cookie arrays
+            HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
+            HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
+            HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
