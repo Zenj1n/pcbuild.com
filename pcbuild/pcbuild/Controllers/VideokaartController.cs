@@ -18,7 +18,7 @@ using pcbuild.Models.VideokaartModels;
 
 namespace pcbuild.Controllers
 {
-    public class VideokaartController : Controller
+    public class VideokaartController : MoederbordController
     {
         // GET: Videokaart
         public ActionResult Index(string moederbord, string prijs, string webshop, string vormfactor, string ddr)
@@ -30,6 +30,10 @@ namespace pcbuild.Controllers
 
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+
+            Debug.WriteLine(MoederbordController.lijstModel.processor);
+
+            ViewBag.Test = lijstModel.processor;
 
             //voeg data toe aan cookies
             moederbord_cookie.Value = moederbord;

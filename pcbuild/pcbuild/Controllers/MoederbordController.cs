@@ -17,9 +17,11 @@ using pcbuild.Models.MoederbordModels;
 
 namespace pcbuild.Controllers
 {
-    public class MoederbordController : Controller
+    public class MoederbordController : ProcessorController
     {
         // GET: Moederbord
+        public static LijstModel lijstModel = new LijstModel();
+
         public ActionResult Index(string processor, string socket, string prijs, string webshop)
         {
             //Maak cookie arrays
@@ -30,6 +32,9 @@ namespace pcbuild.Controllers
             Debug.WriteLine(socket);
 
             string socket_search = "(?i).*" + socket + ".*";
+            int processor_prijs = Convert.ToInt32(prijs);
+
+            lijstModel.processor = processor;
 
             //voeg data toe aan cookies
             processor_cookie.Value = processor;
@@ -45,21 +50,22 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-                   var componenten_query = client
-                  .Cypher
-                  .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
-                  .Where("n.naam =~ {socket_c}")
-                  .WithParam("socket_c", socket_search)
-                  .Return((n, r, p) => new ViewModelMoederbord
-                  {
-                     Moederbord_all = n.As<Moederbord_Model>(),
-                     Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
-                     Webshop_all = p.As<Webshop_Model>(),
-                  })
-                 .Results;
+            var componenten_query = client
+           .Cypher
+           .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
+           .Where("n.naam =~ {socket_c}")
+           .WithParam("socket_c", socket_search)
+           .Return((n, r, p) => new ViewModelMoederbord
+           {
+               Moederbord_all = n.As<Moederbord_Model>(),
+               Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
+               Webshop_all = p.As<Webshop_Model>(),
+           })
+          .Results;
 
-                 return View(componenten_query);
-            }
 
+            return View(componenten_query);
         }
+
+    }
 }
