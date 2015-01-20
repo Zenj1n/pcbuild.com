@@ -3050,3 +3050,35 @@ Storage files: (filename : modification date - size)
 2015-01-20 09:10:40.754+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 187ms [total block time: 12.503s]
 2015-01-20 09:12:06.673+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 111ms [total block time: 12.614s]
 2015-01-20 09:32:54.883+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 119ms [total block time: 12.733s]
+2015-01-20 10:22:47.768+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 103ms [total block time: 12.836s]
+2015-01-20 10:22:48.003+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 135ms [total block time: 12.971s]
+2015-01-20 10:22:48.214+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 111ms [total block time: 13.082s]
+2015-01-20 10:22:48.637+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 153ms [total block time: 13.235s]
+2015-01-20 10:23:04.182+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 106ms [total block time: 13.341s]
+2015-01-20 10:23:55.370+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 133ms [total block time: 13.474s]
+2015-01-20 10:32:55.080+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 165ms [total block time: 13.639s]
+2015-01-20 10:36:29.749+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: GC Monitor: Application threads blocked for an additional 135ms [total block time: 13.774s]
+2015-01-20 10:37:04.992+0000 INFO  [o.n.s.CommunityNeoServer]: Successfully shutdown Neo4j Server.
+2015-01-20 10:37:04.992+0000 INFO  [o.n.k.EmbeddedGraphDatabase]: Shutdown started
+2015-01-20 10:37:04.992+0000 INFO  [o.n.k.EmbeddedGraphDatabase]: Database is now unavailable
+2015-01-20 10:37:04.992+0000 INFO  [o.n.k.EmbeddedGraphDatabase]: GC Monitor stopped. 
+2015-01-20 10:37:04.992+0000 INFO  [o.n.k.i.t.x.XaLogicalLog]: Closed log C:\Users\0859607\Documents\Neo4j\db1\index\lucene.log
+2015-01-20 10:37:04.992+0000 INFO  [o.n.k.i.t.TxManager]: TM shutting down
+2015-01-20 10:37:05.054+0000 INFO  [o.n.k.i.t.x.XaLogicalLog]: Closed log C:\Users\0859607\Documents\Neo4j\db1\nioneo_logical.log
+2015-01-20 10:37:05.054+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.relationshiptypestore.db.names hit=0 miss=2 switches=0 ooe=0
+2015-01-20 10:37:05.054+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.relationshiptypestore.db hit=0 miss=1 switches=0 ooe=0
+2015-01-20 10:37:05.070+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.labeltokenstore.db.names hit=0 miss=23 switches=0 ooe=0
+2015-01-20 10:37:05.070+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.labeltokenstore.db hit=0 miss=12 switches=0 ooe=0
+2015-01-20 10:37:05.085+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.propertystore.db.strings hit=1017 miss=32347 switches=0 ooe=0
+2015-01-20 10:37:05.085+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.propertystore.db.index.keys hit=0 miss=45 switches=0 ooe=0
+2015-01-20 10:37:05.101+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.propertystore.db.index hit=0 miss=23 switches=0 ooe=0
+2015-01-20 10:37:05.101+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.propertystore.db.arrays hit=3990 miss=1764 switches=0 ooe=0
+2015-01-20 10:37:05.101+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.propertystore.db hit=30680 miss=50000 switches=0 ooe=0
+2015-01-20 10:37:05.116+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.relationshipstore.db hit=31316 miss=17096 switches=0 ooe=0
+2015-01-20 10:37:05.116+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.nodestore.db.labels hit=0 miss=0 switches=0 ooe=0
+2015-01-20 10:37:05.132+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.nodestore.db hit=51430 miss=27227 switches=0 ooe=0
+2015-01-20 10:37:05.132+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore.schemastore.db hit=0 miss=0 switches=0 ooe=0
+2015-01-20 10:37:05.132+0000 INFO  [o.n.k.i.n.s.StoreFactory]: C:\Users\0859607\Documents\Neo4j\db1\neostore hit=0 miss=9577 switches=0 ooe=0
+2015-01-20 10:37:05.148+0000 INFO  [o.n.k.i.n.x.NeoStoreXaDataSource]: NeoStore closed
+2015-01-20 10:37:05.148+0000 INFO  [o.n.k.i.DiagnosticsManager]: --- STOPPING diagnostics START ---
+2015-01-20 10:37:05.148+0000 INFO  [o.n.k.i.DiagnosticsManager]: --- STOPPING diagnostics END ---
