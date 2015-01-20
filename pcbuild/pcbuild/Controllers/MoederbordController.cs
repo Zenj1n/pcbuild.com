@@ -27,6 +27,10 @@ namespace pcbuild.Controllers
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
 
+            Debug.WriteLine(socket);
+
+            string socket_search = "(?i).*" + socket + ".*";
+
             //voeg data toe aan cookies
             processor_cookie.Value = processor;
             processorprijs_cookie.Value = prijs;
@@ -44,7 +48,8 @@ namespace pcbuild.Controllers
                    var componenten_query = client
                   .Cypher
                   .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
-                  .Where((Moederbord_Model n) => n.socket == socket)
+                  .Where("n.naam =~ {socket_c}")
+                  .WithParam("socket_c", socket_search)
                   .Return((n, r, p) => new ViewModelMoederbord
                   {
                      Moederbord_all = n.As<Moederbord_Model>(),

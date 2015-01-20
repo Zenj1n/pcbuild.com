@@ -30,6 +30,9 @@ namespace pcbuild.Controllers
             moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
 
             string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
+            string vormfactor_search = "(?i).*" + vormfactor[0] + ".*";
+
+            Debug.WriteLine("test" + vormfactor);
 
             //voeg data toe aan cookies
             werkgeheugen_cookie.Value = werkgeheugen;
@@ -49,7 +52,8 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
-              .Where((Behuizing_Model n) => n.vormfactor == vormfactor)
+              .Where("n.naam =~ {vormfactor_c}")
+              .WithParam("vormfactor_c", vormfactor_search)
               .Return((n, r, p) => new ViewModelBehuizing
               {
                   Behuizing_test = n.As<Behuizing_Model>(),
