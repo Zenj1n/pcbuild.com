@@ -15,20 +15,29 @@
     --><li class="progtrckr-todo">Voeding</li>
 </ol>
 
-<div style="border: 1px solid black"> <center> FILTERS </center> </div>
+<div class="filters"> <center> FILTERS </center> </div>
 
-<table style="background-color:lightpink; border:solid 2px black;">
+<div class="componenten">
+<table>
+    <tr>
+        <td colspan="6" style="width:100%; height: 30px"><center><b>Componenten</b></center></td>
+    </tr>
+
     <tr>
         <td>Naam</td>
         <td>Socket</td>
         <td>Kernen</td>
         <td>Kloksnelheid</td>
         <td>Prijs</td>
-
     </tr>
 
     @foreach (var item in Model)
     {
+        string uniek = item.GetHashCode().ToString();
+        string uniekmethashtag = "#" + uniek;
+        
+        if (item.Proccesor_m.naam == item.Proccesor_m.naam) 
+        { 
         <tr>
             <td>@item.Proccesor_m.naam</td>
             <td>@item.Proccesor_m.socket</td>
@@ -36,48 +45,96 @@
             <td>@item.Proccesor_m.kloksnelheid</td>
             <td>@item.Verkrijgbaar_m.prijs</td>
             <td><a href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam'> KIES </a></td>
+            <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target=@uniekmethashtag>@item.Proccesor_m.naam</button></td>
+            
+            <div class="modal fade" id=@uniek tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Component informatie</h4>
+                        </div>
+                        <div class="modal-body">
+                            @item.Proccesor_m.naam <br />
+                            @item.Proccesor_m.socket<br />
+                            @item.Proccesor_m.kernen<br />
+                            @item.Proccesor_m.kloksnelheid<br />
+                            @item.Verkrijgbaar_m.prijs<br />
+                            @item.Verkrijgbaar_m.url<br />
+                            @item.Webshop_m.naam<br />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
         </tr>
+        }
     }
 
 </table>
+</div>
 
-<div style="border: 1px solid black">
-
-    Uw Lijst
+<div class="lijst">
 
     @if (Request.Cookies["processor_cookie"] != null)
     {
 
-        <table style="border: 1px solid black">
+        <table>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center><b>Uw Lijst</b></center></td>
+            </tr>
             <tr>
                 <td>Component</td>
                 <td>Prijs</td>
             </tr>
-
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Processor</center></td>
+            </tr>
             <tr>
                 <td>@Request.Cookies["processor_cookie"].Value</td>
                 <td>@Request.Cookies["processorprijs_cookie"].Value</td>
             </tr>
-
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Moederbord</center></td>
+            </tr>
             <tr>
                 <td>@Request.Cookies["moederbord_cookie"].Value</td>
                 <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Videokaart</center></td>
             </tr>
             <tr>
                 <td>@Request.Cookies["videokaart_cookie"].Value</td>
                 <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
             </tr>
             <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Werkgeheugen</center></td>
+            </tr>
+            <tr>
                 <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
                 <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Behuizing</center></td>
             </tr>
             <tr>
                 <td>@Request.Cookies["behuizing_cookie"].Value</td>
                 <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
             </tr>
             <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Opslag</center></td>
+            </tr>
+            <tr>
                 <td>@Request.Cookies["opslag_cookie"].Value</td>
                 <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Voeding</center></td>
             </tr>
             <tr>
                 <td>@Request.Cookies["voeding_cookie"].Value</td>
@@ -85,11 +142,14 @@
             </tr>
 
         </table>
-
     }
     else { 
-    <center> ERROR - Zet cookies aan om gebruik te maken van de lijst!  </center> 
-}
+        <table>
+            <tr>
+                <td>Zet cookies aan om gebruik te maken van de lijst!</td>
+            </tr>
+        </table>
+    }
 
 </div>
 
