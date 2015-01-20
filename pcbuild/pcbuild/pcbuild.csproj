@@ -188,6 +188,7 @@
     <Compile Include="Models\All_Components.cs" />
     <Compile Include="Models\BehuizingModels\Behuizing_Model.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LijstModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MoederbordModels\Moederbord_Model.cs" />
     <Compile Include="Models\MoederbordModels\ViewModelMoederbord.cs" />
