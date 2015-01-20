@@ -10,5 +10,4 @@ names(test) <- c("datum","naam","prijs")
 
 plot(test$datum, test$prijs, type="b")
 ggplot(data=test, aes(x=datum, y=prijs, group=1)) + geom_line()
-options <- commandArgs(trailingOnly = TRUE)
-options
+args[1]

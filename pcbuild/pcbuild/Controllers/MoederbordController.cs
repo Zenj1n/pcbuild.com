@@ -21,15 +21,44 @@ namespace pcbuild.Controllers
     {
         // GET: Moederbord
         //public static LijstModel lijstModel = new LijstModel();
-
-        public ActionResult Index(string processor, string socket, string prijs, string webshop)
+        public ActionResult Reload(string processor, string socket, string prijs, string webshop)
         {
-            //Maak cookie arrays
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
+            HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
 
-            Debug.WriteLine(socket);
+            //voeg data toe aan cookies
+            processor_cookie.Value = processor;
+            processorprijs_cookie.Value = prijs;
+            processorwebshop_cookie.Value = webshop;
+            processorsocket_cookie.Value = socket;
+
+            //save the cookies!!!
+            Response.Cookies.Add(processor_cookie);
+            Response.Cookies.Add(processorprijs_cookie);
+            Response.Cookies.Add(processorwebshop_cookie);
+            Response.Cookies.Add(processorsocket_cookie);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Index()
+        {
+            HttpCookie processor_cookie = new HttpCookie("processor_cookie");
+            HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
+            HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
+            HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
+
+            processor_cookie = Request.Cookies["processor_cookie"];
+            processorprijs_cookie = Request.Cookies["processorprijs_cookie"];
+            processorwebshop_cookie = Request.Cookies["processorwebshop_cookie"];
+            processorsocket_cookie = Request.Cookies["processorsocket_cookie"];
+
+            string processor = processor_cookie.Value;
+            string socket = processorsocket_cookie.Value;
+            string prijs = processorprijs_cookie.Value;
+            string webshop = processorwebshop_cookie.Value;
 
             string socket_search = "(?i).*" + socket + ".*";
            // int processor_prijs = Convert.ToInt32(prijs);
@@ -37,15 +66,7 @@ namespace pcbuild.Controllers
           //  lijstModel.processor = processor;
           //  ViewBag.lijst_processor = lijstModel.processor;
 
-            //voeg data toe aan cookies
-            processor_cookie.Value = processor;
-            processorprijs_cookie.Value = prijs;
-            processorwebshop_cookie.Value = webshop;
-
-            //save the cookies!!!
-            Response.Cookies.Add(processor_cookie);
-            Response.Cookies.Add(processorprijs_cookie);
-            Response.Cookies.Add(processorwebshop_cookie);
+            
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

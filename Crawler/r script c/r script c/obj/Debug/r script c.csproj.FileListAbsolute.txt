@@ -1,0 +1,6 @@
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\bin\Debug\r script c.exe.config
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\bin\Debug\r script c.exe
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\bin\Debug\r script c.pdb
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.csprojResolveAssemblyReference.cache
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.exe
+c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.pdb
