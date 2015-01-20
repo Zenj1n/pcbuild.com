@@ -56,7 +56,7 @@ class inf_mb(CrawlSpider):
                 vormfactor = "onbekend"
             interfaces = "onbekend"
             try:
-                socket
+                socket.replace("\"[u'", "")
             except:
                 socket = "onbekend"
 

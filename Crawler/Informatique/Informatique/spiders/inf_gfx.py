@@ -42,11 +42,11 @@ class inf_gfx(CrawlSpider):
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             try:
-                gfx = desc[0].strip()
+                gfx = desc[0].replace("\"[u'", "").strip()
             except:
                 gfx = "onbekend"
             try:
-                geheugen = desc[1].strip()
+                geheugen = desc[1].replace("\"[u'", "").strip()
             except:
                 geheugen = "onbeklend"
             slots = "onbekend"

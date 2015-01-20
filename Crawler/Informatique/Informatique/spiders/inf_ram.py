@@ -45,11 +45,11 @@ class inf_ram(CrawlSpider):
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             try:
-                capaciteit = desc[0].strip()
+                capaciteit = desc[0].replace("\"[u'", "").strip()
             except:
                 capaciteit = "onbekend"
             try:
-                modules = desc[2].strip()
+                modules = desc[2].replace("\"[u'", "").strip()
             except:
                 modules = "onbekend"
 
