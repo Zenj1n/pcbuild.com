@@ -6,7 +6,8 @@
 }
 
 <ol class="progtrckr" data-progtrckr-steps="7">
-       <li class="progtrckr-current">Processor</li><!--
+      <li onclick="javascript: history.back()" class="progtrckr-return">Vorige onderdeel</li><!--
+    --><li class="progtrckr-current">Processor</li><!--
     --><li class="progtrckr-todo">Moederbord</li><!--
     --><li class="progtrckr-todo">Videokaart</li><!--
     --><li class="progtrckr-todo">Werkgeheugen</li><!--
@@ -15,7 +16,31 @@
     --><li class="progtrckr-todo">Voeding</li>
 </ol>
 
-<div class="filters"> <center> FILTERS </center> </div>
+<div class="filters">
+    
+    <table>
+        <tr>
+            <td colspan="2" style="width:100%; height: 40px"><center><b>Filters</b></center></td>
+        </tr>
+        <tr>
+            <td>Filter</td>
+            <td>keuzes</td>
+        </tr>
+        <tr>
+            <td>Filter</td>
+            <td>keuzes</td>
+        </tr>
+        <tr>
+            <td>Filter</td>
+            <td>keuzes</td>
+        </tr>
+        <tr>
+            <td>Filter</td>
+            <td>keuzes</td>
+        </tr>
+    </table>
+
+</div>
 
 <div class="componenten">
 <table class="componenten_table">
@@ -53,18 +78,24 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <h4 class="modal-title" id="myModalLabel">@item.Proccesor_m.naam</h4>
                                 </div>
-                                <div class="modal-body">
-                                    @item.Proccesor_m.naam <br />
-                                    @item.Proccesor_m.socket<br />
-                                    @item.Proccesor_m.kernen<br />
-                                    @item.Proccesor_m.kloksnelheid<br />
-                                    @item.Verkrijgbaar_m.prijs<br />
-                                    @item.Verkrijgbaar_m.url<br />
-                                    @item.Webshop_m.naam<br />
+                                <div style="overflow: hidden" class="modal-body">
+                                   
+                                    <div class="modalcomponenteninfo">
+                                        <b>Kernen:</b>  @item.Proccesor_m.kernen<br />
+                                        <b>Kloksnelheid:</b> @item.Proccesor_m.kloksnelheid<br />
+                                        <br />
+                                        <b>Prijs:</b>   @item.Verkrijgbaar_m.prijs<br />
+                                        <br />
+                                        <b>Webshop:</b> @item.Webshop_m.naam<br />
+                                    </div>
+
+                                    <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
+                                    </div>
+
                                 </div>
                                 <div class="modal-footer">
-                                    <a class="btn btn-default" href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam' role="button">Kies onderdeel</a>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                                    <a class="btn btn-primary" href='/Moederbord/Index?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam' role="button">Kies onderdeel</a>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                                 </div>
                             </div>
                         </div>
@@ -93,49 +124,49 @@
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Processor</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["processor_cookie"].Value</td>
                 <td>@Request.Cookies["processorprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Moederbord</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["moederbord_cookie"].Value</td>
                 <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Videokaart</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["videokaart_cookie"].Value</td>
                 <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Werkgeheugen</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
                 <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Behuizing</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["behuizing_cookie"].Value</td>
                 <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Opslag</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["opslag_cookie"].Value</td>
                 <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
             </tr>
             <tr>
                 <td colspan="2" style="width:100%; height: 30px"><center>Voeding</center></td>
             </tr>
-            <tr style="font-style: italic">
+            <tr style="font-style: italic; background-color: #C0C0C0">
                 <td>@Request.Cookies["voeding_cookie"].Value</td>
                 <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
             </tr>
@@ -151,5 +182,3 @@
     }
 
 </div>
-
-
