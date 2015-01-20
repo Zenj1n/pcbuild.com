@@ -166,3 +166,22 @@ div.lijst{
     width: 20%;
     float: left;
 }
+
+/* css componenten_table*/
+
+table.componenten_table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.componententr{
+    height: 30px;
+    border-bottom: thin dotted #00aeff;
+}
+
+
+.componententr:hover{
+    border-bottom: thin solid #00aeff;
+    border-top: thin solid #00aeff;
+    color: #00aeff;
+}
