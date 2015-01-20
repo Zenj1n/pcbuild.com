@@ -1,0 +1,10 @@
+scrapy crawl inf_case
+scrapy crawl inf_cpu
+scrapy crawl inf_drive
+scrapy crawl inf_gfx
+scrapy crawl inf_mb
+scrapy crawl inf_opslag
+scrapy crawl inf_psu
+scrapy crawl inf_ram
+scrapy crawl inf_soundcard
+scrapy crawl inf_ssd

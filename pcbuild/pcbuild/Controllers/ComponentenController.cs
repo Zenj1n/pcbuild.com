@@ -18,8 +18,7 @@ using System.Diagnostics;
 namespace pcbuild.Controllers   
 {
     public class ComponentenController : Controller
-    {
-      
+    {      
         public ActionResult Index()
         {
             //Connectie met database

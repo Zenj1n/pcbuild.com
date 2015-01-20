@@ -9,7 +9,7 @@ namespace pcbuild.Models.WerkgeheugenModels
     {
         public string naam { get; set; }
         public string capaciteit { get; set; }
-        public string timings { get; set; }
+        public string ddr { get; set; }
         public string modules { get; set; }
     }
 }

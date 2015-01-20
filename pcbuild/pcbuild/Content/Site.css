@@ -142,3 +142,27 @@ ol.progtrckr li.progtrckr-current:before {
     font-size: 1.5em;
     bottom: -1.6em;
 }
+
+/* css filters*/
+
+div.filters{
+    border: 1px solid blue;
+    width: 15%;
+    float: left;
+}
+
+/* css componenten*/
+
+div.componenten{
+    border: 1px solid green;
+    width: 65%;
+    float:left;
+}
+
+/* css lijst*/
+
+div.lijst{
+    border: 1px solid red;
+    width: 20%;
+    float: left;
+}

@@ -1,11 +1,12 @@
-import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
-from py2neo import rel, node
 from py2neo import neo4j
 
-from alternate.items import AlternateItem
+import csv
+import datetime
+import time
+
 
 
 class alt_cpu(CrawlSpider):
@@ -19,6 +20,9 @@ class alt_cpu(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
 
     def parse_start_url(self, response):
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv", "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
@@ -37,10 +41,13 @@ class alt_cpu(CrawlSpider):
             kernen = desc[1].strip();
             socket = desc[2].strip();
 
-            euro = ''.join(euro_raw)
-            cent = ''.join(cent_raw)
+            euro_raw = ''.join(euro_raw)
+            euro = euro_raw[1:]
+            cent_raw = ''.join(cent_raw)
+            cent = cent_raw[:-1]
             price_raw = euro + cent
-            price = price_raw.replace("[\"]\"*", "")
+            price_raw2 = price_raw.replace("[\"]\"*", "").strip();
+            price = price_raw2.replace("-","00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -77,4 +84,9 @@ class alt_cpu(CrawlSpider):
                 "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
+
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])
 									  

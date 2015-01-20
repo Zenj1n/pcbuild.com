@@ -8,7 +8,8 @@ from py2neo import rel, node
 from py2neo import neo4j
 from scrapy.selector import HtmlXPathSelector
 
-from Hardware.items import HWItem
+import time
+
 
 class hw_case(CrawlSpider):
     name = "hw_case"
@@ -35,7 +36,12 @@ class hw_case(CrawlSpider):
             try:
                 vormfactor = ','.join(desc).split(",")[1].strip();
             except:
-                vormfactor = "unknown"
+                vormfactor = "onbekend"
+
+            try:
+                type = ','.join(desc).split(",")[0].strip();
+            except:
+                type = "onbekend"
             interfaces = "onbekend"
             try:
                 vormvoeding = ','.join(desc).split(",")[4].strip()
@@ -48,29 +54,7 @@ class hw_case(CrawlSpider):
 
             print "== Adding Node to database =="
 
-            query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
-                                                        "MERGE (w:Webshop { naam: {webshop} })")
-            hw_case = query_CreateWebshopNode.execute(webshop=webshop)
-
-            query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:behuizing) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
-            matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
-            for record in query_CheckOnExistingComponent.stream(namedb=namedb):
-                matchCountNumber = record[0]
-
-            if matchCountNumber != 0:
-                query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
-                hw_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
-            else:
-                query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:behuizing {naam:{namedb}, interfaces:{interfaces}, vormfactor:{vormfactor}, vormvoeding:{vormvoeding}})")
-                hw_case = query_CreateComponentNode.execute(namedb=namedb, interfaces=interfaces,
-                vormfactor=vormfactor, vormvoeding=vormvoeding)
-                query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
-                hw_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+            query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
+            "MATCH (c:behuizing)  WHERE c.naam = {namedb} SET c.type = {type}")
+            hw_case = query_VoegSpecificatiesToe.execute(namedb=namedb, type=type)
+            time.sleep(10)

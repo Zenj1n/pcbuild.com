@@ -1,11 +1,10 @@
-import scrapy
+import csv
+import datetime
+import time
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import Selector
-from py2neo import rel, node
 from py2neo import neo4j
-
-from Informatique.items import InformatiqueItem
 
 class inf_case(CrawlSpider):
     name = "inf_case"
@@ -17,12 +16,16 @@ class inf_case(CrawlSpider):
     )
 
     def parse_start_url(self, response):
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
+                 "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = Selector(response)
         titles = hxs.xpath('//ul[@id="detailview"]/li')
         for titles in titles:
             webshop = 'Informatique'
-            name = titles.xpath('div[@id="title"]/a/text()').extract()
+            name_raw = titles.xpath('div[@id="title"]/a/text()').extract()
             url_raw = titles.xpath('div[@id="title"]/a/@href').extract()
             component = 'behuizing'
             desc = titles.xpath('div[@id="description"]/ul/li/text()').extract()
@@ -30,7 +33,9 @@ class inf_case(CrawlSpider):
             #image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
-            price = ''.join(price_raw).replace("[\"]\"","")
+            name = ''.join(name_raw).replace("\"[u'", "")
+            price = ''.join(price_raw)[1:].replace("[\"]\"*", "").strip();
+
 
             try:
                 vormfactor = desc[0].strip();
@@ -46,6 +51,7 @@ class inf_case(CrawlSpider):
                 vormvoeding = "onbekend"
 
             kernen = "onbekend"
+
 
 
             namesplit = ''.join(name).split(",")
@@ -79,3 +85,8 @@ class inf_case(CrawlSpider):
                 "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 MATCH = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
                 price=price, url=url)
+            time.sleep(10)
+
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])

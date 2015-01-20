@@ -1,9 +1,10 @@
-scrapy crawl hw_cases
-scrapy crawl hw_cpucooler
+scrapy crawl hw_case
 scrapy crawl hw_cpu
-scrapy crawl hw_gpu
+scrapy crawl hw_cpukoel
+scrapy crawl hw_drive
+scrapy crawl hw_gfx
+scrapy crawl hw_mb
+scrapy crawl hw_opslag
+scrapy crawl hw_psu
 scrapy crawl hw_ram
-scrapy crawl hw_opticaldrive
-scrapy crawl hw_motherboard
-scrapy crawl hw_power_supply
-scrapy crawl hw_storage
+scrapy crawl hw_ssd

@@ -247,4 +247,67 @@ C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.c
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csprojResolveAssemblyReference.cache
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 C:\Users\Rinesh\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.config
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.pdb
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Antlr3.Runtime.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\EntityFramework.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\EntityFramework.SqlServer.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Google.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Web.Infrastructure.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Newtonsoft.Json.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Owin.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Extensions.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Primitives.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Helpers.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Mvc.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Optimization.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Razor.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.Deployment.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.Razor.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\WebGrease.dll
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.pdb
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Neo4jClient.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Extensions.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Net.Http.Primitives.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Helpers.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Mvc.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Optimization.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.Razor.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.Deployment.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\System.Web.WebPages.Razor.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Antlr3.Runtime.pdb
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Newtonsoft.Json.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\EntityFramework.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\EntityFramework.SqlServer.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Google.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csproj.App.config
+>>>>>>> b006924d04732fa9be25cc20bacc4e05530206d9

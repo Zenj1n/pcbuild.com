@@ -1,3 +1,7 @@
+import csv
+import datetime
+import time
+
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
@@ -14,6 +18,10 @@ class alt_case(CrawlSpider):
     rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[@class="next"]')), callback='parse_start_url', follow=True),)
 
     def parse_start_url(self, response):
+        now = datetime.datetime.today()
+        date = now.strftime('%m/%d/%Y')
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
+                 "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
@@ -21,23 +29,29 @@ class alt_case(CrawlSpider):
 
         for titles in titles:
             webshop = 'alternate.nl'
-            name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
+            name_raw = titles.select(
+                'a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'behuizing'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            cent_raw = titles.select(
+                'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
             url = ''.join(url_raw).replace("[\"]\"", "")
+            name = ''.join(name_raw).replace("\"[u'", "")
 
-            interfaces = desc[0].strip();
-            vormfactor = desc[1].strip();
-            vormvoeding = desc[2].strip();
+            interfaces = desc[0].strip()
+            vormfactor = desc[1].strip()
+            vormvoeding = desc[2].strip()
 
-            euro = ''.join(euro_raw)
-            cent = ''.join(cent_raw)
+            euro_raw = ''.join(euro_raw)
+            euro = euro_raw[1:]
+            cent_raw = ''.join(cent_raw)
+            cent = cent_raw[:-1]
             price_raw = euro + cent
-            price = price_raw.replace("[\"]\"*", "")
+            price_raw2 = price_raw.replace("[\"]\"*", "").strip();
+            price = price_raw2.replace("-", "00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -49,35 +63,33 @@ class alt_case(CrawlSpider):
             alt_case = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:behuizing) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                               "match (c:behuizing) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing) WHERE c.naam = {namedb} SET c.interfaces = {interfaces}, c.vormfactor = {vormfactor}, c.vormvoeding = {vormvoeding}")
-                alt_case = query_SetSpecifications.execute(namedb=namedb, interfaces=interfaces, vormfactor=vormfactor, vormvoeding=vormvoeding)
+                                                            "MATCH (c:behuizing) WHERE c.naam = {namedb} SET c.interfaces = {interfaces}, c.vormfactor = {vormfactor}, c.vormvoeding = {vormvoeding}")
+                alt_case = query_SetSpecifications.execute(namedb=namedb, interfaces=interfaces, vormfactor=vormfactor,
+                                                           vormvoeding=vormvoeding)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                              "MATCH (c:behuizing)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_case = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:behuizing {naam:{namedb}, interfaces:{interfaces}, vormfactor:{vormfactor}, vormvoeding:{vormvoeding}})")
+                                                              "Create (c:behuizing {naam:{namedb}, interfaces:{interfaces}, vormfactor:{vormfactor}, vormvoeding:{vormvoeding}})")
                 alt_case = query_CreateComponentNode.execute(namedb=namedb, interfaces=interfaces,
-                vormfactor=vormfactor, vormvoeding=vormvoeding)
+                                                             vormfactor=vormfactor, vormvoeding=vormvoeding)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_case = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+                                                                 price=price, url=url)
+            time.sleep(10)
 
-
-
-
-
-
-       
-
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])
