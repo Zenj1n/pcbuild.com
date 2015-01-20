@@ -9,5 +9,6 @@ namespace pcbuild.Models
     {
         public string processor { get; set; }
         public string moederbord { get; set; }
+        public string videokaart_naam { get; set; }
     }
 }

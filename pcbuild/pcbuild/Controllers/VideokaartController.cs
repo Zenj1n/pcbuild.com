@@ -18,7 +18,7 @@ using pcbuild.Models.VideokaartModels;
 
 namespace pcbuild.Controllers
 {
-    public class VideokaartController : MoederbordController
+    public class VideokaartController : Controller
     {
         // GET: Videokaart
         public ActionResult Index(string moederbord, string prijs, string webshop, string vormfactor, string ddr)

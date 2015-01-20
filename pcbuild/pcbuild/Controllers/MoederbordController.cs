@@ -17,7 +17,7 @@ using pcbuild.Models.MoederbordModels;
 
 namespace pcbuild.Controllers
 {
-    public class MoederbordController : ProcessorController
+    public class MoederbordController : Controller
     {
         // GET: Moederbord
         public static LijstModel lijstModel = new LijstModel();
@@ -35,6 +35,7 @@ namespace pcbuild.Controllers
             int processor_prijs = Convert.ToInt32(prijs);
 
             lijstModel.processor = processor;
+            ViewBag.lijst_processor = lijstModel.processor;
 
             //voeg data toe aan cookies
             processor_cookie.Value = processor;
