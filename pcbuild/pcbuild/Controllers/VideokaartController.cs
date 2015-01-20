@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.VideokaartModels;
+using System.Globalization;
 
 
 namespace pcbuild.Controllers
@@ -66,6 +67,9 @@ namespace pcbuild.Controllers
             moederbordwebshop_cookie = Request.Cookies["moederbordwebshop_cookie"];
             moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
+
+            string prijs = moederbordprijs_cookie.Value;
+            decimal prijs_moederbord = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

@@ -13,6 +13,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
@@ -46,6 +47,9 @@ namespace pcbuild.Controllers
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
+
+            string prijs = werkgeheugenprijs_cookie.Value;
+            decimal prijs_werkgeheugen = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             
             //Haal de cookies op om te matchen
             moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];

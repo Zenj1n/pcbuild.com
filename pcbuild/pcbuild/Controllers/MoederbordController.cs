@@ -63,7 +63,6 @@ namespace pcbuild.Controllers
             string webshop = processorwebshop_cookie.Value;
 
             decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            Debug.WriteLine(prijs_processor);
 
             string socket_search = "(?i).*" + socket + ".*";              
 

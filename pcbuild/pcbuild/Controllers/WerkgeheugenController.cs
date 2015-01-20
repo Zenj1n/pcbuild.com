@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.WerkgeheugenModels;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
@@ -47,6 +48,9 @@ namespace pcbuild.Controllers
 
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");            
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
+
+            string prijs = videokaartprijs_cookie.Value;
+            decimal prijs_videokaart = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
             string ddr_search = "(?i).*"+ddr+".*";            
