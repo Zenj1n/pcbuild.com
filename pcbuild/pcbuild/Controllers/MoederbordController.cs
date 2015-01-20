@@ -20,7 +20,7 @@ namespace pcbuild.Controllers
     public class MoederbordController : Controller
     {
         // GET: Moederbord
-        public static LijstModel lijstModel = new LijstModel();
+        //public static LijstModel lijstModel = new LijstModel();
 
         public ActionResult Index(string processor, string socket, string prijs, string webshop)
         {
@@ -32,10 +32,10 @@ namespace pcbuild.Controllers
             Debug.WriteLine(socket);
 
             string socket_search = "(?i).*" + socket + ".*";
-            int processor_prijs = Convert.ToInt32(prijs);
+           // int processor_prijs = Convert.ToInt32(prijs);
 
-            lijstModel.processor = processor;
-            ViewBag.lijst_processor = lijstModel.processor;
+          //  lijstModel.processor = processor;
+          //  ViewBag.lijst_processor = lijstModel.processor;
 
             //voeg data toe aan cookies
             processor_cookie.Value = processor;

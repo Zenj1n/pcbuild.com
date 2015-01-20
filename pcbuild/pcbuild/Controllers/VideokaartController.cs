@@ -31,9 +31,9 @@ namespace pcbuild.Controllers
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
 
-            Debug.WriteLine(MoederbordController.lijstModel.processor);
+           // Debug.WriteLine(MoederbordController.lijstModel.processor);
 
-            ViewBag.Test = lijstModel.processor;
+           // ViewBag.Test = lijstModel.processor;
 
             //voeg data toe aan cookies
             moederbord_cookie.Value = moederbord;
