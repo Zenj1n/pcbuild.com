@@ -1,4 +1,6 @@
 library("ggplot2")
+args<-commandArgs(TRUE)
+options(echo=TRUE)
 Prijshistory = read.csv('E:/Repositories Git Hub/pcbuild.com/Crawler/alternate/components/case/prijsgeschiedenis.csv', header = F)
 names(Prijshistory) <- c("datum","naam","prijs")
 
@@ -8,3 +10,5 @@ names(test) <- c("datum","naam","prijs")
 
 plot(test$datum, test$prijs, type="b")
 ggplot(data=test, aes(x=datum, y=prijs, group=1)) + geom_line()
+options <- commandArgs(trailingOnly = TRUE)
+options

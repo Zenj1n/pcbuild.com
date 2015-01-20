@@ -44,11 +44,11 @@ class inf_opslag(CrawlSpider):
 
             type = ''.join(type_raw).replace("SATA Harddisks", "Harde schijf").replace("(Solid State Drive)", "").strip()
             try:
-                capaciteit = desc[0].strip()
+                capaciteit = desc[0].replace("\"[u'", "").strip()
             except:
                 capiciteit = "onbekend"
             try:
-                snelheid = desc[2].strip()
+                snelheid = desc[2].replace("\"[u'", "").strip()
             except:
                 snelheid = "onbekend"
 

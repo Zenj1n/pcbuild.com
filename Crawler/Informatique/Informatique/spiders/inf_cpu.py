@@ -46,7 +46,7 @@ class inf_cpu(CrawlSpider):
             except:
                 socket = "onbekend"
             try:
-                kloksnelheid = desc[3].strip()
+                kloksnelheid = desc[3].replace("\"[u'", "").strip()
             except:
                 kloksnelheid = "onbekend"
 
