@@ -32,8 +32,6 @@ namespace pcbuild.Controllers
             string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
             string vormfactor_search = "(?i).*" + vormfactor[0] + ".*";
 
-            Debug.WriteLine("test" + vormfactor);
-
             //voeg data toe aan cookies
             werkgeheugen_cookie.Value = werkgeheugen;
             werkgeheugenprijs_cookie.Value = prijs;

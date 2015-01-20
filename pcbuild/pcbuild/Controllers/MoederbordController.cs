@@ -60,5 +60,6 @@ namespace pcbuild.Controllers
 
                  return View(componenten_query);
             }
+
         }
 }
