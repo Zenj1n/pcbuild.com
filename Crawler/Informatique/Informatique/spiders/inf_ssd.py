@@ -41,11 +41,11 @@ class inf_ssd(CrawlSpider):
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             try:
-                capaciteit = desc[0].strip()
+                capaciteit = desc[0].replace("\"[u'", "").strip()
             except:
                 capaciteit = "onbekend"
             try:
-                snelheid = desc[4].strip()
+                snelheid = desc[4].replace("\"[u'", "").strip()
             except:
                 snelheid = "onbekend"
 

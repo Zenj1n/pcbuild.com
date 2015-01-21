@@ -27,6 +27,7 @@ scrapy crawl inf_ssd
 
 cd ..
 
+cd Hardware
 scrapy crawl hw_case
 scrapy crawl hw_cpu
 scrapy crawl hw_cpukoel

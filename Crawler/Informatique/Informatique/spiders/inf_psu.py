@@ -40,12 +40,12 @@ class inf_psu(CrawlSpider):
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
 
             try:
-                vermogen = desc[1].strip();
+                vermogen = desc[1].replace("\"[u'", "").strip();
             except:
                 vermogen = "onbekend"
             geluid = "onbekend"
             try:
-                zuinigheid = desc[2].strip()
+                zuinigheid = desc[2].replace("\"[u'", "").strip()
             except:
                 zuinigheid = "onbekend"
 
