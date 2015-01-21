@@ -15,6 +15,8 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.MoederbordModels;
 using System.Globalization;
+using pcbuild.Models.ProcessorModels;
+using System.Text.RegularExpressions;
 
 namespace pcbuild.Controllers
 {
@@ -24,24 +26,28 @@ namespace pcbuild.Controllers
         // GET: Moederbord
         public ActionResult Reload(string processor, string socket, string prijs, string webshop)
         {
+            socket = Regex.Replace(socket, " ", "+", RegexOptions.IgnoreCase); //Voor Sockets die een "+" hebben en URL's kunnen dat niet meegeven
+
+            //Roep Cookies aan
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
             HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
-
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
             HttpCookie moederbordprijs_cookie = new HttpCookie("moederbordprijs_cookie");
+
+            //Stop de cookies data in een variable
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             moederbordprijs_cookie = Request.Cookies["moederbordprijs_cookie"];
 
-            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS")); //Pak prijs van de vorige stap
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));                          //Pak prijs van de vorige stap
             decimal prijs_moederbord = Convert.ToDecimal(moederbordprijs_cookie.Value, new CultureInfo("is-IS")); //Pak de prijs van de component van deze stap
-            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, //Pak de vorige totale prijs van vorige stap en verminder dat met 
-            new CultureInfo("is-IS")) - prijs_moederbord;                              //De prijs van dit component(om te voorkomen dat bij terugstap de prijs opnieuw optelt)
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value,                            //Pak de vorige totale prijs van vorige stap en verminder dat met 
+            new CultureInfo("is-IS")) - prijs_moederbord;                                                         //De prijs van dit component(om te voorkomen dat bij terugstap de prijs opnieuw optelt)
             decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
             string prijs_totaal_string = prijs_totaal.ToString();
             totale_prijs_cookie.Value = prijs_totaal_string;
-            moederbordprijs_cookie.Value = "0,00";
+            moederbordprijs_cookie.Value = "0,00";                                                                 //Zet de huidige component prijs weer op 0.00 om de stap opnieuw te beginnen
             Response.Cookies.Add(moederbordprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
@@ -63,24 +69,16 @@ namespace pcbuild.Controllers
 
         public ActionResult Index()
         {
+            //Roep Cookies aan voor de View
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
             HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
-            processor_cookie = Request.Cookies["processor_cookie"];
-            processorprijs_cookie = Request.Cookies["processorprijs_cookie"];
-            processorwebshop_cookie = Request.Cookies["processorwebshop_cookie"];
             processorsocket_cookie = Request.Cookies["processorsocket_cookie"];
-            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
-            string processor = processor_cookie.Value;
             string socket = processorsocket_cookie.Value;
-            string prijs = processorprijs_cookie.Value;
-            string webshop = processorwebshop_cookie.Value;
-
-            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Where Query voor compatible
             string socket_search = "(?i).*" + socket + ".*";
@@ -90,6 +88,7 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
+            //Query om moederborden op te halen met de juiste socket van het processor
             var componenten_query = client
            .Cypher
            .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
