@@ -25,6 +25,16 @@ namespace pcbuild.Controllers
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+
+            string prijs_2 = totale_prijs_cookie.Value;
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
+            string prijs_totaal_string = prijs_totaal.ToString();
+            totale_prijs_cookie.Value = prijs_totaal_string;
 
             //voeg data toe aan cookies
             werkgeheugen_cookie.Value = werkgeheugen;
@@ -47,10 +57,8 @@ namespace pcbuild.Controllers
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
-            string prijs = werkgeheugenprijs_cookie.Value;
-            decimal prijs_werkgeheugen = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            
             //Haal de cookies op om te matchen
             moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
 

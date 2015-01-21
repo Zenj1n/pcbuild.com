@@ -30,6 +30,16 @@ namespace pcbuild.Controllers
 
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+
+            string prijs_2 = totale_prijs_cookie.Value;
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
+            string prijs_totaal_string = prijs_totaal.ToString();
+            totale_prijs_cookie.Value = prijs_totaal_string;          
 
             //voeg data toe aan cookies
             moederbord_cookie.Value = moederbord;
@@ -61,15 +71,14 @@ namespace pcbuild.Controllers
 
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             moederbord_cookie = Request.Cookies["moederbord_cookie"];
             moederbordprijs_cookie = Request.Cookies["moederbordprijs_cookie"];
             moederbordwebshop_cookie = Request.Cookies["moederbordwebshop_cookie"];
             moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
-
-            string prijs = moederbordprijs_cookie.Value;
-            decimal prijs_moederbord = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoederbordController.cs" />
     <Compile Include="Controllers\OpslagController.cs" />
+    <Compile Include="Controllers\PrintLijstController.cs" />
     <Compile Include="Controllers\ProcessorController.cs" />
     <Compile Include="Controllers\SearchComponentController.cs" />
     <Compile Include="Controllers\VideokaartController.cs" />
@@ -283,6 +284,7 @@
     <Content Include="Views\Opslag\Index.cshtml" />
     <Content Include="Views\SearchComponent\Index.cshtml" />
     <Content Include="Views\SearchComponent\Search.cshtml" />
+    <Content Include="Views\PrintLijst\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

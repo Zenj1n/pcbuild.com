@@ -29,6 +29,16 @@ namespace pcbuild.Controllers
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
             HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            
+            string prijs_2 = totale_prijs_cookie.Value;
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
+            string prijs_totaal_string = prijs_totaal.ToString();
+            totale_prijs_cookie.Value = prijs_totaal_string;
 
             //voeg data toe aan cookies
             processor_cookie.Value = processor;
@@ -41,6 +51,7 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(processorprijs_cookie);
             Response.Cookies.Add(processorwebshop_cookie);
             Response.Cookies.Add(processorsocket_cookie);
+            Response.Cookies.Add(totale_prijs_cookie);
 
             return RedirectToAction("Index");
         }
@@ -51,11 +62,13 @@ namespace pcbuild.Controllers
             HttpCookie processorprijs_cookie = new HttpCookie("processorprijs_cookie");
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
             HttpCookie processorsocket_cookie = new HttpCookie("processorsocket_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
             processor_cookie = Request.Cookies["processor_cookie"];
             processorprijs_cookie = Request.Cookies["processorprijs_cookie"];
             processorwebshop_cookie = Request.Cookies["processorwebshop_cookie"];
             processorsocket_cookie = Request.Cookies["processorsocket_cookie"];
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
             string processor = processor_cookie.Value;
             string socket = processorsocket_cookie.Value;
@@ -64,6 +77,7 @@ namespace pcbuild.Controllers
 
             decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
+            //Where Query voor compatible
             string socket_search = "(?i).*" + socket + ".*";              
 
             //Connectie met database

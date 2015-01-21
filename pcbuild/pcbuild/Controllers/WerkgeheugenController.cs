@@ -27,6 +27,16 @@ namespace pcbuild.Controllers
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
             HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
 
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+
+            string prijs_2 = totale_prijs_cookie.Value;
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
+            string prijs_totaal_string = prijs_totaal.ToString();
+            totale_prijs_cookie.Value = prijs_totaal_string; 
+
             //voeg data toe aan cookies
             videokaart_cookie.Value = videokaart;
             videokaartprijs_cookie.Value = prijs;
@@ -45,12 +55,11 @@ namespace pcbuild.Controllers
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
             HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");            
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
-
-            string prijs = videokaartprijs_cookie.Value;
-            decimal prijs_videokaart = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
             string ddr_search = "(?i).*"+ddr+".*";            

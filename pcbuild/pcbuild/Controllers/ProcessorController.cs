@@ -41,6 +41,7 @@ namespace pcbuild.Controllers
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
             HttpCookie voedingprijs_cookie = new HttpCookie("voedingprijs_cookie");
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
             HttpCookie processorwebshop_cookie = new HttpCookie("processorwebshop_cookie");
             HttpCookie moederbordwebshop_cookie = new HttpCookie("moederbordwebshop_cookie");
@@ -49,6 +50,7 @@ namespace pcbuild.Controllers
             HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
             HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
             HttpCookie voedingwebshop_cookie = new HttpCookie("voedingwebshop_cookie");
+
 
             //voeg data toe aan cookies
             processor_cookie.Value = "Geen processor toegevoegd.";
@@ -66,6 +68,7 @@ namespace pcbuild.Controllers
             behuizingprijs_cookie.Value = "€ 0,-";
             opslagprijs_cookie.Value = "€ 0,-";
             voedingprijs_cookie.Value = "€ 0,-";
+            totale_prijs_cookie.Value = "0,00";
 
             processorwebshop_cookie.Value = "Webshop onbekend.";
             moederbordwebshop_cookie.Value = "Webshop onbekend.";
@@ -91,6 +94,7 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(behuizingprijs_cookie);
             Response.Cookies.Add(opslagprijs_cookie);
             Response.Cookies.Add(voedingprijs_cookie);
+            Response.Cookies.Add(totale_prijs_cookie);
 
             Response.Cookies.Add(processorwebshop_cookie);
             Response.Cookies.Add(moederbordwebshop_cookie);
