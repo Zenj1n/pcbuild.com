@@ -26,11 +26,13 @@ C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboar
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\System.Net.Http.Extensions.dll
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\System.Net.Http.Primitives.dll
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Neo4jClient.pdb
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Neo4jClient.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.App.config
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.Form1.resources
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.Cache
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
-C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
-C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.exe
-C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.pdb

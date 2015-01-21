@@ -4,56 +4,113 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Uw Build</h2>
+<ol class="progtrckr" data-progtrckr-steps="7">
+    <li onclick="javascript: history.back()" class="progtrckr-return">Verander bouw</li><!--
+ --><li class="progtrckr-done">Processor</li><!--
+ --><li class="progtrckr-done">Moederbord</li><!--
+ --><li class="progtrckr-done">Videokaart</li><!--
+ --><li class="progtrckr-done">Werkgeheugen</li><!--
+ --><li class="progtrckr-done">Behuizing</li><!--
+ --><li class="progtrckr-done">Opslag</li><!--
+ --><li class="progtrckr-done">Voeding</li>
+</ol>
 
-@if (Request.Cookies["processor_cookie"] != null)
-{
 
-    <table style="border: 1px solid black">
-        <tr>
-            <td>Component</td>
-            <td>Prijs</td>
-        </tr>
+<div class="eindinfo">
 
-        <tr>
-            <td>@Request.Cookies["processor_cookie"].Value</td>
-            <td>@Request.Cookies["processorprijs_cookie"].Value</td>
-        </tr>
+    <h1>Bedankt voor het bouwen!</h1>
+    <br />
+    <p>
+        U kunt uw lijst vinden aan de rechterzijde.
+    </p>
+    <br />
+    <p>
+        U kunt uw lijst uitprinten door op de volgende link te klikken:
+    </p>
+    <br />
+    <a class="btn btn-default btn-lg" href="javascript:window.print()" role="button">Print lijst</a>
+    <br />
+    <br />
+    <p style="font-size: xx-small; color: silver"> Uw configuratie is niet gegarandeerd om 100% compatible te zijn.</p>
+</div>
+<div class="eindlijst">
 
-        <tr>
-            <td>@Request.Cookies["moederbord_cookie"].Value</td>
-            <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>@Request.Cookies["videokaart_cookie"].Value</td>
-            <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
-            <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>@Request.Cookies["behuizing_cookie"].Value</td>
-            <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>@Request.Cookies["opslag_cookie"].Value</td>
-            <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>@Request.Cookies["voeding_cookie"].Value</td>
-            <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
-        </tr>
-        <tr>
-            <td>Totale Prijs</td>
-            <td>@Request.Cookies["totale_prijs_cookie"].Value</td>
-        </tr>
+    @if (Request.Cookies["processor_cookie"] != null)
+    {
 
-    </table>
+        <table>
+            <tr>
+                <td colspan="2" style="width:100%; height: 40px"><center><b>Uw Lijst</b></center></td>
+            </tr>
+            <tr>
+                <td>Component</td>
+                <td>Prijs</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Processor</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["processor_cookie"].Value</td>
+                <td>@Request.Cookies["processorprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Moederbord</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["moederbord_cookie"].Value</td>
+                <td>@Request.Cookies["moederbordprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Videokaart</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["videokaart_cookie"].Value</td>
+                <td>@Request.Cookies["videokaartprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Werkgeheugen</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["werkgeheugen_cookie"].Value</td>
+                <td>@Request.Cookies["werkgeheugenprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Behuizing</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["behuizing_cookie"].Value</td>
+                <td>@Request.Cookies["behuizingprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Opslag</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["opslag_cookie"].Value</td>
+                <td>@Request.Cookies["opslagprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:100%; height: 30px"><center>Voeding</center></td>
+            </tr>
+            <tr style="font-style: italic; background-color: #C0C0C0">
+                <td>@Request.Cookies["voeding_cookie"].Value</td>
+                <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr style="border-top: thin solid white; font-weight: bold">
+                <td>Totale Prijs:</td>
+                <td>@Request.Cookies["totale_prijs_cookie"].Value</td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <table>
+            <tr>
+                <td>Zet cookies aan om gebruik te maken van de lijst!</td>
+            </tr>
+        </table>
+    }
 
-}
-else
-{
-    <center> ERROR - Zet cookies aan om gebruik te maken van de lijst!  </center>
-}
-
+</div>
