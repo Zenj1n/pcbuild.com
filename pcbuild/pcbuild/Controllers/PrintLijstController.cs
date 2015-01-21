@@ -19,14 +19,13 @@ namespace pcbuild.Controllers
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
             decimal prijs_voeding = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal = prijs_totaal_vorige + prijs_voeding;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
             Response.Cookies.Add(totale_prijs_cookie);
+
             
             //voeg data toe aan cookies
             voeding_cookie.Value = voeding;
