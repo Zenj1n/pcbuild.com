@@ -23,6 +23,13 @@ class unittest(unittest.TestCase):
         test1 = cleaning.clean_price(test1)
         self.assertEqual(test1, correct)
 
+    def test_cleanSocket(self):
+        cleaning = Cleaning()
+        test1 = "Socket 2011-3 (Intel)"
+        correct = "2011-3"
+        test1 = cleaning.clean_socket(test1)
+        self.assertEqual(test1, correct)
+
     def test_crawlNaam(self):
         database = Database()
         databasetest = database.parse_title("http://www.informatique.nl/?m=usl&g=004&view=6&&sort=pop&pl=800")
@@ -72,6 +79,8 @@ class unittest(unittest.TestCase):
         database = Database()
         databasetest = database.check_dbPsu()
         self.assertIsNot(databasetest, null)
+
+
 
 
 
