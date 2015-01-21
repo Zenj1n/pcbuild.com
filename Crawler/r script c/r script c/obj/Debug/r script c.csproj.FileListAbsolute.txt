@@ -4,3 +4,19 @@ c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\bin\
 c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.csprojResolveAssemblyReference.cache
 c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.exe
 c:\users\fabian\documents\visual studio 2013\Projects\r script c\r script c\obj\Debug\r script c.pdb
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.exe.config
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.exe
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.pdb
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.csproj.App.config
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.csprojResolveAssemblyReference.cache
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.exe
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.pdb
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Neo4jClient.dll
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Neo4jClient.pdb
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Neo4jClient.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Primitives.xml

@@ -3,21 +3,152 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Neo4jClient.Cypher;
+using Neo4jClient;
 namespace r_script_c
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string component = "Chieftec Elox BT-04B-U3, behuizing Zwart, 250 Watt";   
+            CPU_grafiek();
+            GPU_grafiek();
+            PSU_grafiek();
+            Moederbord_grafiek();
+            Case_grafiek();
+            RAM_grafiek();
+            Opslag_grafiek();                 
+        }
+        public static void Run_Rscript(string component)
+        {
             string strCmdText;
             strCmdText = "/C Rscript prijshistory.r " + component.Replace(" ", "_");
-            System.Diagnostics.Process.Start("CMD.exe",strCmdText);
-
-
+            System.Diagnostics.Process.Start("CMD.exe", strCmdText);
         }
+
+        public static void Moederbord_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:moederbord)")
+           .Return(n => n.As<moederbord>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+
+        public static void CPU_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:processor)")
+           .Return(n => n.As<processor>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+
+        public static void GPU_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:videokaart)")
+           .Return(n => n.As<videokaart>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+
+        public static void RAM_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:werkgeheugen)")
+           .Return(n => n.As<werkgeheugen>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+        public static void Case_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:behuizing)")
+           .Return(n => n.As<behuizing>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+        public static void Opslag_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:opslag)")
+           .Return(n => n.As<opslag>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+
+        public static void PSU_grafiek()
+        {
+            string component;
+            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            client.Connect();
+            var query_componenten = client
+           .Cypher
+           .Match("(n:voeding)")
+           .Return(n => n.As<voeding>())
+           .Results
+           .ToArray();
+            for (int i = 0; i < query_componenten.Length; i++)
+            {
+                component = query_componenten[i].naam;
+                Run_Rscript(component);
+            }
+        }
+
     }
 }
-
-//Rscript E:/Repositories Git Hub/pcbuild.com/Crawler/afbeeldingen/prijshistory.r Antec_Minuet_350W,_behuizing_Zwart_(Hoogglans)/Zilver

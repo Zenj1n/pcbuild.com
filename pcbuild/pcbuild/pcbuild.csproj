@@ -206,8 +206,8 @@
     <Compile Include="Models\VoedingModels\ViewModelVoeding.cs" />
     <Compile Include="Models\VoedingModels\Voeding_Model.cs" />
     <Compile Include="Models\Webshop_Model.cs" />
-    <Compile Include="Models\WerkgeheugenModels\ViewModelWerkgeheugen.cs" />
-    <Compile Include="Models\WerkgeheugenModels\Werkgeheugen_Model.cs" />
+    <Compile Include="Models\VoedingModels\WerkgeheugenModels\ViewModelWerkgeheugen.cs" />
+    <Compile Include="Models\VoedingModels\WerkgeheugenModels\Werkgeheugen_Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
