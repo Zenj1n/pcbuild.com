@@ -28,15 +28,18 @@ namespace pcbuild.Controllers
             HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
 
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            HttpCookie voedingprijs_cookie = new HttpCookie("voedingprijs_cookie");
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            voedingprijs_cookie = Request.Cookies["voedingprijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
             decimal prijs_opslag = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_voeding = Convert.ToDecimal(voedingprijs_cookie.Value, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_voeding;
             decimal prijs_totaal = prijs_totaal_vorige + prijs_opslag;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
+            voedingprijs_cookie.Value = "0,00";
+            Response.Cookies.Add(voedingprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
             //voeg data toe aan cookies
@@ -57,9 +60,7 @@ namespace pcbuild.Controllers
             HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
             HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");
-
-            string prijs = opslagprijs_cookie.Value;
-            decimal prijs_opslag = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

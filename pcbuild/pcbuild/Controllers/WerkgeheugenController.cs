@@ -28,15 +28,18 @@ namespace pcbuild.Controllers
             HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
 
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            werkgeheugenprijs_cookie = Request.Cookies["werkgeheugenprijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
             decimal prijs_videokaart = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_werkgeheugen = Convert.ToDecimal(werkgeheugenprijs_cookie.Value, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_werkgeheugen;
             decimal prijs_totaal = prijs_totaal_vorige + prijs_videokaart;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
+            werkgeheugenprijs_cookie.Value = "0,00";
+            Response.Cookies.Add(werkgeheugenprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
             //voeg data toe aan cookies

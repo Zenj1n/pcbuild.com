@@ -26,16 +26,20 @@ namespace pcbuild.Controllers
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
             HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
-            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
-            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            opslagprijs_cookie = Request.Cookies["opslagprijs_cookie"];
+
             decimal prijs_behuizing = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_opslag = Convert.ToDecimal(opslagprijs_cookie.Value, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_opslag;
             decimal prijs_totaal = prijs_totaal_vorige + prijs_behuizing;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
+            opslagprijs_cookie.Value = "0,00";
+            Response.Cookies.Add(opslagprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
             //voeg data toe aan cookies
