@@ -18,8 +18,8 @@ class inf_case(CrawlSpider):
     def parse_start_url(self, response):
         now = datetime.datetime.today()
         date = now.strftime('%m/%d/%Y')
-        #f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
-         #        "a")
+        f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
+                "a")
         graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
         hxs = Selector(response)
         titles = hxs.xpath('//ul[@id="detailview"]/li')
@@ -87,6 +87,6 @@ class inf_case(CrawlSpider):
                 price=price, url=url)
             time.sleep(10)
 
-           # csv_f = csv.reader(f)
-           # a = csv.writer(f, delimiter=',')
-           # a.writerow([str(date), name, price])
+            csv_f = csv.reader(f)
+            a = csv.writer(f, delimiter=',')
+            a.writerow([str(date), name, price])
