@@ -83,7 +83,8 @@ namespace pcbuild.Controllers
             decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Where Query voor compatible
-            string socket_search = "(?i).*" + socket + ".*";              
+            string socket_search = "(?i).*" + socket + ".*";
+            Debug.WriteLine(socket);
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
@@ -92,8 +93,8 @@ namespace pcbuild.Controllers
             var componenten_query = client
            .Cypher
            .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
-           .Where("n.naam =~ {socket_c}")
-           .WithParam("socket_c", socket_search)
+           .Where("n.socket = {socket_c}")
+           .WithParam("socket_c", socket)
            .Return((n, r, p) => new ViewModelMoederbord
            {
                Moederbord_all = n.As<Moederbord_Model>(),
