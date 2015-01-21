@@ -1,4 +1,3 @@
-install.packages("ggplot2") 
 library("ggplot2")
 Prijshistory = read.csv('C:/Users/Jason/Documents/GitHub/pcbuild.com/Crawler/alternate/components/case/prijsgeschiedenis.csv', header = F)
 names(Prijshistory) <- c("datum","naam","prijs")
@@ -6,8 +5,8 @@ test = read.csv('C:/Users/Jason/Documents/GitHub/pcbuild.com/Crawler/alternate/c
 names(test) <- c("datum","naam","prijs")
 huidige_datum = Sys.Date()
 test$datum = as.Date(test$datum, "%m/%d/%Y")
-filenaam = "a"
+filenaam ="a"
 pngpath = paste("C:/Users/Jason/Documents/GitHub/pcbuild.com/Crawler/R script/", filenaam,".png", sep="")
 png(filename=pngpath)
-ggplot(data=test[test$naam == naam,],  aes(x=datum, y=prijs, group=1)) + geom_line(colour="#0174DF", size=2)
+ggplot(data=Prijshistory[Prijshistory$naam == filenaam,],  aes(x=datum, y=prijs, group=1)) + geom_line(colour="#0174DF", size=2)
 dev.off()

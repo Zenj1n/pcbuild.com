@@ -14,9 +14,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using pcbuild.Models.MoederbordModels;
+using System.Globalization;
 
 namespace pcbuild.Controllers
 {
+
     public class MoederbordController : Controller
     {
         // GET: Moederbord
@@ -60,13 +62,9 @@ namespace pcbuild.Controllers
             string prijs = processorprijs_cookie.Value;
             string webshop = processorwebshop_cookie.Value;
 
-            string socket_search = "(?i).*" + socket + ".*";
-           // int processor_prijs = Convert.ToInt32(prijs);
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
-          //  lijstModel.processor = processor;
-          //  ViewBag.lijst_processor = lijstModel.processor;
-
-            
+            string socket_search = "(?i).*" + socket + ".*";              
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));

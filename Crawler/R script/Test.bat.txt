@@ -1,0 +1,2 @@
+set R_Script="C:\Program Files\R\R-3.1.2\bin\RScript.exe"
+%R_Script% exmpl.R b example 100 > exmpl.batch 2>&1
