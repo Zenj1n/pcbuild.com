@@ -27,7 +27,7 @@ class inf_ram(CrawlSpider):
         date = now.strftime('%m/%d/%Y')
         f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
                  "a")
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//ul[@id="detailview"]/li')
         for titles in titles:
