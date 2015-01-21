@@ -67,8 +67,10 @@ namespace pcbuild.Controllers
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
-            string ddr_search = "(?i).*"+ddr+".*";            
+            string ddr_search = "(?i).*"+ddr+".*";
 
+            Debug.WriteLine(ddr);
+            Debug.WriteLine(ddr_search);
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
