@@ -278,9 +278,6 @@
     <Content Include="Views\Moederbord\Index.cshtml" />
     <Content Include="Views\Werkgeheugen\Index.cshtml" />
     <Content Include="Views\Voeding\Index.cshtml" />
-    <Content Include="Views\Home\Processor_Stap1.cshtml" />
-    <Content Include="Views\Home\Moederbord_Stap2.cshtml" />
-    <Content Include="Views\Home\Videokaart_Stap3.cshtml" />
     <Content Include="Views\Opslag\Index.cshtml" />
     <Content Include="Views\SearchComponent\Index.cshtml" />
     <Content Include="Views\SearchComponent\Search.cshtml" />
