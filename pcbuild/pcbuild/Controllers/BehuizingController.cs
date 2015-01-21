@@ -69,8 +69,9 @@ namespace pcbuild.Controllers
 
             //Maak er een query van om te zoeken in onze database
             string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
-            string vormfactor_search = "(?i)" + vormfactor[0] + ".*";           
-
+            string vormfactor_search = "(?i)" + vormfactor[0] + vormfactor[1] + vormfactor[2] + ".*";
+            Debug.WriteLine(vormfactor);
+            Debug.WriteLine(vormfactor_search);
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
@@ -79,7 +80,7 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
-              .Where("n.naam =~ {vormfactor_c}")
+              .Where("n.vormfactor =~ {vormfactor_c}")
               .WithParam("vormfactor_c", vormfactor_search)
               .Return((n, r, p) => new ViewModelBehuizing
               {
