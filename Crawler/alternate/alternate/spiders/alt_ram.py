@@ -36,7 +36,7 @@ class alt_ram_ddr(CrawlSpider):
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
-            ddr_raw  = response.xpath('//*[@id="pageContent"]/h1/text()').extract()
+            ddr_raw  = response.xpath('//*[@id="listingResult"]/div[4]/text()').extract()
 
             url = ''.join(url_raw).replace("[\"]\"", "")
 
