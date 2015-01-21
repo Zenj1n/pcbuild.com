@@ -20,11 +20,11 @@ class inf_case(CrawlSpider):
         date = now.strftime('%m/%d/%Y')
         f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
                 "a")
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = Selector(response)
         titles = hxs.xpath('//ul[@id="detailview"]/li')
         for titles in titles:
-            webshop = 'Informatique'
+            webshop = 'Informatique.nl'
             name_raw = titles.xpath('div[@id="title"]/a/text()').extract()
             url_raw = titles.xpath('div[@id="title"]/a/@href').extract()
             component = 'behuizing'
