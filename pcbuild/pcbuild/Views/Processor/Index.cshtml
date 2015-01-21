@@ -6,7 +6,7 @@
 }
 
 <ol class="progtrckr" data-progtrckr-steps="7">
-      <li onclick="javascript: history.back()" class="progtrckr-return">Vorige onderdeel</li><!--
+      <li onclick="javascript: history.back()" class="progtrckr-return">Stop Bouw</li><!--
     --><li class="progtrckr-current">Processor</li><!--
     --><li class="progtrckr-todo">Moederbord</li><!--
     --><li class="progtrckr-todo">Videokaart</li><!--
@@ -16,8 +16,7 @@
     --><li class="progtrckr-todo">Voeding</li>
 </ol>
 
-<div class="filters">
-    
+<div class="filters">   
     <table>
         <tr>
             <td colspan="2" style="width:100%; height: 40px"><center><b>Filters</b></center></td>
@@ -26,20 +25,7 @@
             <td>Filter</td>
             <td>keuzes</td>
         </tr>
-        <tr>
-            <td>Filter</td>
-            <td>keuzes</td>
-        </tr>
-        <tr>
-            <td>Filter</td>
-            <td>keuzes</td>
-        </tr>
-        <tr>
-            <td>Filter</td>
-            <td>keuzes</td>
-        </tr>
     </table>
-
 </div>
 
 <div class="componenten">
@@ -47,13 +33,13 @@
     <tr>
         <td colspan="6" style="width:100%; height: 40px"><center><b>Componenten</b></center></td>
     </tr>
-
     <tr>
         <td>Naam</td>
         <td>Socket</td>
         <td>Kernen</td>
         <td>Kloksnelheid</td>
         <td>Prijs</td>
+        <td>Webshop</td>
     </tr>
 
         @foreach (var item in Model)
@@ -61,48 +47,58 @@
             string uniek = item.GetHashCode().ToString();
             string uniekmethashtag = "#" + uniek;
 
-            if (item.Proccesor_m.naam == item.Proccesor_m.naam)
-            {
 
-                <tr class="componententr" href="" data-toggle="modal" data-id="1" data-target=@uniekmethashtag>
-                    <td>@item.Proccesor_m.naam</td>
-                    <td>@item.Proccesor_m.socket</td>
-                    <td>@item.Proccesor_m.kernen</td>
-                    <td>@item.Proccesor_m.kloksnelheid</td>
-                    <td>@item.Verkrijgbaar_m.prijs</td>
 
-                    <div class="modal fade" id=@uniek tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">@item.Proccesor_m.naam</h4>
-                                </div>
-                                <div style="overflow: hidden" class="modal-body">
+        <tr class="componententr" href="" data-toggle="modal" data-id="1" data-target=@uniekmethashtag>
+            <td>@item.Proccesor_m.naam</td>
+            <td>@item.Proccesor_m.socket</td>
+            <td>@item.Proccesor_m.kernen</td>
+            <td>@item.Proccesor_m.kloksnelheid</td>
+            <td>@item.Verkrijgbaar_m.prijs</td>
+            <td>@item.Webshop_m.naam</td>
+
+            <div class="modal fade" id=@uniek tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">@item.Proccesor_m.naam</h4>
+                        </div>
+                        <div style="overflow: hidden" class="modal-body">
                                    
-                                    <div class="modalcomponenteninfo">
-                                        <b>Kernen:</b>  @item.Proccesor_m.kernen<br />
-                                        <b>Kloksnelheid:</b> @item.Proccesor_m.kloksnelheid<br />
-                                        <br />
-                                        <b>Prijs:</b>   @item.Verkrijgbaar_m.prijs<br />
-                                        <br />
-                                        <b>Webshop:</b> @item.Webshop_m.naam<br />
-                                    </div>
-
-                                    <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
-                                    </div>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href='/Moederbord/Reload?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam' role="button">Kies onderdeel</a>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
-                                </div>
+                            <div class="modalcomponenteninfo">
+                                <b>Kernen:</b>  @item.Proccesor_m.kernen<br />
+                                <b>Kloksnelheid:</b> @item.Proccesor_m.kloksnelheid<br />
+                                <br />
+                                <b>Prijs:</b>   @item.Verkrijgbaar_m.prijs<br />
+                                <br />
+                                <b>Webshop:</b> @item.Webshop_m.naam<br />
                             </div>
+
+                            @if (false)
+                            {
+
+                                <div style="background-image: url(https://www.google.com/images/srpr/logo11w.png)" class="modalcomponentenafbeelding">
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
+                                </div>
+                            }
+
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" href='/Moederbord/Reload?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam' role="button">Kies onderdeel</a>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                </tr>
-            }
+        </tr>
+            
         }
 
 </table>
@@ -171,10 +167,12 @@
                 <td>@Request.Cookies["voedingprijs_cookie"].Value</td>
             </tr>
             <tr>
-                <td>Totale Prijs</td>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr style="border-top: thin solid white; font-weight: bold">
+                <td>Totale Prijs:</td>
                 <td>@Request.Cookies["totale_prijs_cookie"].Value</td>
             </tr>
-
         </table>
     }
     else { 

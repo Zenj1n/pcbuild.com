@@ -216,6 +216,7 @@ table.componenten_table{
     border-bottom: thin solid #00aeff;
     border-top: thin solid #00aeff;
     color: #00aeff;
+    cursor: pointer;
 }
 
 /* css filter table*/
@@ -241,4 +242,27 @@ div.modalcomponentenafbeelding{
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+/* css eindlijst */
+
+div.eindinfo{
+    width: 55%;
+    float:left;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+div.eindlijst{
+    border: thin solid #00aeff;
+    border-radius: 6px;
+    width: 43.75%;
+    float: left;
+    margin-left: 1.25%;
+    padding-bottom: 20px;
+}
+
+div.eindlijst table{
+   width: 100%;
 }
