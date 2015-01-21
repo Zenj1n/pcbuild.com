@@ -37,12 +37,13 @@ class inf_ram(CrawlSpider):
             component = 'werkgeheugen'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
             price_raw = titles.select('div[@id="price"]/text()').extract()
-            ddr = response.xpath('//*[@id="hdr"]/h1/text()').extract()
+            ddr_raw = response.xpath('//*[@id="hdr"]/h1/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
             name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
+            ddr = ''.join(ddr_raw).replace("modules","").strip().lower()
 
             try:
                 capaciteit = desc[0].replace("\"[u'", "").strip()
