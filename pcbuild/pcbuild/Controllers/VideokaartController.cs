@@ -30,24 +30,26 @@ namespace pcbuild.Controllers
 
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
+
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
-
+            HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            videokaartprijs_cookie = Request.Cookies["videokaartprijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
             decimal prijs_moederbord = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_videokaart = Convert.ToDecimal(videokaartprijs_cookie.Value, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_videokaart;
             decimal prijs_totaal = prijs_totaal_vorige + prijs_moederbord;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
+            videokaartprijs_cookie.Value = "0,00";
+            Response.Cookies.Add(videokaartprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
             //voeg data toe aan cookies
             moederbord_cookie.Value = moederbord;
             moederbordprijs_cookie.Value = prijs;
             moederbordwebshop_cookie.Value = webshop;
-
             moederbordvormfactor_cookie.Value = vormfactor;
             moederbordddr_cookie.Value = ddr;
 
@@ -55,7 +57,6 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(moederbord_cookie);
             Response.Cookies.Add(moederbordprijs_cookie);
             Response.Cookies.Add(moederbordwebshop_cookie);
-
             Response.Cookies.Add(moederbordvormfactor_cookie);
             Response.Cookies.Add(moederbordddr_cookie);
 

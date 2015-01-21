@@ -43,12 +43,15 @@ class inf_mb(CrawlSpider):
             component = 'moederbord'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
             price_raw = titles.select('div[@id="price"]/text()').extract()
-            socket = response.xpath('//*[@id="hdr"]/h1/text()').extract()
+            socket_raw = response.xpath('//*[@id="hdr"]/h1/text()').extract()
             #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             url = ''.join(url_raw).replace("[\"]\"","")
             name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
+            socket_raw0 = ''.join(url_raw).replace("Socket","")
+            socket_raw1 = socket_raw0.replace("(Intel","")
+            socket = socket_raw1.replace("(AMD)","")
 
             try:
                 vormfactor = desc[1].strip()

@@ -25,16 +25,20 @@ namespace pcbuild.Controllers
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
-            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
-            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
 
-            string prijs_2 = totale_prijs_cookie.Value;
+            HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
+            HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
+            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
+            behuizingprijs_cookie = Request.Cookies["behuizingprijs_cookie"];
+
             decimal prijs_werkgeheugen = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
-            decimal prijs_totaal_vorige = Convert.ToDecimal(prijs_2, new CultureInfo("is-IS"));
+            decimal prijs_behuizing = Convert.ToDecimal(behuizingprijs_cookie.Value, new CultureInfo("is-IS"));
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_behuizing;
             decimal prijs_totaal = prijs_totaal_vorige + prijs_werkgeheugen;
             string prijs_totaal_string = prijs_totaal.ToString();
-
             totale_prijs_cookie.Value = prijs_totaal_string;
+            behuizingprijs_cookie.Value = "0,00";
+            Response.Cookies.Add(behuizingprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
             //voeg data toe aan cookies
@@ -65,8 +69,9 @@ namespace pcbuild.Controllers
 
             //Maak er een query van om te zoeken in onze database
             string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
-            string vormfactor_search = "(?i)" + vormfactor[0] + ".*";           
-
+            string vormfactor_search = "(?i)" + vormfactor[0] + vormfactor[1] + vormfactor[2] + ".*";
+            Debug.WriteLine(vormfactor);
+            Debug.WriteLine(vormfactor_search);
             //Connectie met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
@@ -75,7 +80,7 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")
-              .Where("n.naam =~ {vormfactor_c}")
+              .Where("n.vormfactor =~ {vormfactor_c}")
               .WithParam("vormfactor_c", vormfactor_search)
               .Return((n, r, p) => new ViewModelBehuizing
               {
