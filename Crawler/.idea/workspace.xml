@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.csprojResolveAssemblyReference.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/bin/pcbuild.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild/obj/Debug/pcbuild.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" afterPath="$PROJECT_DIR$/../pcbuild/pcbuild.v12.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../pcbuild/WebAndLoadTestPcBuild/WebAndLoadTestPcBuild.csproj" afterPath="$PROJECT_DIR$/../pcbuild/WebAndLoadTestPcBuild/WebAndLoadTestPcBuild.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inf_case.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="inf_case.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_case.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1649">
@@ -75,6 +71,26 @@
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inf_mb.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1615">
+              <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hw_mb.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="897">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -759,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_opslag.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
@@ -861,13 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1598">
           <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1751">
-          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -969,6 +971,22 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1615">
+          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="897">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
