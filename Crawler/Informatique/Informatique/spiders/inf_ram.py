@@ -43,7 +43,7 @@ class inf_ram(CrawlSpider):
             url = ''.join(url_raw).replace("[\"]\"","")
             name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"","")
-            ddr = ''.join(ddr_raw).replace("modules","").strip().lower()
+            ddr = ''.join(ddr_raw).replace("modules","").replace("[\"]\"","").strip().lower()
 
             try:
                 capaciteit = desc[0].replace("\"[u'", "").strip()

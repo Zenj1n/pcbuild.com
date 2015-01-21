@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e79a0a2-5565-40db-83e2-8002c5154101" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" afterPath="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" afterPath="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
     </list>
     <ignored path="Crawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +32,7 @@
       <file leaf-file-name="unit_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python unit test/unit_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1581">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581">
               <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -45,88 +44,18 @@
       <file leaf-file-name="Cleaning.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python unit test/Cleaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="578">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python unit test/Database.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="820" max-vertical-offset="1717">
-              <caret line="72" column="88" selection-start-line="72" selection-start-column="88" selection-end-line="72" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_mb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1666">
-              <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hw_ram.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="952">
-              <caret line="14" column="74" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_ram.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inf_ram.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1513">
-              <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alt_ram.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5875139" vertical-offset="0" max-vertical-offset="1547">
-              <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_cpu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_cpu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1479">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hw_mb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="884">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hw_cpu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="935">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.8862876" vertical-offset="616" max-vertical-offset="1513">
+              <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -189,8 +118,8 @@
         <option value="$PROJECT_DIR$/python unit test/unit_test.py" />
         <option value="$PROJECT_DIR$/python unit test/Cleaning.py" />
         <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py" />
-        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
         <option value="$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py" />
+        <option value="$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py" />
       </list>
     </option>
   </component>
@@ -981,7 +910,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_cpu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="935">
+        <state vertical-scroll-proportion="0.018952062" vertical-offset="34" max-vertical-offset="935">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
@@ -989,7 +918,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_mb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+        <state vertical-scroll-proportion="0.018952062" vertical-offset="0" max-vertical-offset="897">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -1003,9 +932,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62541807" vertical-offset="204" max-vertical-offset="1666">
+          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.033444814" vertical-offset="55" max-vertical-offset="952">
+          <caret line="14" column="74" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1547">
+          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python unit test/Database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="820" max-vertical-offset="1717">
+        <state vertical-scroll-proportion="1.303233" vertical-offset="55" max-vertical-offset="1717">
           <caret line="72" column="88" selection-start-line="72" selection-start-column="88" selection-end-line="72" selection-end-column="88" />
           <folding />
         </state>
@@ -1029,34 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_mb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1666">
-          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Hardware/Hardware/spiders/hw_ram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
-          <caret line="14" column="74" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Informatique/Informatique/spiders/inf_ram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1513">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/alternate/alternate/spiders/alt_ram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5875139" vertical-offset="0" max-vertical-offset="1547">
-          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.8862876" vertical-offset="616" max-vertical-offset="1513">
+          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
           <folding />
         </state>
       </provider>
