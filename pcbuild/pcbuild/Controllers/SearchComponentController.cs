@@ -29,10 +29,14 @@ namespace pcbuild.Controllers
 
         public ActionResult Search(string name)
         {
+            // Query eis
             string search_query = "(?i).*" + name + ".*";
+
+            //Maak verbinding met database
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
+            //Voer query uit m.b.v neo4jclient en zet het in een variable
             var componenten_query = client
              .Cypher
              .Match("(n)-[r:verkrijgbaar]-(p:Webshop)")
@@ -47,6 +51,7 @@ namespace pcbuild.Controllers
              })
              .Results;
 
+            //Stuur data naar de view
             return View(componenten_query);
         }
     }

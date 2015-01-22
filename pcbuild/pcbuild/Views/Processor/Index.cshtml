@@ -46,8 +46,7 @@
         {
             string uniek = item.GetHashCode().ToString();
             string uniekmethashtag = "#" + uniek;
-
-
+            System.Web.HttpUtility.UrlPathEncode(@item.Proccesor_m.socket);
 
         <tr class="componententr" href="" data-toggle="modal" data-id="1" data-target=@uniekmethashtag>
             <td>@item.Proccesor_m.naam</td>
@@ -84,13 +83,13 @@
                             }
                             else
                             {
-                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
+                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">                                    
                                 </div>
                             }
 
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary" href='/Moederbord/Reload?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam' role="button">Kies onderdeel</a>
+                            <a class="btn btn-primary" href='/Moederbord/Reload?processor=@item.Proccesor_m.naam&socket=@item.Proccesor_m.socket&prijs=@item.Verkrijgbaar_m.prijs&webshop=@item.Webshop_m.naam'role="button">Kies onderdeel</a>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                         </div>
                     </div>

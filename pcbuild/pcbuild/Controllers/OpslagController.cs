@@ -26,12 +26,14 @@ namespace pcbuild.Controllers
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
             HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");
-
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
+
+            //Roep cookies aan
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             opslagprijs_cookie = Request.Cookies["opslagprijs_cookie"];
 
+            //Verreken totale prijs
             decimal prijs_behuizing = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_opslag = Convert.ToDecimal(opslagprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_opslag;
@@ -69,7 +71,7 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om alle behuizingen op te halen
+            // Query om opslag op te halen
             var componenten_query = client
               .Cypher
               .Match("(n:opslag)-[r:verkrijgbaar]-(p:Webshop)")

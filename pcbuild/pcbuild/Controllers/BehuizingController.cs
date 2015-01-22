@@ -21,16 +21,18 @@ namespace pcbuild.Controllers
     {
         public ActionResult Reload(string werkgeheugen, string prijs, string webshop)
         {
-            //Maak cookie arrays
+            //Roep cookie arrays
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
-
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
+
+            //Roep prijs cookies aan
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             behuizingprijs_cookie = Request.Cookies["behuizingprijs_cookie"];
 
+            //Verreken totale prijs
             decimal prijs_werkgeheugen = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_behuizing = Convert.ToDecimal(behuizingprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_behuizing;
@@ -76,7 +78,7 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om behuizingen op te halen met de parameters die wij kregen van moederbord
+            // Query om behuizingen op te halen met de juiste vormfactor die wij kregen van moederbord
             var componenten_query = client
               .Cypher
               .Match("(n:behuizing)-[r:verkrijgbaar]-(p:Webshop)")

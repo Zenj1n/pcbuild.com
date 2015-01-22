@@ -34,3 +34,6 @@ C:\Users\Jason\Documents\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboar
 C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
 C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.exe
 C:\Users\Jason\Desktop\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+C:\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
+C:\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.exe
+C:\GitHub\pcbuild.com\Dashboard - Jason\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
