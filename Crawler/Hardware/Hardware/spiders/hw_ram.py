@@ -6,19 +6,19 @@ from scrapy.selector import HtmlXPathSelector
 from py2neo import rel, node
 from py2neo import neo4j
 
-import time
 
+import time
 
 class hw_ram(CrawlSpider):
     name = "hw_ram"
     allowed_domains = ["hardware.info"]
     start_urls = ["http://nl.hardware.info/productgroep/20/geheugenmodules"]
-
-    rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-                  , callback="parse_start_url", follow=True),
+    
+    rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
+    , callback="parse_start_url", follow= True),
     )
-
-    def parse_start_url(self, response):
+    
+    def parse_start_url(self,response):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         row = hxs.select('//tr')
@@ -29,7 +29,7 @@ class hw_ram(CrawlSpider):
             component = 'werkgeheugen'
             desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
             price = titles.select('td[@class="center"]/a/text()').extract()
-            # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             #filter de data---------------------------------------------------------------------------------------------
 
@@ -46,9 +46,10 @@ class hw_ram(CrawlSpider):
             except:
                 ddr = "onbekend"
             try:
-                cl = ','.join(desc).split(",")[5].strip()
+                cl =  ','.join(desc).split(",")[5].strip()
             except:
                 cl = "onbekend"
+
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -56,7 +57,6 @@ class hw_ram(CrawlSpider):
             #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
-                                                           "MATCH (c:werkgeheugen)  WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.modules = {modules}, c.ddr = {ddr}, c.cl = {cl}")
-            hw_ram = query_VoegSpecificatiesToe.execute(namedb=namedb, capaciteit=capaciteit, modules=modules, ddr=ddr,
-                                                        cl=cl)
+            "MATCH (c:werkgeheugen)  WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.modules = {modules}, c.ddr = {ddr}, c.cl = {cl}")
+            hw_ram = query_VoegSpecificatiesToe.execute(namedb=namedb, capaciteit=capaciteit, modules = modules, ddr=ddr, cl = cl)
             time.sleep(10)

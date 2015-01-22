@@ -46,5 +46,4 @@ class alt_koel(CrawlSpider):
                                       "CREATE (alt_koel {webshop:{webshop}, name:{namedb}, url:{url}, desc:{desc}, price:{price}, component:{component}})"
                                       "RETURN alt_koel")
 
-            alt_koel = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price,
-                                     component=component)
+            alt_koel = query.execute(webshop=webshop, namedb=namedb, url=url, desc=desc, price=price, component=component)

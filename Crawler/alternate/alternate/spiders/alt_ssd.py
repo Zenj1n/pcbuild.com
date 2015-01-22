@@ -8,6 +8,7 @@ import datetime
 import time
 
 
+
 class alt_ssd(CrawlSpider):
     name = "alt_ssd"
     allowed_domains = ["alternate.nl"]
@@ -34,8 +35,7 @@ class alt_ssd(CrawlSpider):
             component = 'ssd'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent_raw = titles.select(
-                'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
             url = ''.join(url_raw).replace("[\"]\"", "")
 
@@ -48,7 +48,7 @@ class alt_ssd(CrawlSpider):
             cent = cent_raw[:-1]
             price_raw = euro + cent
             price_raw2 = price_raw.replace("[\"]\"*", "").strip();
-            price = price_raw2.replace("-", "00")
+            price = price_raw2.replace("-","00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -60,30 +60,30 @@ class alt_ssd(CrawlSpider):
             alt_ssd = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                               "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
-                                                            "MATCH (c:ssd) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
+                "MATCH (c:ssd) WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
                 alt_ssd = query_SetSpecifications.execute(namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                              "MATCH (c:ssd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                "MATCH (c:ssd)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_ssd = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                                  "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                              "Create (c:ssd {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
+                "Create (c:ssd {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}})")
                 alt_ssd = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
-                                                            snelheid=snelheid)
+                snelheid=snelheid)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                                  "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                "MATCH (c:ssd), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_ssd = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                                price=price, url=url)
+                price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)

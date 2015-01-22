@@ -8,6 +8,7 @@ import datetime
 import time
 
 
+
 class alt_gfx(CrawlSpider):
     name = "alt_gfx"
     allowed_domains = ["alternate.nl"]
@@ -32,8 +33,7 @@ class alt_gfx(CrawlSpider):
             component = 'videokaart'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent_raw = titles.select(
-                'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
             #filter de data, maak eerst strings van---------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ class alt_gfx(CrawlSpider):
             cent = cent_raw[:-1]
             price_raw = euro + cent
             price_raw2 = price_raw.replace("[\"]\"*", "").strip();
-            price = price_raw2.replace("-", "00")
+            price = price_raw2.replace("-","00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -61,7 +61,7 @@ class alt_gfx(CrawlSpider):
             alt_gfx = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                               "match (c:videokaart) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                      "match (c:videokaart) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
@@ -70,23 +70,23 @@ class alt_gfx(CrawlSpider):
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
-                                                            "MATCH (c:videokaart) WHERE c.naam = {namedb} SET c.gfx = {gfx}, c.geheugen = {geheugen}, c.slots = {slots}")
+                "MATCH (c:videokaart) WHERE c.naam = {namedb} SET c.gfx = {gfx}, c.geheugen = {geheugen}, c.slots = {slots}")
                 alt_gfx = query_SetSpecifications.execute(namedb=namedb, gfx=gfx, geheugen=geheugen, slots=slots)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                              "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                "MATCH (c:videokaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_gfx = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                                  "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                              "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
+                "Create (c:videokaart {naam:{namedb}, gfx:{gfx}, geheugen:{geheugen}, slots:{slots}})")
                 alt_gfx = query_CreateComponentNode.execute(namedb=namedb, gfx=gfx,
-                                                            geheugen=geheugen, slots=slots)
+                geheugen=geheugen, slots=slots)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                                  "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                "MATCH (c:videokaart), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_gfx = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                                price=price, url=url)
+                price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)

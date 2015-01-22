@@ -26,7 +26,7 @@ class inf_soundcard(CrawlSpider):
             component = 'geluidskaart'
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
             price = titles.select('div[@id="price"]/text()').extract()
-            # image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+            #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -38,19 +38,19 @@ class inf_soundcard(CrawlSpider):
             inf_soundcard = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                                                          "MERGE (c:geluidskaart {naam:{namedb}})")
+                                                      "MERGE (c:geluidskaart {naam:{namedb}})")
             inf_soundcard = query_CreateComponentNode.execute(namedb=namedb)
 
             query_GiveComponentProperties = neo4j.CypherQuery(graph_db,
-                                                              "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
+                                                          "MATCH (c:geluidskaart) WHERE c.naam = {namedb} SET c.interface={interface}, c.geluidschip={geluidschip}, c.aansluitingen={aansluitingen}")
             inf_soundcard = query_GiveComponentProperties.execute(namedb=namedb, interface=interface,
-                                                                  geluidschip=geluidschip, aansluitingen=aansluitingen)
+                                                         geluidschip=geluidschip, aansluitingen=aansluitingen)
 
             query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                                                          "MATCH (c:geluidskaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                      "MATCH (c:geluidskaart)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
             inf_soundcard = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
 
             query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                                                              "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                          "MATCH (c:behuizing), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
             inf_soundcard = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                                                                  price=price, url=url)
+                                                         price=price, url=url)
