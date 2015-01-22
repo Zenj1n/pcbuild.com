@@ -51,7 +51,7 @@ class hw_mb(CrawlSpider):
             namedb = namesplit[0]
 
             #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
-
+            print "hallo"
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
                                                            "MATCH (c:moederbord)  WHERE c.naam = {namedb} SET c.ddr = {ddr}")
             hw_mb = query_VoegSpecificatiesToe.execute(namedb=namedb, ddr=ddr)

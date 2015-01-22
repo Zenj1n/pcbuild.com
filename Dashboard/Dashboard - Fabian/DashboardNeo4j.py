@@ -1,7 +1,7 @@
 from py2neo import rel, node
 from py2neo import neo4j
 
-class neo4jcasus:
+class DashboardNeo4j:
     graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
 
     #-----------------------aantal componenten voeding------------------------------------#
@@ -45,22 +45,40 @@ class neo4jcasus:
     videokaart = queryCountVideokaart.execute()
     for record in queryCountVideokaart.stream():
         videokaart = record[0]
+
+    #-----------------------aantal componenten ------------------------------------#
+    queryCountAlles = neo4j.CypherQuery(graph_db, "MATCH n-[r]-() RETURN count(n)")
+    Alles = queryCountAlles.execute()
+    for record in queryCountAlles.stream():
+        Alles = record[0]
+
+    #-----------------------aantal componenten Informatique ------------------------------------#
+    queryInformatique = neo4j.CypherQuery(graph_db, "MATCH (n)-[r]-(i) where i.naam = " + " \"Informatique\" " + "RETURN count(n)")
+    Informatique = queryInformatique.execute()
+    for record in queryInformatique.stream():
+        Informatique = record[0]
+    #-----------------------aantal componenten Alternate ------------------------------------#
+    queryAlternate = neo4j.CypherQuery(graph_db, "MATCH (n)-[r]-(i) where i.naam = " + " \"alternate.nl\" " + "RETURN count(n)")
+    Alternate = queryAlternate.execute()
+    for record in queryAlternate.stream():
+        Alternate = record[0]
     #------------------------------------------------------------------------------------------------------------------#
 
-    queryPriceVoeding = neo4j.CypherQuery(graph_db, "MATCH (n:`voeding`)-[r]-() RETURN r.prijs LIMIT 25")
-    voedingprice = queryPriceVoeding.execute()
-    for record in queryPriceVoeding.stream():
-        voedingprice = record[0]
+
+
 
     print "Aantal onderdelen per component"
-    print "voeding" + "      " + str(voeding)
-    print "opslag" + "       " + str(opslag)
-    print "behuizing" + "    " + str(behuizing)
-    print "werkgeheugen" + " " + str(werkgeheugen)
-    print "processor" + "    " + str(processor)
-    print "moederbord" + "   " + str(moederbord)
-    print "videokaart" + "   " + str(videokaart)
-    print "totaal" + "       " + str( voeding + opslag + behuizing + werkgeheugen + processor + moederbord + videokaart)
+    print "voeding" + "             " + str(voeding)
+    print "opslag" + "              " + str(opslag)
+    print "behuizing" + "           " + str(behuizing)
+    print "werkgeheugen" + "        " + str(werkgeheugen)
+    print "processor" + "           " + str(processor)
+    print "moederbord" + "          " + str(moederbord)
+    print "videokaart" + "          " + str(videokaart)
+    print "totaal componenten" + "  " + str(voeding + opslag + behuizing + werkgeheugen + processor + moederbord + videokaart)
+    print "totaal nodes" + "        " + str(Alles)
 
-    print str(voedingprice)
+    print "Aantal Informatique producten" + " " + str(Informatique)
+    print "Aantal Alternate producten" + "    " + str(Alternate)
+    print "Aantal ongebruike producten (kunnen verwijderd worden)" + "  " + str(Alles - (Alternate + Informatique))
 
