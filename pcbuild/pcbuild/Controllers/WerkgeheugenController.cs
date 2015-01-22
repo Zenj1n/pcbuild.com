@@ -69,10 +69,8 @@ namespace pcbuild.Controllers
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
-            string ddr_search = "(?i).*"+ddr+".*";      // where eis van de moederbord voor het werkgeheugen
-
+  
             Debug.WriteLine(ddr);
-            Debug.WriteLine(ddr_search);
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data/"));
@@ -83,7 +81,7 @@ namespace pcbuild.Controllers
               .Cypher
               .Match("(n:werkgeheugen)-[r:verkrijgbaar]-(p:Webshop)")
               .Where("n.ddr = {ddr_query}")
-              .WithParam("ddr_query", ddr_search)
+              .WithParam("ddr_query", ddr)
               .Return((n, r, p) => new ViewModelWerkgeheugen
               {
                   Werkgeheugen_all = n.As<Werkgeheugen_Model>(),

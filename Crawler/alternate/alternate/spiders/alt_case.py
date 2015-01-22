@@ -38,6 +38,8 @@ class alt_case(CrawlSpider):
             cent_raw = titles.select(
                 'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
+            #filter de data, maak eerst strings van---------------------------------------------------------------------
+
             url = ''.join(url_raw).replace("[\"]\"", "")
             name = ''.join(name_raw).replace("\"[u'", "")
 
