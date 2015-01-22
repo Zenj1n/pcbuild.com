@@ -18,7 +18,7 @@ namespace Dashboard_HoyeLam
         {
             public string naam { get; set; }
         }
-                
+
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Dashboard_HoyeLam
 
         private void componenten_button_Click(object sender, EventArgs e)
         {
-           
+
             var client = new GraphClient(new Uri("http://localhost:8080/db/data"));
             client.Connect();
 
@@ -138,26 +138,88 @@ namespace Dashboard_HoyeLam
             this.chart1.Series["componenten"].Points.AddXY("Ongebruikt", niet_gebruikte_componenten);
         }
 
-        private void prijs_webshop_button_Click(object sender, EventArgs e)
+        public class inf_prijzen
         {
-          //  var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-          //  client.Connect();
-
-          //  var componenten_query = client
-          // .Cypher
-          // .Match("(n:)-[r:verkrijgbaar]-(p:Webshop)")
-          // .Where("n.socket = {socket_c}")
-          // .WithParam("socket_c", socket)
-          // .Return((n, r, p) => new ViewModelMoederbord
-          // {
-          //     Moederbord_all = n.As<Moederbord_Model>(),
-          //     Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
-          //     Webshop_all = p.As<Webshop_Model>(),
-          // })
-          //.Results;
-           
+            public string prijs { get; set; }
         }
 
+        public class alt_prijzen
+        {
+            public string prijs { get; set; }
+        }
+        private void prijs_webshop_button_Click(object sender, EventArgs e)
+        {
+            //Connectie met database
+            var client = new GraphClient(new Uri("http://localhost:8080/db/data"));
+            client.Connect();
 
+            this.chart1.Visible = false;
+
+            //Haal alle prijzen van informatique op
+            string informatique = "Informatique";
+            string informatique2 = "Informatique.nl";
+            var componenten_query = client
+            .Cypher
+            .Match("(n)-[r:verkrijgbaar]-(p:Webshop)")
+            .Where("p.naam = {inf}")
+            .OrWhere("p.naam = {inf2}")
+            .WithParam("inf2", informatique2)
+            .WithParam("inf", informatique)
+            .Return(r => r.As<inf_prijzen>())
+            .Results.ToList();
+
+            //Bereken de gemiddelde prijs
+            string prijs_avg_inf = "00,00";
+            decimal prijs_informatique = Convert.ToDecimal(prijs_avg_inf, new CultureInfo("is-IS"));
+
+            foreach (var item in componenten_query)
+            {
+                decimal prijs_inf = Convert.ToDecimal(item.prijs, new CultureInfo("is-IS"));
+                prijs_informatique = prijs_inf + prijs_informatique;
+            }
+            prijs_informatique = prijs_informatique / componenten_query.Count();
+            this.label1.Text = "Gemiddelde prijs van Informatique: " + prijs_informatique.ToString();
+            this.label2.Text = "Aantal gemeten componenten van Informatique: " + componenten_query.Count();
+
+            //Haal alle prijzen van alternate op bereken gemiddelde prijs
+            string alternate = "alternate.nl";
+            var componenten_query2 = client
+            .Cypher
+            .Match("(n)-[r:verkrijgbaar]-(p:Webshop)")
+            .Where("p.naam = {alt}")
+            .WithParam("alt", alternate)
+            .Return(r => r.As<alt_prijzen>())
+            .Results.ToList();
+
+            string prijs_avg_alt = "00,00";
+            decimal prijs_alternate = Convert.ToDecimal(prijs_avg_alt, new CultureInfo("is-IS"));
+
+            foreach (var item in componenten_query2)
+            {
+                try
+                {
+                    decimal prijs_alt = Convert.ToDecimal(item.prijs, new CultureInfo("is-IS"));
+                    prijs_alternate = prijs_alt + prijs_alternate;
+                }
+                catch (FormatException eze)
+                {
+                    // do nothing
+                }
+            }
+            prijs_alternate = prijs_alternate / componenten_query.Count();
+            this.label3.Text = "Gemiddelde prijs van Alternate: " + prijs_alternate.ToString();
+            this.label4.Text = "Aantal gemeten componenten van Alternate: " + componenten_query2.Count();
+
+            //Bereken gemiddle prijs van alle webshops
+            decimal prijs_alle_webshops = prijs_alternate + prijs_informatique;
+            prijs_alle_webshops = prijs_alle_webshops / 2;
+            this.label5.Text = "Gemddle prijs van alle Webshops" + prijs_alle_webshops.ToString();
+
+            this.chart2.Visible = true;
+
+            this.chart2.Series["Alternate"].Points.AddXY(System.DateTime.Now, prijs_alternate);
+            this.chart2.Series["Informatique"].Points.AddXY(System.DateTime.Now, prijs_informatique);
+            this.chart2.Series["Alle Webshops"].Points.AddXY(System.DateTime.Now, prijs_alle_webshops);
+        }
     }
 }

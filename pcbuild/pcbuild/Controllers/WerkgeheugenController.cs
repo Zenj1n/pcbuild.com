@@ -89,6 +89,7 @@ namespace pcbuild.Controllers
                   Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
                   Webshop_all = p.As<Webshop_Model>(),
               })
+              .Limit(100)
               .Results;
 
             return View(componenten_query);
