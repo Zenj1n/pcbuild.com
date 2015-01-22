@@ -76,6 +76,7 @@
 
                             @if (System.IO.Directory.Exists("C:\\prijsverandering"))
                             {
+
                                 string path = "file:///C:/prijsverandering/" + @item.Proccesor_m.naam + ".jpg";
                                 <div style="background-image: url(@path)" class="modalcomponentenafbeelding">
                                 </div>
@@ -83,7 +84,7 @@
                             }
                             else
                             {
-                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
+                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">                                    
                                 </div>
                             }
 
