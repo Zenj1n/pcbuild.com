@@ -78,11 +78,10 @@ namespace pcbuild.Controllers
 
             processorsocket_cookie = Request.Cookies["processorsocket_cookie"];
 
+            //Where Query voor compatible      
             string socket = processorsocket_cookie.Value;
 
-            //Where Query voor compatible
-            string socket_search = "(?i).*" + socket + ".*";              
-
+                  
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
@@ -91,8 +90,8 @@ namespace pcbuild.Controllers
             var componenten_query = client
            .Cypher
            .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
-           .Where("n.naam =~ {socket_c}")
-           .WithParam("socket_c", socket_search)
+           .Where("n.socket = {socket_c}")
+           .WithParam("socket_c", socket)
            .Return((n, r, p) => new ViewModelMoederbord
            {
                Moederbord_all = n.As<Moederbord_Model>(),
