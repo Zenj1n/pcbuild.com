@@ -82,8 +82,8 @@ namespace pcbuild.Controllers
             var componenten_query = client
               .Cypher
               .Match("(n:werkgeheugen)-[r:verkrijgbaar]-(p:Webshop)")
-              .Where("n.naam =~ {ddr_query}")
-              .WithParam("ddr_query", ddr_search)
+              .Where("n.ddr = {ddr_query}")
+              .WithParam("ddr_query", ddr)
               .Return((n, r, p) => new ViewModelWerkgeheugen
               {
                   Werkgeheugen_all = n.As<Werkgeheugen_Model>(),
