@@ -80,6 +80,8 @@
                                 {
 
                                     string path = "file:///C:/prijsverandering/" + @item.Behuizing_test.naam + ".jpeg";
+                                    path = path.Replace(" ", "%20");
+                                    path = path.Replace("®", "");
                                     <div style="background-image: url(@path)" class="modalcomponentenafbeelding">
                                     </div>
                                 }
