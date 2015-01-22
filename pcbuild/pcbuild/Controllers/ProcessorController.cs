@@ -150,6 +150,7 @@ namespace pcbuild.Controllers
             return View(componenten_query);
         }
 
+        //Filter acties maar is NOG NIET GEIMPLEMENTEERD! 
         public ActionResult filter_prijs()
         {
             int filter_prijs_setting = 0;

@@ -27,15 +27,16 @@ namespace pcbuild.Controllers
             HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");
             HttpCookie moederbordprijs_cookie = new HttpCookie("moederbordprijs_cookie");
             HttpCookie moederbordwebshop_cookie = new HttpCookie("moederbordwebshop_cookie");
-
             HttpCookie moederbordvormfactor_cookie = new HttpCookie("moederbordvormfactor_cookie");
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
-
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
+
+            //Roep cookies aan
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             videokaartprijs_cookie = Request.Cookies["videokaartprijs_cookie"];
 
+            //Vereken totale prijs
             decimal prijs_moederbord = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_videokaart = Convert.ToDecimal(videokaartprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_videokaart;
@@ -87,7 +88,7 @@ namespace pcbuild.Controllers
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
-            // Query om alle Videokaarten op te halen
+            // Query om Videokaarten op te halen
             var componenten_query = client
               .Cypher
               .Match("(n:videokaart)-[r:verkrijgbaar]-(p:Webshop)")
