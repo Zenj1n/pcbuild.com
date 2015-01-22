@@ -76,15 +76,10 @@
                                     <b>Webshop:</b> @item.Webshop_m.naam<br />
                                 </div>
 
-                                @if (false)
+                                @if (System.IO.Directory.Exists("C:\\prijsverandering"))
                                 {
-<<<<<<< HEAD
                                     string path = "file:///C:/prijsverandering/" + @item.Opslag_m.naam + ".jpg";
                                     <div style="background-image: url(@path)" class="modalcomponentenafbeelding">
-=======
-
-                                    <div style="background-image: url(https://www.google.com/images/srpr/logo11w.png)" class="modalcomponentenafbeelding">
->>>>>>> origin/master
                                     </div>
 
                                 }
