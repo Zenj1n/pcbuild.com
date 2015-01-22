@@ -68,7 +68,7 @@ namespace pcbuild.Controllers
             decimal prijs_behuizing = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             // Query om opslag op te halen

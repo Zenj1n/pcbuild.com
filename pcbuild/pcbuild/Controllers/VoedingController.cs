@@ -65,7 +65,7 @@ namespace pcbuild.Controllers
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             // Query om voeding op te halen

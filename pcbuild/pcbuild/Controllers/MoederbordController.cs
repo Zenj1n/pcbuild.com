@@ -84,7 +84,7 @@ namespace pcbuild.Controllers
             string socket_search = "(?i).*" + socket + ".*";              
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             //Query om moederborden op te halen met de juiste socket van het processor
