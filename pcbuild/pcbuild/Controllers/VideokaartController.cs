@@ -77,12 +77,6 @@ namespace pcbuild.Controllers
             HttpCookie moederbordddr_cookie = new HttpCookie("moederbordddr_cookie");
             HttpCookie totale_prijs_cookie = new HttpCookie("totale_prijs_cookie");
 
-            totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
-            moederbord_cookie = Request.Cookies["moederbord_cookie"];
-            moederbordprijs_cookie = Request.Cookies["moederbordprijs_cookie"];
-            moederbordwebshop_cookie = Request.Cookies["moederbordwebshop_cookie"];
-            moederbordvormfactor_cookie = Request.Cookies["moederbordvormfactor_cookie"];
-            moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
