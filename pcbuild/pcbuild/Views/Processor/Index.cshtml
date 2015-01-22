@@ -74,16 +74,16 @@
                                 <b>Webshop:</b> @item.Webshop_m.naam<br />
                             </div>
 
-                            @if (false)
+                            @if (System.IO.Directory.Exists("C:\\prijsverandering"))
                             {
-
-                                <div style="background-image: url(https://www.google.com/images/srpr/logo11w.png)" class="modalcomponentenafbeelding">
+                                string path = "file:///C:/prijsverandering/" + @item.Proccesor_m.naam + ".png";
+                                <div style="background-image: url(@path)" class="modalcomponentenafbeelding">
                                 </div>
 
                             }
                             else
                             {
-                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">                                    
+                                <div style="background-image: url(http://i.imgur.com/CGzFjqq.png)" class="modalcomponentenafbeelding">
                                 </div>
                             }
 
