@@ -93,7 +93,7 @@ namespace Dashboard
 
         public int query_aantal(string component)
         {
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@145.24.222.155:8080/db/data"));
             client.Connect();
             var aantal_query = client
             .Cypher
@@ -110,7 +110,7 @@ namespace Dashboard
 
         public Tuple<decimal, decimal> query_prijzen(string component)
         {
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@145.24.222.155:8080/db/data"));
             client.Connect();
             var prijzen_query = client
             .Cypher
