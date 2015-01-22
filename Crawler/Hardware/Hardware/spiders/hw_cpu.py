@@ -9,17 +9,16 @@ from py2neo import neo4j
 import time
 
 
-
 class hw_cpu(CrawlSpider):
     name = "hw_cpu"
     allowed_domains = ["hardware.info"]
     start_urls = ["http://nl.hardware.info/productgroep/3/processors"]
-    
-    rules = (Rule (SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
-    , callback="parse_start_url", follow= True),
+
+    rules = (Rule(SgmlLinkExtractor(restrict_xpaths=('//a[contains(., "Volgende")]',))
+                  , callback="parse_start_url", follow=True),
     )
-    
-    def parse_start_url(self,response):
+
+    def parse_start_url(self, response):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         row = hxs.select('//tr')
@@ -30,7 +29,7 @@ class hw_cpu(CrawlSpider):
             component = 'processor'
             desc = titles.select('td[@class="top"]/div[@itemscope]/p[@class="specinfo"]/small/text()').extract()
             price = titles.select('td[@class="center"]/a/text()').extract()
-            #image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
+            # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
             try:
                 socket = ','.join(desc).split(",")[0].strip();
@@ -44,8 +43,7 @@ class hw_cpu(CrawlSpider):
             try:
                 kernen = ','.join(desc).split(",")[2].strip()
             except:
-                kernen  = "onbekend"
-
+                kernen = "onbekend"
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -53,6 +51,6 @@ class hw_cpu(CrawlSpider):
             print "== Adding Node to database =="
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
-            "MATCH (c:processor)  WHERE c.naam = {namedb} SET c.kloksnelheid = {kloksnelheid}, c.kernen = {kernen}")
-            hw_cpu = query_VoegSpecificatiesToe.execute(namedb=namedb, kloksnelheid=kloksnelheid, kernen = kernen)
+                                                           "MATCH (c:processor)  WHERE c.naam = {namedb} SET c.kloksnelheid = {kloksnelheid}, c.kernen = {kernen}")
+            hw_cpu = query_VoegSpecificatiesToe.execute(namedb=namedb, kloksnelheid=kloksnelheid, kernen=kernen)
             time.sleep(10)

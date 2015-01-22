@@ -2,7 +2,6 @@ import csv
 import datetime
 import time
 
-
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
@@ -37,12 +36,12 @@ class inf_cpu(CrawlSpider):
             price_raw = titles.select('div[@id="price"]/text()').extract()
             # image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
-            url = ''.join(url_raw).replace("[\"]\"","")
+            url = ''.join(url_raw).replace("[\"]\"", "")
             name = ''.join(name_raw).replace("\"[u'", "")
-            price = ''.join(price_raw)[1:].replace("[\"]\"","")
+            price = ''.join(price_raw)[1:].replace("[\"]\"", "")
 
             try:
-                socket = desc[2].strip().replace("S","");
+                socket = desc[2].strip().replace("S", "");
             except:
                 socket = "onbekend"
             try:
@@ -62,27 +61,27 @@ class inf_cpu(CrawlSpider):
             inf_cpu = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                               "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                              "MATCH (c:processor)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 inf_cpu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
+                                                              "Create (c:processor {naam:{namedb}, kloksnelheid:{kloksnelheid}, socket:{socket}, kernen:{kernen}})")
                 inf_cpu = query_CreateComponentNode.execute(namedb=namedb, kloksnelheid=kloksnelheid,
-                socket=socket, kernen=kernen)
+                                                            socket=socket, kernen=kernen)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:processor), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_cpu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+                                                                price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)
