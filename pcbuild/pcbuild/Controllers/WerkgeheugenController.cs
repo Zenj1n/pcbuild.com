@@ -75,7 +75,7 @@ namespace pcbuild.Controllers
             Debug.WriteLine(ddr_search);
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data/"));
             client.Connect();
 
             // Query om werkgeheugen op te halen met de juiste DDR geheugen van het moederbord
