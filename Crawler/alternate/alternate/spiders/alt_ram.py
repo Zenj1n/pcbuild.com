@@ -25,18 +25,18 @@ class alt_ram_ddr(CrawlSpider):
         now = datetime.datetime.today()
         date = now.strftime('%m/%d/%Y')
         f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv", "a")
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
         for titles in titles:
-            webshop = 'alternate.nl'
+            webshop = 'Alternate.nl'
             name = titles.select('a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url_raw = titles.select('a[@class="productLink"]/@href').extract()
             component = 'werkgeheugen'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
             cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
-            ddr_raw  = response.xpath('//*[@id="pageContent"]/h1/text()').extract()
+            ddr_raw  = response.xpath('//*[@id="listingResult"]/div[4]/text()').extract()
 
             url = ''.join(url_raw).replace("[\"]\"", "")
 

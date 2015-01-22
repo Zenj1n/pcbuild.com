@@ -22,13 +22,13 @@ class alt_case(CrawlSpider):
         date = now.strftime('%m/%d/%Y')
         f = open("C:\\GitHub\\pcbuild.com\\Crawler\\prijsgeschiedenis.csv",
                  "a")
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         titles = hxs.select('//div[@class="listRow"]')
         print "== Initializing =="
 
         for titles in titles:
-            webshop = 'alternate.nl'
+            webshop = 'Alternate.nl'
             name_raw = titles.select(
                 'a[@class="productLink"]/span[@class="product"]/span[@class="pic"]/@title').extract()
             url_raw = titles.select('a[@class="productLink"]/@href').extract()

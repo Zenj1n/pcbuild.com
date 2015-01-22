@@ -18,7 +18,7 @@ class hw_ssd(CrawlSpider):
     )
     
     def parse_start_url(self,response):
-        graph_db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
+        graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
         hxs = HtmlXPathSelector(response)
         row = hxs.select('//tr')
         for titles in row:
