@@ -266,3 +266,26 @@ div.eindlijst{
 div.eindlijst table{
    width: 100%;
 }
+
+/* css zoeklijst */
+
+div.zoeklijst{
+    border: thin solid #00aeff;
+    border-radius: 6px;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+div.zoeklijst table{
+    width: 90%;
+}
+
+div.zoekinput{
+    border: thin solid #C0C0C0;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+}

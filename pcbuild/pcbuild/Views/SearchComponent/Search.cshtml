@@ -5,15 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Search</h2>
+<h2>Zoeken</h2>
+
+<div class="zoekinput">
 @using (Html.BeginForm("Search", "SearchComponent"))
 {
     @Html.TextBox("name")
     <input type="submit" value="Search" />
 }
 
-<table style="background-color:lightpink; border:solid 2px black;">
-    <tr>
+</div>
+
+<div class="zoeklijst">
+<table>
+    <tr style="height: 35px; font-weight: bold">
         <td>Naam</td>
         <td>Prijs</td>
         <td>Webshop</td>
@@ -30,4 +35,4 @@
 
 </table>
 
-
+</div>

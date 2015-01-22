@@ -85,7 +85,7 @@ namespace pcbuild.Controllers
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             // Query om Videokaarten op te halen

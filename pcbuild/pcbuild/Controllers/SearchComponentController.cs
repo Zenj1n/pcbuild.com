@@ -33,7 +33,7 @@ namespace pcbuild.Controllers
             string search_query = "(?i).*" + name + ".*";
 
             //Maak verbinding met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             //Voer query uit m.b.v neo4jclient en zet het in een variable

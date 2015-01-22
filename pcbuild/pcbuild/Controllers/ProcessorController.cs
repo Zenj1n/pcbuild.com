@@ -131,7 +131,7 @@ namespace pcbuild.Controllers
             HttpCookie voedingwebshop_cookie = new HttpCookie("voedingwebshop_cookie");
 
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             // Query om alle processoren op te halen
