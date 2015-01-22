@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Neo4jClient.Cypher;
 using Neo4jClient;
+using System.Text.RegularExpressions;
 namespace r_script_c
 {
     class Program
@@ -22,14 +23,14 @@ namespace r_script_c
         public static void Run_Rscript(string component)
         {
             string strCmdText;
-            strCmdText = "/C Rscript prijshistory.r " + component.Replace(" ", "_");
+            strCmdText = "/C Rscript prijshistory.r " + component;
             System.Diagnostics.Process.Start("CMD.exe", strCmdText);
         }
 
         public static void Moederbord_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -40,6 +41,7 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component," ","_");
                 Run_Rscript(component);
             }
         }
@@ -47,7 +49,7 @@ namespace r_script_c
         public static void CPU_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -58,6 +60,7 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
@@ -65,7 +68,7 @@ namespace r_script_c
         public static void GPU_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -76,6 +79,7 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
@@ -83,7 +87,7 @@ namespace r_script_c
         public static void RAM_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -94,13 +98,14 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
         public static void Case_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -111,13 +116,14 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
         public static void Opslag_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -128,6 +134,7 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
@@ -135,7 +142,7 @@ namespace r_script_c
         public static void PSU_grafiek()
         {
             string component;
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
             var query_componenten = client
            .Cypher
@@ -146,6 +153,7 @@ namespace r_script_c
             for (int i = 0; i < query_componenten.Length; i++)
             {
                 component = query_componenten[i].naam;
+                component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
             }
         }
