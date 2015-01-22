@@ -34,6 +34,7 @@ class hw_case(CrawlSpider):
             price = titles.select('td[@class="center"]/a/text()').extract()
             # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
+            #filter de data---------------------------------------------------------------------------------------------
             try:
                 vormfactor = ','.join(desc).split(",")[1].strip();
             except:
@@ -52,7 +53,7 @@ class hw_case(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-            print "== Adding Node to database =="
+            #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
                                                            "MATCH (c:behuizing)  WHERE c.naam = {namedb} SET c.type = {type}")

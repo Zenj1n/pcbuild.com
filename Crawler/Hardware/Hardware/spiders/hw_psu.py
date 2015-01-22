@@ -31,6 +31,8 @@ class hw_psu(CrawlSpider):
             price = titles.select('td[@class="center"]/a/text()').extract()
             # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
+            #filter de data---------------------------------------------------------------------------------------------
+
             try:
                 vermogen = ','.join(desc).split(",")[0].strip();
             except:
@@ -50,7 +52,7 @@ class hw_psu(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-            print "== Adding Node to database =="
+            #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
                                                            "MATCH (c:voeding)  WHERE c.naam = {namedb} SET c.vermogen = {vermogen}, c.zuinigheid = {zuinigheid}, c.type = {type}")

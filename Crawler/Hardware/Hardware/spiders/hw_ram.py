@@ -31,6 +31,8 @@ class hw_ram(CrawlSpider):
             price = titles.select('td[@class="center"]/a/text()').extract()
             # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
+            #filter de data---------------------------------------------------------------------------------------------
+
             try:
                 capaciteit = ','.join(desc).split(",")[0].strip()
             except:
@@ -51,7 +53,7 @@ class hw_ram(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-            print "== Adding Node to database =="
+            #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
                                                            "MATCH (c:werkgeheugen)  WHERE c.naam = {namedb} SET c.capaciteit = {capaciteit}, c.modules = {modules}, c.ddr = {ddr}, c.cl = {cl}")

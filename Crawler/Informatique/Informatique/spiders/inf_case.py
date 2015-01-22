@@ -33,6 +33,8 @@ class inf_case(CrawlSpider):
             price_raw = titles.xpath('div[@id="price"]/text()').extract()
             # image_urls = titles.xpath('div[@id="image"]/a/img/@src').extract()
 
+            #filter de data, maak eerst strings van---------------------------------------------------------------------
+
             url = ''.join(url_raw).replace("[\"]\"", "")
             name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"*", "").strip();
@@ -56,6 +58,8 @@ class inf_case(CrawlSpider):
             namedb = namesplit[0]
 
             print "== Adding Node to database =="
+
+            #check of de componenten matchen/al bestaan, update het anders make een nieuwe node aan
 
             query_CreateWebshopNode = neo4j.CypherQuery(graph_db,
                                                         "MERGE (w:Webshop { naam: {webshop} })")

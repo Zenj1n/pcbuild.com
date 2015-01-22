@@ -38,6 +38,8 @@ class alt_ram_ddr(CrawlSpider):
                 'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
             ddr_raw = response.xpath('//*[@id="listingResult"]/div[4]/text()').extract()
 
+            #filter de data, maak eerst strings van---------------------------------------------------------------------
+
             url = ''.join(url_raw).replace("[\"]\"", "")
 
             capaciteit = desc[0].strip()
@@ -66,6 +68,8 @@ class alt_ram_ddr(CrawlSpider):
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
+
+            #check of de componenten matchen/al bestaan, update het anders make een nieuwe node aan
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,

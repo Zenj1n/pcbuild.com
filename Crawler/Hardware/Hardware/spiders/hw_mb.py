@@ -31,6 +31,8 @@ class hw_mb(CrawlSpider):
             price = titles.select('td[@class="center"]/a/text()').extract()
             # image_urls = titles.select('td/div[@class="block-center"]/div[@class="thumb_93"]/a/img/@src').extract()
 
+            #filter de data---------------------------------------------------------------------------------------------
+
             try:
                 ddr = ','.join(desc).split(",")[2].strip().lower()
             except:
@@ -48,7 +50,7 @@ class hw_mb(CrawlSpider):
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
 
-            print "== Adding Node to database =="
+            #voeg eventueel missende specificaties toe aan componenten--------------------------------------------------
 
             query_VoegSpecificatiesToe = neo4j.CypherQuery(graph_db,
                                                            "MATCH (c:moederbord)  WHERE c.naam = {namedb} SET c.ddr = {ddr}")

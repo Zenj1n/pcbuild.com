@@ -35,6 +35,8 @@ class inf_ssd(CrawlSpider):
             price_raw = titles.select('div[@id="price"]/text()').extract()
             # image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
+            #filter de data, maak eerst strings van---------------------------------------------------------------------
+
             url = ''.join(url_raw).replace("[\"]\"", "")
             name = ''.join(name_raw).replace("\"[u'", "")
             price = ''.join(price_raw)[1:].replace("[\"]\"", "")
@@ -62,6 +64,9 @@ class inf_ssd(CrawlSpider):
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
+
+            #check of de componenten matchen/al bestaan, update het anders make een nieuwe node aan
+
 
             if matchCountNumber != 0:
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,

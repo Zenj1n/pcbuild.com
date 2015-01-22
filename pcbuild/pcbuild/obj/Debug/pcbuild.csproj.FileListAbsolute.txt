@@ -305,3 +305,5 @@ E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\obj\Debug\pcbuild.csproj.App.config
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.CodeAnalysisLog.xml
+E:\Repositories Git Hub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.lastcodeanalysissucceeded
