@@ -64,6 +64,7 @@
             this.prijs_webshop_button.TabIndex = 1;
             this.prijs_webshop_button.Text = "Prijs verschillen webshop";
             this.prijs_webshop_button.UseVisualStyleBackColor = true;
+            this.prijs_webshop_button.Click += new System.EventHandler(this.prijs_webshop_button_Click);
             // 
             // label1
             // 
@@ -156,11 +157,12 @@
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "componenten";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(338, 159);
             this.chart1.TabIndex = 12;
             this.chart1.Text = "chart1";
+            this.chart1.Visible = false;
             // 
             // Form1
             // 
@@ -181,7 +183,6 @@
             this.Controls.Add(this.componenten_button);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -68,6 +68,7 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];                    
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
+            
             string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
   
             Debug.WriteLine(ddr);
@@ -88,10 +89,45 @@ namespace pcbuild.Controllers
                   Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
                   Webshop_all = p.As<Webshop_Model>(),
               })
-               .Limit(100)
               .Results;
 
             return View(componenten_query);
+
+            //HIER BENEDEN IS CODE OM DUPLICATES TE FILTEREN MAAR IS SUPER TRAAG
+            //var test = client
+            //    .Cypher
+            //    .Match("(n:werkgeheugen)")
+            //    .Return(n => n.As<Werkgeheugen_Model>().naam)
+            //    .Union()
+            //    .Match("(n:werkgeheugen)")
+            //    .Return(n => n.As<Werkgeheugen_Model>().naam)
+            //    .Results
+            //    .ToList();
+            
+            //foreach (var item in test)
+            //{
+            //    int i = 1;
+            //    string werkgeheugen_naam = item;
+            //    var componenten_query = client
+            //   .Cypher
+            //   .Match("(n:werkgeheugen)-[r:verkrijgbaar]-(p:Webshop)")
+            //   .Where("n.ddr = {ddr_query}")
+            //   .AndWhere("n.naam = {werkgeheugen_naam}")
+            //   .WithParam("ddr_query", ddr)
+            //   .WithParam("werkgeheugen_naam", werkgeheugen_naam)
+            //   .Return((n, r, p) => new ViewModelWerkgeheugen
+            //   {
+            //       Werkgeheugen_all = n.As<Werkgeheugen_Model>(),
+            //       Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
+            //       Webshop_all = p.As<Webshop_Model>(),
+            //   })
+            //   .Results;
+            //    i++;
+            //    if (i == test.Count)
+            //    {
+            //        return View(componenten_query);     
+            //    }
+            //}            
         }
     }
 }

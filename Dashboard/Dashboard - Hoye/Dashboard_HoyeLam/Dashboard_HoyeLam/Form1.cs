@@ -27,7 +27,7 @@ namespace Dashboard_HoyeLam
         private void componenten_button_Click(object sender, EventArgs e)
         {
            
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://localhost:8080/db/data"));
             client.Connect();
 
             //Alle componenten 
@@ -126,19 +126,36 @@ namespace Dashboard_HoyeLam
             label8.Text = "Totaal voedingen                 : " + totaal_voedingen.ToString();
             label9.Text = "Totaal niet gebruikte componenten: " + niet_gebruikte_componenten.ToString();
 
-            this.chart1.Series["Totaal componenten"].Points.AddXY("Totaal", totaal_comp);
-            this.chart1.Series["Totaal Moederbord"].Points.AddXY("Moederbord", totaal_comp);
-            this.chart1.Series["Totaal Processor"].Points.AddXY("Processor", totaal_comp);
-            this.chart1.Series["Totaal videokaarten"].Points.AddXY("videokaarten", totaal_comp);
-            this.chart1.Series["Totaal werkgeheugen"].Points.AddXY("werkgeheugen", totaal_comp);
-            this.chart1.Series["Totaal behuizing"].Points.AddXY("behuizing", totaal_comp);
-            this.chart1.Series["Totaal voeding"].Points.AddXY("voeding", totaal_comp);
-            this.chart1.Series["Totaal Ongebruikt"].Points.AddXY("Ongebruikt", totaal_comp);
+            this.chart1.Visible = true;
+
+            this.chart1.Series["componenten"].Points.AddXY("Totaal", totaal_comp);
+            this.chart1.Series["componenten"].Points.AddXY("Moederbord", totaal_moederborden);
+            this.chart1.Series["componenten"].Points.AddXY("Processor", totaal_processoren);
+            this.chart1.Series["componenten"].Points.AddXY("videokaarten", totaal_videokaarten);
+            this.chart1.Series["componenten"].Points.AddXY("werkgeheugen", totaal_werkgeheugen);
+            this.chart1.Series["componenten"].Points.AddXY("behuizing", totaal_behuizingen);
+            this.chart1.Series["componenten"].Points.AddXY("voeding", totaal_voedingen);
+            this.chart1.Series["componenten"].Points.AddXY("Ongebruikt", niet_gebruikte_componenten);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void prijs_webshop_button_Click(object sender, EventArgs e)
         {
+          //  var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+          //  client.Connect();
 
+          //  var componenten_query = client
+          // .Cypher
+          // .Match("(n:)-[r:verkrijgbaar]-(p:Webshop)")
+          // .Where("n.socket = {socket_c}")
+          // .WithParam("socket_c", socket)
+          // .Return((n, r, p) => new ViewModelMoederbord
+          // {
+          //     Moederbord_all = n.As<Moederbord_Model>(),
+          //     Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
+          //     Webshop_all = p.As<Webshop_Model>(),
+          // })
+          //.Results;
+           
         }
 
 
