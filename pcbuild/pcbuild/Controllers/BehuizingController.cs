@@ -75,7 +75,7 @@ namespace pcbuild.Controllers
             Debug.WriteLine(vormfactor);
             Debug.WriteLine(vormfactor_search);
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();
 
             // Query om behuizingen op te halen met de juiste vormfactor die wij kregen van moederbord
