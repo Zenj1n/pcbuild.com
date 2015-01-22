@@ -20,3 +20,13 @@ C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\De
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\Jason\Documents\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Primitives.xml
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.exe.config
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.exe
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.pdb
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.exe
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.pdb
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Neo4jClient.dll
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Extensions.dll
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Primitives.dll
+C:\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.csprojResolveAssemblyReference.cache
