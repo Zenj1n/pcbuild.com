@@ -8,7 +8,6 @@ import datetime
 import time
 
 
-
 class alt_psu(CrawlSpider):
     name = "alt_psu"
 
@@ -36,7 +35,8 @@ class alt_psu(CrawlSpider):
             component = 'voeding'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            cent_raw = titles.select(
+                'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
 
             #filter de data, maak eerst strings van---------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ class alt_psu(CrawlSpider):
             cent = cent_raw[:-1]
             price_raw = euro + cent
             price_raw2 = price_raw.replace("[\"]\"*", "").strip();
-            price = price_raw2.replace("-","00")
+            price = price_raw2.replace("-", "00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -64,7 +64,7 @@ class alt_psu(CrawlSpider):
             alt_psu = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                               "match (c:processor) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
@@ -73,23 +73,24 @@ class alt_psu(CrawlSpider):
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
-                "MATCH (c:voeding) WHERE c.naam = {namedb} SET c.vermogen = {vermogen}, c.geluid = {geluid}, c.zuinigheid = {zuinigheid}")
-                alt_psu = query_SetSpecifications.execute(namedb=namedb, vermogen=vermogen, geluid=geluid, zuinigheid=zuinigheid)
+                                                            "MATCH (c:voeding) WHERE c.naam = {namedb} SET c.vermogen = {vermogen}, c.geluid = {geluid}, c.zuinigheid = {zuinigheid}")
+                alt_psu = query_SetSpecifications.execute(namedb=namedb, vermogen=vermogen, geluid=geluid,
+                                                          zuinigheid=zuinigheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                              "MATCH (c:voeding)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_psu = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:voeding {naam:{namedb}, vermogen:{vermogen}, geluid:{geluid}, zuinigheid:{zuinigheid}})")
+                                                              "Create (c:voeding {naam:{namedb}, vermogen:{vermogen}, geluid:{geluid}, zuinigheid:{zuinigheid}})")
                 alt_psu = query_CreateComponentNode.execute(namedb=namedb, vermogen=vermogen,
-                geluid=geluid, zuinigheid=zuinigheid)
+                                                            geluid=geluid, zuinigheid=zuinigheid)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:voeding), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_psu = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+                                                                price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)

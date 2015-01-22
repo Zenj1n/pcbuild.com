@@ -2,7 +2,6 @@ import csv
 import datetime
 import time
 
-
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.selector import HtmlXPathSelector
@@ -39,15 +38,14 @@ class inf_ram(CrawlSpider):
             desc = titles.select('div[@id="description"]/ul/li/text()').extract()
             price_raw = titles.select('div[@id="price"]/text()').extract()
             ddr_raw = response.xpath('//*[@id="hdr"]/h1/text()').extract()
-            #image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
+            # image_urls = titles.select('div[@id="image"]/a/img/@src').extract()
 
             #filter de data, maak eerst strings van---------------------------------------------------------------------
 
             url = ''.join(url_raw).replace("[\"]\"", "")
-
             name = ''.join(name_raw).replace("\"[u'", "")
-            price = ''.join(price_raw)[1:].replace("[\"]\"","")
-            ddr = ''.join(ddr_raw).replace("modules","").replace("[\"]\"","").strip().lower()
+            price = ''.join(price_raw)[1:].replace("[\"]\"", "")
+            ddr = ''.join(ddr_raw).replace("modules", "").replace("[\"]\"", "").strip().lower()
 
             try:
                 capaciteit = desc[0].replace("\"[u'", "").strip()
@@ -70,27 +68,27 @@ class inf_ram(CrawlSpider):
             inf_ram = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:werkgeheugen) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                               "match (c:werkgeheugen) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
 
             if matchCountNumber != 0:
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                              "MATCH (c:werkgeheugen)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 inf_ram = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:werkgeheugen {naam:{namedb}, capaciteit:{capaciteit}, ddr:{ddr}, modules:{modules}})")
+                                                              "Create (c:werkgeheugen {naam:{namedb}, capaciteit:{capaciteit}, ddr:{ddr}, modules:{modules}})")
                 inf_ram = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
-                ddr=ddr, modules=modules)
+                                                            ddr=ddr, modules=modules)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:werkgeheugen), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 inf_ram = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+                                                                price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)

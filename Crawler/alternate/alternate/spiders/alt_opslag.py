@@ -8,7 +8,6 @@ import datetime
 import time
 
 
-
 class alt_opslag(CrawlSpider):
     name = "alt_opslag"
     allowed_domains = ["alternate.nl"]
@@ -39,7 +38,8 @@ class alt_opslag(CrawlSpider):
             component = 'HDD'
             desc = titles.select('a[@class="productLink"]/span[@class="info"]/text()').extract()
             euro_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/text()').extract()
-            cent_raw = titles.select('div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
+            cent_raw = titles.select(
+                'div[@class= "waresSum"]/p/span[@class = "price right right10"]/sup/text()').extract()
             type_raw = response.xpath('//*[@id="listingResult"]/div[4]/text()').extract()
 
             #filter de data, maak eerst strings van---------------------------------------------------------------------
@@ -50,14 +50,13 @@ class alt_opslag(CrawlSpider):
             capaciteit = desc[0].strip()
             snelheid = desc[1].strip()
 
-
             euro_raw = ''.join(euro_raw)
             euro = euro_raw[1:]
             cent_raw = ''.join(cent_raw)
             cent = cent_raw[:-1]
             price_raw = euro + cent
             price_raw2 = price_raw.replace("[\"]\"*", "").strip();
-            price = price_raw2.replace("-","00")
+            price = price_raw2.replace("-", "00")
 
             namesplit = ''.join(name).split(",")
             namedb = namesplit[0]
@@ -69,7 +68,7 @@ class alt_opslag(CrawlSpider):
             alt_opslag = query_CreateWebshopNode.execute(webshop=webshop)
 
             query_CheckOnExistingComponent = neo4j.CypherQuery(graph_db,
-                                                      "match (c:opslag) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
+                                                               "match (c:opslag) where c.naam = {namedb} with COUNT(c) as Count_C RETURN Count_C")
             matchCount = query_CheckOnExistingComponent.execute(namedb=namedb)
             for record in query_CheckOnExistingComponent.stream(namedb=namedb):
                 matchCountNumber = record[0]
@@ -78,23 +77,24 @@ class alt_opslag(CrawlSpider):
 
             if matchCountNumber != 0:
                 query_SetSpecifications = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag) WHERE c.naam = {namedb} SET c.type = {type}, c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
-                alt_opslag = query_SetSpecifications.execute(type = type, namedb=namedb, capaciteit=capaciteit, snelheid=snelheid)
+                                                            "MATCH (c:opslag) WHERE c.naam = {namedb} SET c.type = {type}, c.capaciteit = {capaciteit}, c.snelheid = {snelheid}")
+                alt_opslag = query_SetSpecifications.execute(type=type, namedb=namedb, capaciteit=capaciteit,
+                                                             snelheid=snelheid)
                 query_DeleteRelationships = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
+                                                              "MATCH (c:opslag)-[r]-(w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} DELETE r")
                 alt_opslag = query_DeleteRelationships.execute(namedb=namedb, webshop=webshop)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop, price=price, url=url)
             else:
                 query_CreateComponentNode = neo4j.CypherQuery(graph_db,
-                "Create (c:opslag {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}, type:{type}})")
+                                                              "Create (c:opslag {naam:{namedb}, capaciteit:{capaciteit}, snelheid:{snelheid}, type:{type}})")
                 alt_opslag = query_CreateComponentNode.execute(namedb=namedb, capaciteit=capaciteit,
-                snelheid=snelheid, type=type)
+                                                               snelheid=snelheid, type=type)
                 query_CreatePriceRelationship = neo4j.CypherQuery(graph_db,
-                "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
+                                                                  "MATCH (c:opslag), (w:Webshop)  WHERE c.naam = {namedb} AND w.naam = {webshop} CREATE UNIQUE  c-[:verkrijgbaar{prijs:{price}, url:{url}}]-w")
                 alt_opslag = query_CreatePriceRelationship.execute(namedb=namedb, webshop=webshop,
-                price=price, url=url)
+                                                                   price=price, url=url)
             time.sleep(10)
 
             csv_f = csv.reader(f)

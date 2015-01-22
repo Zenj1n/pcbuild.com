@@ -20,7 +20,6 @@ class Database(CrawlSpider):
 
 
 
-
     def parse_title(self, response):
         hxs = Selector(text = response)
         titles = hxs.xpath('//ul[@id="detailview"]/li')
@@ -48,7 +47,6 @@ class Database(CrawlSpider):
 #---------------------------------------------database-----------------------------------------------------------------#
     def check_dbCase(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`behuizing`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
@@ -57,7 +55,6 @@ class Database(CrawlSpider):
 
     def check_dbRam(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`werkgeheugen`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
@@ -66,7 +63,6 @@ class Database(CrawlSpider):
 
     def check_dbMB(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`moederbord`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
@@ -76,7 +72,6 @@ class Database(CrawlSpider):
 
     def check_dbOpslag(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`opslag`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
@@ -85,7 +80,6 @@ class Database(CrawlSpider):
 
     def check_dbCpu(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`processor`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
@@ -94,12 +88,12 @@ class Database(CrawlSpider):
 
     def check_dbPsu(self):
         graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
-
         queryRead = neo4j.CypherQuery(graph_db,  "MATCH (n:`voeding`) RETURN n LIMIT 25")
         phone = queryRead.execute()
         for record in queryRead.stream():
             print ""
         return record
+
 
 
 
