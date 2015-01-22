@@ -6,11 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Neo4jClient;
 using System.Windows.Forms;
-using System.Globalization;
 
-namespace Dashboard_HoyeLam
+namespace Dashboard
 {
     public partial class Form1 : Form
     {
@@ -18,7 +16,7 @@ namespace Dashboard_HoyeLam
         {
             public string naam { get; set; }
         }
-                
+
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +24,7 @@ namespace Dashboard_HoyeLam
 
         private void componenten_button_Click(object sender, EventArgs e)
         {
-           
+
             var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
             client.Connect();
 
@@ -126,21 +124,14 @@ namespace Dashboard_HoyeLam
             label8.Text = "Totaal voedingen                 : " + totaal_voedingen.ToString();
             label9.Text = "Totaal niet gebruikte componenten: " + niet_gebruikte_componenten.ToString();
 
-            this.chart1.Series["Totaal componenten"].Points.AddXY("Totaal", totaal_comp);
-            this.chart1.Series["Totaal Moederbord"].Points.AddXY("Moederbord", totaal_comp);
-            this.chart1.Series["Totaal Processor"].Points.AddXY("Processor", totaal_comp);
-            this.chart1.Series["Totaal videokaarten"].Points.AddXY("videokaarten", totaal_comp);
-            this.chart1.Series["Totaal werkgeheugen"].Points.AddXY("werkgeheugen", totaal_comp);
-            this.chart1.Series["Totaal behuizing"].Points.AddXY("behuizing", totaal_comp);
-            this.chart1.Series["Totaal voeding"].Points.AddXY("voeding", totaal_comp);
-            this.chart1.Series["Totaal Ongebruikt"].Points.AddXY("Ongebruikt", totaal_comp);
+            //this.chart1.Series["Totaal componenten"].Points.AddXY("Totaal", totaal_comp);
+            //this.chart1.Series["Totaal Moederbord"].Points.AddXY("Moederbord", totaal_comp);
+            //this.chart1.Series["Totaal Processor"].Points.AddXY("Processor", totaal_comp);
+            //this.chart1.Series["Totaal videokaarten"].Points.AddXY("videokaarten", totaal_comp);
+            //this.chart1.Series["Totaal werkgeheugen"].Points.AddXY("werkgeheugen", totaal_comp);
+            //this.chart1.Series["Totaal behuizing"].Points.AddXY("behuizing", totaal_comp);
+            //this.chart1.Series["Totaal voeding"].Points.AddXY("voeding", totaal_comp);
+            //this.chart1.Series["Totaal Ongebruikt"].Points.AddXY("Ongebruikt", totaal_comp);
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
