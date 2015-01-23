@@ -21,7 +21,10 @@ namespace r_script_c
      * Misschien dat het nog een oude csv 
      * is op misschien nog nooit geupdate is maar bij mij laat hij ook wat 
      * specificaties bij de naam zien om 1 of andere reden. Daardoor staan de namen van de database 
-     * niet gelijk aan die in het csv bestand en kan hij niet de grafieken maken.
+     * niet gelijk aan die in het csv bestand en kan hij niet de grafieken maken. In de crawlers worden er 
+     * namelijk 2 verschillende string weggeschreven. 
+     * "Namedb" naar de databse en "name" naar het csv bestand. Volgens mij moeten beide "namedb" zijn.
+     * Het zou fijn zijn als iemand dat morgen kan testen aangezien ik niet op m'n desktop kan crawlen.
      */
      
     class Program
