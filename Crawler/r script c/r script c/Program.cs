@@ -13,7 +13,15 @@ namespace r_script_c
      * Op m'n desktop wacht hij nu tot dat de vorige cmd.exe 
      * is afgesloten voordat hij de volgende opent. Op de server 
      * loopt hij nogsteeds van en duurt ongeveer 20 min voordat 
-     * je weer wat kan doen 
+     * je weer wat kan doen. Verder heb ik dit script nog op m'n desktop
+     * getest door te syncen met git, de database naar die van git te wijzigen, 
+     * en de prijshistory naar m'n pc gekopieerd maardan werkt het nogsteeds
+     * niet doordat de namen van de databse 
+     * niet gelijk zijn met de namen in het csv bestand. 
+     * Misschien dat het nog een oude csv 
+     * is op misschien nog nooit geupdate is maar bij mij laat hij ook wat 
+     * specificaties bij de naam zien om 1 of andere reden. Daardoor staan de namen van de database 
+     * niet gelijk aan die in het csv bestand en kan hij niet de grafieken maken.
      */
      
     class Program
@@ -38,7 +46,6 @@ namespace r_script_c
             Console.WriteLine(strCmdText);
             Console.WriteLine("Prijshistory van " + component + " aan get maken");
             cmd.WaitForExit();
-            Console.ReadKey();
         }
 
         public static void Moederbord_grafiek()
