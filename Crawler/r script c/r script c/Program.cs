@@ -13,12 +13,12 @@ namespace r_script_c
         static void Main(string[] args)
         {
             CPU_grafiek();
-            GPU_grafiek();
-            PSU_grafiek();
-            Moederbord_grafiek();
-            Case_grafiek();
-            RAM_grafiek();
-            Opslag_grafiek();                 
+            //GPU_grafiek();
+            //PSU_grafiek();
+            //Moederbord_grafiek();
+            //Case_grafiek();
+            //RAM_grafiek();
+            //Opslag_grafiek();                 
         }
         public static void Run_Rscript(string component)
         {
@@ -57,8 +57,9 @@ namespace r_script_c
            .Return(n => n.As<processor>())
            .Results
            .ToArray();
-            for (int i = 0; i < query_componenten.Length; i++)
+            for (int i = 0; i < 1; i++)
             {
+                //query_componenten.Length
                 component = query_componenten[i].naam;
                 component = Regex.Replace(component, " ", "_");
                 Run_Rscript(component);
