@@ -80,6 +80,7 @@ namespace pcbuild.Controllers
 
             //Where Query voor compatible      
             string socket = processorsocket_cookie.Value;
+            string ddr_mb = ".*.*";
 
                   
             //Connectie met database
@@ -91,7 +92,9 @@ namespace pcbuild.Controllers
            .Cypher
            .Match("(n:moederbord)-[r:verkrijgbaar]-(p:Webshop)")
            .Where("n.socket = {socket_c}")
+           .AndWhere("n.ddr =~ {ddr_mb}")
            .WithParam("socket_c", socket)
+           .WithParam("ddr_mb", ddr_mb)
            .Return((n, r, p) => new ViewModelMoederbord
            {
                Moederbord_all = n.As<Moederbord_Model>(),
