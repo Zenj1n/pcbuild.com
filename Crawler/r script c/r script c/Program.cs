@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Neo4jClient.Cypher;
 using Neo4jClient;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 namespace r_script_c
 {
     class Program
@@ -24,7 +25,10 @@ namespace r_script_c
         {
             string strCmdText;
             strCmdText = "/C Rscript prijshistory.r " + component;
-            System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+            ProcessStartInfo start = new ProcessStartInfo("cmd.exe");
+            start.Arguments = strCmdText;
+            Process cmd = Process.Start(start);
+            cmd.WaitForExit();
         }
 
         //public static void Moederbord_grafiek()
