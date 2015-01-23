@@ -77,7 +77,7 @@
                             @if (System.IO.Directory.Exists("C:\\prijsverandering"))
                             {
 
-                                string path = "file:///C:/prijsverandering/" + @item.Proccesor_m.naam + ".jpeg";
+                                string path = "~/prijsverandering/" + @item.Proccesor_m.naam + ".jpeg";
                                 path = path.Replace(" ", "%20");
                                 path = path.Replace("®", "");
                                 <div style="background-image: url(@path)" class="modalcomponentenafbeelding">

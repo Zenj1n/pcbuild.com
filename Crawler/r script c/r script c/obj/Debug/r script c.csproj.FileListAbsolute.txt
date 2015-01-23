@@ -24,3 +24,6 @@ C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\Newtonsoft.Json.dl
 C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Extensions.dll
 C:\GitHub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\System.Net.Http.Primitives.dll
 C:\GitHub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.csprojResolveAssemblyReference.cache
+E:\Repositories Git Hub\pcbuild.com\Crawler\r script c\r script c\bin\Debug\r script c.exe.config
+E:\Repositories Git Hub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.exe
+E:\Repositories Git Hub\pcbuild.com\Crawler\r script c\r script c\obj\Debug\r script c.pdb
