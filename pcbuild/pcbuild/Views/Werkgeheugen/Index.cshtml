@@ -41,14 +41,12 @@
             <td>Prijs</td>
             <td>webshop</td>
         </tr>
-
+  
         @foreach (var item in Model)
         {
             string uniek = item.GetHashCode().ToString();
             string uniekmethashtag = "#" + uniek;
-
-
-
+                    
             <tr class="componententr" href="" data-toggle="modal" data-id="1" data-target=@uniekmethashtag>
                 <td>@item.Werkgeheugen_all.naam</td>
                 <td>@item.Werkgeheugen_all.capaciteit</td>
