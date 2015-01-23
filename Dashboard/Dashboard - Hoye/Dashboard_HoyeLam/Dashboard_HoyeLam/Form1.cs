@@ -27,7 +27,7 @@ namespace Dashboard_HoyeLam
         private void componenten_button_Click(object sender, EventArgs e)
         {
 
-            var client = new GraphClient(new Uri("http://localhost:8080/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@145.24.222.155:8080/db/data/"));
             client.Connect();
 
             //Alle componenten 
@@ -150,7 +150,7 @@ namespace Dashboard_HoyeLam
         private void prijs_webshop_button_Click(object sender, EventArgs e)
         {
             //Connectie met database
-            var client = new GraphClient(new Uri("http://localhost:8080/db/data"));
+            var client = new GraphClient(new Uri("http://Horayon:Zenjin@145.24.222.155:8080/db/data/"));
             client.Connect();
 
             this.chart1.Visible = false;

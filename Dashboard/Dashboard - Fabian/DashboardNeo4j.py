@@ -2,7 +2,7 @@ from py2neo import rel, node
 from py2neo import neo4j
 
 class DashboardNeo4j:
-    graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@localhost:8080/db/data/")
+    graph_db = neo4j.GraphDatabaseService("http://Horayon:Zenjin@145.24.222.155:8080/db/data/")
 
     #-----------------------aantal componenten voeding------------------------------------#
     queryCountVoeding = neo4j.CypherQuery(graph_db, "MATCH (n:`voeding`) RETURN count(n)")
