@@ -61,6 +61,9 @@ namespace pcbuild.Controllers
         }
         // GET: Werkgeheugen
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
