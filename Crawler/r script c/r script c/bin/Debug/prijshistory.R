@@ -10,6 +10,6 @@ var = gsub("/", " ", var2)
 
 
 image = ggplot(data=Prijshistory[Prijshistory$naam == var2, ], aes(x=datum, y=prijs, group=1)) + geom_line()
-ggsave(file=paste("C:/GitHub/pcbuild.com/pcbuild/pcbuild/Images",var,".jpeg", sep=""), plot=image, width=10, height=8)
+ggsave(file=paste("C:/pcbuild/Images/",var,".jpeg", sep=""), plot=image, width=10, height=8)
 
 
