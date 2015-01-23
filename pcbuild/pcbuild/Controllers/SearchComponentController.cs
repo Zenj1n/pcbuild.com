@@ -28,6 +28,9 @@ namespace pcbuild.Controllers
         }
 
         public ActionResult Search(string name)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             // Query eis
             string search_query = "(?i).*" + name + ".*";

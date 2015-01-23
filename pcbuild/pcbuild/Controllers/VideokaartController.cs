@@ -22,6 +22,9 @@ namespace pcbuild.Controllers
     public class VideokaartController : Controller
     {
         public ActionResult Reload(string moederbord, string prijs, string webshop, string vormfactor, string ddr)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");
@@ -67,6 +70,9 @@ namespace pcbuild.Controllers
 
         // GET: Videokaart
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             //Maak cookie arrays
             HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");

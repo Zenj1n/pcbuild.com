@@ -20,6 +20,9 @@ namespace pcbuild.Controllers
     public class ProcessorController : Controller
     {
         public ActionResult Reload()
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
@@ -104,6 +107,9 @@ namespace pcbuild.Controllers
 
         // GET: Processor
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
             HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");

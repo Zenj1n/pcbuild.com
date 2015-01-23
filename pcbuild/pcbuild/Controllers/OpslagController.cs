@@ -21,6 +21,9 @@ namespace pcbuild.Controllers
     public class OpslagController : Controller
     {
         public ActionResult Reload(string behuizing, string prijs, string webshop)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
@@ -58,6 +61,9 @@ namespace pcbuild.Controllers
         }
         // GET: Opslag
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             //Maak cookie arrays
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");

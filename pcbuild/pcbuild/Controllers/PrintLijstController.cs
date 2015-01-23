@@ -10,6 +10,9 @@ namespace pcbuild.Controllers
     public class PrintLijstController : Controller
     {
         public ActionResult Reload(string voeding, string prijs, string webshop)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookies aan
             HttpCookie voeding_cookie = new HttpCookie("voeding_cookie");

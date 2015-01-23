@@ -20,6 +20,9 @@ namespace pcbuild.Controllers
     public class BehuizingController : Controller
     {
         public ActionResult Reload(string werkgeheugen, string prijs, string webshop)
+            //Deze methode zorgt ervoor dat cookies worden gemaakt
+            //en strings van de vorige stap worden dan opgeslagen in de cookies
+            //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Roep cookie arrays
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
@@ -58,6 +61,9 @@ namespace pcbuild.Controllers
 
         // GET: Behuizing
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             //Maak de cookies
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");

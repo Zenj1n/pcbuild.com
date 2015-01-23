@@ -21,6 +21,9 @@ namespace pcbuild.Controllers
     public class WerkgeheugenController : Controller
     {
         public ActionResult Reload(string videokaart, string prijs, string webshop)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
@@ -104,7 +107,7 @@ namespace pcbuild.Controllers
             //    .Return(n => n.As<Werkgeheugen_Model>().naam)
             //    .Results
             //    .ToList();
-            
+
             //foreach (var item in test)
             //{
             //    int i = 1;
@@ -126,7 +129,7 @@ namespace pcbuild.Controllers
             //    i++;
             //    if (i == test.Count)
             //    {
-            //        return View(componenten_query);     
+            //        return View(componenten_query);
             //    }
             //}            
         }

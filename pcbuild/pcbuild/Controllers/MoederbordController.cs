@@ -25,6 +25,9 @@ namespace pcbuild.Controllers
     {
         // GET: Moederbord
         public ActionResult Reload(string processor, string socket, string prijs, string webshop)
+        //Deze methode zorgt ervoor dat cookies worden gemaakt
+        //en strings van de vorige stap worden dan opgeslagen in de cookies
+        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             socket = Regex.Replace(socket, " ", "+", RegexOptions.IgnoreCase); //Voor Sockets die een "+" hebben en URL's kunnen dat niet meegeven
 
@@ -68,6 +71,9 @@ namespace pcbuild.Controllers
         }
 
         public ActionResult Index()
+        // In deze methode worden de cookies aangeroepen 
+        // Connectie met database wordt gemaakt en een query word gevraagd
+        // Eventueel with parameters van de vorige stap
         {
             //Roep Cookies aan voor de View
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");

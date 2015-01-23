@@ -15,6 +15,7 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 
 
+// DEZE CONTROLLER WORDT MOMENTEEL NIET GEBRUIKT!!!!
 namespace pcbuild.Controllers   
 {
     public class ComponentenController : Controller
