@@ -13,17 +13,24 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using pcbuild.Models.OpslagModels;
+using pcbuild.Models.MoederbordModels;
 using System.Globalization;
+using pcbuild.Models.OpslagModels;
+using System.Text.RegularExpressions;
+
 
 namespace pcbuild.Controllers
 {
     public class OpslagController : Controller
     {
+        /// <summary>
+        /// Deze methode slaat maakt, voegt data toe en slaat de cookies op
+        /// </summary>
+        /// <param name="behuizing">naam behuizing</param>
+        /// <param name="prijs">prijs van de behuizing</param>
+        /// <param name="webshop">naam wewbshop van de behuizing</param>
+        /// <returns></returns>
         public ActionResult Reload(string behuizing, string prijs, string webshop)
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
@@ -36,7 +43,7 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             opslagprijs_cookie = Request.Cookies["opslagprijs_cookie"];
 
-            //Verreken totale prijs
+            //Pak alle prijzen tot nu toe en tel ze bij elkaar op en als je terug kwam van vorige stap haal de eerdere prijs eruit.
             decimal prijs_behuizing = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_opslag = Convert.ToDecimal(opslagprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_opslag;
@@ -59,13 +66,13 @@ namespace pcbuild.Controllers
 
             return RedirectToAction("Index");
         }
-        // GET: Opslag
+        /// <summary>
+        /// Deze methode maakt, voegt data en slaat de cookies op
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
-            //Maak cookie arrays
+            //Roep de cookies aan voor de View
             HttpCookie behuizing_cookie = new HttpCookie("behuizing_cookie");
             HttpCookie behuizingprijs_cookie = new HttpCookie("behuizingprijs_cookie");
             HttpCookie behuizingwebshop_cookie = new HttpCookie("behuizingwebshop_cookie");

@@ -23,13 +23,19 @@ namespace pcbuild.Controllers
 
     public class MoederbordController : Controller
     {
-        // GET: Moederbord
+       /// <summary>
+        ///Deze methode maakt, voegt data en slaat de cookies op
+       /// </summary>
+       /// <param name="processor"> Processor naam van de vorige stap </param>
+        /// <param name="socket">Processor socket naam van de vorige stap</param>
+        /// <param name="prijs">Processor prijs van de vorige stap</param>
+        /// <param name="webshop">Webshop naam van de processor van de vorige stap</param>
+       /// <returns></returns>
         public ActionResult Reload(string processor, string socket, string prijs, string webshop)
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
-            socket = Regex.Replace(socket, " ", "+", RegexOptions.IgnoreCase); //Voor Sockets die een "+" hebben en URL's kunnen dat niet meegeven
+            //Verander de socket strings voor URL gebruik, want de URL neemt geen spaties mee.
+            socket = Regex.Replace(socket, " ", "+", RegexOptions.IgnoreCase);
+            prijs = Regex.Replace(prijs, "€", "", RegexOptions.IgnoreCase);
 
             //Roep Cookies aan
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
@@ -43,14 +49,15 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             moederbordprijs_cookie = Request.Cookies["moederbordprijs_cookie"];
 
-            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));                          //Pak prijs van de vorige stap
-            decimal prijs_moederbord = Convert.ToDecimal(moederbordprijs_cookie.Value, new CultureInfo("is-IS")); //Pak de prijs van de component van deze stap
-            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value,                            //Pak de vorige totale prijs van vorige stap en verminder dat met 
-            new CultureInfo("is-IS")) - prijs_moederbord;                                                         //De prijs van dit component(om te voorkomen dat bij terugstap de prijs opnieuw optelt)
+            //Pak alle prijzen tot nu toe en tel ze bij elkaar op en als je terug kwam van vorige stap haal de eerdere prijs eruit.
+            decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));                          
+            decimal prijs_moederbord = Convert.ToDecimal(moederbordprijs_cookie.Value, new CultureInfo("is-IS")); 
+            decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value,                             
+            new CultureInfo("is-IS")) - prijs_moederbord;                                                         
             decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
             string prijs_totaal_string = prijs_totaal.ToString();
             totale_prijs_cookie.Value = prijs_totaal_string;
-            moederbordprijs_cookie.Value = "0,00";                                                                 //Zet de huidige component prijs weer op 0.00 om de stap opnieuw te beginnen
+            moederbordprijs_cookie.Value = "0,00";                              
             Response.Cookies.Add(moederbordprijs_cookie);
             Response.Cookies.Add(totale_prijs_cookie);
 
@@ -67,13 +74,16 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(processorsocket_cookie);            
             Response.Cookies.Add(totale_prijs_cookie);
 
+            //Roep de Index methode aan
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        ///  Deze methode maakt connectie met de NEO4J database, haalt data uit de NEO4J database 
+        ///  en roept de cookies aan die wij gaan gebruiken
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
             //Roep Cookies aan voor de View
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
@@ -84,10 +94,9 @@ namespace pcbuild.Controllers
 
             processorsocket_cookie = Request.Cookies["processorsocket_cookie"];
 
-            //Where Query voor compatible      
+            //Variables van de socket van de processor voor de WHERE query 
             string socket = processorsocket_cookie.Value;
             string ddr_mb = ".*.*";
-
                   
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
@@ -109,7 +118,7 @@ namespace pcbuild.Controllers
            })
           .Results;
 
-
+            //return naar de View en neem componenten_query mee
             return View(componenten_query);
         }
 

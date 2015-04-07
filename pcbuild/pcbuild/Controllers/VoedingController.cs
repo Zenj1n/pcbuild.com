@@ -13,17 +13,25 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using pcbuild.Models.VoedingModels;
+using pcbuild.Models.MoederbordModels;
 using System.Globalization;
+using pcbuild.Models.ProcessorModels;
+using System.Text.RegularExpressions;
+using pcbuild.Models.VoedingModels;
+
 
 namespace pcbuild.Controllers
 {
     public class VoedingController : Controller
     {
+        /// <summary>
+        /// Deze methode slaat maakt, voegt data toe en slaat de cookies op
+        /// </summary>
+        /// <param name="opslag">naam opslag</param>
+        /// <param name="prijs">prijs opslag</param>
+        /// <param name="webshop"naam webshop van de opslag></param>
+        /// <returns></returns>
         public ActionResult Reload(string opslag, string prijs, string webshop)
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
@@ -36,7 +44,7 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             voedingprijs_cookie = Request.Cookies["voedingprijs_cookie"];
 
-            //Vereken totale prijs
+            //Pak alle prijzen tot nu toe en tel ze bij elkaar op en als je terug kwam van vorige stap haal de eerdere prijs eruit.
             decimal prijs_opslag = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_voeding = Convert.ToDecimal(voedingprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_voeding;
@@ -59,12 +67,13 @@ namespace pcbuild.Controllers
 
             return RedirectToAction("Index");
         }
-        // GET: Voeding
+        /// <summary>
+        /// Roep de cookies aan voor de View, maak een connectie en haal data uit database.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
+            //Roep de cookies aan voor de View
             HttpCookie opslag_cookie = new HttpCookie("opslag_cookie");
             HttpCookie opslagprijs_cookie = new HttpCookie("opslagprijs_cookie");
             HttpCookie opslagwebshop_cookie = new HttpCookie("opslagwebshop_cookie");

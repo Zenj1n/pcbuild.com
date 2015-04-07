@@ -9,10 +9,14 @@ namespace pcbuild.Controllers
 {
     public class PrintLijstController : Controller
     {
+        /// <summary>
+        ///  Deze methode maakt, voegt data en slaat de cookies op
+        /// </summary>
+        /// <param name="voeding"></param>
+        /// <param name="prijs"></param>
+        /// <param name="webshop"></param>
+        /// <returns></returns>
         public ActionResult Reload(string voeding, string prijs, string webshop)
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookies aan
             HttpCookie voeding_cookie = new HttpCookie("voeding_cookie");
@@ -41,17 +45,22 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(voedingprijs_cookie);
             Response.Cookies.Add(voedingwebshop_cookie);
 
+            //Roep methode Index aan
             return RedirectToAction("Index");
         }
         
-        // GET: PrintLijst
+        /// <summary>
+        /// Roep de cookies aan en gebruik het voor de view
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            //Maak cookies aan voor View
+            //Roep cookies aan voor View
             HttpCookie voeding_cookie = new HttpCookie("voeding_cookie");
             HttpCookie voedingprijs_cookie = new HttpCookie("voedingprijs_cookie");
             HttpCookie voedingwebshop_cookie = new HttpCookie("voedingwebshop_cookie");
 
+            // roep de view aan
             return View();
         }
     }

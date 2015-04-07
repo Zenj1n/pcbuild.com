@@ -19,10 +19,11 @@ namespace pcbuild.Controllers
 {
     public class ProcessorController : Controller
     {
+        /// <summary>
+        /// Deze methode maakt, voegt data en slaat cookies op
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Reload()
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
@@ -102,15 +103,17 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(opslagwebshop_cookie);
             Response.Cookies.Add(voedingwebshop_cookie);
 
+            //Roep de Index methode aan
             return RedirectToAction("Index");
         }
 
-        // GET: Processor
+        /// <summary>
+        /// Deze methode maakt connectie met de database en roept de cookies aan die wij gaan gebruiken
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
+            //Roep de cookies aan voor de View
             HttpCookie processor_cookie = new HttpCookie("processor_cookie");
             HttpCookie moederbord_cookie = new HttpCookie("moederbord_cookie");
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
@@ -153,116 +156,8 @@ namespace pcbuild.Controllers
               })
               .Results;
 
+            //return naar de View en neem componenten_query mee
             return View(componenten_query);
-        }
-
-        //Filter acties maar is NOG NIET GEIMPLEMENTEERD! 
-        public ActionResult filter_prijs()
-        {
-            int filter_prijs_setting = 0;
-
-            if (filter_prijs_setting == 200)
-            {
-                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-                client.Connect();
-
-                var componenten_query_200 = client
-                .Cypher
-                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
-                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
-                .Return((n, r, p) => new ViewModelProcessor
-                {
-                    Proccesor_m = n.As<Processor_Model>(),
-                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
-                    Webshop_m = p.As<Webshop_Model>(),
-                })
-                .Results;
-
-                return View(componenten_query_200);
-            }
-            if (filter_prijs_setting == 400)
-            {
-                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-                client.Connect();
-
-                var componenten_query_400 = client
-                .Cypher
-                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
-                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
-                .Return((n, r, p) => new ViewModelProcessor
-                {
-                    Proccesor_m = n.As<Processor_Model>(),
-                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
-                    Webshop_m = p.As<Webshop_Model>(),
-                })
-                .Results;
-
-                return View(componenten_query_400);
-            }
-
-            if (filter_prijs_setting == 600)
-            {
-                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-                client.Connect();
-
-                var componenten_query_600 = client
-                .Cypher
-                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
-                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
-                .Return((n, r, p) => new ViewModelProcessor
-                {
-                    Proccesor_m = n.As<Processor_Model>(),
-                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
-                    Webshop_m = p.As<Webshop_Model>(),
-                })
-                .Results;
-
-                return View(componenten_query_600);
-            }
-
-            if (filter_prijs_setting == 800)
-            {
-                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-                client.Connect();
-
-                var componenten_query_800 = client
-                .Cypher
-                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
-                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
-                .Return((n, r, p) => new ViewModelProcessor
-                {
-                    Proccesor_m = n.As<Processor_Model>(),
-                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
-                    Webshop_m = p.As<Webshop_Model>(),
-                })
-                .Results;
-
-                return View(componenten_query_800);
-            }
-            if (filter_prijs_setting == 1000)
-            {
-                var client = new GraphClient(new Uri("http://localhost:7474/db/data"));
-                client.Connect();
-
-                var componenten_query_1000 = client
-                .Cypher
-                .Match("(n:processor)-[r:verkrijgbaar]-(p:Webshop)")
-                .Where((Webshop_Model p) => p.naam == "alternate.nl" || p.naam == "Informatique")
-                .Return((n, r, p) => new ViewModelProcessor
-                {
-                    Proccesor_m = n.As<Processor_Model>(),
-                    Verkrijgbaar_m = r.As<Verkrijgbaar_Model>(),
-                    Webshop_m = p.As<Webshop_Model>(),
-                })
-                .Results;
-
-                return View(componenten_query_1000);
-            }
-            else
-            {
-                return View();
-            }
-
         }
     }
 }

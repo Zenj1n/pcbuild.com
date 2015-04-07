@@ -13,17 +13,25 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using pcbuild.Models.WerkgeheugenModels;
+using pcbuild.Models.MoederbordModels;
 using System.Globalization;
+using pcbuild.Models.ProcessorModels;
+using pcbuild.Models.WerkgeheugenModels;
+using System.Text.RegularExpressions;
+
 
 namespace pcbuild.Controllers
 {
     public class WerkgeheugenController : Controller
     {
+        /// <summary>
+        /// Deze methode maakt, voegt data en slaat de cookies op
+        /// </summary>
+        /// <param name="videokaart">naam van de videokaart</param>
+        /// <param name="prijs">prijs van de videokaart</param>
+        /// <param name="webshop">naam webshop van de videokaart</param>
+        /// <returns></returns>
         public ActionResult Reload(string videokaart, string prijs, string webshop)
-        //Deze methode zorgt ervoor dat cookies worden gemaakt
-        //en strings van de vorige stap worden dan opgeslagen in de cookies
-        //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Maak cookie arrays
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
@@ -36,7 +44,7 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             werkgeheugenprijs_cookie = Request.Cookies["werkgeheugenprijs_cookie"];
 
-            //Vereken totale prijs
+            //Pak alle prijzen tot nu toe en tel ze bij elkaar op en als je terug kwam van vorige stap haal de eerdere prijs eruit.
             decimal prijs_videokaart = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_werkgeheugen = Convert.ToDecimal(werkgeheugenprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_werkgeheugen;
@@ -57,14 +65,16 @@ namespace pcbuild.Controllers
             Response.Cookies.Add(videokaartprijs_cookie);
             Response.Cookies.Add(videokaartwebshop_cookie);
 
+            //roep de methode Index aan
             return RedirectToAction("Index");
         }
-        // GET: Werkgeheugen
+        /// <summary>
+        /// Roep de cookies aan voor de View, maak een connectie en haal data uit database.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
+            //Roep de cookies aan voor de View
             HttpCookie videokaart_cookie = new HttpCookie("videokaart_cookie");
             HttpCookie videokaartprijs_cookie = new HttpCookie("videokaartprijs_cookie");
             HttpCookie videokaartwebshop_cookie = new HttpCookie("videokaartwebshop_cookie");
@@ -74,10 +84,8 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];                    
             moederbordddr_cookie = Request.Cookies["moederbordddr_cookie"];
 
-            
-            string ddr = moederbordddr_cookie.Value;    //  moederbord ddr voor matchen
-  
-            Debug.WriteLine(ddr);
+            //Variable om de juister werkgeheugen te halen door de juiste DDR-slot van het moederbord
+            string ddr = moederbordddr_cookie.Value;
 
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data/"));
@@ -97,44 +105,9 @@ namespace pcbuild.Controllers
               })
               .Limit(100)
               .Results;
-
-            return View(componenten_query);
-
-            //HIER BENEDEN IS CODE OM DUPLICATES TE FILTEREN MAAR IS SUPER TRAAG
-            //var test = client
-            //    .Cypher
-            //    .Match("(n:werkgeheugen)")
-            //    .Return(n => n.As<Werkgeheugen_Model>().naam)
-            //    .Union()
-            //    .Match("(n:werkgeheugen)")
-            //    .Return(n => n.As<Werkgeheugen_Model>().naam)
-            //    .Results
-            //    .ToList();
-
-            //foreach (var item in test)
-            //{
-            //    int i = 1;
-            //    string werkgeheugen_naam = item;
-            //    var componenten_query = client
-            //   .Cypher
-            //   .Match("(n:werkgeheugen)-[r:verkrijgbaar]-(p:Webshop)")
-            //   .Where("n.ddr = {ddr_query}")
-            //   .AndWhere("n.naam = {werkgeheugen_naam}")
-            //   .WithParam("ddr_query", ddr)
-            //   .WithParam("werkgeheugen_naam", werkgeheugen_naam)
-            //   .Return((n, r, p) => new ViewModelWerkgeheugen
-            //   {
-            //       Werkgeheugen_all = n.As<Werkgeheugen_Model>(),
-            //       Verkrijgbaar_all = r.As<Verkrijgbaar_Model>(),
-            //       Webshop_all = p.As<Webshop_Model>(),
-            //   })
-            //   .Results;
-            //    i++;
-            //    if (i == test.Count)
-            //    {
-            //        return View(componenten_query);
-            //    }
-            //}            
+            
+            //return naar de View en stuur componenten_query mee
+            return View(componenten_query);          
         }
     }
 }

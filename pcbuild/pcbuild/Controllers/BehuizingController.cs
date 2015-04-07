@@ -13,16 +13,23 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using pcbuild.Models.MoederbordModels;
 using System.Globalization;
+using pcbuild.Models.ProcessorModels;
+using System.Text.RegularExpressions;
 
 namespace pcbuild.Controllers
 {
     public class BehuizingController : Controller
     {
+        /// <summary>
+        /// Deze methode maakt, voegt data en slaat de cookies op
+        /// </summary>
+        /// <param name="werkgeheugen">naam van het werkgeheugen</param>
+        /// <param name="prijs">prijs van het werkgeheugen</param>
+        /// <param name="webshop">naam webshop van het werkgeheugen</param>
+        /// <returns></returns>
         public ActionResult Reload(string werkgeheugen, string prijs, string webshop)
-            //Deze methode zorgt ervoor dat cookies worden gemaakt
-            //en strings van de vorige stap worden dan opgeslagen in de cookies
-            //en in de volgende methode de cookies worden aangeroepen voor de view
         {
             //Roep cookie arrays
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
@@ -35,7 +42,7 @@ namespace pcbuild.Controllers
             totale_prijs_cookie = Request.Cookies["totale_prijs_cookie"];
             behuizingprijs_cookie = Request.Cookies["behuizingprijs_cookie"];
 
-            //Verreken totale prijs
+            //Pak alle prijzen tot nu toe en tel ze bij elkaar op en als je terug kwam van vorige stap haal de eerdere prijs eruit.
             decimal prijs_werkgeheugen = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));
             decimal prijs_behuizing = Convert.ToDecimal(behuizingprijs_cookie.Value, new CultureInfo("is-IS"));
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value, new CultureInfo("is-IS")) - prijs_behuizing;
@@ -59,13 +66,13 @@ namespace pcbuild.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Behuizing
+        /// <summary>
+        /// Roep de cookies aan voor de View, maak een connectie en haal data uit database.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
-        // In deze methode worden de cookies aangeroepen 
-        // Connectie met database wordt gemaakt en een query word gevraagd
-        // Eventueel with parameters van de vorige stap
         {
-            //Maak de cookies
+            //Roep de cookies aan voor de View
             HttpCookie werkgeheugen_cookie = new HttpCookie("werkgeheugen_cookie");
             HttpCookie werkgeheugenprijs_cookie = new HttpCookie("werkgeheugenprijs_cookie");
             HttpCookie werkgeheugenwebshop_cookie = new HttpCookie("werkgeheugenwebshop_cookie");
@@ -78,8 +85,7 @@ namespace pcbuild.Controllers
             //Maak er een query van om te zoeken in onze database
             string vormfactor = moederbordvormfactor_cookie.Value;  // moederbord vormfactor voor matchen
             string vormfactor_search = "(?i)" + vormfactor[0] + vormfactor[1] + vormfactor[2] + ".*";
-            Debug.WriteLine(vormfactor);
-            Debug.WriteLine(vormfactor_search);
+
             //Connectie met database
             var client = new GraphClient(new Uri("http://Horayon:Zenjin@localhost:8080/db/data"));
             client.Connect();

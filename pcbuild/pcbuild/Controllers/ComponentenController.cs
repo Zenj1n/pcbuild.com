@@ -20,6 +20,10 @@ namespace pcbuild.Controllers
 {
     public class ComponentenController : Controller
     {      
+        /// <summary>
+        /// Maak connectie en haal data uit de database.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             //Connectie met database
