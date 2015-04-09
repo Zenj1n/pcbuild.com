@@ -22,6 +22,8 @@ namespace PCBuild.nl_Installer
             System.Diagnostics.Process.Start("CMD.exe", copy);
             string copy2 = "/C copy ..\\..\\Res\\script2.bat C:\\PCBuild.nl\\";
             System.Diagnostics.Process.Start("CMD.exe", copy2);
+            string copy3 = "/C copy ..\\..\\Res\\easy_install.bat C:\\PCBuild.nl\\";
+            System.Diagnostics.Process.Start("CMD.exe", copy3);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,6 +54,9 @@ namespace PCBuild.nl_Installer
         {
             // run script
             System.Diagnostics.Process.Start(@"C:\PCBuild.nl\script2.bat");
+
+            // open folder PCBuild.nl
+            Process.Start(@"c:\PCBuild.nl\");
 
             button3.Enabled = false;
         }

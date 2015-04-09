@@ -1,3 +1,5 @@
-cd C:\PCBuild.nl
-Python ez_setup.py
-easy_install scrapy
+@echo off
+echo de folder "PCBuild.nl" is geopent
+echo open het bestand "easy_install.bat"
+echo wacht tot het bestand klaar is met runnen
+pause
