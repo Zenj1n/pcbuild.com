@@ -54,7 +54,6 @@ c:\users\hoye\documents\visual studio 2013\Projects\pcbuild\pcbuild\obj\Debug\pc
 c:\users\hoye\documents\visual studio 2013\Projects\pcbuild\pcbuild\obj\Debug\pcbuild.dll
 c:\users\hoye\documents\visual studio 2013\Projects\pcbuild\pcbuild\obj\Debug\pcbuild.pdb
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll.config
-C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.dll
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\pcbuild.pdb
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\Antlr3.Runtime.dll
 C:\Users\hoye\Documents\GitHub\pcbuild.com\pcbuild\pcbuild\bin\EntityFramework.dll

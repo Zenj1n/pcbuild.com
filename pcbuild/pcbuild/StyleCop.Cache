@@ -755,6 +755,269 @@
       </violation>
     </violations>
   </sourcecode>
+  <sourcecode name="Behuizing_Model.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2014/04/01 11:18:24.000</styleCop>
+      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
+      <sourceFile>2015/01/11 17:54:55.592</sourceFile>
+      <parser>2014/04/01 11:18:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>2</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>3</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>4</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>namespace names begin with an upper-case letter: pcbuild.</context>
+        <line>6</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>8</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>property names begin with an upper-case letter: naam.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>property names begin with an upper-case letter: interfaces.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>property names begin with an upper-case letter: vormfactor.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>property names begin with an upper-case letter: vormvoeding.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ViewModelBehuizing.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2014/04/01 11:18:24.000</styleCop>
+      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
+      <sourceFile>2015/01/11 17:54:55.593</sourceFile>
+      <parser>2014/04/01 11:18:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>2</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>3</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>4</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
+        <context>namespace names begin with an upper-case letter: pcbuild.</context>
+        <line>6</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>8</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1509">
+        <context>An opening curly bracket must not be preceded by a blank line.</context>
+        <line>10</line>
+        <index>163</index>
+        <endIndex>163</endIndex>
+        <startLine>10</startLine>
+        <startColumn>5</startColumn>
+        <endLine>10</endLine>
+        <endColumn>5</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="IdentityModels.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2014/04/01 11:18:24.000</styleCop>
+      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
+      <sourceFile>2014/12/08 21:11:09.512</sourceFile>
+      <parser>2014/04/01 11:18:24.000</parser>
+      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
+        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
+        <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>21</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The constructor must have a documentation header.</context>
+        <line>23</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>28</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
   <project key="-309455453">
     <configuration>DEBUG;TRACE</configuration>
   </project>
@@ -2820,7 +3083,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.129</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.066</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -2973,154 +3236,199 @@
         <line>16</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>18</line>
+        <line>21</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>20</line>
+        <line>23</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
         <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>98</line>
+        <line>110</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>22</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, werkgeheugen</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: prijs, werkgeheugen</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, webshop, werkgeheugen</context>
+        <line>32</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>32</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'BehuizingController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>56</line>
-        <index>2458</index>
-        <endIndex>2473</endIndex>
-        <startLine>56</startLine>
+        <line>66</line>
+        <index>3038</index>
+        <endIndex>3053</endIndex>
+        <startLine>66</startLine>
         <startColumn>20</startColumn>
-        <endLine>56</endLine>
+        <endLine>66</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>24</line>
-        <index>592</index>
-        <endIndex>611</endIndex>
-        <startLine>24</startLine>
+        <line>34</line>
+        <index>1076</index>
+        <endIndex>1095</endIndex>
+        <startLine>34</startLine>
         <startColumn>13</startColumn>
-        <endLine>24</endLine>
+        <endLine>34</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>31</line>
-        <index>1081</index>
-        <endIndex>1104</endIndex>
-        <startLine>31</startLine>
+        <line>41</line>
+        <index>1565</index>
+        <endIndex>1588</endIndex>
+        <startLine>41</startLine>
         <startColumn>13</startColumn>
-        <endLine>31</endLine>
+        <endLine>41</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>35</line>
-        <index>1275</index>
-        <endIndex>1297</endIndex>
-        <startLine>35</startLine>
+        <line>45</line>
+        <index>1759</index>
+        <endIndex>1877</endIndex>
+        <startLine>45</startLine>
         <startColumn>13</startColumn>
-        <endLine>35</endLine>
-        <endColumn>35</endColumn>
+        <endLine>45</endLine>
+        <endColumn>131</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>46</line>
-        <index>2026</index>
-        <endIndex>2052</endIndex>
-        <startLine>46</startLine>
+        <line>56</line>
+        <index>2606</index>
+        <endIndex>2632</endIndex>
+        <startLine>56</startLine>
         <startColumn>13</startColumn>
-        <endLine>46</endLine>
+        <endLine>56</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>51</line>
-        <index>2234</index>
-        <endIndex>2254</endIndex>
-        <startLine>51</startLine>
+        <line>61</line>
+        <index>2814</index>
+        <endIndex>2834</endIndex>
+        <startLine>61</startLine>
         <startColumn>13</startColumn>
-        <endLine>51</endLine>
+        <endLine>61</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>60</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Roep, aan, voor, maak, een, connectie, haal, uit</context>
+        <line>73</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>77</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>73</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'BehuizingController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>95</line>
-        <index>4437</index>
-        <endIndex>4440</endIndex>
-        <startLine>95</startLine>
+        <line>107</line>
+        <index>5091</index>
+        <endIndex>5094</endIndex>
+        <startLine>107</startLine>
         <startColumn>24</startColumn>
-        <endLine>95</endLine>
+        <endLine>107</endLine>
         <endColumn>27</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>62</line>
-        <index>2586</index>
-        <endIndex>2602</endIndex>
-        <startLine>62</startLine>
+        <line>75</line>
+        <index>3312</index>
+        <endIndex>3345</endIndex>
+        <startLine>75</startLine>
         <startColumn>13</startColumn>
-        <endLine>62</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>69</line>
-        <index>3084</index>
-        <endIndex>3117</endIndex>
-        <startLine>69</startLine>
-        <startColumn>13</startColumn>
-        <endLine>69</endLine>
+        <endLine>75</endLine>
         <endColumn>46</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>72</line>
-        <index>3225</index>
-        <endIndex>3277</endIndex>
-        <startLine>72</startLine>
+        <line>82</line>
+        <index>3827</index>
+        <endIndex>3860</endIndex>
+        <startLine>82</startLine>
         <startColumn>13</startColumn>
-        <endLine>72</endLine>
+        <endLine>82</endLine>
+        <endColumn>46</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>85</line>
+        <index>3968</index>
+        <endIndex>4020</endIndex>
+        <startLine>85</startLine>
+        <startColumn>13</startColumn>
+        <endLine>85</endLine>
         <endColumn>65</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>77</line>
-        <index>3593</index>
-        <endIndex>3616</endIndex>
-        <startLine>77</startLine>
+        <line>89</line>
+        <index>4247</index>
+        <endIndex>4270</endIndex>
+        <startLine>89</startLine>
         <startColumn>13</startColumn>
-        <endLine>77</endLine>
+        <endLine>89</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
@@ -3130,7 +3438,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.132</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.067</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -3285,49 +3593,54 @@
       </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>18</line>
+        <line>19</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>20</line>
+        <line>21</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>22</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Maak, connectie, haal, uit</context>
+        <line>27</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>27</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ComponentenController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>35</line>
-        <index>943</index>
-        <endIndex>946</endIndex>
-        <startLine>35</startLine>
+        <line>40</line>
+        <index>1135</index>
+        <endIndex>1138</endIndex>
+        <startLine>40</startLine>
         <startColumn>24</startColumn>
-        <endLine>35</endLine>
+        <endLine>40</endLine>
         <endColumn>27</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>24</line>
-        <index>526</index>
-        <endIndex>549</endIndex>
-        <startLine>24</startLine>
+        <line>29</line>
+        <index>718</index>
+        <endIndex>741</endIndex>
+        <startLine>29</startLine>
         <startColumn>13</startColumn>
-        <endLine>24</endLine>
+        <endLine>29</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>28</line>
-        <index>697</index>
-        <endIndex>734</endIndex>
-        <startLine>28</startLine>
+        <line>33</line>
+        <index>889</index>
+        <endIndex>926</endIndex>
+        <startLine>33</startLine>
         <startColumn>13</startColumn>
-        <endLine>28</endLine>
+        <endLine>33</endLine>
         <endColumn>50</endColumn>
         <warning>False</warning>
       </violation>
@@ -5014,7 +5327,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.134</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.068</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -5209,203 +5522,217 @@
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
         <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>108</line>
+        <line>125</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>27</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, vorige, stap</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: prijs, vorige, stap</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: Webshop, naam, vorige, stap</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="SplitParametersMustStartOnLineAfterDeclaration" ruleCheckId="SA1116">
         <context>If the method parameters are on separate lines, the first parameter must begin on the line beneath the name of the method.</context>
-        <line>45</line>
+        <line>55</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'MoederbordController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>67</line>
-        <index>3472</index>
-        <endIndex>3487</endIndex>
-        <startLine>67</startLine>
+        <line>78</line>
+        <index>3859</index>
+        <endIndex>3874</endIndex>
+        <startLine>78</startLine>
         <startColumn>20</startColumn>
-        <endLine>67</endLine>
+        <endLine>78</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>29</line>
-        <index>820</index>
-        <endIndex>886</endIndex>
-        <startLine>29</startLine>
-        <startColumn>80</startColumn>
-        <endLine>29</endLine>
-        <endColumn>146</endColumn>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="UseStringEmptyForEmptyStrings" ruleCheckId="SA1122">
+        <context>Use string.Empty rather than "".</context>
+        <line>38</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="DocumentationLinesMustBeginWithSingleSpace" ruleCheckId="SA1004">
+        <context>The documentation header line must start with a single space.</context>
+        <line>27</line>
+        <index>633</index>
+        <endIndex>688</endIndex>
+        <startLine>27</startLine>
+        <startColumn>9</startColumn>
+        <endLine>27</endLine>
+        <endColumn>64</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>31</line>
-        <index>903</index>
-        <endIndex>920</endIndex>
-        <startLine>31</startLine>
+        <line>36</line>
+        <index>1199</index>
+        <endIndex>1280</endIndex>
+        <startLine>36</startLine>
         <startColumn>13</startColumn>
-        <endLine>31</endLine>
+        <endLine>36</endLine>
+        <endColumn>94</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>40</line>
+        <index>1454</index>
+        <endIndex>1471</endIndex>
+        <startLine>40</startLine>
+        <startColumn>13</startColumn>
+        <endLine>40</endLine>
         <endColumn>30</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>39</line>
-        <index>1465</index>
-        <endIndex>1502</endIndex>
-        <startLine>39</startLine>
+        <line>48</line>
+        <index>2016</index>
+        <endIndex>2053</endIndex>
+        <startLine>48</startLine>
         <startColumn>13</startColumn>
-        <endLine>39</endLine>
+        <endLine>48</endLine>
         <endColumn>50</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>43</line>
-        <index>1778</index>
-        <endIndex>1807</endIndex>
-        <startLine>43</startLine>
-        <startColumn>116</startColumn>
-        <endLine>43</endLine>
-        <endColumn>145</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>44</line>
-        <index>1924</index>
-        <endIndex>1968</endIndex>
-        <startLine>44</startLine>
-        <startColumn>115</startColumn>
-        <endLine>44</endLine>
-        <endColumn>159</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>45</line>
-        <index>2085</index>
-        <endIndex>2150</endIndex>
-        <startLine>45</startLine>
-        <startColumn>115</startColumn>
-        <endLine>45</endLine>
-        <endColumn>180</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>46</line>
-        <index>2267</index>
-        <endIndex>2353</endIndex>
-        <startLine>46</startLine>
-        <startColumn>115</startColumn>
-        <endLine>46</endLine>
-        <endColumn>201</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>50</line>
-        <index>2675</index>
-        <endIndex>2750</endIndex>
-        <startLine>50</startLine>
-        <startColumn>116</startColumn>
-        <endLine>50</endLine>
-        <endColumn>191</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>54</line>
-        <index>2882</index>
-        <endIndex>2908</endIndex>
-        <startLine>54</startLine>
+        <line>52</line>
+        <index>2226</index>
+        <endIndex>2344</endIndex>
+        <startLine>52</startLine>
         <startColumn>13</startColumn>
-        <endLine>54</endLine>
+        <endLine>52</endLine>
+        <endColumn>131</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>64</line>
+        <index>3228</index>
+        <endIndex>3254</endIndex>
+        <startLine>64</startLine>
+        <startColumn>13</startColumn>
+        <endLine>64</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>60</line>
-        <index>3130</index>
-        <endIndex>3150</endIndex>
-        <startLine>60</startLine>
+        <line>70</line>
+        <index>3476</index>
+        <endIndex>3496</endIndex>
+        <startLine>70</startLine>
         <startColumn>13</startColumn>
-        <endLine>60</endLine>
+        <endLine>70</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>70</line>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>77</line>
+        <index>3811</index>
+        <endIndex>3837</endIndex>
+        <startLine>77</startLine>
+        <startColumn>13</startColumn>
+        <endLine>77</endLine>
+        <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
-        <context>The code must not contain multiple blank lines in a row.</context>
-        <line>104</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, connectie, haalt, uit, roept, aan, wij, gaan, gebruiken</context>
+        <line>86</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>86</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'MoederbordController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>105</line>
-        <index>5097</index>
-        <endIndex>5100</endIndex>
-        <startLine>105</startLine>
+        <line>122</line>
+        <index>5877</index>
+        <endIndex>5880</endIndex>
+        <startLine>122</startLine>
         <startColumn>20</startColumn>
-        <endLine>105</endLine>
+        <endLine>122</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>72</line>
-        <index>3573</index>
-        <endIndex>3603</endIndex>
-        <startLine>72</startLine>
+        <line>88</line>
+        <index>4201</index>
+        <endIndex>4231</endIndex>
+        <startLine>88</startLine>
         <startColumn>13</startColumn>
-        <endLine>72</endLine>
+        <endLine>88</endLine>
         <endColumn>43</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>83</line>
-        <index>4201</index>
-        <endIndex>4229</endIndex>
-        <startLine>83</startLine>
+        <line>97</line>
+        <index>4768</index>
+        <endIndex>4830</endIndex>
+        <startLine>97</startLine>
         <startColumn>13</startColumn>
-        <endLine>83</endLine>
-        <endColumn>41</endColumn>
+        <endLine>97</endLine>
+        <endColumn>75</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>86</line>
-        <index>4322</index>
-        <endIndex>4345</endIndex>
-        <startLine>86</startLine>
+        <line>101</line>
+        <index>4961</index>
+        <endIndex>4984</endIndex>
+        <startLine>101</startLine>
         <startColumn>13</startColumn>
-        <endLine>86</endLine>
+        <endLine>101</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>90</line>
-        <index>4493</index>
-        <endIndex>4566</endIndex>
-        <startLine>90</startLine>
+        <line>105</line>
+        <index>5132</index>
+        <endIndex>5205</endIndex>
+        <startLine>105</startLine>
         <startColumn>13</startColumn>
-        <endLine>90</endLine>
+        <endLine>105</endLine>
         <endColumn>86</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>121</line>
+        <index>5805</index>
+        <endIndex>5855</endIndex>
+        <startLine>121</startLine>
+        <startColumn>13</startColumn>
+        <endLine>121</endLine>
+        <endColumn>63</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -5414,7 +5741,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.136</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.068</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -5435,6 +5762,11 @@
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
         <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
         <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>21</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
@@ -5577,127 +5909,172 @@
         <line>17</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>19</line>
+        <line>22</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>21</line>
+        <line>24</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>59</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, slaat, maakt, voegt, slaat</context>
+        <line>33</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>23</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, behuizing</context>
+        <line>33</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: prijs, behuizing</context>
+        <line>33</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, wewbshop, behuizing</context>
+        <line>33</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>33</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'OpslagController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>57</line>
-        <index>2410</index>
-        <endIndex>2425</endIndex>
-        <startLine>57</startLine>
+        <line>67</line>
+        <index>2942</index>
+        <endIndex>2957</endIndex>
+        <startLine>67</startLine>
         <startColumn>20</startColumn>
-        <endLine>57</endLine>
+        <endLine>67</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>25</line>
-        <index>622</index>
-        <endIndex>641</endIndex>
-        <startLine>25</startLine>
+        <line>35</line>
+        <index>1058</index>
+        <endIndex>1077</endIndex>
+        <startLine>35</startLine>
         <startColumn>13</startColumn>
-        <endLine>25</endLine>
+        <endLine>35</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>32</line>
-        <index>1087</index>
-        <endIndex>1104</endIndex>
-        <startLine>32</startLine>
+        <line>42</line>
+        <index>1523</index>
+        <endIndex>1540</endIndex>
+        <startLine>42</startLine>
         <startColumn>13</startColumn>
-        <endLine>32</endLine>
+        <endLine>42</endLine>
         <endColumn>30</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>36</line>
-        <index>1269</index>
-        <endIndex>1291</endIndex>
-        <startLine>36</startLine>
+        <line>46</line>
+        <index>1705</index>
+        <endIndex>1823</endIndex>
+        <startLine>46</startLine>
         <startColumn>13</startColumn>
-        <endLine>36</endLine>
-        <endColumn>35</endColumn>
+        <endLine>46</endLine>
+        <endColumn>131</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>47</line>
-        <index>1999</index>
-        <endIndex>2025</endIndex>
-        <startLine>47</startLine>
+        <line>57</line>
+        <index>2531</index>
+        <endIndex>2557</endIndex>
+        <startLine>57</startLine>
         <startColumn>13</startColumn>
-        <endLine>47</endLine>
+        <endLine>57</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>52</line>
-        <index>2195</index>
-        <endIndex>2215</endIndex>
-        <startLine>52</startLine>
+        <line>62</line>
+        <index>2727</index>
+        <endIndex>2747</endIndex>
+        <startLine>62</startLine>
         <startColumn>13</startColumn>
-        <endLine>52</endLine>
+        <endLine>62</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>60</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>73</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>73</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>73</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementDocumentationHeaderMustBePrecededByBlankLine" ruleCheckId="SA1514">
+        <context>A documentation header must be preceded by a blank line or must be the first item in its scope.</context>
+        <line>69</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'OpslagController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>86</line>
-        <index>3643</index>
-        <endIndex>3646</endIndex>
-        <startLine>86</startLine>
+        <line>99</line>
+        <index>4312</index>
+        <endIndex>4315</endIndex>
+        <startLine>99</startLine>
         <startColumn>20</startColumn>
-        <endLine>86</endLine>
+        <endLine>99</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>62</line>
-        <index>2533</index>
-        <endIndex>2552</endIndex>
-        <startLine>62</startLine>
+        <line>75</line>
+        <index>3188</index>
+        <endIndex>3221</endIndex>
+        <startLine>75</startLine>
         <startColumn>13</startColumn>
-        <endLine>62</endLine>
-        <endColumn>32</endColumn>
+        <endLine>75</endLine>
+        <endColumn>46</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>70</line>
-        <index>2980</index>
-        <endIndex>3003</endIndex>
-        <startLine>70</startLine>
+        <line>83</line>
+        <index>3649</index>
+        <endIndex>3672</endIndex>
+        <startLine>83</startLine>
         <startColumn>13</startColumn>
-        <endLine>70</endLine>
+        <endLine>83</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
@@ -5707,7 +6084,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 11:08:06.430</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.069</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -5785,101 +6162,137 @@
         <line>10</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>12</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParameterDocumentationMustHaveText" ruleCheckId="SA1614">
+        <context>The documentation text within the param tag for the '&lt;param name="voeding" /&gt;' parameter must not be empty.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParameterDocumentationMustHaveText" ruleCheckId="SA1614">
+        <context>The documentation text within the param tag for the '&lt;param name="prijs" /&gt;' parameter must not be empty.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParameterDocumentationMustHaveText" ruleCheckId="SA1614">
+        <context>The documentation text within the param tag for the '&lt;param name="webshop" /&gt;' parameter must not be empty.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>19</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'PrintLijstController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>41</line>
-        <index>1745</index>
-        <endIndex>1760</endIndex>
-        <startLine>41</startLine>
+        <line>49</line>
+        <index>2061</index>
+        <endIndex>2076</endIndex>
+        <startLine>49</startLine>
         <startColumn>20</startColumn>
-        <endLine>41</endLine>
+        <endLine>49</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>14</line>
-        <index>341</index>
-        <endIndex>358</endIndex>
-        <startLine>14</startLine>
+        <line>21</line>
+        <index>619</index>
+        <endIndex>636</endIndex>
+        <startLine>21</startLine>
         <startColumn>13</startColumn>
-        <endLine>14</endLine>
+        <endLine>21</endLine>
         <endColumn>30</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>20</line>
-        <index>709</index>
-        <endIndex>732</endIndex>
-        <startLine>20</startLine>
+        <line>27</line>
+        <index>987</index>
+        <endIndex>1010</endIndex>
+        <startLine>27</startLine>
         <startColumn>13</startColumn>
-        <endLine>20</endLine>
+        <endLine>27</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>23</line>
-        <index>824</index>
-        <endIndex>845</endIndex>
-        <startLine>23</startLine>
+        <line>30</line>
+        <index>1102</index>
+        <endIndex>1123</endIndex>
+        <startLine>30</startLine>
         <startColumn>13</startColumn>
-        <endLine>23</endLine>
+        <endLine>30</endLine>
         <endColumn>34</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>31</line>
-        <index>1336</index>
-        <endIndex>1362</endIndex>
-        <startLine>31</startLine>
+        <line>38</line>
+        <index>1614</index>
+        <endIndex>1640</endIndex>
+        <startLine>38</startLine>
         <startColumn>13</startColumn>
-        <endLine>31</endLine>
+        <endLine>38</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>36</line>
-        <index>1536</index>
-        <endIndex>1556</endIndex>
-        <startLine>36</startLine>
+        <line>43</line>
+        <index>1814</index>
+        <endIndex>1834</endIndex>
+        <startLine>43</startLine>
         <startColumn>13</startColumn>
-        <endLine>36</endLine>
+        <endLine>43</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>45</line>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>48</line>
+        <index>2016</index>
+        <endIndex>2039</endIndex>
+        <startLine>48</startLine>
+        <startColumn>13</startColumn>
+        <endLine>48</endLine>
+        <endColumn>36</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Roep, aan, gebruik, voor</context>
+        <line>56</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>56</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'PrintLijstController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>52</line>
-        <index>2182</index>
-        <endIndex>2185</endIndex>
-        <startLine>52</startLine>
+        <line>64</line>
+        <index>2644</index>
+        <endIndex>2647</endIndex>
+        <startLine>64</startLine>
         <startColumn>20</startColumn>
-        <endLine>52</endLine>
+        <endLine>64</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>47</line>
-        <index>1882</index>
-        <endIndex>1909</endIndex>
-        <startLine>47</startLine>
+        <line>58</line>
+        <index>2311</index>
+        <endIndex>2338</endIndex>
+        <startLine>58</startLine>
         <startColumn>13</startColumn>
-        <endLine>47</endLine>
+        <endLine>58</endLine>
         <endColumn>40</endColumn>
         <warning>False</warning>
       </violation>
@@ -5889,7 +6302,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.138</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.070</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -6052,214 +6465,155 @@
         <line>20</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>153</line>
-        <index>8056</index>
-        <endIndex>8105</endIndex>
-        <startLine>153</startLine>
-        <startColumn>9</startColumn>
-        <endLine>153</endLine>
-        <endColumn>58</endColumn>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>26</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>22</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>26</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CodeMustNotContainEmptyStatements" ruleCheckId="SA1106">
         <context>The code contains an extra semicolon.</context>
-        <line>61</line>
+        <line>65</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CodeMustNotContainEmptyStatements" ruleCheckId="SA1106">
         <context>The code contains an extra semicolon.</context>
-        <line>70</line>
+        <line>74</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>102</line>
-        <index>5202</index>
-        <endIndex>5217</endIndex>
-        <startLine>102</startLine>
+        <line>107</line>
+        <index>5387</index>
+        <endIndex>5402</endIndex>
+        <startLine>107</startLine>
         <startColumn>20</startColumn>
-        <endLine>102</endLine>
+        <endLine>107</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>24</line>
-        <index>553</index>
-        <endIndex>572</endIndex>
-        <startLine>24</startLine>
+        <line>28</line>
+        <index>697</index>
+        <endIndex>716</endIndex>
+        <startLine>28</startLine>
         <startColumn>13</startColumn>
-        <endLine>24</endLine>
+        <endLine>28</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>50</line>
-        <index>2505</index>
-        <endIndex>2531</endIndex>
-        <startLine>50</startLine>
+        <line>54</line>
+        <index>2649</index>
+        <endIndex>2675</endIndex>
+        <startLine>54</startLine>
         <startColumn>13</startColumn>
-        <endLine>50</endLine>
+        <endLine>54</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SemicolonsMustBeSpacedCorrectly" ruleCheckId="SA1002">
         <context>Invalid spacing around the semicolon.</context>
-        <line>61</line>
-        <index>3166</index>
-        <endIndex>3166</endIndex>
-        <startLine>61</startLine>
+        <line>65</line>
+        <index>3310</index>
+        <endIndex>3310</endIndex>
+        <startLine>65</startLine>
         <startColumn>52</startColumn>
-        <endLine>61</endLine>
+        <endLine>65</endLine>
         <endColumn>52</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SemicolonsMustBeSpacedCorrectly" ruleCheckId="SA1002">
         <context>Invalid spacing around the semicolon.</context>
-        <line>70</line>
-        <index>3621</index>
-        <endIndex>3621</endIndex>
-        <startLine>70</startLine>
+        <line>74</line>
+        <index>3765</index>
+        <endIndex>3765</endIndex>
+        <startLine>74</startLine>
         <startColumn>67</startColumn>
-        <endLine>70</endLine>
+        <endLine>74</endLine>
         <endColumn>67</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>76</line>
-        <index>3901</index>
-        <endIndex>3921</endIndex>
-        <startLine>76</startLine>
+        <line>80</line>
+        <index>4045</index>
+        <endIndex>4065</endIndex>
+        <startLine>80</startLine>
         <startColumn>13</startColumn>
-        <endLine>76</endLine>
+        <endLine>80</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
         <line>106</line>
+        <index>5339</index>
+        <endIndex>5365</endIndex>
+        <startLine>106</startLine>
+        <startColumn>13</startColumn>
+        <endLine>106</endLine>
+        <endColumn>39</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, connectie, roept, aan, wij, gaan, gebruiken</context>
+        <line>114</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>114</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>150</line>
-        <index>8009</index>
-        <endIndex>8012</endIndex>
-        <startLine>150</startLine>
+        <line>160</line>
+        <index>8465</index>
+        <endIndex>8468</endIndex>
+        <startLine>160</startLine>
         <startColumn>20</startColumn>
-        <endLine>150</endLine>
+        <endLine>160</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>133</line>
-        <index>7248</index>
-        <endIndex>7271</endIndex>
-        <startLine>133</startLine>
+        <line>116</line>
+        <index>5673</index>
+        <endIndex>5706</endIndex>
+        <startLine>116</startLine>
         <startColumn>13</startColumn>
-        <endLine>133</endLine>
+        <endLine>116</endLine>
+        <endColumn>46</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>142</line>
+        <index>7639</index>
+        <endIndex>7662</endIndex>
+        <startLine>142</startLine>
+        <startColumn>13</startColumn>
+        <endLine>142</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>154</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
-        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
-        <line>176</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
-        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
-        <line>235</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
-        <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>260</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>method names begin with an upper-case letter: filter_prijs.</context>
-        <line>154</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>175</line>
-        <index>8975</index>
-        <endIndex>8978</endIndex>
-        <startLine>175</startLine>
-        <startColumn>24</startColumn>
-        <endLine>175</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>194</line>
-        <index>9787</index>
-        <endIndex>9790</endIndex>
-        <startLine>194</startLine>
-        <startColumn>24</startColumn>
-        <endLine>194</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>214</line>
-        <index>10601</index>
-        <endIndex>10604</endIndex>
-        <startLine>214</startLine>
-        <startColumn>24</startColumn>
-        <endLine>214</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>234</line>
-        <index>11415</index>
-        <endIndex>11418</endIndex>
-        <startLine>234</startLine>
-        <startColumn>24</startColumn>
-        <endLine>234</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>253</line>
-        <index>12229</index>
-        <endIndex>12232</endIndex>
-        <startLine>253</startLine>
-        <startColumn>24</startColumn>
-        <endLine>253</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'ProcessorController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>257</line>
-        <index>12331</index>
-        <endIndex>12334</endIndex>
-        <startLine>257</startLine>
-        <startColumn>24</startColumn>
-        <endLine>257</endLine>
-        <endColumn>27</endColumn>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>159</line>
+        <index>8393</index>
+        <endIndex>8443</endIndex>
+        <startLine>159</startLine>
+        <startColumn>13</startColumn>
+        <endLine>159</endLine>
+        <endColumn>63</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -6268,7 +6622,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.140</sourceFile>
+      <sourceFile>2015/01/23 10:44:37.377</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -6462,47 +6816,85 @@
         <line>30</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>31</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'SearchComponentController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>55</line>
-        <index>1733</index>
-        <endIndex>1736</endIndex>
-        <startLine>55</startLine>
+        <line>58</line>
+        <index>1954</index>
+        <endIndex>1957</endIndex>
+        <startLine>58</startLine>
         <startColumn>20</startColumn>
-        <endLine>55</endLine>
+        <endLine>58</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>35</line>
-        <index>832</index>
-        <endIndex>861</endIndex>
-        <startLine>35</startLine>
+        <line>31</line>
+        <index>730</index>
+        <endIndex>783</endIndex>
+        <startLine>31</startLine>
+        <startColumn>9</startColumn>
+        <endLine>31</endLine>
+        <endColumn>62</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>32</line>
+        <index>794</index>
+        <endIndex>860</endIndex>
+        <startLine>32</startLine>
+        <startColumn>9</startColumn>
+        <endLine>32</endLine>
+        <endColumn>75</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>33</line>
+        <index>871</index>
+        <endIndex>940</endIndex>
+        <startLine>33</startLine>
+        <startColumn>9</startColumn>
+        <endLine>33</endLine>
+        <endColumn>78</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>38</line>
+        <index>1053</index>
+        <endIndex>1082</endIndex>
+        <startLine>38</startLine>
         <startColumn>13</startColumn>
-        <endLine>35</endLine>
+        <endLine>38</endLine>
         <endColumn>42</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>39</line>
-        <index>1009</index>
-        <endIndex>1069</endIndex>
-        <startLine>39</startLine>
+        <line>42</line>
+        <index>1230</index>
+        <endIndex>1290</endIndex>
+        <startLine>42</startLine>
         <startColumn>13</startColumn>
-        <endLine>39</endLine>
+        <endLine>42</endLine>
         <endColumn>73</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>54</line>
-        <index>1687</index>
-        <endIndex>1711</endIndex>
-        <startLine>54</startLine>
+        <line>57</line>
+        <index>1908</index>
+        <endIndex>1932</endIndex>
+        <startLine>57</startLine>
         <startColumn>13</startColumn>
-        <endLine>54</endLine>
+        <endLine>57</endLine>
         <endColumn>37</endColumn>
         <warning>False</warning>
       </violation>
@@ -6512,7 +6904,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.141</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.071</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -6537,7 +6929,12 @@
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
         <context>The code must not contain multiple blank lines in a row.</context>
-        <line>19</line>
+        <line>22</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>23</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
@@ -6680,128 +7077,205 @@
         <line>17</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>20</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>20</line>
+        <line>24</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>22</line>
+        <line>26</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>24</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: moederbord, naam</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: moederbord, prijs</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: webshop, moederbord</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: vormfactor, moederbord</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: ddr, moederbord</context>
+        <line>37</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>37</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
         <context>A closing curly bracket must not be preceded by a blank line.</context>
-        <line>66</line>
+        <line>80</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'VideokaartController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>64</line>
-        <index>2919</index>
-        <endIndex>2934</endIndex>
-        <startLine>64</startLine>
+        <line>78</line>
+        <index>3647</index>
+        <endIndex>3662</endIndex>
+        <startLine>78</startLine>
         <startColumn>20</startColumn>
-        <endLine>64</endLine>
+        <endLine>78</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>26</line>
-        <index>664</index>
-        <endIndex>683</endIndex>
-        <startLine>26</startLine>
+        <line>39</line>
+        <index>1257</index>
+        <endIndex>1276</endIndex>
+        <startLine>39</startLine>
         <startColumn>13</startColumn>
-        <endLine>26</endLine>
+        <endLine>39</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>35</line>
-        <index>1331</index>
-        <endIndex>1348</endIndex>
-        <startLine>35</startLine>
+        <line>48</line>
+        <index>1924</index>
+        <endIndex>1941</endIndex>
+        <startLine>48</startLine>
         <startColumn>13</startColumn>
-        <endLine>35</endLine>
+        <endLine>48</endLine>
         <endColumn>30</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>39</line>
-        <index>1521</index>
-        <endIndex>1542</endIndex>
-        <startLine>39</startLine>
+        <line>52</line>
+        <index>2114</index>
+        <endIndex>2232</endIndex>
+        <startLine>52</startLine>
         <startColumn>13</startColumn>
-        <endLine>39</endLine>
-        <endColumn>34</endColumn>
+        <endLine>52</endLine>
+        <endColumn>131</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>50</line>
-        <index>2272</index>
-        <endIndex>2298</endIndex>
-        <startLine>50</startLine>
+        <line>63</line>
+        <index>2962</index>
+        <endIndex>2988</endIndex>
+        <startLine>63</startLine>
         <startColumn>13</startColumn>
-        <endLine>50</endLine>
+        <endLine>63</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>57</line>
-        <index>2580</index>
-        <endIndex>2600</endIndex>
-        <startLine>57</startLine>
+        <line>70</line>
+        <index>3270</index>
+        <endIndex>3290</endIndex>
+        <startLine>70</startLine>
         <startColumn>13</startColumn>
-        <endLine>57</endLine>
+        <endLine>70</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>69</line>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>77</line>
+        <index>3602</index>
+        <endIndex>3625</endIndex>
+        <startLine>77</startLine>
+        <startColumn>13</startColumn>
+        <endLine>77</endLine>
+        <endColumn>36</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Roep, aan, voor, maak, een, connectie, haal, uit</context>
+        <line>86</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>86</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'VideokaartController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>103</line>
-        <index>4780</index>
-        <endIndex>4783</endIndex>
-        <startLine>103</startLine>
+        <line>114</line>
+        <index>5248</index>
+        <endIndex>5251</endIndex>
+        <startLine>114</startLine>
         <startColumn>20</startColumn>
-        <endLine>103</endLine>
+        <endLine>114</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>71</line>
-        <index>3050</index>
-        <endIndex>3069</endIndex>
-        <startLine>71</startLine>
+        <line>88</line>
+        <index>3923</index>
+        <endIndex>3953</endIndex>
+        <startLine>88</startLine>
         <startColumn>13</startColumn>
-        <endLine>71</endLine>
-        <endColumn>32</endColumn>
+        <endLine>88</endLine>
+        <endColumn>43</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>87</line>
-        <index>4110</index>
-        <endIndex>4133</endIndex>
-        <startLine>87</startLine>
+        <line>97</line>
+        <index>4512</index>
+        <endIndex>4535</endIndex>
+        <startLine>97</startLine>
         <startColumn>13</startColumn>
-        <endLine>87</endLine>
+        <endLine>97</endLine>
         <endColumn>36</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>113</line>
+        <index>5175</index>
+        <endIndex>5226</endIndex>
+        <startLine>113</startLine>
+        <startColumn>13</startColumn>
+        <endLine>113</endLine>
+        <endColumn>64</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -6810,7 +7284,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 14:02:43.143</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.071</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -6833,6 +7307,11 @@
         <line>1</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>22</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
         <context>All using directives must be placed inside of the namespace.</context>
         <line>1</line>
@@ -6973,127 +7452,168 @@
         <line>17</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>20</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>19</line>
+        <line>23</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>21</line>
+        <line>25</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>59</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>23</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="DocumentationMustContainValidXml" ruleCheckId="SA1603">
+        <context>The documentation header is composed of invalid Xml: 'naam' is an unexpected token. Expecting white space. Line 6, position 22.</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'VoedingController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>57</line>
-        <index>2388</index>
-        <endIndex>2403</endIndex>
-        <startLine>57</startLine>
+        <line>68</line>
+        <index>2940</index>
+        <endIndex>2955</endIndex>
+        <startLine>68</startLine>
         <startColumn>20</startColumn>
-        <endLine>57</endLine>
+        <endLine>68</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>25</line>
-        <index>621</index>
-        <endIndex>640</endIndex>
-        <startLine>25</startLine>
+        <line>36</line>
+        <index>1076</index>
+        <endIndex>1095</endIndex>
+        <startLine>36</startLine>
         <startColumn>13</startColumn>
-        <endLine>25</endLine>
+        <endLine>36</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>32</line>
-        <index>1070</index>
-        <endIndex>1103</endIndex>
-        <startLine>32</startLine>
+        <line>43</line>
+        <index>1525</index>
+        <endIndex>1558</endIndex>
+        <startLine>43</startLine>
         <startColumn>13</startColumn>
-        <endLine>32</endLine>
+        <endLine>43</endLine>
         <endColumn>46</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>36</line>
-        <index>1270</index>
-        <endIndex>1291</endIndex>
-        <startLine>36</startLine>
+        <line>47</line>
+        <index>1725</index>
+        <endIndex>1843</endIndex>
+        <startLine>47</startLine>
         <startColumn>13</startColumn>
-        <endLine>36</endLine>
-        <endColumn>34</endColumn>
+        <endLine>47</endLine>
+        <endColumn>131</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>47</line>
-        <index>1998</index>
-        <endIndex>2024</endIndex>
-        <startLine>47</startLine>
+        <line>58</line>
+        <index>2550</index>
+        <endIndex>2576</endIndex>
+        <startLine>58</startLine>
         <startColumn>13</startColumn>
-        <endLine>47</endLine>
+        <endLine>58</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>52</line>
-        <index>2182</index>
-        <endIndex>2202</endIndex>
-        <startLine>52</startLine>
+        <line>63</line>
+        <index>2734</index>
+        <endIndex>2754</endIndex>
+        <startLine>63</startLine>
         <startColumn>13</startColumn>
-        <endLine>52</endLine>
+        <endLine>63</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>60</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Roep, aan, voor, maak, een, connectie, haal, uit</context>
+        <line>74</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>74</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>74</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementDocumentationHeaderMustBePrecededByBlankLine" ruleCheckId="SA1514">
+        <context>A documentation header must be preceded by a blank line or must be the first item in its scope.</context>
+        <line>70</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'VoedingController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>84</line>
-        <index>3532</index>
-        <endIndex>3535</endIndex>
-        <startLine>84</startLine>
+        <line>99</line>
+        <index>4280</index>
+        <endIndex>4283</endIndex>
+        <startLine>99</startLine>
         <startColumn>20</startColumn>
-        <endLine>84</endLine>
+        <endLine>99</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>67</line>
-        <index>2842</index>
-        <endIndex>2865</endIndex>
-        <startLine>67</startLine>
+        <line>76</line>
+        <index>3212</index>
+        <endIndex>3245</endIndex>
+        <startLine>76</startLine>
         <startColumn>13</startColumn>
-        <endLine>67</endLine>
+        <endLine>76</endLine>
+        <endColumn>46</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>82</line>
+        <index>3590</index>
+        <endIndex>3613</endIndex>
+        <startLine>82</startLine>
+        <startColumn>13</startColumn>
+        <endLine>82</endLine>
         <endColumn>36</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>83</line>
-        <index>3488</index>
-        <endIndex>3510</endIndex>
-        <startLine>83</startLine>
+        <line>98</line>
+        <index>4236</index>
+        <endIndex>4258</endIndex>
+        <startLine>98</startLine>
         <startColumn>13</startColumn>
-        <endLine>83</endLine>
+        <endLine>98</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
@@ -7103,7 +7623,7 @@
     <timestamps>
       <styleCop>2014/04/01 11:18:24.000</styleCop>
       <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/22 11:08:06.436</sourceFile>
+      <sourceFile>2015/04/07 13:53:25.072</sourceFile>
       <parser>2014/04/01 11:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -7124,6 +7644,11 @@
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
         <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
         <line>1</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>22</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
@@ -7266,155 +7791,211 @@
         <line>17</line>
         <warning>False</warning>
       </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
+        <context>All using directives must be placed inside of the namespace.</context>
+        <line>20</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives" ruleCheckId="SA1208">
+        <context>System using directives must be placed before all other using directives.</context>
+        <line>20</line>
+        <warning>False</warning>
+      </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
         <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>19</line>
+        <line>23</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
-        <line>21</line>
+        <line>25</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>59</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Deze, methode, maakt, voegt, slaat</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>23</line>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, videokaart</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: prijs, videokaart</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the param tag contains incorrectly spelled words: naam, webshop, videokaart</context>
+        <line>34</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>34</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to RedirectToAction must begin with the 'this.', 'base.', 'object.' or 'WerkgeheugenController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>57</line>
-        <index>2492</index>
-        <endIndex>2507</endIndex>
-        <startLine>57</startLine>
+        <line>69</line>
+        <index>3105</index>
+        <endIndex>3120</endIndex>
+        <startLine>69</startLine>
         <startColumn>20</startColumn>
-        <endLine>57</endLine>
+        <endLine>69</endLine>
         <endColumn>35</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>25</line>
-        <index>635</index>
-        <endIndex>654</endIndex>
-        <startLine>25</startLine>
+        <line>36</line>
+        <index>1110</index>
+        <endIndex>1129</endIndex>
+        <startLine>36</startLine>
         <startColumn>13</startColumn>
-        <endLine>25</endLine>
+        <endLine>36</endLine>
         <endColumn>32</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>32</line>
-        <index>1118</index>
-        <endIndex>1136</endIndex>
-        <startLine>32</startLine>
+        <line>43</line>
+        <index>1593</index>
+        <endIndex>1611</endIndex>
+        <startLine>43</startLine>
         <startColumn>13</startColumn>
-        <endLine>32</endLine>
+        <endLine>43</endLine>
         <endColumn>31</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>36</line>
-        <index>1313</index>
-        <endIndex>1334</endIndex>
-        <startLine>36</startLine>
+        <line>47</line>
+        <index>1788</index>
+        <endIndex>1906</endIndex>
+        <startLine>47</startLine>
         <startColumn>13</startColumn>
-        <endLine>36</endLine>
-        <endColumn>34</endColumn>
+        <endLine>47</endLine>
+        <endColumn>131</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>47</line>
-        <index>2074</index>
-        <endIndex>2100</endIndex>
-        <startLine>47</startLine>
+        <line>58</line>
+        <index>2646</index>
+        <endIndex>2672</endIndex>
+        <startLine>58</startLine>
         <startColumn>13</startColumn>
-        <endLine>47</endLine>
+        <endLine>58</endLine>
         <endColumn>39</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>52</line>
-        <index>2274</index>
-        <endIndex>2294</endIndex>
-        <startLine>52</startLine>
+        <line>63</line>
+        <index>2846</index>
+        <endIndex>2866</endIndex>
+        <startLine>63</startLine>
         <startColumn>13</startColumn>
-        <endLine>52</endLine>
+        <endLine>63</endLine>
         <endColumn>33</endColumn>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>60</line>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>68</line>
+        <index>3057</index>
+        <endIndex>3083</endIndex>
+        <startLine>68</startLine>
+        <startColumn>13</startColumn>
+        <endLine>68</endLine>
+        <endColumn>39</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
+        <context>The documentation text within the summary tag contains incorrectly spelled words: Roep, aan, voor, maak, een, connectie, haal, uit</context>
+        <line>75</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementReturnValueDocumentationMustHaveText" ruleCheckId="SA1616">
+        <context>The returns section in the documentation header must not be empty.</context>
+        <line>75</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
+        <context>Adjacent elements must be separated by a blank line.</context>
+        <line>75</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementDocumentationHeaderMustBePrecededByBlankLine" ruleCheckId="SA1514">
+        <context>A documentation header must be preceded by a blank line or must be the first item in its scope.</context>
+        <line>71</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
         <context>The call to View must begin with the 'this.', 'base.', 'object.' or 'WerkgeheugenController.' or 'Controller.' prefix to indicate the intended method call. </context>
-        <line>96</line>
-        <index>4371</index>
-        <endIndex>4374</endIndex>
-        <startLine>96</startLine>
+        <line>110</line>
+        <index>5122</index>
+        <endIndex>5125</endIndex>
+        <startLine>110</startLine>
         <startColumn>20</startColumn>
-        <endLine>96</endLine>
+        <endLine>110</endLine>
         <endColumn>23</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>71</line>
-        <index>3284</index>
-        <endIndex>3314</endIndex>
-        <startLine>71</startLine>
-        <startColumn>57</startColumn>
-        <endLine>71</endLine>
-        <endColumn>87</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
-        <context>The spacing around the symbol '+' is invalid.</context>
-        <line>72</line>
-        <index>3357</index>
-        <endIndex>3357</endIndex>
-        <startLine>72</startLine>
-        <startColumn>41</startColumn>
-        <endLine>72</endLine>
-        <endColumn>41</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
-        <context>The spacing around the symbol '+' is invalid.</context>
-        <line>72</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SymbolsMustBeSpacedCorrectly" ruleCheckId="SA1003">
-        <context>The spacing around the symbol '+' is invalid.</context>
-        <line>72</line>
-        <index>3361</index>
-        <endIndex>3361</endIndex>
-        <startLine>72</startLine>
-        <startColumn>45</startColumn>
-        <endLine>72</endLine>
-        <endColumn>45</endColumn>
+        <line>77</line>
+        <index>3377</index>
+        <endIndex>3410</endIndex>
+        <startLine>77</startLine>
+        <startColumn>13</startColumn>
+        <endLine>77</endLine>
+        <endColumn>46</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
         <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>77</line>
-        <index>3520</index>
-        <endIndex>3543</endIndex>
-        <startLine>77</startLine>
+        <line>87</line>
+        <index>4044</index>
+        <endIndex>4132</endIndex>
+        <startLine>87</startLine>
         <startColumn>13</startColumn>
-        <endLine>77</endLine>
+        <endLine>87</endLine>
+        <endColumn>101</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>90</line>
+        <index>4203</index>
+        <endIndex>4226</endIndex>
+        <startLine>90</startLine>
+        <startColumn>13</startColumn>
+        <endLine>90</endLine>
         <endColumn>36</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>109</line>
+        <index>5049</index>
+        <endIndex>5100</endIndex>
+        <startLine>109</startLine>
+        <startColumn>13</startColumn>
+        <endLine>109</endLine>
+        <endColumn>64</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -7754,382 +8335,9 @@
         <line>1</line>
         <warning>False</warning>
       </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>2</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>3</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>4</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
         <line>8</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: name.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: desc.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: url.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: price.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: webshop.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: component.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="Behuizing_Model.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2014/04/01 11:18:24.000</styleCop>
-      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/11 17:54:55.592</sourceFile>
-      <parser>2014/04/01 11:18:24.000</parser>
-      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
-        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>2</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>3</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>4</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The class must have a documentation header.</context>
-        <line>8</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: naam.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: interfaces.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: vormfactor.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>property names begin with an upper-case letter: vormvoeding.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="ViewModelBehuizing.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2014/04/01 11:18:24.000</styleCop>
-      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2015/01/11 17:54:55.593</sourceFile>
-      <parser>2014/04/01 11:18:24.000</parser>
-      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
-        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>2</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>3</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="UsingDirectivesMustBePlacedWithinNamespace" ruleCheckId="SA1200">
-        <context>All using directives must be placed inside of the namespace.</context>
-        <line>4</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="ElementMustBeginWithUpperCaseLetter" ruleCheckId="SA1300">
-        <context>namespace names begin with an upper-case letter: pcbuild.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The class must have a documentation header.</context>
-        <line>8</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1509">
-        <context>An opening curly bracket must not be preceded by a blank line.</context>
-        <line>10</line>
-        <index>163</index>
-        <endIndex>163</endIndex>
-        <startLine>10</startLine>
-        <startColumn>5</startColumn>
-        <endLine>10</endLine>
-        <endColumn>5</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
-  <sourcecode name="IdentityModels.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2014/04/01 11:18:24.000</styleCop>
-      <settingsFile>2012/09/27 22:03:32.000</settingsFile>
-      <sourceFile>2014/12/08 21:11:09.512</sourceFile>
-      <parser>2014/04/01 11:18:24.000</parser>
-      <StyleCop.CSharp.DocumentationRules>2014/04/01 11:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-2064112440</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2014/04/01 11:18:24.000</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2014/04/01 11:18:24.000</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2014/04/01 11:18:24.000</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="FileMustHaveHeader" ruleCheckId="SA1633">
-        <context>The file has no header, the header Xml is invalid, or the header is not located at the top of the file.</context>
-        <line>1</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The class must have a documentation header.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The class must have a documentation header.</context>
-        <line>21</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The constructor must have a documentation header.</context>
-        <line>23</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>28</line>
         <warning>False</warning>
       </violation>
     </violations>

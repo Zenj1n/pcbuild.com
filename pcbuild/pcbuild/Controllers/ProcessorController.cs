@@ -110,7 +110,7 @@ namespace pcbuild.Controllers
         /// <summary>
         /// Deze methode maakt connectie met de database en roept de cookies aan die wij gaan gebruiken
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return data van de database in componenten_query naar de view</returns>
         public ActionResult Index()
         {
             //Roep de cookies aan voor de View

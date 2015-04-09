@@ -69,7 +69,7 @@ namespace pcbuild.Controllers
         /// <summary>
         /// Deze methode maakt, voegt data en slaat de cookies op
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return data van de database in componenten_query naar de view</returns>
         public ActionResult Index()
         {
             //Roep de cookies aan voor de View

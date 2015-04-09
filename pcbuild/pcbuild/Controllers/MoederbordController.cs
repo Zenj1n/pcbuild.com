@@ -53,7 +53,7 @@ namespace pcbuild.Controllers
             decimal prijs_processor = Convert.ToDecimal(prijs, new CultureInfo("is-IS"));                          
             decimal prijs_moederbord = Convert.ToDecimal(moederbordprijs_cookie.Value, new CultureInfo("is-IS")); 
             decimal prijs_totaal_vorige = Convert.ToDecimal(totale_prijs_cookie.Value,                             
-            new CultureInfo("is-IS")) - prijs_moederbord;                                                         
+            new CultureInfo("is-IS")) - prijs_moederbord;                     //Haal de moederbord prijs uit de totale prijs cookie als hij terugkwam van een verdere stap                                                       
             decimal prijs_totaal = prijs_totaal_vorige + prijs_processor;
             string prijs_totaal_string = prijs_totaal.ToString();
             totale_prijs_cookie.Value = prijs_totaal_string;
@@ -82,7 +82,7 @@ namespace pcbuild.Controllers
         ///  Deze methode maakt connectie met de NEO4J database, haalt data uit de NEO4J database 
         ///  en roept de cookies aan die wij gaan gebruiken
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return data van de database in componenten_query naar de view</returns>
         public ActionResult Index()
         {
             //Roep Cookies aan voor de View

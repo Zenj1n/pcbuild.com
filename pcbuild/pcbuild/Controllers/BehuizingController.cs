@@ -69,7 +69,7 @@ namespace pcbuild.Controllers
         /// <summary>
         /// Roep de cookies aan voor de View, maak een connectie en haal data uit database.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return data van de database in componenten_query naar de view</returns>
         public ActionResult Index()
         {
             //Roep de cookies aan voor de View
